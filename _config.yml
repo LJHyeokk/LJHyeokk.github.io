@@ -12,14 +12,14 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: 'default' # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: 'sunrise' # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # /sd
 # Site Settings
-locale: 'en-US'
-title: 'Site Title'
-title_separator: '-'
-subtitle: # site tagline that appears below site title in masthead
-name: 'Your Name'
+locale: 'ko-KR'
+title: 'POPO'
+title_separator: '|'
+subtitle: 'EZ coding'
+name: 'Lee Jun Hyeok'
 description: 'An amazing website.'
 url: 'https://LJHyeokk.github.io'
 baseurl: # the subpath of your site, e.g. "/blog"
