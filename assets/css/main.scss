@@ -6,3 +6,19 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.page__title {
+  margin-top: 0;
+  line-height: 1;
+  text-align: center;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  & + .page__meta {
+    text-align: center;
+    margin-top: -0.5em;
+  }
+}

@@ -1,0 +1,19 @@
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
+.table-of-contents-list a:link {
+  color: rgb(1, 15, 7);
+}
+
+.table-of-contents-list a:visited {
+  color: rgb(1, 15, 7);
+}
+
+.ptype p {
+  color: #4c7a8a;
+  font-weight: bold;
+}
