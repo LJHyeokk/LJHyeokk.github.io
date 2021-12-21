@@ -1,35 +1,12 @@
-# # main links
-# main-sidebar:
-#   - title: 'Front-End'
-#     url: /
-#     children:
-#       - title: 'HTML/CSS(3)'
-#         # url: /Every/HTMLCSS/HTMLCSS/
-#       - title: 'JavaScript(10)'
-#         # url: /Every/JS/javascript/
-#       - title: 'React(11)'
-#         # url: /Every/React/React/
-#   - title: 'BACK-END'
-#     children:
-#       - title: 'Node.Js(2)'
-#         # url: /Every/Node/node/
-#   - title: 'Algorithm'
-#     children:
-#       - title: '알고리즘(5)'
-#         # url: /Every/Algorithm/Algorithm
-#   - title: 'Database'
-#     children:
-#       - title: 'mySQL(1)'
-#         # url: /Every/Sql/sql/
-#       - title: 'mongoDB(0)'
-#         # url: /
-#   - title: 'Blog'
-#     children:
-#       - title: '만들어보기(3)'
-#         # url: /Every/Blog/Blog/
-#   - title: 'etc'
-#     children:
-#       - title: '이것저것(5)'
-#         # url: /Every/etc/etc/
-#       - title: 'Wecode(3)'
-#         # url: /Every/Wecode/wecode/
+# main links
+main:
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
