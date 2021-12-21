@@ -4,32 +4,32 @@ main-sidebar:
     url: /
     children:
       - title: 'HTML/CSS(3)'
-        # url: /Every/HTMLCSS/HTMLCSS/
+        url: /Every/HTMLCSS/HTMLCSS/
       - title: 'JavaScript(10)'
-        # url: /Every/JS/javascript/
+        url: /Every/JS/javascript/
       - title: 'React(11)'
-        # url: /Every/React/React/sd
+        url: /Every/React/React/
   - title: 'BACK-END'
     children:
       - title: 'Node.Js(2)'
-        # url: /Every/Node/node/
+        url: /Every/Node/node/
   - title: 'Algorithm'
     children:
       - title: '알고리즘(5)'
-        # url: /Every/Algorithm/Algorithm
+        url: /Every/Algorithm/Algorithm
   - title: 'Database'
     children:
       - title: 'mySQL(1)'
-        # url: /Every/Sql/sql/
+        url: /Every/Sql/sql/
       - title: 'mongoDB(0)'
         url: /
   - title: 'Blog'
     children:
       - title: '만들어보기(3)'
-        # url: /Every/Blog/Blog/
+        url: /Every/Blog/Blog/
   - title: 'etc'
     children:
       - title: '이것저것(5)'
-        # url: /Every/etc/etc/
+        url: /Every/etc/etc/
       - title: 'Wecode(3)'
-        # url: /Every/Wecode/wecode/
+        url: /Every/Wecode/wecode/
