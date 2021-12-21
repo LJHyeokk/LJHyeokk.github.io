@@ -8,7 +8,7 @@ main-sidebar:
       - title: 'JavaScript(10)'
         # url: /Every/JS/javascript/
       - title: 'React(11)'
-        # url: /Every/React/React/
+        # url: /Every/React/React/sd
   - title: 'BACK-END'
     children:
       - title: 'Node.Js(2)'
