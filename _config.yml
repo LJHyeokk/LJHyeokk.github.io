@@ -13,27 +13,27 @@
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 
-minimal_mistakes_skin: "sunrise" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: 'sunrise' # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 theme: minimal-mistakes-jekyll
 # Site Settings
-locale: "ko-KR"
-title: "POPO"
-title_separator: "|"
-subtitle: "EZ coding"
-name: "Lee Jun Hyeok"
-description: "An amazing website."
-url: "https://LJHyeokk.github.io"
+locale: 'ko-KR'
+title: 'POPO'
+title_separator: '|'
+subtitle: 'EZ coding'
+name: 'Lee Jun Hyeok'
+description: 'An amazing website.'
+url: 'https://LJHyeokk.github.io'
 baseurl:
 repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo: "/assets/images/logo5.png"
+logo: '/assets/images/logo5.png'
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 200
 comments:
-  provider: "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider: 'disqus' # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname: "ljhy"
+    shortname: 'ljhy'
   discourse:
     server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -95,47 +95,47 @@ social:
 
 # Analytics
 analytics:
-  provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: 'google-gtag' # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id: "G-8BT2RB0J2P"
+    tracking_id: 'G-8BT2RB0J2P'
 
     anonymize_ip: false # true, false (default)
 
 # Site Author
 author:
-  name: "Lee Jun Hyeok"
-  avatar: "/assets/images/tory3.png"
-  bio: "안녕하세요~😸"
-  location: "Busan"
+  name: 'Lee Jun Hyeok'
+  avatar: '/assets/images/tory3.png'
+  bio: '안녕하세요~😸'
+  location: 'Busan'
   email:
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:clzlsqkq@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    - label: 'Email'
+      icon: 'fas fa-fw fa-envelope-square'
+      url: 'mailto:clzlsqkq@gmail.com'
+    - label: 'Website'
+      icon: 'fas fa-fw fa-link'
       # url: "https://your-website.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/LJHyeokk"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+    - label: 'GitHub'
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/LJHyeokk'
+    - label: 'Instagram'
+      icon: 'fab fa-fw fa-instagram'
       # url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/LJHyeokk"
+    - label: 'GitHub'
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/LJHyeokk'
 
 # Reading Files
 include:
   - .htaccess
   - _pages
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - '*.sublime-project'
+  - '*.sublime-workspace'
   - vendor
   - .asset-cache
   - .bundle
@@ -163,8 +163,8 @@ exclude:
 keep_files:
   - .git
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+encoding: 'utf-8'
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 
 # Conversion
 markdown: kramdown
@@ -250,14 +250,14 @@ compress_html:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: single
       wide: true
       author_profile: true
       sidebar:
-        nav: "main-sidebar"
+        nav: 'main-sidebar'
       read_time: true
       comments: true
       share: true
@@ -265,10 +265,10 @@ defaults:
       show_date: true
     # _pages
   - scope:
-      path: "_pages"
+      path: '_pages'
       type: pages
     values:
       layout: single
       author_profile: true
 
-date_format: "%Y-%m-%d"
+date_format: '%Y-%m-%d'
