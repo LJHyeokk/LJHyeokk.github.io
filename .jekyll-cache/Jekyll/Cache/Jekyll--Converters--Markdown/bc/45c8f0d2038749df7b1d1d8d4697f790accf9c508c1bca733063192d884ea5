@@ -1,0 +1,52 @@
+I"g<h2 id="algorithm">Algorithm🤮</h2>
+
+<center class="notice--danger">나름 신박한 문제여서 쓴다.</center>
+
+<center><img src="../images/2021-10-27-first/day3.png" alt="day3" style="zoom:70%;" /></center>
+<p><br />
+<br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getLengthOfStr</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">newStr</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">newStr</span> <span class="o">=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">newStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">newStr</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newStr</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">let</span> <span class="nx">text</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">text</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">text</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">text</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>arr를 출력해보면</p>
+
+<p>[
+‘jf’, ‘fj’, ‘jfk’,
+‘fk’, ‘k’, ‘k’,
+‘kd’, ‘d’, ‘dej’,
+‘ej’, ‘j’
+]</p>
+
+<p>이것의 제일 긴 길이를 반환하면 끝이다</p>
+
+<p>왜 처음에 쉽게 접근하지 못하였을까?</p>
+
+<p>아마도 낱개와 낱개를 비교하는건 익숙하지만 전체와 낱개를 비교한다는 것에 익숙하지 않아서 인거같다.</p>
+:ET

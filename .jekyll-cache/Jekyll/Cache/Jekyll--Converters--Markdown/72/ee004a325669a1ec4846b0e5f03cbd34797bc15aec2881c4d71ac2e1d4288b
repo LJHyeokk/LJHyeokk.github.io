@@ -1,0 +1,77 @@
+I"D<h2 id="babel-">Babel? 💯</h2>
+
+<center class="notice--info">babel : JS의 ES6+ 코드를 현재 및 과거의 브라우저와 같은 환경에서 호환되는 버전으로 변환하는데 주로 사용되는 컴파일러이다.</center>
+
+<h2 id="탄생배경">탄생배경</h2>
+
+<center class="notice--info">Cross Browsing : 다른 기종 혹은 플랫폼에 따라 달리 구현되는 기술을 비슷하게 만듦과 동시에 어느 한쪽에 최적화되어 치우지지 않도록 공통 요소를 사용하여 웹 페이지를 제작하는 기법을 말한다. 또한, 지원할 수 없는 다른 웹 브라우저를 위한 장치를 구현하여 모든 웹 브라우저 사용자가 방문했을 때 정보로서의 소외감을 느끼지 않도록 하는 방법론적 가이드를 의미한다.</center>
+
+<p>IE에서만 해도 ES6의 문법들을 지원하지않는다. 그렇기에 ES6 문법들로 구성된 코드들은 IE에서는 제대로된 기능을 하지못할것이다.</p>
+
+<p>그렇기에 개발자들에게 크로스 브라우징 이슈는 코드의 일관성도 망가트리고 혼란스럽게 만드는 요소 중 하나이다.</p>
+
+<p>이러한 크로스 브라우징 이슈를 해결하기 위해 생겨난 툴이 바벨이다</p>
+
+<p><a href="https://kangax.github.io/compat-table/es6/" target="_blank">브라우저별 ES6 지원현황 click</a></p>
+
+<p><a href=" https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/" target="_blank">출처 click</a></p>
+
+<h2 id="사용방법">사용방법</h2>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/node</code> ➡️ Babel-node는 Babel-cli에서 독립된 모듈로 node cli(Command-lind Interface) 처럼 동작함. 이에 따라 node index.js 명령어를 babel-node index.js로 쓸 수 있음. 뿐만 아니라 Node.js 실행 전 Babel의 설정과 플러그인을 고려하여 컴파일 해주는 이점이 있음. ( 주의) 무겁기때문에 개발단계에서만 확인용으로 사용 )</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/core</code> ➡️ 바벨(Babel)의 핵심(주요) 기능들을 담고 있는 모듈</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/preset-env</code> ➡️ 프리셋(Preset)은 바벨(Babel) 플러그인(Plugin) 들을 묶음(Bundle)로 만들어놓은 것. 프리셋(Preset)을 통해 간편하게 Trans File 설정을 할 수 있음. 여기서는 범용적으로 쓰이는 env 프리셋을 사용</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>.babelrc</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+    <span class="s">"presets"</span><span class="o">:</span> <span class="o">[</span><span class="s">"@babel/preset-env"</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p>package.json</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">"scripts"</span><span class="o">:</span> <span class="o">{</span>
+    <span class="s">"start"</span><span class="o">:</span> <span class="s">"nodemon server.js --exec babel-node "</span>
+ <span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p>server.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">express</span> <span class="n">from</span> <span class="s">"express"</span>
+<span class="c1">// ES6 import 문법 사용</span>
+<span class="c1">// const express = require('express'); -&gt; import express from "express"</span>
+<span class="kd">const</span> <span class="n">app</span> <span class="o">=</span> <span class="n">express</span><span class="o">();</span>
+<span class="kd">const</span> <span class="no">PORT</span> <span class="o">=</span> <span class="mi">4000</span><span class="o">;</span>
+<span class="kd">const</span> <span class="n">home</span> <span class="o">=</span> <span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+    <span class="n">res</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="err">`</span><span class="nc">Welcome</span> <span class="n">to</span> <span class="n">my</span> <span class="nc">Home</span><span class="o">!</span><span class="err">`</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">app</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="sc">'/'</span><span class="o">,</span> <span class="n">home</span><span class="o">);</span>
+<span class="kd">const</span> <span class="nc">Listening</span> <span class="o">=</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="o">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="err">`</span><span class="nc">Listening</span> <span class="nl">on:</span> <span class="nl">http:</span><span class="c1">//localhost:${PORT}`);</span>
+<span class="o">}</span>
+<span class="n">app</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="no">PORT</span><span class="o">,</span> <span class="nc">Listening</span><span class="o">);</span>
+</code></pre></div></div>
+
+<center>import 부분에 에러가 나지 않았다면 babel이 정상작동하는 것</center>
+
+<p><br /></p>
+
+<p>끝</p>
+:ET

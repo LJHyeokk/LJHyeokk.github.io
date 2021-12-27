@@ -1,0 +1,167 @@
+I"u(<h2 id="number와-string의-메서드-각각-3개와-사용-방법">number와 string의 메서드 각각 3개와 사용 방법🍍</h2>
+
+<p><br /></p>
+
+<p><strong>number</strong>와 <strong>srting</strong>의 메서드(method)를 알아보자.</p>
+
+<p><br /></p>
+
+<p>우선 JavaScript의 모든 메서드는 <a href="https://www.w3schools.com/js/js_number_methods.asp" target="_blank">‘<strong>모든메서드</strong>’</a>에서 볼수있다.</p>
+
+<p>이중에서 나는 Number의 메서드 중 가장 마음에 드는 3가지를 골랐다.</p>
+
+<h3 id="number"><center>Number</center></h3>
+
+<hr />
+
+<p style="color:seagreen">1. toString()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">toString()</code>메서드는 숫자를 문자열로 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span> <span class="o">//</span> <span class="s">'12345'</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span> <span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span> <span class="o">//</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<p>간단하게 숫자-&gt;문자로 변환해준다.</p>
+
+<p>자매품으로 parseInt() 메서드가 있다.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">parseInt</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">()));</span> <span class="o">//</span> <span class="mi">9</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">parseInt</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">())))</span> <span class="o">//</span> <span class="n">number</span>
+</code></pre></div></div>
+
+<p>문자-&gt;숫자로 변환해준다. 요긴하게 쓸곳이 많을것 같다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">2. toPrecision()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">toPrecision()</code> 지정된 길이로 작성된 숫자와 함께 문자열을 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">9.213112</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toPrecision</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="o">//</span> <span class="s">'9.21'</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span> <span class="n">a</span><span class="p">.</span><span class="n">toPrecision</span><span class="p">());</span> <span class="o">//</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<p>아직 어디에 써먹을진 모르겠지만 언젠가 쓸일이 있을것 같다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">3. isInteger()</p>
+
+<blockquote>
+  <p>Number.isInteger() 메서드는 값이 정수인지 여부를 결정합니다.</p>
+
+  <p>이 메서드는 값이 Number 유형이고 정수(소수점이 없는 숫자)인 경우 true를 반환합니다. 그렇지 않으면 false를 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">9.213112</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">Number</span><span class="p">.</span><span class="n">isInteger</span><span class="p">(</span><span class="n">a</span><span class="p">));</span> <span class="o">//</span> <span class="n">false</span>
+</code></pre></div></div>
+
+<p>정수가 아닌경우엔 boolean타입으로 true, false를 반환해준다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="string"><center>String</center></h2>
+
+<p style="color:seagreen">1. substr()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">substr()</code>와 비슷합니다 <code class="language-plaintext highlighter-rouge">slice()</code>.</p>
+
+  <p>차이점은 두 번째 매개변수 가 추출된 부분 의 <strong>길이</strong> 를 지정한다는 것 입니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'abc def ghi'</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span> <span class="o">//</span> <span class="s">'def'</span>
+</code></pre></div></div>
+
+<p>1번째 인자는 시작할 위치, 2번째 인자는 문자열의 길이를 지정해준다.</p>
+
+<p>slice() 메서드와 비슷하지만 substr() 메서드가 좀더 직관적이다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">2. trim()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">trim()</code>메서드는 문자열의 양쪽에서 공백을 제거합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'               say  Hello                '</span><span class="p">;</span> <span class="o">//</span> <span class="n">양옆</span> <span class="n">공백이</span> <span class="n">많은</span> <span class="n">문자열</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">trim</span><span class="p">());</span> <span class="o">//</span> <span class="s">'say Hello'</span>
+</code></pre></div></div>
+
+<p>위에서 보시다시피 양옆의 공백이 제거되었다. 이를 사용할 예를 들면 검색기능을 구현하거나 주소창에 url을 변경할 때 사용자의 실수로 인한 공백 문자열을 포함하지 않게 할 수 있을것같다</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">3. replace()</p>
+
+<blockquote>
+  <p>replace()메서드는 지정된 값을 문자열의 다른 값으로 바꿉니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'가나나 가구니 가자회'</span><span class="p">;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'가'</span><span class="p">,</span><span class="s">'바'</span><span class="p">));</span> <span class="o">//</span> <span class="s">'바나나 가구니 가자회'</span>
+</code></pre></div></div>
+
+<p>1번째 인자는 바꿀 문자, 2번째 인자는 변환될 문자이다</p>
+
+<p>우리의 예상과 다르게 replace()는 맨처음 발견된 문자에만 적용이 된다.</p>
+
+<p>하지만 이를 정규표현식을 이용하게 되면 모든 문자를 바꿀 수도 있다.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'가나나 가구니 가자회'</span><span class="p">;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="o">/</span><span class="n">가</span><span class="o">/</span><span class="n">g</span><span class="p">,</span><span class="s">'바'</span><span class="p">));</span> <span class="o">//</span> <span class="s">'바나나 바구니 바자회'</span>
+</code></pre></div></div>
+
+<p>이렇게 정규표현식을 활용하여 바꾸어주자.</p>
+
+<p>정규표현식을 공부하고 싶다면 <a href="https://opentutorials.org/course/909/5142" target="_blank"><strong>정규표현식</strong></a> 에서 공부해보자.</p>
+:ET

@@ -1,0 +1,145 @@
+I"+<h3 id="redux상">Redux(상)🍓</h3>
+
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="n">redux</span> <span class="n">react</span><span class="o">-</span><span class="n">redux</span>
+</code></pre></div></div>
+
+<p>redux를 사용하기 위해 터미널에서 명령어를 통해 설치하자.</p>
+
+<p><br /></p>
+
+<center><p style="color:seagreen">기초 문법🚩</p></center>
+
+<blockquote>
+  <p>index.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="n">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react-redux"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="n">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"redux"</span><span class="p">;</span>
+
+<span class="n">let</span> <span class="n">store</span> <span class="o">=</span> <span class="n">createStore</span><span class="p">(</span><span class="n">reducer</span><span class="p">);</span> <span class="o">//</span><span class="n">state만들기</span>
+
+<span class="n">function</span> <span class="n">reducer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">"신발"</span><span class="p">,</span> <span class="n">quan</span><span class="p">:</span> <span class="mi">7</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">"상의"</span><span class="p">,</span> <span class="n">quan</span><span class="p">:</span> <span class="mi">18</span> <span class="p">},</span>
+  <span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">ReactDOM</span><span class="p">.</span><span class="n">render</span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="n">Provider</span> <span class="n">store</span><span class="o">=</span><span class="p">{</span><span class="n">store</span><span class="p">}</span> <span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">App</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">Provider</span><span class="o">&gt;</span>
+<span class="p">);</span>
+
+</code></pre></div></div>
+
+<blockquote>
+  <p>App.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">React</span> <span class="k">from</span> <span class="s">"react"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="n">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react-redux"</span><span class="p">;</span>
+
+<span class="n">function</span> <span class="n">Abcd</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+    	<span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+        	<span class="p">{</span><span class="n">props</span><span class="p">.</span><span class="n">작명</span><span class="p">}</span> <span class="o">//</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span><span class="s">'b'</span><span class="p">]</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">function</span> <span class="n">작명1</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">작명</span><span class="p">:</span> <span class="n">state</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="n">connect</span><span class="p">(</span><span class="n">state</span><span class="p">)(</span><span class="n">작명1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>‘초기셋팅’</strong></p>
+
+<p>a,b가 담긴 store을 어디에서나 사용할 수 있다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>index.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">datastate</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">"신발"</span><span class="p">,</span> <span class="n">quan</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">"상의"</span><span class="p">,</span> <span class="n">quan</span><span class="p">:</span> <span class="mi">18</span> <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="n">function</span> <span class="n">reducer</span><span class="p">(</span><span class="n">state</span> <span class="o">=</span> <span class="n">datastate</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="nb">type</span> <span class="o">===</span> <span class="s">"inc"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">copy</span> <span class="o">=</span> <span class="p">[...</span><span class="n">state</span><span class="p">];</span>
+    <span class="n">copy</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">quan</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="nb">type</span> <span class="o">===</span> <span class="s">"dec"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">copy</span> <span class="o">=</span> <span class="p">[...</span><span class="n">state</span><span class="p">];</span>
+    <span class="n">copy</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">quan</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">let</span> <span class="n">store</span> <span class="o">=</span> <span class="n">createStore</span><span class="p">(</span><span class="n">reducer</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>App.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">Cart</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">(</span>
+
+    	<span class="p">{</span><span class="n">props</span><span class="p">.</span><span class="n">dispatch</span><span class="p">({</span> <span class="nb">type</span><span class="p">:</span> <span class="s">"inc"</span> <span class="p">}}</span>
+
+    <span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>‘Redux의 변수의 값 변경’</strong></p>
+
+<p>변수의 값을 변경하고 싶을땐 초기설정했던 곳에서 변경할 액션을 만들고 작명한다.</p>
+
+<p>그것을 필요한 곳마다 불러오는 식으로 변수의 값을 변경하는데 이 방법은 컴포넌트가 많을때 에러를 잡기에 아주 편리하다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>index.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">reducer</span><span class="p">(</span><span class="n">state</span> <span class="o">=</span> <span class="n">datastate</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">function</span> <span class="n">reducer2</span><span class="p">(</span><span class="n">state</span> <span class="o">=</span> <span class="n">opneclose</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">let</span> <span class="n">store</span> <span class="o">=</span> <span class="n">createStore</span><span class="p">(</span><span class="n">combineReducers</span><span class="p">({</span> <span class="n">reducer</span><span class="p">,</span> <span class="n">reducer2</span> <span class="p">}));</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>app.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="n">a</span><span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">reducer</span><span class="p">,</span>
+    <span class="n">b</span><span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">reducer2</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="n">connect</span><span class="p">(</span><span class="n">state</span><span class="p">)(</span><span class="n">Cart</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>‘<strong>2개이상의 Reducer만들기</strong>’</p>
+
+<p>변수를 한개더 만들고 싶다면 combineReducers를 통해 더 만들 수 있다.</p>
+:ET

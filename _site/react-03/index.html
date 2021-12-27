@@ -1,0 +1,658 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>react 기초문법 | POPO</title>
+<meta name="description" content="기초문법&lt;2&gt; 여러가지들🍓">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="react 기초문법">
+<meta property="og:url" content="http://localhost:4000/react-03/">
+
+
+  <meta property="og:description" content="기초문법&lt;2&gt; 여러가지들🍓">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react-03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">react 기초문법</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="react 기초문법"
+    /> <meta
+      itemprop="description"
+      content="기초문법&lt;2&gt; 여러가지들🍓"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-11-01T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/react-03/" class="u-url" itemprop="url"
+            ><p>react 기초문법</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-01T00:00:00+09:00">2021-11-01</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h3 id="기초문법2-여러가지들">기초문법&lt;2&gt; 여러가지들🍓</h3>
+
+<hr />
+
+<p>저번 글과 같이 계속해서 기초 문법을 알아보자.</p>
+
+<center><p style="color:seagreen">기초 문법🚩</p></center>
+
+<pre><code class="language-pythhon">npm install react-router-dom
+</code></pre>
+
+<p>페이지를 나누기 위해 위의 코드를 터미널에 치기.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="n">BrowserRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="s">'react-router-dom'</span>
+
+<span class="n">ReactDOM</span><span class="p">.</span><span class="n">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="n">React</span><span class="p">.</span><span class="n">StrictMode</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">BrowserRouter</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">App</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">BrowserRouter</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">React</span><span class="p">.</span><span class="n">StrictMode</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">"root"</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>src/index.js에서 위와 같이 셋팅해주자</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="n">Link</span><span class="p">,</span> <span class="n">Route</span><span class="p">,</span> <span class="n">Switch</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react-router-dom"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>마지막으로 App.js에 위와깉이 셋팅.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">"/"</span><span class="o">&gt;</span><span class="n">환영합니다</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span> <span class="o">//</span> <span class="n">환영합니다</span><span class="p">.</span>
+
+<span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">"/bye"</span><span class="o">&gt;</span><span class="n">조심히</span> <span class="n">가세요</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span> <span class="o">//</span><span class="n">환영합니다</span><span class="p">.</span> <span class="n">조심히가세요</span><span class="p">.</span>
+
+
+
+<span class="o">&lt;</span><span class="n">Route</span> <span class="n">exact</span> <span class="n">path</span><span class="o">=</span><span class="s">"/"</span><span class="o">&gt;</span><span class="n">환영합니다</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span> <span class="o">//</span><span class="n">환영합니다</span><span class="p">.</span>
+
+<span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">"/bye"</span><span class="o">&gt;</span><span class="n">조심히</span> <span class="n">가세요</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span> <span class="o">//</span> <span class="n">조심히</span> <span class="n">가세요</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>그냥 경로만 써놓으면 Route는 같은 경로를 모두 참조하기때문에 <strong>‘exact’</strong>를 써주도록 하자.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">React</span><span class="p">,</span> <span class="p">{</span> <span class="n">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react"</span><span class="p">;</span>
+
+<span class="n">function</span> <span class="n">Abcd</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="n">Abcd</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>component를 다른파일로 만들때는 react를 import하자.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">Nav</span><span class="p">.</span><span class="n">Link</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">Link</span> <span class="n">to</span><span class="o">=</span><span class="s">"/"</span><span class="o">&gt;</span><span class="n">Home</span><span class="o">&lt;/</span><span class="n">Link</span><span class="o">&gt;</span>   <span class="o">//</span> <span class="o">&lt;</span><span class="n">link</span> <span class="n">to</span><span class="o">=</span><span class="s">'경로'</span><span class="o">&gt;</span><span class="n">작명</span><span class="o">&lt;/</span><span class="n">Link</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">Nav</span><span class="p">.</span><span class="n">Link</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>nav바의 일부분이다. 앞에서 import해온 Link를 사용하는 방법</p>
+
+<p>해당 경로로 url이 바뀐다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="n">useHistory</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react-router-dom"</span><span class="p">;</span>
+
+<span class="n">function</span> <span class="n">Abcd</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="n">history</span> <span class="o">=</span> <span class="n">useHistory</span><span class="p">();</span>
+
+    <span class="k">return</span><span class="p">(</span>
+
+        <span class="o">&lt;</span><span class="n">button</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span><span class="o">=&gt;</span> <span class="p">{</span> <span class="n">history</span><span class="p">.</span><span class="n">goBack</span><span class="p">();</span> <span class="p">}}</span>
+
+    <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>‘react-router-dom’</strong>의 useHistory를 사용하는 방법</p>
+
+<p>버튼을 누르면 뒤로간다. // history.push(‘경로’) 원하는경로로 이동도 된다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">Switch</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">'/a'</span><span class="o">&gt;&lt;/</span><span class="n">Routh</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">'/ab'</span><span class="o">&gt;&lt;/</span><span class="n">Routh</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">'/abc'</span><span class="o">&gt;&lt;/</span><span class="n">Routh</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">'/abcd'</span><span class="o">&gt;&lt;/</span><span class="n">Routh</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">Switch</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>exact와 비슷한기능을 하지만 Switch는 첫번째로 매칭되는 경로를 가진 컴포넌트를 렌더링시킨다.</p>
+
+<p>ex) /abc ➡️ /a (x) /ab (x) /abc (o)</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">Route</span> <span class="n">path</span><span class="o">=</span><span class="s">"/detail/:id"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">Detail</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">Route</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>‘path=”/detail/:id”‘</strong> ➡️ /detail/afadjovkbsjvlsn 디테일 뒤에 어떤걸 쓰든지 <Detail></Detail>을 보여준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="n">useHistory</span><span class="p">,</span> <span class="n">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react-router-dom"</span><span class="p">;</span>
+
+<span class="n">function</span> <span class="n">Abcd</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="p">{</span> <span class="nb">id</span> <span class="p">}</span> <span class="o">=</span> <span class="n">useParams</span><span class="p">();</span>
+
+    <span class="k">return</span><span class="p">(</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="nb">id</span><span class="p">);</span>
+
+    <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>/detail/5</strong>를 주소창에 친다면 5가 출력이된다.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-01T00:00:00+09:00">2021-11-01</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=react+%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Freact-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freact-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freact-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/react-02/" class="pagination--pager" title="react 기초문법
+">이전</a>
+    
+    
+      <a href="/react-04/" class="pagination--pager" title="react 기초문법
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

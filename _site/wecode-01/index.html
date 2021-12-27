@@ -1,0 +1,880 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Webucks 만들기 - js | POPO</title>
+<meta name="description" content="스타벅스를 복제해봅시다 ~ 🧑‍💻">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="Webucks 만들기 - js">
+<meta property="og:url" content="http://localhost:4000/wecode-01/">
+
+
+  <meta property="og:description" content="스타벅스를 복제해봅시다 ~ 🧑‍💻">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/wecode-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Webucks 만들기 - js</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Webucks 만들기 - js"
+    /> <meta
+      itemprop="description"
+      content="스타벅스를 복제해봅시다 ~ 🧑‍💻"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-11-25T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/wecode-01/" class="u-url" itemprop="url"
+            ><p>Webucks 만들기 - js</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-25T00:00:00+09:00">2021-11-25</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="스타벅스를-복제해봅시다--">스타벅스를 복제해봅시다 ~ 🧑‍💻</h2>
+
+<center class="notice--danger">Wecode의 첫번째 과제.....webucks만들기....한번해봅시다.</center>
+
+<h2 id="mission-1-로그인-페이지-레이아웃-구현-1">[Mission 1] 로그인 페이지 레이아웃 구현 #1</h2>
+
+<blockquote>
+  <p>과제의 사진을 보고 똑같이 구현하라.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">section</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">container</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">login-logo</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">./images/logo.png</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">로고이미지</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">form</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">login-form</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span>
+        <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span>
+        <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">전화번호, 사용자 이름 또는 이메일</span><span class="dl">"</span>
+        <span class="nx">autocomplete</span><span class="o">=</span><span class="dl">"</span><span class="s2">off</span><span class="dl">"</span>
+      <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">pw</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">비밀번호</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">showHide</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="nx">show</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">toList</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="nx">로그인</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">login-forget</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">#</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">비밀번호를</span> <span class="nx">잊으셨나요</span><span class="p">?</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">./js/login.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>크게 &lt;section&gt; 안에 2개의 &lt;div&gt;와 1개의 &lt;form&gt;으로 만들었다.<br /></p>
+
+<p>form안에는 로그인,패스워드의 input태그와 1개의 버튼으로 이루어져있다.<br /></p>
+
+<p>form에 flex를 주어 세로정렬시키고 margin을 통해 약간씩 띄어주었다.
+<br />
+<br />
+<br /></p>
+
+<h2 id="mission-2-로그인-페이지-기능-구현-2">[Mission 2] 로그인 페이지 기능 구현 #2</h2>
+
+<blockquote>
+  <p>1 - 아이디값으로 @가 들어오면 input창이 초록색으로<br />
+2 - 비밀번호값으로 대문자,소문자,숫자,특수기호가 포함되고 길이가 8자이상이면 input창 초록색으로<br />
+3 - 이 두개의 조건을 모두 갖추면 버튼이 활성화되게 하라.<br />
+4 - 또한 show,hide버튼을 만들어 비밀번호의 값이 보이게,안보이게 구현하라.<br /></p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">id</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">/g</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">eng</span> <span class="o">=</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">a-z</span><span class="se">]</span><span class="sr">/gi</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">spe</span> <span class="o">=</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">`~!@@#$%^&amp;*|₩₩₩'₩";:₩</span><span class="se">/</span><span class="sr">?</span><span class="se">]</span><span class="sr">/gi</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">@</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">pw</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">num</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">eng</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">spe</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#79BAF2</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#b4d2e8</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">borderColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#dddddd</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">@</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">borderColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#659c31</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">borderColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">#dddddd</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>코드가 길어지니 아이디의 이벤트만 보도록한다.<br /></p>
+
+<p>정규식을 통해 비밀번호의 값을 확인하였고 if문으로 구현하였다.<br /></p>
+
+<p>serch는 원하는 값이 있으면 해당값의 인덱스를 없으면 -1을 반환하기에 위와같이 작성하였다.<br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="mission-3-커피-리스트-페이지-레이아웃-구현-3">[Mission 3] 커피 리스트 페이지 레이아웃 구현 #3</h2>
+
+<blockquote>
+  <p>과제의 사진을 보고 똑같이 구현하세요.</p>
+</blockquote>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 콜드브루 아이템들</span>
+<span class="kd">const</span> <span class="nx">에스프레소</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">아이스 토피 넛 라떼</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">토피 넛 라떼</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">에스프레소 콘 파나</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">에스프레소 마키아또</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">아이스 카페 아메리카노</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">카페 아메리카노</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">아이스 카라멜 마키아또</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">카라멜 마키아또</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">아이스 카푸치노</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">카푸치노</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">라벤더 카페 브레베</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">럼 샷 코르타도</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">바닐라 빈 라떼</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">블론드 에스프레소 라떼</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">사케라또 비안코 오버 아이스</span><span class="dl">"</span> <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="c1">//페이지 렌더링되면 보여줌</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">showItems</span><span class="p">(</span><span class="nx">콜드브루</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">coffee</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//페이지 렌더링되면 보여줌</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">showItems</span><span class="p">(</span><span class="nx">에스프레소</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">coffeeshot</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//나열함수</span>
+<span class="kd">function</span> <span class="nx">showItems</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="nx">what</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">img</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">h4</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">h4</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">like</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">span</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="nx">like</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">like</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">add</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">add</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">img</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">,</span> <span class="s2">`./images/</span><span class="p">${</span><span class="nx">what</span><span class="p">}${</span><span class="nx">i</span><span class="p">}</span><span class="s2">.png`</span><span class="p">);</span>
+    <span class="nx">img</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">alt</span><span class="dl">"</span><span class="p">,</span> <span class="s2">`</span><span class="p">${</span><span class="nx">item</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="nx">name</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">h4</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">;</span>
+    <span class="nx">like</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;🤍`</span><span class="p">;</span>
+
+    <span class="nx">like</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">like</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">===</span> <span class="s2">`&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;🤍`</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">like</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;❤️`</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="nx">like</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;🤍`</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nx">add</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">img</span><span class="p">);</span>
+    <span class="nx">add</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">name</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">h4</span><span class="p">);</span>
+    <span class="nx">name</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">like</span><span class="p">);</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">"</span><span class="s2">상품들</span><span class="dl">"</span><span class="p">)[</span><span class="nx">num</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br />
+이부분은 고민을 조금하였다.<br /></p>
+
+<p>html에 전부 써주자니 html이 너무 더러워보였다.<br /></p>
+
+<p>그래서 내가 보여줘야할 item들을 배열에 저장시키고<br /></p>
+
+<p>window의 load이벤트를 통해 페이지가 렌더링되면~<br /></p>
+
+<p>동적으로 요소들을 생성하여 그값들을 flex, space-between을 통해 나열하였다.<br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="mission-4-커피-상세-페이지-레이아웃-구현-4">[Mission 4] 커피 상세 페이지 레이아웃 구현 #4</h2>
+
+<blockquote>
+  <p>과제의 사진과 같이 만들어라.</p>
+</blockquote>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">container</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">콜드</span> <span class="nx">브루</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">detail-img</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">./images/coffee11.png</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">화이트 초콜릿 모카</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">detail-info</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">화이트</span> <span class="nx">초콜릿</span> <span class="nx">모카</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">span</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">like</span><span class="dl">"</span><span class="o">&gt;</span><span class="err">♡</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">smallP</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">White</span> <span class="nx">chocolate</span> <span class="nx">Mocha</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">info</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="nx">달콤하고</span> <span class="nx">부드러운</span> <span class="nx">화이트</span> <span class="nx">초콜릿</span> <span class="nx">시럽과</span> <span class="nx">에스프레소를</span> <span class="nx">스팀</span> <span class="nx">밀크와</span> <span class="nx">섞어</span>
+          <span class="nx">휘핑크림으로</span> <span class="nx">마무리한</span> <span class="nx">음료로</span> <span class="nx">달콤함과</span> <span class="nx">강렬한</span> <span class="nx">에스프레소가</span> <span class="nx">부드럽게</span>
+          <span class="nx">어우러진</span> <span class="nx">커피</span>
+        <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">item</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">p</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">item-info</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">제품</span> <span class="nx">영양</span> <span class="nx">정보</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">span</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">item-span</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Tall</span><span class="p">(</span><span class="nx">톨</span><span class="p">)</span> <span class="o">/</span> <span class="mi">355</span><span class="nx">ml</span> <span class="p">(</span><span class="mi">12</span> <span class="nx">fl</span> <span class="nx">oz</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">detail-kcal</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">division</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">division</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal2</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal2</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">kcal2</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">회</span> <span class="nx">제공량</span> <span class="p">(</span><span class="nx">kcal</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">345</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">알러지</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">알레르기</span> <span class="nx">유발</span> <span class="nx">요인</span> <span class="p">:</span> <span class="nx">우유</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">review</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">리뷰</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">comment</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">input</span>
+            <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">리뷰를 입력해주세요.</span><span class="dl">"</span>
+            <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">commentInput</span><span class="dl">"</span>
+            <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+          <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<p>큰 틀로보면 &lt;div&gt;안에 &lt;h2&gt;1개와 &lt;div&gt;2개로 이루어져 있다.<br /></p>
+
+<p>flex를 써도 되지만 float도 써보고 싶어 <img />옆의 &lt;div&gt;는 float:right를 통해 이미지와 나란히 배치시켰다.<br /></p>
+
+<p>그 밑으로는 모두 flex를 사용하여 구현하였다<br /></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="mission-5-커피-상세-페이지-기능-구현-5">[Mission 5] 커피 상세 페이지 기능 구현 #5</h2>
+
+<blockquote>
+  <p>좋아요 버튼 구현과 댓글 추가기능 구현하라.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">likeSpan</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">"</span><span class="s2">like</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="c1">// 하트</span>
+<span class="nx">likeSpan</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">likeBool</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">likeSpan</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">❤️</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">likeBool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">likeSpan</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">♡</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">likeBool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">comment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.comment</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">commentInput</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">//엔터치면 댓글</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keydown</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//감싸는 박스 div</span>
+    <span class="kd">const</span> <span class="nx">commentBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">commentBox</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">commentBox</span><span class="dl">"</span><span class="p">);</span>
+    <span class="c1">//텍스트 추가 span</span>
+    <span class="kd">const</span> <span class="nx">commentText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">span</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">commentText</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">commentText</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">commentText</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
+      <span class="dl">"</span><span class="s2">&lt;b&gt;</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/b&gt;</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="c1">//좋아요 span</span>
+    <span class="kd">const</span> <span class="nx">likeBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">span</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">likeNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">likeBtn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">likeBtn</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">likeBtn</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`  ❤️ </span><span class="p">${</span><span class="nx">likeNum</span><span class="p">}</span><span class="s2">명`</span><span class="p">;</span>
+    <span class="nx">likeBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">likeNum</span><span class="o">++</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">likeNum</span><span class="p">);</span>
+      <span class="nx">likeBtn</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">` ➡️ ❤️ </span><span class="p">${</span><span class="nx">likeNum</span><span class="p">}</span><span class="s2">명`</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="c1">//삭제 button</span>
+    <span class="kd">const</span> <span class="nx">deleteBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">deleteBtn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">deleteBtn</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">deleteBtn</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">삭제</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">deleteBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">comment</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">commentBox</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="c1">//실제로 달기</span>
+    <span class="nx">commentText</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">likeBtn</span><span class="p">);</span>
+    <span class="nx">commentBox</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">commentText</span><span class="p">);</span>
+    <span class="nx">commentBox</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">deleteBtn</span><span class="p">);</span>
+    <span class="nx">comment</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">commentBox</span><span class="p">);</span>
+
+    <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><br />
+리뷰 역시 동적으로 요소들을 생성하여 구현하였고 <br /></p>
+
+<p>로그인할때의 아이디값을 어떻게 받아올지 구상하다가 Session storage를 통해서<br /></p>
+
+<p>값을 옮기면 되겠다고 생각하여 구글링을 통해 완성하였다.<br /></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="mission-6-도전-과제-6">[Mission 6] 도전 과제 #6</h2>
+
+<blockquote>
+  <p>리뷰별로 좋아요버튼과 삭제버튼을 만들어주세요.
+커피 이름 옆 좋아요 버튼(하트)를 눌렀을 때 붉은색 하트로 변하게 구현해주세요</p>
+</blockquote>
+
+<p><br />
+위와 같은 코드를 통해 해결하였고 구현한 것을 사진으로 대체하겠다.
+<br /></p>
+
+<center><img src="../images/2021-10-27-first/loginpage.png" alt="loginpage" /></center>
+<p><br /></p>
+<center>로그인 페이지</center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/list.png" alt="list" /></center>
+<p><br /></p>
+<center>리스트 페이지</center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/detail.png" alt="detail" /></center>
+<p><br /></p>
+<center>디테일 페이지</center>
+<p><br />
+<br />
+<br /></p>
+<center class="notice--info">이번 과제를 하며 느낀점!</center>
+<center class="notice">변수명을 잘써야겠다.....내가봐도 모르겠다;;</center>
+<center class="notice--warning">시작하기전에 80%정도는 구상을 끝내고 내가 구상한게 구현되는지 확인 후 시작하자(40%정도에서 시작하면 코드가 갈수록 더러워진다.)</center>
+<center class="notice--success">기능구현에서 그치지말고 좀 더 세밀하게 디테일에 신경쓰자......특히 이부분이 절실하다. 절대 만족하지말자.</center>
+<center class="notice--danger">오늘 느꼈던것을 까먹지말자.(정신차리자)</center>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-25T00:00:00+09:00">2021-11-25</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Webucks+%EB%A7%8C%EB%93%A4%EA%B8%B0+-+js%20http%3A%2F%2Flocalhost%3A4000%2Fwecode-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwecode-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwecode-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/Algorithm-03/" class="pagination--pager" title="프로그래머스 키패드 누르기
+">이전</a>
+    
+    
+      <a href="/react-08/" class="pagination--pager" title="react example
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,90 @@
+I"�<h2 id="nodejs-">Node.js 🙀</h2>
+
+<center class="notice--danger">Node.js : 비동기(Asynchronous) 이벤트-기반(event-driven) JavaScript 실행환경이다.</center>
+
+<p>비동기 이벤트-기반의 처리, 메모리 관리, 스케줄 관리 등의 일들을 V8 엔진이 감당하기때문에 이점을 이해하고 code를 짠다면 빠르고 안정성 있는 앱을 설계할 수 있다.</p>
+
+<p>즉, node란 V8이라는 JavaScript 엔진 위에서 동작하는 자바스크립트 런타임이다.</p>
+
+<p><br /></p>
+
+<h2 id="배경">배경</h2>
+
+<ul>
+  <li>
+    <p>Node.js를 사용하려면 먼저 JavaScript를 배워야한다.</p>
+  </li>
+  <li>
+    <p>Node.js는 JavaScript를 사용하기 위해 만들어진 것이기 때문이다.</p>
+  </li>
+  <li>
+    <p>JavaScript는 C/C++, Java 와 같은 프로그래밍 언어이다.</p>
+  </li>
+  <li>
+    <p>하지만 이름에서 알 수 있듯 JavaScript는 독립적인 언어가 아닌 스크립트 언어이다.</p>
+  </li>
+  <li>
+    <p>스크립트 언어는 특정한 프로그램 안에서 동작하는 프로그램이기 때문에 웹 브라우저 프로그램 안에서만 동작을 한다.</p>
+  </li>
+  <li>
+    <p>즉, 웹 브라우저(크롬, 사파리, 익스플로러, 파이어폭스 등)가 없으면 사용할 수 없는 프로그램이다.</p>
+  </li>
+  <li>
+    <p>여기서 Node.js가 나오는 이유가 된다.</p>
+  </li>
+  <li>
+    <p>즉, JavaScript 를 웹 브라우저에서 독립시킨 것으로 Node.js를 설치하게 되면 터미널프로그램(윈도우의 cmd, 맥의 terminal 등)에서 Node.js를 입력하여 브라우저 없이 바로 실행할 수 있다.</p>
+  </li>
+  <li>
+    <p>하지만 JavaScript에서 분리된 언어이기 때문에 문법은 같다.</p>
+  </li>
+  <li>
+    <p>이렇게 Node.js를 이용하여 웹 브라우저와 무관한 프로그램을 만들 수 있게 되었다.</p>
+  </li>
+  <li>
+    <p>중요한 것은 Node.js를 이용하여 서버를 만들 수 있다는 것이다.</p>
+  </li>
+  <li>
+    <p>중요한 이유는 이전까지 Server-Client 웹사이트를 만들 때 웹에서 표시되는 부분은 JavaScript 를 사용하여 만들어야만 했으며, 서버는 Reby, Java 등 다른 언어를 써서 만들었어야 했는데 마침내 한 가지 언어로 전체 웹 페이지를 만들 수 있게 된 것이다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h2 id="express">Express</h2>
+
+<center class="notice--danger">Express : nodejs의 프레임워크로 라우팅과 로직의 모듈화를 위해 사용함</center>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">http</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="err">'</span><span class="n">http</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="n">express</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="err">'</span><span class="n">express</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="o">{</span> <span class="n">categories</span> <span class="o">}</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="err">'</span><span class="o">./</span><span class="n">categories</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="o">{</span> <span class="n">products</span><span class="o">,</span> <span class="n">createProduct</span><span class="o">,</span> <span class="n">updateProduct</span><span class="o">,</span> <span class="n">deleteProduct</span> <span class="o">}</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="err">'</span><span class="o">./</span><span class="n">products</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="o">{</span> <span class="n">products2</span> <span class="o">}</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="err">'</span><span class="o">./</span><span class="n">products2</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="no">PORT</span> <span class="o">=</span> <span class="mi">8080</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">app</span> <span class="o">=</span> <span class="n">express</span><span class="o">();</span>
+
+<span class="n">app</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="o">/</span><span class="n">categories</span><span class="err">'</span><span class="o">,</span> <span class="n">categories</span><span class="o">);</span>
+<span class="n">app</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="err">'</span><span class="o">,</span> <span class="n">products</span><span class="o">);</span>
+<span class="n">app</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="o">/</span><span class="mi">2</span><span class="err">'</span><span class="o">,</span> <span class="n">products2</span><span class="o">);</span>
+<span class="c1">// 사용자가 값을 쓰면 보여주기</span>
+<span class="n">app</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="err">'</span><span class="o">,</span> <span class="n">express</span><span class="o">.</span><span class="na">json</span><span class="o">(),</span> <span class="n">createProduct</span><span class="o">);</span>
+<span class="c1">// 사용자가 원래있던 데이터를 변경하기</span>
+<span class="n">app</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="err">'</span><span class="o">,</span> <span class="n">express</span><span class="o">.</span><span class="na">json</span><span class="o">(),</span> <span class="n">updateProduct</span><span class="o">);</span>
+<span class="c1">// 데이터 삭제하기</span>
+<span class="n">app</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="err">'</span><span class="o">/</span><span class="n">products</span><span class="err">'</span><span class="o">,</span> <span class="n">express</span><span class="o">.</span><span class="na">json</span><span class="o">(),</span> <span class="n">deleteProduct</span><span class="o">);</span>
+
+<span class="kd">const</span> <span class="n">server</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="na">createServer</span><span class="o">(</span><span class="n">app</span><span class="o">);</span>
+
+<span class="n">server</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="no">PORT</span><span class="o">,</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="n">console</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="err">`</span><span class="n">server</span> <span class="n">is</span> <span class="n">listening</span> <span class="n">on</span> <span class="no">PORT</span> <span class="err">$</span><span class="o">{</span><span class="no">PORT</span><span class="o">}</span><span class="err">`</span><span class="o">);</span>
+<span class="o">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<center>express를 사용하면 조건문 없이도 요청이 가능하며 직관적이다</center>
+:ET

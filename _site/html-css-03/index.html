@@ -1,0 +1,687 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>SASS(SCSS) | POPO</title>
+<meta name="description" content="Sass(Scss) 알아보기🍇">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="SASS(SCSS)">
+<meta property="og:url" content="http://localhost:4000/html-css-03/">
+
+
+  <meta property="og:description" content="Sass(Scss) 알아보기🍇">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-29T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/html-css-03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">SASS(SCSS)</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="SASS(SCSS)"
+    /> <meta
+      itemprop="description"
+      content="Sass(Scss) 알아보기🍇"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-11-29T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/html-css-03/" class="u-url" itemprop="url"
+            ><p>SASS(SCSS)</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-29T00:00:00+09:00">2021-11-29</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="sassscss-알아보기">Sass(Scss) 알아보기🍇</h2>
+
+<center class="notice--danger">🏳️ Sass(Scss) : CSS Preprocessor(CSS 전처리기)라 불리며 선택자의 중첩(Nesting)이나 조건문, 반복문, 다양한 단위(Unit)의 연산 등… 표준 CSS 보다 훨씬 많은 기능을 사용해서 편리하게 작성할수 있게 해준다. </center>
+
+<h3 id="sass와-scss는-차이점은">Sass와 SCSS는 차이점은?</h3>
+
+<center class="notice--info">🏳️ SCSS는 CSS 구문과 완전히 호환되도록 새로운 구문을 도입해 만든 Sass의 모든 기능을 지원하는 CSS의 상위집합(Superset) 이다.또한 Sass는 선택자의 유효범위를 ‘들여쓰기’로 구분하고, SCSS는 {}로 범위를 구분한다. </center>
+<hr />
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/sass-data.png" alt="sass-data" style="zoom:70%;" /></center>
+<p><br /></p>
+<center>SASS(Scss)의 데이터형식 </center>
+<p><br /></p>
+<hr />
+
+<h3 id="nesting중첩">Nesting(중첩)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="p">.</span><span class="nx">bottom</span><span class="o">-</span><span class="nx">bar</span><span class="o">-</span><span class="nx">section</span> <span class="p">{</span>
+    <span class="nx">ul</span> <span class="p">{</span>
+      <span class="nx">list</span><span class="o">-</span><span class="nx">style</span><span class="o">-</span><span class="nx">type</span><span class="p">:</span> <span class="nx">none</span><span class="p">;</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">bottom</span><span class="p">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">li</span> <span class="p">{</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">bottom</span><span class="p">:</span> <span class="mi">5</span><span class="nx">px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">p</span> <span class="p">{</span>
+      <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="p">:</span> <span class="mi">40</span><span class="nx">px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>위와 같이 요소를 묶어주어 선택자의 반복을 줄여 가독성을 높여주며 코드를 짧게 해준다. </center>
+<p><br /></p>
+<hr />
+
+<h3 id="ampersand-상위-선택자-참조">Ampersand (상위 선택자 참조)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">header</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nx">fixed</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">z</span><span class="o">-</span><span class="nx">index</span><span class="p">:</span> <span class="mi">10000</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="mi">60</span><span class="o">%</span><span class="p">;</span>
+    <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="mi">20</span><span class="o">%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="mi">60</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">f4f4f2</span><span class="p">;</span>
+    <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span><span class="nx">px</span> <span class="mi">2</span><span class="nx">px</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">),</span> <span class="mi">0</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">0</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">144</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">);</span>
+
+    <span class="o">&amp;</span><span class="p">:</span><span class="nx">hover</span> <span class="p">.</span><span class="nx">nav</span> <span class="nx">li</span> <span class="p">{</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="nl">transition</span><span class="p">:</span> <span class="nx">all</span> <span class="mf">0.5</span><span class="nx">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">&amp;</span><span class="p">:</span><span class="nx">not</span><span class="p">(:</span><span class="nx">hover</span><span class="p">)</span> <span class="p">.</span><span class="nx">nav</span> <span class="nx">li</span> <span class="p">{</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">;</span>
+      <span class="nl">transition</span><span class="p">:</span> <span class="nx">all</span> <span class="mf">0.5</span><span class="nx">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>Nesting 안에서 &amp; 키워드는 상위(부모) 선택자를 참조하여 치환함</center>
+<p><br /></p>
+<hr />
+
+<h3 id="속성-중첩">속성 중첩</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nx">box</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="nx">bold</span><span class="p">;</span>
+    <span class="nl">size</span><span class="p">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">family</span><span class="p">:</span> <span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">top</span><span class="p">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">bottom</span><span class="p">:</span> <span class="mi">40</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>가독성을 높여준다.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="변수variables">변수(Variables)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$color</span><span class="o">-</span><span class="nx">primary</span><span class="p">:</span> <span class="err">#</span><span class="nx">e96900</span><span class="p">;</span>
+<span class="nx">$url</span><span class="o">-</span><span class="nx">images</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/assets/images/</span><span class="dl">"</span><span class="p">;</span>
+<span class="nl">$w</span><span class="p">:</span> <span class="mi">200</span><span class="nx">px</span><span class="p">;</span>
+
+<span class="p">.</span><span class="nx">box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="nx">$w</span><span class="p">;</span>
+  <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="nx">$w</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">$color</span><span class="o">-</span><span class="nx">primary</span> <span class="nx">url</span><span class="p">(</span><span class="nx">$url</span><span class="o">-</span><span class="nx">images</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">bg.jpg</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>자주 사용되는 값 변수저장 가능</center>
+<p><br /></p>
+<hr />
+
+<h3 id="연산가능">연산가능</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">width</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>  <span class="c1">// 단위 모순 에러(Incompatible units error)</span>
+<span class="nl">width</span><span class="p">:</span> <span class="nx">calc</span><span class="p">(</span><span class="mi">50</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">);</span>  <span class="c1">// 연산 가능</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>연산가능 / 나누기는 ()괄호에 넣어줘야함.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="mixin재활용">@mixin(재활용)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">mixin</span> <span class="nx">작명</span> <span class="p">{</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="p">:</span> <span class="mi">22</span><span class="nx">px</span><span class="p">;</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">weight</span><span class="p">:</span> <span class="nx">bold</span><span class="p">;</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="p">:</span> <span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">orange</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">h1</span> <span class="p">{</span>
+  <span class="p">@</span><span class="nd">include</span> <span class="nx">작명</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>아주 훌륭한기능. 코드를 줄여준다.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="if">@if()</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">if</span> <span class="p">(</span><span class="nx">조건1</span><span class="p">)</span> <span class="p">{</span>
+<span class="sr">/_ 조건1이 참일 때 구문 _/</span>
+<span class="p">}</span> <span class="p">@</span><span class="nd">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">조건2</span><span class="p">)</span> <span class="p">{</span>
+<span class="sr">/_ 조건2가 참일 때 구문 _/</span>
+<span class="p">}</span> <span class="p">@</span><span class="nd">else</span> <span class="p">{</span>
+<span class="o">/</span><span class="nx">_</span> <span class="nx">모두</span> <span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">구문</span> <span class="nx">_</span><span class="o">/</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>js의 if와 같은기능</center>
+<p><br /></p>
+<hr />
+
+<p>참조 <a href="https://heropy.blog/2018/01/31/sass/">https://heropy.blog/2018/01/31/sass/</a></p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-29T00:00:00+09:00">2021-11-29</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=SASS%28SCSS%29%20http%3A%2F%2Flocalhost%3A4000%2Fhtml-css-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fhtml-css-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fhtml-css-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/react-08/" class="pagination--pager" title="react example
+">이전</a>
+    
+    
+      <a href="/Algorithm-04/" class="pagination--pager" title="codecata Day3
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

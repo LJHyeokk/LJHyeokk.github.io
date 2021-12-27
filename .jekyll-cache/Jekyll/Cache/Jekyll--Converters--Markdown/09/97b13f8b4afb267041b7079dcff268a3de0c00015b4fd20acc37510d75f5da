@@ -1,0 +1,119 @@
+I"<h2 id="html-and-css-알아보기">HTML and CSS 알아보기🍇</h2>
+
+<center class="notice--danger">🏳️ Semantic Web과 Semantic Tag</center>
+
+<blockquote>
+  <p>Semantic Web : 사전적 의미론 ‘의미있는 웹’으로 기계가 읽고 처리할 수 있는 웹이다. 목적으로는 방대한 양의 데이터를 사용자의 검색에 맞게 연관성 있는 데이터만을 기계가 해석하여 사용자에게 보여주는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p>Semantic Tag : 기계에게 의미를 가진 정보로서 보이기 위해 고안된 태그. 이것은 명확한 의미를 가지므로 보다 빠르고 정확한 검색을 도와주고 문서의 가독성을 높여준다.</p>
+</blockquote>
+
+<p class="notice--info">img vs div backgroung-image ➡️ 전자는 이미지가 alt속성에 정보를 담고있어 검색에 의해 사용자에게 노출되어지지만, 후자는 단순한 디자인용, 즉 정보가 없다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<center class="notice--danger">🏳️inline inline-block and block</center>
+
+<blockquote>
+  <p>inline : 요소가 새 줄에서 시작하지 않고 필요한 너비만 차지. 너비나 높이를 설정할 수 없음.</p>
+</blockquote>
+
+<blockquote>
+  <p>inline-block : 새 줄에서 시작하지 않는 인라인 요소와 같은 형식. 그러나 너비와 높이 값을 설정할 수 있음.</p>
+</blockquote>
+
+<blockquote>
+  <p>block : 요소는 새 줄에서 시작하여 사용 가능한 전체 너비를 차지. 그리고 너비와 높이 값을 설정할 수 있음.</p>
+</blockquote>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>display, float</p>
+</blockquote>
+
+<p>인라인성질과 블록성질을 바뀌게 해줌.</p>
+
+<hr />
+
+<blockquote>
+  <p>margin : 0 auto;</p>
+</blockquote>
+
+<p>위아래의 margin은 0을 주고 양옆은 auto로 하여 중앙에 배치시킨다.</p>
+
+<hr />
+
+<blockquote>
+  <p>li:last-child</p>
+</blockquote>
+
+<p>첫째, 홀수, 짝수도 있다.</p>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">&lt;input type="text" placeholder="ID"&gt;</code></p>
+</blockquote>
+
+<p>type별로 선택. placeholder는 도움말</p>
+
+<blockquote>
+  <p>textarea</p>
+</blockquote>
+
+<p>input보다 더 긴 텍스트를 입력받고 싶을때 사용. 줄바꿈가능</p>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">input[type="text"]::placeholder</code></p>
+</blockquote>
+
+<p>모두다 그런것은 아니지만 input의 속성값을 표현할땐 ::을 씀</p>
+
+<hr />
+
+<blockquote>
+  <p>position</p>
+</blockquote>
+
+<p>static: 기본, relative : top, right, bottom, left을 통해 위치 변경가능, absolute: 부모에 대해 절대적인 위치를 갖는다(기준이 없으면 body가 기준), fixed: 고정</p>
+
+<hr />
+
+<blockquote>
+  <p>display: flex</p>
+</blockquote>
+
+<p>설정을 하면 바로밑의 자식요소에만 적용됨</p>
+
+<p>justufy-content : flex-start,end or center 부모의 크기만큼의 공간에서 왼쪽,오른쪽,중앙 정렬이 됨</p>
+<p>justufy-content : space-around 요소의 각각의 margin이 같게 정렬, space-between 양옆의 margin이 없어짐, space-evenly 모든 공간이 동일</p>
+<p>align-items : flex-start,end or center 세로에 대한 정렬</p>
+<p>flex-direction : row, row-reverse, column, column-reverse 정렬을 바꿔줌
+order: 'number'</p>
+<p>flex-wrap : wrap, nowrap, wrap-reverse 가 있음(두줄)</p>
+<p>flex-flow : 'flex-direction' 'flex-wrap' 두가지를 한번에 사용가능</p>
+<p>align-content : flex-start, flex-end,center, space-between, space-around, stretch</p>
+
+<hr />
+
+<blockquote>
+  <p>overflow: auto;</p>
+</blockquote>
+
+<p>넘치는 값을 자동으로 조정해줌.</p>
+
+<blockquote>
+  <p>@media (max-width:599px)</p>
+</blockquote>
+
+<p>화면의 크기가 599보다 작다면~</p>
+:ET

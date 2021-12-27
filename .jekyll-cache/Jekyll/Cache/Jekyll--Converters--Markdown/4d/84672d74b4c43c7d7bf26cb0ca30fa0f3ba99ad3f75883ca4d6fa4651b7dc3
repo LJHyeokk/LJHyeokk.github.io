@@ -1,0 +1,106 @@
+I"�<h2 id="왜-javascript를-사용하는가">왜 JavaScript를 사용하는가?🍍</h2>
+
+<p><strong>요즘 어디서나 JavaScript를 사용한다. 왜?</strong></p>
+
+<center class="notice--danger">1.웹서버 2.모바일앱 3.머신러닝 등등</center>
+
+<center> 그 중 웹환경에서의 JavaScript의 목적은 'html 조작과 변경이다'.</center>
+<hr />
+
+<p><br />
+자, 이제 html을 JS로 조작해보자.</p>
+
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h2</span> <span class="nb">id</span><span class="o">=</span><span class="s">"ㅎㅇ"</span><span class="o">&gt;</span><span class="n">ㅎㅇ</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+      <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">"ㅎㅇ"</span><span class="p">).</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="s">"안녕하세요"</span><span class="p">;</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>‘<strong>html 조작방법</strong>’</p>
+
+<p class="notice--info">html에 body태그안에 script로 감싸주어 그 안에 코드를 작성한다. getElementById는 이름만 봐도 알 수 있듯이 id를 통해 원하는 태그를 가져오는 메서드이다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h2</span> <span class="n">class</span><span class="o">=</span><span class="s">"ㅎㅇ"</span><span class="o">&gt;</span><span class="n">ㅎㅇ</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+
+      <span class="n">document</span><span class="p">.</span><span class="n">getElementsbyClassName</span><span class="p">(</span><span class="s">"ㅎㅇ"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="s">"안녕하세요"</span><span class="p">;</span>
+
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>‘<strong>getElementsbyClassname</strong>’</p>
+
+<p class="notice--info">class이름이 같은 모든 태그를 가져오기때문에 배열에 담긴다. 꼭 배열을 불러오는 []을 사용하자.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s">"bu"</span><span class="o">&gt;</span><span class="n">ㅎㅎ</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+
+      <span class="n">document</span><span class="p">.</span><span class="n">getElementsByClassName</span><span class="p">(</span><span class="s">"bu"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">addEventListener</span><span class="p">(</span><span class="s">"click"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="n">document</span><span class="p">.</span><span class="n">getElementsByClassName</span><span class="p">(</span><span class="s">"bu"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="s">"안녕하세용"</span><span class="p">;</span>
+
+      <span class="p">});</span>
+
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<center><div>
+    <button class="bu">ㅎㅎ</button>
+
+    <script>
+      document.getElementsByClassName("bu")[0].addEventListener("click", () => {
+        if (document.getElementsByClassName("bu")[0].innerHTML === "ㅎㅎ") {
+          document.getElementsByClassName("bu")[0].innerHTML = "안녕하세용";
+        } else if (
+          document.getElementsByClassName("bu")[0].innerHTML === "안녕하세용"
+        ) {
+          document.getElementsByClassName("bu")[0].innerHTML = "ㅎㅎ";
+        }
+      });
+    </script>
+
+  </div></center>
+<p><br /></p>
+
+<p>‘<strong>addEventListener</strong>’</p>
+
+<p class="notice--info">클릭, 스크롤, 키다운, 마우스오버 등 다양한 이벤트로 콜백함수의 내용을 행할수있다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<center class="notice--danger">🏳️ DOM : 웹페이지의 HTML을 계층화시켜 트리구조로 만든 객체(Object) 모델. JavaScript는 이 model로 웹 페이지에 접근하고, 페이지를 수정할 수 있습니다. DOM은 HTML인 웹페이지와 스크립팅언어(JavaScript)를 서로 잇는 역할을 함.</center>
+
+<blockquote>
+  <p>JS는 document라는 전역객체를 통해 HTML에 접근할 수 있다.</p>
+</blockquote>
+:ET

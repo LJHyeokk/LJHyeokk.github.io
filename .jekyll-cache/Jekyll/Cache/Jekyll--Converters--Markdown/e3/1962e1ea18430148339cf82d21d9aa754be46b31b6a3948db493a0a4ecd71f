@@ -1,0 +1,62 @@
+I"d<h2 id="algorithm">Algorithm?🤮</h2>
+
+<center class="notice--danger">알고리즘을 풀어봅시다...그중 악명높은 백준으로</center>
+
+<p>백준알고리즘은 JS로 풀기에는 초보자들이 정~~~말 어렵다..</p>
+
+<p>이유는 input으로 text값을 받아서 푸는 문제들이 많은데 이게 JS로 input받기가 까다롭다</p>
+
+<p>그래서 초보자도 문제를 풀수있도록 input 받는것을 설정하는 code를 짜본다.</p>
+
+<center><img src="../images/2021-10-27-first/a.png" alt="a" style="zoom:60%;" /></center>
+<p><br />
+JS로 백준문제를 풀다가 대부분 위와 같은 문제에서 막힌다</p>
+
+<p>어떻게 input을 받으라는거야? 아래를 보자..</p>
+
+<blockquote>
+  <p>input.text</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>question.js</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">"fs"</span><span class="p">);</span> <span class="o">//</span><span class="n">파일받기위해</span> <span class="n">필요하다</span>
+<span class="n">const</span> <span class="n">localFile</span> <span class="o">=</span> <span class="n">fs</span><span class="p">.</span><span class="n">existsSync</span><span class="p">(</span><span class="s">"./input.txt"</span><span class="p">);</span> <span class="o">//</span> <span class="n">내가</span> <span class="n">알고리즘</span> <span class="n">풀려는</span> <span class="n">폴더에</span> <span class="s">'./input.txt'</span><span class="n">의</span> <span class="n">유무를</span> <span class="n">참</span><span class="p">,</span><span class="n">거짓으로</span> <span class="n">localFile에</span> <span class="n">넣자</span>
+<span class="n">const</span> <span class="n">filePath</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">참이면</span> <span class="n">내</span> <span class="n">input파일을</span> <span class="n">열고</span> <span class="n">그외는</span> <span class="n">백준의</span> <span class="n">알고리즘에서</span> <span class="n">주는</span> <span class="n">입력값을</span> <span class="n">받겠다</span><span class="p">.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">localFile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"./input.txt"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="s">"/dev/stdin"</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">let</span> <span class="nb">input</span> <span class="o">=</span> <span class="n">fs</span><span class="p">.</span><span class="n">readFileSync</span><span class="p">(</span><span class="n">filePath</span><span class="p">()).</span><span class="n">toString</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="o">//</span><span class="nb">input</span><span class="p">.</span><span class="n">text의</span> <span class="n">값들을</span> <span class="n">엔터기준으로</span> <span class="n">각</span> <span class="n">배열의</span> <span class="n">인덱스에</span> <span class="n">값을</span> <span class="n">넣어준다</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="o">//</span> <span class="nb">input</span> <span class="o">=</span> <span class="s">'1 2'</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">).</span><span class="nb">map</span><span class="p">((</span><span class="n">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="n">item</span><span class="p">);</span> <span class="o">//</span> <span class="s">'1 2'</span><span class="n">가</span> <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span><span class="n">에</span> <span class="n">의해</span> <span class="p">[</span><span class="s">'1'</span><span class="p">,</span><span class="s">'2'</span><span class="p">]</span><span class="n">로</span> <span class="n">변경</span> <span class="n">된것을</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="n">로</span> <span class="n">변경</span>
+<span class="o">//</span> <span class="n">즉</span><span class="p">,</span> <span class="n">값들을</span> <span class="n">띄워쓰기</span> <span class="n">기준으로</span> <span class="n">값을</span> <span class="n">배열에</span> <span class="n">넣고</span> <span class="n">하나씩</span> <span class="n">꺼내서</span> <span class="n">Num타입으로</span> <span class="n">바꿔준다</span><span class="p">.</span>
+<span class="o">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="n">pro</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">input</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="n">function</span> <span class="n">pro</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--info">주석을 보고 내용을 이해하자. 절취선 기준 위로는 input값 받기 설정 / 아래로는 문제를 풀기 위한 code</p>
+
+<p>내용을 이해했으면 각자 가지고있는 에디터로 새롭게 폴더를 열어보자</p>
+
+<p>나는 vscode로 했다.</p>
+
+<p>새폴더를 열고 ➡️ 작명.js 파일 만들고 ➡️ 작명.text 파일을 같은 경로에 만들어준다.</p>
+
+<p>나는 text파일의 이름을 input.text로 했는데 다르게 하고 싶다면 “./input.txt” 여기도 같은이름으로 바꿔주자</p>
+
+<p>마지막으로 문제마다 input값이 다양하기에 input값을 받는 code도 바꿔줘야 한다.</p>
+
+<center><p style="color:seagreen ">이제 열심히 알고리즘을 풀어봅시다~~~~</p></center>
+:ET

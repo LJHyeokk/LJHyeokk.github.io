@@ -1,0 +1,48 @@
+I"c<h1 id="즉각적인-반응을-위해">즉각적인 반응을 위해…🥝</h1>
+
+<p><br /></p>
+
+<p>bundle, jekyll 설치</p>
+
+<p>해야할일</p>
+
+<ol>
+  <li>터미널창에서 내 블로그 경로를 타고 들어간다.</li>
+  <li>bundle exec jekyll serve</li>
+  <li>localhost:4000</li>
+</ol>
+
+<p><br /></p>
+
+<p>즉각적으로 바뀌는것을 알수있음.</p>
+
+<p>(구글에서 다운받은 bundle로는 에러가뜸 꼭 bundle update를 해주자)</p>
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'코드입력하는방법'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>.```python</p>
+
+<p>.```</p>
+
+<p>(온점을 한개씩 빼고 그 사이에 작성할 코드 입력)</p>
+
+<p class="notice--primary"><strong>Primary Notice:</strong><br />
+중요한 Notice</p>
+
+<p class="notice"><strong>Notice:</strong><br />
+기본적인 Notice</p>
+
+<p class="notice--info"><strong>Info Notice:</strong><br />
+정보 Notice</p>
+
+<p class="notice--warning"><strong>Warning Notice:</strong><br />
+경고 Notice</p>
+
+<p class="notice--danger"><strong>Danger Notice:</strong><br />
+Danger Notice</p>
+
+<p class="notice--success"><strong>Success Notice:</strong><br />
+Success Notice</p>
+:ET

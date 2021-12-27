@@ -1,0 +1,752 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>react 사용이유 | POPO</title>
+<meta name="description" content="React?🍓">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="react 사용이유">
+<meta property="og:url" content="http://localhost:4000/react-01/">
+
+
+  <meta property="og:description" content="React?🍓">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">react 사용이유</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="react 사용이유"
+    /> <meta
+      itemprop="description"
+      content="React?🍓"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-11-01T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/react-01/" class="u-url" itemprop="url"
+            ><p>react 사용이유</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-01T00:00:00+09:00">2021-11-01</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="react">React?🍓</h2>
+
+<center class="notice--danger">🏳️ React란 javascript의 라이브러리이다.</center>
+
+<h2 id="jsx">JSX?</h2>
+
+<center class="notice--danger">🏳️ const hi =  &lt; 태그&gt;Hi&lt; 태그&gt;;</center>
+
+<p style="color:black">위의 코드는 JS도 HTML도 아닌 javascript syntax extension라고 하는 JS의 확장버전이다.</p>
+<p style="color:black">.js 파일에서 사용할 수 있고 별도의 컴파일 과정을 거쳐야지만 js문법으로 변환하여 브라우저가 인식할 수 있다.</p>
+<p style="color:black">JSX는 어떤 태그라도 self closing tag가 가능함. ex) div /div =&gt; div / </p>
+<p style="color:black">소괄호로 감싸주고 무조건 하나의 태그안에 중첩요소를 담아주어야한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="o">!&lt;</span><span class="sr">/h1&gt;, document.getElementById</span><span class="se">(</span><span class="sr">"root"</span><span class="se">))</span><span class="err">;
+</span></code></pre></div></div>
+
+<p style="color:black">DOM node에 추가되어 화면에 랜더링되려면 위와같이 작성해준다. JS의 appendchild 느낌인것 같다.</p>
+
+<h2 id="component와-props">Component와 Props</h2>
+
+<center class="notice--danger">🏳️ 1. Component</center>
+
+<p style="color:black">component(컴포넌트)란 재사용 가능한 UI 단위이다. ( 함수랑 비슷하다고 생각하면 편함 )</p>
+
+<center class="notice--danger">🏳️ 2. Props</center>
+
+<p style="color:black">이러한 component(컴포넌트)의 매개변수 역할을 하는것을 Props라고 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="c1">// 2. App 컴포넌트 정의</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">wecoder</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">John</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">Sara</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p style="color:black">Welcome이라는 컴포넌트를 App이라는 컴포넌트에서 사용하는 예시이다. 이렇게되면 App은 부모 Welcomde은 자식이라는 관계가 형성된다.</p>
+
+<h2 id="component의-state">Component의 State</h2>
+
+<center class="notice--danger">🏳️ State : 타입은 Object이고 화면에 보여줄 정보를 가지고 있는 컴포넌트의 상태값이다.</center>
+
+<p style="color:black">props와 다른점이있다면 props는 부모에게서 받아야만 사용할 수 있다면 state는 컴포넌트 내에서도 정의하고 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Button</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isClicked</span><span class="p">,</span> <span class="nx">setIsClicked</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">btn</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setIsClicked</span><span class="p">(</span><span class="o">!</span><span class="nx">isClicked</span><span class="p">)}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">isClicked</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">좋아요</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">싫어요</span><span class="dl">"</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p style="color:black">버튼을 누를때마다 값이 바뀌는 간단한 예시. </p>
+
+<h2 id="리액트를-왜-사용하는가">리액트를 왜 사용하는가?</h2>
+
+<blockquote>
+  <ol>
+    <li>모바일앱으로 발행이 쉽다.</li>
+    <li>앱 처럼 뛰어난 UX</li>
+    <li>그냥 웹사이트보다 비즈니스적으로 강점이있다.</li>
+  </ol>
+</blockquote>
+
+<p><br /></p>
+
+<p>자 이제 시작해보자.</p>
+
+<ol>
+  <li>node.js를 최신버전으로 깔아준다.</li>
+  <li>폴더를 만들고 vscode로 킨 후 ➡️ 터미널창에 ‘npx create-react-app <프로젝트 이름="">' 을 친다.</프로젝트></li>
+  <li>터미널에 ‘npm start’ 입력 후 예시 페이지가 나오는지 확인</li>
+</ol>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<center><p style="color:#4c7a8a">기초 설명🚩</p></center>
+
+<p>‘node.js’를 설치한 이유 ➡️ create react app을 사용하기 위해 -&gt; node.js를 깔면 npm이라는 툴을 사용가능</p>
+
+<p><br /></p>
+
+<p>public-&gt;index.html (메인페이지 ) ➡️ ‘src-&gt;app.js’를 끌어다 사용하고있다.</p>
+
+<p><br /></p>
+
+<p>package.json ➡️ 설치한 라이브러리 목록</p>
+
+<p><br /></p>
+
+<p>node_modules ➡️ 라이브러리 집합소</p>
+
+<p><br /></p>
+
+<p>public ➡️ static 파일 보관함</p>
+
+<p><br /></p>
+
+<p>src ➡️소스코드 보관함</p>
+
+<p><br /></p>
+
+<p>src-index.js ➡️ app.js와 메인페이지를 이어줌 root</p>
+
+<p><br /></p>
+
+<p>App.js에서 return안에 쓰는 문법은 HTML처럼 생긴 JSX이다.</p>
+
+<p><br /></p>
+
+<p>데이터 바인딩은 { }을 사용하여 편하게 사용</p>
+
+<hr />
+
+<p><br /></p>
+
+<center><p style="color:#4c7a8a">기초 문법🚩</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">이름</span> <span class="k">from</span> <span class="s">'이미지 경로'</span>
+
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="p">{</span> <span class="n">이름</span> <span class="p">}</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>이미지 업로드하기</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span> <span class="n">color</span> <span class="p">:</span> <span class="s">'black'</span><span class="p">,</span> <span class="n">fontSize</span> <span class="p">:</span> <span class="s">'30px'</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="n">asd</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>style 사용법 ‘-‘을 사용불가하니 카멜형식으로 사용</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">React</span><span class="p">,</span> <span class="p">{</span> <span class="n">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react"</span><span class="p">;</span> <span class="o">//</span> <span class="n">리액트에있는</span> <span class="n">내장함수를</span> <span class="n">쓰겠다</span><span class="p">.</span> <span class="n">state는</span> <span class="n">변수대신</span> <span class="n">쓰는</span> <span class="n">데이터</span> <span class="n">공간</span>
+
+<span class="n">let</span> <span class="p">[</span><span class="n">title</span><span class="p">,</span> <span class="n">titleModify</span><span class="p">]</span> <span class="o">=</span> <span class="n">useState</span><span class="p">([</span><span class="s">"신라면 맛있어"</span><span class="p">,</span> <span class="s">'우유랑 같이 먹어야함'</span><span class="p">]);</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">{</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">//</span> <span class="s">'신라면 맛잇어'</span>
+</code></pre></div></div>
+
+<p>ustState 사용 이유 -&gt; app처럼 사용하기위해, 새로고침없이 재랜더링됨, 자주바뀌는 중요한 데이터를 쓰자.</p>
+
+<p>useState함수 사용시 [‘신라면 ..’, 함수] 이렇게 나옴 -&gt; 이것을 신문법으로 a변수에는 ‘신라면…’ b변수에는 함수를 넣음</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/*</span> <span class="n">eslint</span><span class="o">-</span><span class="n">disable</span><span class="o">*/</span>
+</code></pre></div></div>
+
+<p>warning을 보기싫을때 쓰면 없애줌</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="p">[</span><span class="n">like</span><span class="p">,</span> <span class="n">likeModify</span><span class="p">]</span> <span class="o">=</span> <span class="n">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">span</span> <span class="n">className</span><span class="o">=</span><span class="s">'like'</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span> <span class="n">likeModify</span><span class="p">(</span> <span class="n">like</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="err">🍓</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">{</span><span class="n">like</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">//</span> <span class="n">딸기모양</span> <span class="n">클릭시마다</span> <span class="n">숫자가</span> <span class="n">올라감</span>
+</code></pre></div></div>
+
+<p>onClick은 {}을 사용하고, 그안은 항상 함수여야한다. 그리고 state값을 바꾸고 싶을땐 수정함수를 사용한다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">function</span> <span class="n">제목바꾸기</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">newArray</span> <span class="o">=</span> <span class="p">[...</span><span class="n">title</span><span class="p">];</span>    <span class="o">//</span> <span class="n">var</span> <span class="n">newArray</span> <span class="o">=</span> <span class="n">title</span> <span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">newArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">'블랙 신라면'</span><span class="p">;</span>
+    <span class="n">titleModify</span><span class="p">(</span> <span class="n">newArray</span> <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="o">&lt;</span><span class="n">button</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="n">제목바꾸기</span> <span class="p">}</span><span class="o">&gt;</span><span class="n">바꿈</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span> <span class="o">//</span> <span class="n">제목바꾸기</span><span class="p">()</span> <span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>변수에 state를 담을때 그냥 담으면 값을 공유하는 것이다. 즉 원래의 값도 바뀐다. […]을 사용하자</p>
+
+<p>함수를 함수()로 호출하면 바로 실행이므로 클릭시에만 호출할 수 있게 ()를 빼주자.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">Nav</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">className</span><span class="o">=</span><span class="s">"black-nav"</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="n">LJH</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">function</span> <span class="n">App</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+    	<span class="o">&lt;</span><span class="n">Nav</span><span class="o">&gt;&lt;/</span><span class="n">Nav</span><span class="o">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Component 사용하기</p>
+
+<ol>
+  <li>이름은 대문자로 쓰기</li>
+  <li>하나의 div로 묶어주기 // &lt;&gt;&lt;/&gt;을 써도됨</li>
+  <li>App 컴포넌트와 같은 위치로 해주기</li>
+</ol>
+
+<p>이렇게되면 App은 부모컴포넌트 nav는 자식컴포넌트가 된다.</p>
+
+<p>자주바뀌는 것들에 사용하자</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-01T00:00:00+09:00">2021-11-01</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=react+%EC%82%AC%EC%9A%A9%EC%9D%B4%EC%9C%A0%20http%3A%2F%2Flocalhost%3A4000%2Freact-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freact-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freact-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/javascript-05/" class="pagination--pager" title="JavaScript 3주차
+">이전</a>
+    
+    
+      <a href="/react-02/" class="pagination--pager" title="react 기초문법
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

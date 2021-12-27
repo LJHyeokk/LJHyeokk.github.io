@@ -1,0 +1,108 @@
+I"e<h2 id="orm-">ORM 🙀</h2>
+
+<center class="notice--danger">ORM : Object-relational-mapping의 약어로 객체와 관계형 데이터베이스의 데이터를 자동으로 매핑(연결)해주는 것이다.</center>
+
+<center class="notice--danger">데이터베이스 데이터 ⬅️ 매핑 ➡️ Object 필드</center>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">User</span> <span class="kd">extends</span> <span class="nx">Model</span> <span class="p">{}</span>
+<span class="nx">User</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="na">username</span><span class="p">:</span> <span class="nx">DataTypes</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+    <span class="na">birthday</span><span class="p">:</span> <span class="nx">DataTypes</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">sequelize</span><span class="p">,</span> <span class="na">modelName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>ORM 중 하나인 <code class="language-plaintext highlighter-rouge">sequelize</code> 의 문법이다.</p>
+
+<p>username, birtday라는 속성이 있으며 이것들의 데이터타입은 각각 string과 date다.</p>
+
+<p>이것은 database관점으로 username, birtday라는 field가 있고 string과 date의 타입을 가진다고 생각하면된다.</p>
+
+<p><br /></p>
+
+<center class="notice--danger">Migrations : 코드로 작성한 클래스를 실제 데이터베이스에 테이블로 옮기는 과정</center>
+
+<p>모델을 생성하면 ORM이 migration 파일을 생성하고, migration 파일이 데이터베이스에 적용된다. ORM에서는 데이터베이스의 구조를 migration file들을 통해 주로 관리함</p>
+
+<h2 id="prisma-">Prisma 🙀</h2>
+
+<center class="notice--danger">Prisma : nodejs환경에서 데이터베이스에 대한 접근을 쉽게 도와주는 소프트웨어로 기존의 ORM들과는 다르게 GraphQL를 사용하여 격이다른 생산성을 보여준다.</center>
+
+<center>Prisma를 다운받고 활용해보자</center>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install prisma --save-dev</code> ➡️ 설치</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @prisma/client --save</code> ➡️ 설치</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install dotenv -D</code> ➡️ 환경변수 사용가능</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx prisma</code> ➡️ 잘깔렸으면 명령어 나옴</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx prisma init</code> ➡️ 초기셋팅 명령어</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">datasource</span> <span class="n">db</span> <span class="o">{</span>
+  <span class="n">provider</span> <span class="o">=</span> <span class="s">"mysql"</span>
+  <span class="n">url</span>      <span class="o">=</span> <span class="n">env</span><span class="o">(</span><span class="s">"DATABASE_URL"</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<center>mysql로 바꿔주기</center>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">DATABASE_URL</span><span class="o">=</span><span class="s">"mysql://root:비밀번호@localhost:3306/prisma"</span>
+</code></pre></div></div>
+
+<center>.env에서 url바꿔주기</center>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">SHOW GLOBAL VARIABLES LIKE 'PORT';</code> ➡️ mysql에서 port번호 찾기</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx prisma migrate dev --name init</code> ➡️ schema.prisma에서 table을 만들고나서 명령어실행하면 db에 연동됨</p>
+
+<p><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="n">categories</span> <span class="o">{</span>
+  <span class="n">id</span>     <span class="nc">Int</span>      <span class="nd">@id</span> <span class="nd">@default</span><span class="o">(</span><span class="n">autoincrement</span><span class="o">())</span>
+  <span class="n">name</span>   <span class="nc">String</span>
+  <span class="n">drinks</span> <span class="n">drinks</span><span class="o">[]</span>
+<span class="o">}</span>
+
+<span class="n">model</span> <span class="n">drinks</span> <span class="o">{</span>
+  <span class="n">id</span>            <span class="nc">Int</span>             <span class="nd">@id</span> <span class="nd">@default</span><span class="o">(</span><span class="n">autoincrement</span><span class="o">())</span>
+  <span class="n">korean_name</span>   <span class="nc">String</span>
+  <span class="n">english_name</span>  <span class="nc">String</span>
+  <span class="n">drink_info</span>    <span class="nc">String</span>
+  <span class="n">is_new</span>        <span class="nc">Boolean</span>
+  <span class="n">category_id</span>   <span class="nc">Int</span>
+  <span class="n">categories</span>    <span class="n">categories</span>      <span class="nd">@relation</span><span class="o">(</span><span class="nl">fields:</span> <span class="o">[</span><span class="n">category_id</span><span class="o">],</span> <span class="nl">references:</span> <span class="o">[</span><span class="n">id</span><span class="o">])</span>
+  <span class="n">likeBool</span>      <span class="n">likeBool</span><span class="o">[]</span>
+  <span class="n">images</span>        <span class="n">images</span><span class="o">[]</span>
+  <span class="n">allergy_drink</span> <span class="n">allergy_drink</span><span class="o">[]</span>
+  <span class="n">nutrients</span>     <span class="n">nutrients</span><span class="o">[]</span>
+<span class="o">}</span>
+
+<span class="n">model</span> <span class="n">users</span> <span class="o">{</span>
+  <span class="n">id</span>            <span class="nc">Int</span>     <span class="nd">@id</span> <span class="nd">@default</span><span class="o">(</span><span class="n">autoincrement</span><span class="o">())</span>
+  <span class="n">email</span>         <span class="nc">String</span>  <span class="nd">@unique</span>
+  <span class="n">password</span>      <span class="nc">String</span>
+  <span class="n">username</span>      <span class="nc">String</span><span class="o">?</span>
+  <span class="n">address</span>       <span class="nc">String</span><span class="o">?</span>
+  <span class="n">phone_number</span>  <span class="nc">String</span><span class="o">?</span>
+  <span class="n">policy_agreed</span> <span class="nc">Boolean</span> <span class="nd">@default</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<center>prisma object로 table생성</center>
+
+<p><br /></p>
+
+<p>npm i -D prettier-plugin-prisma</p>
+
+<p>명령어를 사용하여 설치하면 참조당하는 곳에</p>
+
+<p>‘참조하는 테이블’ ‘참조하는 테이블’ [] 이라고 쓰면 자동으로 FK가 설정된다..</p>
+:ET

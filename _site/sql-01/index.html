@@ -1,0 +1,635 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MYSQL 첫걸음 | POPO</title>
+<meta name="description" content="MYSQL👾">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="MYSQL 첫걸음">
+<meta property="og:url" content="http://localhost:4000/sql-01/">
+
+
+  <meta property="og:description" content="MYSQL👾">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sql-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">MYSQL 첫걸음</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="MYSQL 첫걸음"
+    /> <meta
+      itemprop="description"
+      content="MYSQL👾"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-12-14T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/sql-01/" class="u-url" itemprop="url"
+            ><p>MYSQL 첫걸음</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-12-14T00:00:00+09:00">2021-12-14</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="mysql">MYSQL👾</h2>
+
+<center class="notice--danger">database : 서로 연관된 데이터(table)들을 모아놓은것 쉽게말해 폴더같은느낌, SCHEMA라고도 불린다.</center>
+
+<center class="notice--danger">database server : 여러개의 schema들을 모아놓은곳 </center>
+
+<center><img src="../images/2021-10-27-first/database.png" alt="database" /></center>
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="간단한-명령어들">간단한 명령어들</h3>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">CREATE DATABASE '작명';</code> ➡️ 스키마 생성</p>
+
+<p><code class="language-plaintext highlighter-rouge">DROP DATABASE 'table이름';</code> ➡️ 스키마 delete</p>
+
+<p><code class="language-plaintext highlighter-rouge">SHOW DATABASES;</code> ➡️ 스키마들을 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">USE 'table이름'</code> ➡️ 해당 스키마에서 작업을 하겠다.</p>
+
+<center>테이블 만들기</center>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="k">data</span><span class="p">(</span>
+<span class="o">//</span> <span class="k">table</span> <span class="err">을</span> <span class="err">만들겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">id</span><span class="err">는</span> <span class="err">숫자로</span> <span class="mi">11</span><span class="err">번째까지</span> <span class="err">보여주고</span> <span class="err">빈값은</span> <span class="err">허용하지않으며</span> <span class="err">자동적으로</span> <span class="mi">1</span><span class="err">씩늘려가겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">title</span><span class="err">은</span> <span class="mi">100</span><span class="err">글자까지</span> <span class="err">보여주고</span> <span class="err">빈값은</span> <span class="err">허용하지않겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">des</span> <span class="nb">text</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">des</span><span class="err">는</span> <span class="err">텍스트타입이며</span> <span class="err">빈값을</span> <span class="err">허용한다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">created</span> <span class="nb">datetime</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="err">시간타입이며</span> <span class="err">빈값을</span> <span class="err">허용하지않는다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">author</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">author</span><span class="err">은</span> <span class="mi">30</span><span class="err">글자만</span> <span class="err">보여주고</span> <span class="err">빈값을</span> <span class="err">허용한다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+<span class="o">//</span> <span class="err">가장중요한</span> <span class="err">값으로</span> <span class="n">id</span><span class="err">를</span> <span class="err">정했고</span> <span class="err">그값은</span> <span class="err">중복을</span> <span class="err">허용하지않는다</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SHOW TABLES</code> ➡️ 해당 스키마가 가지고있는 table을 보여준다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DESC 'table이름'</code> ➡️ table의 구조를 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">INSERT INTO 'table이름' (필드들) values ('필드에 넣을값들')</code> ➡️ 작성했던 테이블에 데이터 넣기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름';</code> ➡️ table로 부터 모든것을 가져오겠다 ( 보여준다. )</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">data</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="o">|</span> <span class="n">id</span> <span class="o">|</span> <span class="n">title</span>        <span class="o">|</span> <span class="n">des</span>             <span class="o">|</span> <span class="n">created</span>             <span class="o">|</span> <span class="n">author</span>    <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="err">배고프다</span>     <span class="o">|</span> <span class="err">진짜로많이</span>      <span class="o">|</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span> <span class="mi">01</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">40</span> <span class="o">|</span> <span class="err">이준혁</span>    <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT id,title FROM 'table이름'</code> ➡️ 원하는 값들만 골라서 보여줄 수도 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁"</code> ➡️ author가 “이준혁”인 값들만 보이게 가능</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁" ORDER BY id DESC</code> ➡️ id값을 기준으로 내림차순으로 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁" ORDER BY id DESC LIMIT 2</code> ➡️ select된 데이터가 몇개든 최대2개까지 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">UPDATE 'table이름' SET '필드'='바꾸고싶은값으로' WHERE id=2</code> ➡️ table의 필드의 값을 바꾸고싶을때 이때 where을 쓰지않고 그냥하면 모든 필드의 값이 바뀌어버리니 조심할것</p>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE FROM 'table이름' WHERE id=5</code> ➡️ 삭제기능 WHERE을 꼭 쓰자</p>
+
+<p><code class="language-plaintext highlighter-rouge">RENAME TABLE 'table이름' TO '바꿀이름'</code> ➡️ 테이블 이름바꾸기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' LEFT JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ join시키기 ON 뒤쪽에 기준을 정해준다. (NULL값이 뜬다면 한쪽에 값이 없다는것이다.)</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' INNER JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ NULL값을 제외한, 즉 교집합만을 join시킨다. (엄격하다고 볼수있음)</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' FULL OUTER JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ 모두보여줌(지원하지않으면 left right를 UNION으로 결함)</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER TABLE [table이름] AUTO_INCREMENT = [시작할 값];</code> ➡️ id값을 초기화해줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER TABLE 'table이름' ADD FOREIGN KEY(ID) REFERENCES 참조할테이블(ID);</code> ➡️ 필드값 나중에 추가해주기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT songs.title, songs.lyrics FROM songs WHERE songs.lyrics LIKE '%넘실넘실%';</code> ➡️ LIKE를 사용하면 %%사이의 값이 포함된 값을 보여줌</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="관계형-데이터-모델링">관계형 데이터 모델링</h3>
+
+<center class="notice--danger">업무파악 ➡️ 개념적 데이터 모델링 ➡️ 논리적 데이터 모델링 ➡️ 물리적 데이터 모델링</center>
+
+<center><img src="../images/2021-10-27-first/database1.png" alt="database1" /></center>
+<p><br /></p>
+
+<center><img src="../images/2021-10-27-first/database2.png" alt="database2" /></center>
+<p><br /></p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-12-14T00:00:00+09:00">2021-12-14</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=MYSQL+%EC%B2%AB%EA%B1%B8%EC%9D%8C%20http%3A%2F%2Flocalhost%3A4000%2Fsql-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsql-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsql-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/wecode-03/" class="pagination--pager" title="react에서 fetch함수로 데이터받아오기
+">이전</a>
+    
+    
+      <a href="/node-01/" class="pagination--pager" title="node.js 첫걸음
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

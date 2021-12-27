@@ -1,0 +1,136 @@
+I"�H<h2 id="배열이란">배열이란?🍍</h2>
+
+<blockquote>
+  <p>배열(array)은 같은 타입의 변수들로 이루어진 유한 집합으로 정의됩니다.</p>
+
+  <p>배열을 구성하는 각각의 값을 배열 요소(element)라고 하며, 배열에서의 위치를 가리키는 숫자는 인덱스(index)라고 합니다.</p>
+
+  <p>C언어에서 인덱스는 언제나 0부터 시작하며, 0을 포함한 양의 정수만을 가질 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="s">'good'</span><span class="p">]</span> <span class="o">//</span> <span class="n">배열선언</span>
+
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">'change'</span> <span class="o">//</span> <span class="mi">0</span><span class="n">번째</span> <span class="n">인덱스</span> <span class="n">변경</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span><span class="s">'change'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s">'good'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>각 인덱스를 변경할 수 있다.</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="s">'good'</span><span class="p">]</span> <span class="o">//</span> <span class="n">배열선언</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">'add'</span><span class="p">);</span> <span class="o">//</span> <span class="n">마지막에</span> <span class="n">add를</span> <span class="n">추가</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span> <span class="s">'add'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s">'good'</span><span class="p">,</span> <span class="s">'add'</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>push를 통해 맨 뒤에 원하는것을 추가시킬 수 있다.</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="s">'good'</span><span class="p">]</span> <span class="o">//</span> <span class="n">배열선언</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>    <span class="o">//</span><span class="n">맨뒤</span> <span class="n">인덱스</span> <span class="n">삭제</span>
+<span class="n">arr</span><span class="p">.</span><span class="n">shift</span><span class="p">();</span>  <span class="o">//</span><span class="n">맨앞</span> <span class="n">인덱스</span> <span class="n">삭제</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span> <span class="o">//</span> <span class="p">[</span><span class="s">'b'</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>pop()은 맨뒤의 인덱스를 삭제, shift()는 맨앞의 인덱스를 삭제시킨다.</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">'마지막'</span><span class="p">]</span> <span class="o">//</span> <span class="n">길이가</span> <span class="n">긴</span> <span class="n">배열생성</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr3</span><span class="p">[</span><span class="n">arr3</span><span class="p">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span> <span class="o">//</span> <span class="s">'마지막'</span>
+</code></pre></div></div>
+
+<p>length를 배열에 활용하여 간단하게 마지막 인덱스 출력하기</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">shoppingCart</span> <span class="o">=</span> <span class="p">[</span><span class="s">'햄'</span><span class="p">,</span> <span class="s">'김밥김'</span><span class="p">,</span> <span class="s">'단무지'</span><span class="p">,</span> <span class="s">'우유'</span><span class="p">,</span> <span class="s">'시금치'</span><span class="p">,</span> <span class="s">'쌀'</span><span class="p">,</span> <span class="s">'당근'</span><span class="p">,</span> <span class="s">'계란'</span><span class="p">];</span> <span class="o">//</span> <span class="n">배열생성</span>
+
+<span class="n">let</span> <span class="n">show</span> <span class="o">=</span> <span class="n">shoppingCart</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">'두유'</span><span class="p">);</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">show</span><span class="p">);</span> <span class="o">//</span> <span class="p">[</span><span class="s">'햄'</span><span class="p">,</span> <span class="s">'김밥김'</span><span class="p">,</span> <span class="s">'단무지'</span><span class="p">,</span> <span class="s">'두유'</span><span class="p">,</span> <span class="s">'쌀'</span><span class="p">,</span> <span class="s">'당근'</span><span class="p">,</span> <span class="s">'계란'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>splice(시작할위치,어디까지삭제,무엇으로) 을 통해 해당 ‘우유’, ‘시금치’를삭제시키고 그곳곳을 ‘두유’로 대체시켰다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">basket</span> <span class="o">=</span> <span class="p">[[</span><span class="s">'양파'</span><span class="p">,</span><span class="s">'곰팡이'</span><span class="p">],[</span><span class="s">'곰팡이'</span><span class="p">,</span><span class="s">'빵'</span><span class="p">,</span><span class="s">'딸기잼'</span><span class="p">],[</span><span class="s">'귤'</span><span class="p">,</span><span class="s">'곰팡이'</span><span class="p">,</span><span class="s">'사과'</span><span class="p">]];</span>
+
+<span class="n">function</span> <span class="n">removeGerm</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">let</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">for</span><span class="p">(</span><span class="n">let</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">===</span><span class="s">'곰팡이'</span><span class="p">){</span>
+          <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">splice</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>splice활용하기</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'banana'</span><span class="p">,</span> <span class="s">'grapes'</span><span class="p">,</span> <span class="s">'mango'</span><span class="p">,</span> <span class="s">'orange'</span><span class="p">];</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span> <span class="n">fruits</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">arg</span><span class="p">.</span><span class="n">includes</span><span class="p">(</span><span class="s">'ap'</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="o">//</span> <span class="p">[</span><span class="s">'apple'</span><span class="p">,</span> <span class="s">'grapes'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>filter의 인자로 함수를 주어 ‘ap’가 들어간 인덱스찾기</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">courses</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span><span class="n">level</span><span class="p">:</span><span class="s">'easy'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">"English"</span> <span class="p">},</span>
+<span class="p">{</span><span class="n">level</span><span class="p">:</span><span class="s">'hard'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">"Mathmatic"</span> <span class="p">},</span>
+<span class="p">{</span><span class="n">level</span><span class="p">:</span><span class="s">'medium'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">"Literature"</span> <span class="p">},</span>
+<span class="p">{</span><span class="n">level</span><span class="p">:</span><span class="s">'hard'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">"Science"</span> <span class="p">},</span>
+<span class="p">{</span><span class="n">level</span><span class="p">:</span><span class="s">'medium'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">"Socialogy"</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span> <span class="n">courses</span><span class="p">.</span><span class="nb">filter</span><span class="p">((</span><span class="n">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="p">.</span><span class="n">level</span><span class="p">.</span><span class="n">includes</span><span class="p">(</span><span class="s">'hard'</span><span class="p">))</span> <span class="p">)</span>
+
+<span class="o">//</span><span class="p">[</span>
+  <span class="p">{</span> <span class="n">level</span><span class="p">:</span> <span class="s">'hard'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">'Mathmatic'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="n">level</span><span class="p">:</span> <span class="s">'hard'</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="s">'Science'</span> <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>filter의 2번째 예시</p>
+
+<p><br /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">pasta</span> <span class="o">=</span> <span class="p">[</span><span class="s">'tomato'</span><span class="p">,</span> <span class="s">'basil'</span><span class="p">,</span> <span class="s">'onion'</span><span class="p">,</span><span class="s">'chicken'</span><span class="p">];</span>
+<span class="n">let</span> <span class="n">pizza</span> <span class="o">=</span> <span class="p">[</span><span class="s">'tomato'</span><span class="p">,</span> <span class="s">'cheese'</span><span class="p">,</span> <span class="s">'onion'</span><span class="p">,</span><span class="s">'olive'</span><span class="p">,</span><span class="s">'beef'</span><span class="p">];</span>
+
+<span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">pasta</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">pizza</span><span class="p">);</span>
+
+<span class="n">a</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="n">index</span><span class="p">,</span><span class="n">target</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">target</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">===</span> <span class="n">index</span><span class="p">);</span>
+<span class="o">//</span><span class="p">[</span> <span class="s">'tomato'</span><span class="p">,</span> <span class="s">'basil'</span><span class="p">,</span> <span class="s">'onion'</span><span class="p">,</span> <span class="s">'chicken'</span><span class="p">,</span> <span class="s">'cheese'</span><span class="p">,</span> <span class="s">'olive'</span><span class="p">,</span> <span class="s">'beef'</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>concat 활용하기</p>
+
+<p>filter(요소,인덱스,어떤것을?) a를 target으로 indexOf(val) 각 요소들의 첫번째 위치를 알아내어 그것이 올바른 위치에 있는지 비교하여 올바른것들만 반환.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">num</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">]];</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">concat</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">);</span>
+<span class="o">//</span><span class="p">[</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>concat 활용하기2</p>
+
+<p><br /></p>
+:ET

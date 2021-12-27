@@ -1,0 +1,284 @@
+I"�W<h2 id="js의-문법총정리상">JS의 문법총정리(상)🍍</h2>
+
+<center class="notice--danger">🏳️ for, if 등등 기초를 제외한 고급 문법들을 배워보자.</center>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>     <span class="o">//</span> <span class="n">window</span>
+
+  <span class="n">function</span> <span class="n">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">a</span><span class="p">();</span>    <span class="o">//</span> <span class="n">window</span>
+
+  <span class="n">const</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">c</span><span class="p">()</span> <span class="p">{</span>
+          <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="n">d</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">b</span><span class="p">.</span><span class="n">c</span><span class="p">();</span> <span class="o">//</span> <span class="n">객체b를</span> <span class="n">가리킨다</span><span class="p">.</span>
+  <span class="n">b</span><span class="p">.</span><span class="n">d</span><span class="p">();</span> <span class="o">//</span> <span class="n">window를</span> <span class="n">가리킨다</span><span class="p">.</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>this의 뜻(1)</strong>’</p>
+
+<p class="notice--info">일반적으로 this란 window를 가리킨다. 일반적인 함수에서도 window를 뜻하지만 ‘use strict’를 사용하면 undefined를 뱉어낸다. 함수가 객체에 포함되어 있다면 함수내의 ‘this’는 객체를 가리킨다. (즉 메소드의 this는 객체) 🚩주의) 신문법 arrow function을 사용하면 함수바깥의 값을 그대로씀</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="n">function</span> <span class="n">abc</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Lee"</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">abc</span><span class="p">();</span>
+
+      <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>  <span class="o">//</span> <span class="n">abc</span><span class="err"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">'Lee'</span><span class="p">}</span>
+
+      <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">"button"</span><span class="p">).</span><span class="n">addEventListener</span><span class="p">(</span><span class="s">"click"</span><span class="p">,</span> <span class="n">function</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>               <span class="o">//&lt;</span><span class="n">button</span> <span class="nb">id</span><span class="o">=</span><span class="s">"button"</span><span class="o">&gt;</span><span class="n">a</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">currentTarget</span><span class="p">);</span>   <span class="o">//</span> <span class="o">&lt;</span><span class="n">button</span> <span class="nb">id</span><span class="o">=</span><span class="s">"button"</span><span class="o">&gt;</span><span class="n">a</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+
+      <span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>this의 뜻(2)</strong>’</p>
+
+<p class="notice--info">생성자 사용시 객체를 의미한다. addEventListener안에서의 this란 ‘현재 이벤트가 동작하고 있는 장소’를 뜻한다. 그 이외의 콜백함수에서의 this는 일반적이라면 window의 값을 갖는다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">let</span> <span class="n">객체1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">메소드</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">' 입니다'</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">var</span> <span class="n">객체2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="p">:</span> <span class="s">'이준혁'</span>
+<span class="p">}</span>
+
+
+<span class="n">객체1</span><span class="p">.</span><span class="n">메소드</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">객체2</span><span class="p">);</span>   <span class="o">//</span> <span class="n">이준혁</span> <span class="n">입니다</span>  <span class="p">(</span><span class="n">객체2</span><span class="p">,</span> <span class="p">[</span><span class="n">arr</span><span class="p">])</span> <span class="n">인자로</span> <span class="n">배열을</span>
+<span class="n">객체1</span><span class="p">.</span><span class="n">메소드</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">객체2</span><span class="p">);</span>   <span class="o">//</span> <span class="n">이준혁</span> <span class="n">입니다</span>   <span class="p">(</span><span class="n">객체2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="n">인자로</span> <span class="n">값을</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>apply와 call 사용해보기</strong>’</p>
+
+<p class="notice--info">‘객체1의 메소드를 객체2에서 사용하고 싶다~’ 할때 사용하는 내장함수들 이다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="n">function</span> <span class="n">Abcd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>   <span class="o">//</span> <span class="n">새로생성될</span> <span class="n">객체의</span> <span class="n">이름</span>
+
+        <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>      <span class="o">//</span>  <span class="s">''</span>
+
+      <span class="p">}</span>
+
+      <span class="n">let</span> <span class="n">people</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Abcd</span><span class="p">(</span><span class="s">'lee'</span><span class="p">,</span><span class="mi">28</span><span class="p">);</span>
+
+      <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">people</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Abcd</span><span class="err"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">'lee'</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>constructor</strong>’</p>
+
+<p class="notice--info">오브젝트의 복사를 도와주며 보통 찍어낼 오브젝트를 만드는 함수는 대문자로 시작한다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="n">function</span> <span class="n">Abcd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+
+        <span class="n">this</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="p">;</span>
+
+      <span class="p">}</span>
+
+      <span class="n">Abcd</span><span class="p">.</span><span class="n">prototype</span><span class="p">.</span><span class="n">sale</span> <span class="o">=</span> <span class="s">"10%"</span><span class="p">;</span>              <span class="o">//</span> <span class="n">Abcd에</span> <span class="n">sale</span> <span class="o">=</span> <span class="s">'10%'</span><span class="n">라는</span> <span class="n">것을</span> <span class="n">추가하겠다</span><span class="p">.</span> <span class="n">하지만</span> <span class="n">Abcd를</span> <span class="n">출력하면</span> <span class="n">보이진않는다</span>
+
+      <span class="n">let</span> <span class="n">item</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Abcd</span><span class="p">(</span><span class="s">"shoes"</span><span class="p">,</span> <span class="mi">50000</span><span class="p">);</span>
+
+      <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">sale</span><span class="p">);</span> <span class="o">//</span> <span class="s">'10%'</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>prototype</strong>’</p>
+
+<p class="notice--info">prototype의 동작원리 ➡️ ‘객체[키]’라고 치면 우선 객체가 키를 갖고 있는지 확인 ➡️ 만약 없다면 부모의 prototype에 키값이 있는지 확인 ➡️ 만약 없다면 부모의..부모의.. prototype에 키값이 있는지 확인</p>
+
+<p>‘var arr = [1,2,3] ➡️ var arr = new Array(1,2,3)’ 즉, Array라는 부모를 가진 arr는 부모의 키,prototype을 사용할 수 있게된다.</p>
+
+<ol>
+  <li>prototype은 함수에만 생성됨</li>
+  <li><code class="language-plaintext highlighter-rouge">'자식.__proto__'</code> 부모의 prototype을 알고 싶을때 사용</li>
+  <li><code class="language-plaintext highlighter-rouge">__proto__</code>를 사용하여 강제로 부모,자식 관계를 만들수 있음</li>
+</ol>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+   <span class="n">let</span> <span class="n">부모</span> <span class="o">=</span> <span class="p">{</span> <span class="n">name</span><span class="p">:</span> <span class="s">"lee"</span> <span class="p">};</span>
+
+   <span class="n">let</span> <span class="n">자식</span> <span class="o">=</span> <span class="n">Object</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">부모</span><span class="p">);</span>  <span class="o">//</span> <span class="n">부모의</span> <span class="n">키를</span> <span class="n">사용가능</span>
+
+   <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">자식</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="o">//</span> <span class="s">'lee'</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>prototype의 신문법(es5)</strong>’</p>
+
+<p class="notice--info">간편하게 쓸 수 있지만 잘 안쓸거같다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="k">class</span> <span class="nc">부모</span> <span class="p">{</span>
+
+        <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+
+          <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+
+          <span class="n">this</span><span class="p">.</span><span class="n">hi</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'hi'</span><span class="p">)</span> <span class="p">};</span>  <span class="o">//</span> <span class="n">자식이</span> <span class="n">직접</span> <span class="n">함수를</span> <span class="n">가짐</span>
+
+        <span class="p">}</span>
+
+        <span class="n">hi</span><span class="p">()</span> <span class="p">{</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'hi'</span><span class="p">)</span> <span class="p">};</span>    <span class="o">//</span> <span class="n">부모</span><span class="p">.</span><span class="n">prototype</span> <span class="n">에</span> <span class="n">추가됨</span><span class="p">,</span> <span class="n">모든자식이</span> <span class="n">다</span> <span class="n">사용하고</span> <span class="n">관리편함</span>
+
+      <span class="p">}</span>
+
+      <span class="n">let</span> <span class="n">자식</span> <span class="o">=</span> <span class="n">new</span> <span class="n">부모</span><span class="p">(</span><span class="s">"lee"</span><span class="p">);</span>
+
+      <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">자식</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>prototype의 신문법(es6)</strong>’</p>
+
+<p class="notice--info">가장 세련되었다. 함수를 선언하는 방법이 2가지 있는데 각각의 장단점이있다.</p>
+<p>‘부모.prototype’ === ‘<code class="language-plaintext highlighter-rouge">자식.__proto__</code>’ === ‘Object.getPrototypeOf(자식)’</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">할아버지</span><span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">){</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">성</span> <span class="o">=</span> <span class="s">'Kim'</span><span class="p">;</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">이름</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">sayHi</span><span class="p">(){</span>                              <span class="o">//</span> <span class="n">할아버지</span><span class="p">.</span><span class="n">prototype에</span> <span class="n">함수</span> <span class="n">생성</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'안녕 나는 할아버지'</span><span class="p">)</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">아버지</span> <span class="n">extends</span> <span class="n">할아버지</span><span class="p">{</span>          <span class="o">//</span> <span class="n">할아버지라는</span> <span class="n">class를</span> <span class="n">그대로</span> <span class="n">상속받겠다</span><span class="p">.</span><span class="o">=</span> <span class="n">extends</span>
+  <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">){</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>                      <span class="o">//</span> <span class="n">this</span><span class="p">.</span><span class="n">성</span> <span class="o">=</span> <span class="s">'Kim'</span><span class="p">;</span> <span class="n">this</span><span class="p">.</span><span class="n">이름</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="n">super란</span> <span class="n">이것을</span> <span class="n">의미하고</span> <span class="n">이것을</span> <span class="n">써야</span> <span class="n">this를</span> <span class="n">사용할</span> <span class="n">수</span> <span class="n">있음</span><span class="p">.</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">나이</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">sayHi2</span><span class="p">(){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'안녕 나는 아버지'</span><span class="p">);</span>
+    <span class="nb">super</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span>                    <span class="o">//</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'안녕 나는 할아버지'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">아버지</span><span class="p">(</span><span class="s">'만수'</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>class 사용법</strong>’</p>
+
+<p class="notice--info">할아버지라는 class를 그대로 사용하고 싶다면 extends를 사용하고 super를 사용하여 매개변수를 그대로 써줌</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">사람</span> <span class="p">{</span>
+  <span class="n">constructor</span><span class="p">(){</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Park'</span><span class="p">;</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">get</span> <span class="n">nextAge</span><span class="p">(){</span>              <span class="o">//</span> <span class="n">가져오는</span> <span class="n">함수</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="p">}</span>
+  <span class="nb">set</span> <span class="n">setAge</span><span class="p">(</span><span class="n">나이</span><span class="p">){</span>           <span class="o">//</span> <span class="n">수정하는</span> <span class="n">함수</span>
+    <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">나이</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">var</span> <span class="n">사람1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">사람</span><span class="p">();</span>
+
+<span class="n">사람1</span><span class="p">.</span><span class="n">nextAge</span><span class="p">;</span>      <span class="o">//</span> <span class="mi">21</span>
+
+<span class="n">사람1</span><span class="p">.</span><span class="n">setAge</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>  <span class="o">//</span> <span class="mi">30</span><span class="n">이</span> <span class="n">들어감</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>getter, setter의 사용법</strong>’</p>
+
+<p class="notice--info">게터, 세터는 직관성과 안전을 위해 사용한다. getter는 사용시 무조건 return이 있어야하고 setter는 매개변수가 1개 이상 있어야 사용가능하다.</p>
+:ET

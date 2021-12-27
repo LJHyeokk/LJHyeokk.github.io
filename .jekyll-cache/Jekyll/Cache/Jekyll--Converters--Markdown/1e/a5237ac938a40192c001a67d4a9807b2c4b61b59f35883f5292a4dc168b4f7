@@ -1,0 +1,186 @@
+I"fA<h2 id="js의-비동기">JS의 비동기🍍</h2>
+
+<h2 id="promise">Promise</h2>
+
+<center class="notice--danger">🏳️ Promise : JS에 내장된 Object로 async한것을 수행할때 콜백함수 대신에 사용하기 좋은 함수</center>
+
+<h3 id="1-producer">1. Producer</h3>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">reslove</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">junhyeok</span><span class="dl">'</span><span class="p">)</span> <span class="c1">//성공했을때</span>
+  <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">뭔가 잘안됐어!</span><span class="dl">'</span><span class="p">))</span>        <span class="c1">//실패했을때</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">asd</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>위의 코드를 실행시켜보면 바로 'asd'가 출력된다. 즉 Promise는 생성되는 순간 콜백함수를 실행시킨다.</center>
+<p><br /></p>
+<center>그렇기에 Promise의 생성타이밍을 잘 조절하자.</center>
+<p><br /></p>
+<center>주로 시간이 많이 걸리는 무거운 일들을 Promise의 콜백함수에 넣어 비동기적으로 처리하자.</center>
+<p><br /></p>
+
+<h3 id="2-consumers--then-catch-finally">2. Consumers : then, catch, finally</h3>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">promise</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span> <span class="c1">// junhyeok</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">cosole</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">finally</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">마지막에 그냥 실행시켜봄</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>then은 성공, catch는 실패, finally는 성공하든 실패하든 그냥 실행시킴.</center>
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Abcd</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">Abcd</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//2</span>
+  <span class="nx">success</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//6</span>
+    <span class="nx">success</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">//5</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">success</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span> <span class="c1">//5</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>then의 안에 Promise생성가능</center>
+<p><br /></p>
+<hr />
+
+<h3 id="example">example</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">UserStorage</span> <span class="p">{</span>
+  <span class="c1">//</span>
+  <span class="nx">loginUser</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">pw</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">내가원하는게된다면</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패...</span><span class="dl">"</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">getRoles</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">,</span> <span class="na">role</span><span class="p">:</span> <span class="dl">"</span><span class="s2">초콜릿</span><span class="dl">"</span> <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">실패..</span><span class="dl">"</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">UserStorage</span><span class="p">.</span><span class="nx">loginUser</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">pw</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">UserStorage</span><span class="p">.</span><span class="nx">getRoles</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> , </span><span class="p">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="p">}</span><span class="s2"> 입니다.`</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center><p style="color:seagreen">요약 : loginUser에 id와pw를 넣고 조건문에 성립하면 그값을 getRoles에 넣어주고 getRoles의 조건이 성립하면 출력한다.</p></center>
+<p><br /></p>
+
+<h3 id="async-and-await">async and await</h3>
+
+<center class="notice--danger">🏳️ async and await : Promise를 더 간단하게 해주며 좀 더 동기적으로 보이게 해준다.</center>
+
+<h4 id="async">async</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">//========================================================================</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>async를 함수 앞에 쓰면 코드블럭이 Promise 기능을 할 수 있게 해준다.</center>
+<p><br /></p>
+<hr />
+
+<h4 id="await">await</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>async를 써야지만 await을 사용할 수 있다.(3초간 대기 후 변수a의 값 출력)</center>
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getA</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getB</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">a</span><span class="p">}</span><span class="s2"> + </span><span class="p">${</span><span class="nx">b</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>동기적으로 코드를 작성할 수 있다. then 처리를 await으로 대체</center>
+<p><br /></p>
+
+<h3 id="병렬적-처리">병렬적 처리</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">getA</span><span class="p">(),</span> <span class="nx">getB</span><span class="p">()]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">배열</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">배열</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">//==================================================================================</span>
+
+<span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">getA</span><span class="p">(),</span> <span class="nx">getB</span><span class="p">()]);</span>
+<span class="p">}</span>
+
+<span class="nx">Abcd</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">두개중빠른것</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">두개중빠른것</span><span class="p">));</span> <span class="c1">// then(console.log)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>all이란 메서드를 통해 병렬적으로 수행하여 배열에 담을 수 있고 race를 통해 가장빨리 끝나는 값만 받을 수 있다.</center>
+<p><br /></p>
+
+<p><br /></p>
+<center><p style="color:seagreen">요약 : async await은 동기적으로 코드를 작성할 수 있게 해줌으로써 좀 더 직관적이다. Promise 체이닝으로 작성을 한다면 변수의 생명주기가 명확하지만 이것은 언제든지 쓰일 수 있다. 물론 이것이 단점이 될 수 도 있다.</p></center>
+<p><br /></p>
+:ET

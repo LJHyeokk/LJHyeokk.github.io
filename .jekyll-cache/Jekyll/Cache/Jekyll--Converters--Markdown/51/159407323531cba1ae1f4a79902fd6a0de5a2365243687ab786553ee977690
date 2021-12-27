@@ -1,0 +1,159 @@
+I"2<h2 id="sassscss-알아보기">Sass(Scss) 알아보기🍇</h2>
+
+<center class="notice--danger">🏳️ Sass(Scss) : CSS Preprocessor(CSS 전처리기)라 불리며 선택자의 중첩(Nesting)이나 조건문, 반복문, 다양한 단위(Unit)의 연산 등… 표준 CSS 보다 훨씬 많은 기능을 사용해서 편리하게 작성할수 있게 해준다. </center>
+
+<h3 id="sass와-scss는-차이점은">Sass와 SCSS는 차이점은?</h3>
+
+<center class="notice--info">🏳️ SCSS는 CSS 구문과 완전히 호환되도록 새로운 구문을 도입해 만든 Sass의 모든 기능을 지원하는 CSS의 상위집합(Superset) 이다.또한 Sass는 선택자의 유효범위를 ‘들여쓰기’로 구분하고, SCSS는 {}로 범위를 구분한다. </center>
+<hr />
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/sass-data.png" alt="sass-data" style="zoom:70%;" /></center>
+<p><br /></p>
+<center>SASS(Scss)의 데이터형식 </center>
+<p><br /></p>
+<hr />
+
+<h3 id="nesting중첩">Nesting(중첩)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="p">.</span><span class="nx">bottom</span><span class="o">-</span><span class="nx">bar</span><span class="o">-</span><span class="nx">section</span> <span class="p">{</span>
+    <span class="nx">ul</span> <span class="p">{</span>
+      <span class="nx">list</span><span class="o">-</span><span class="nx">style</span><span class="o">-</span><span class="nx">type</span><span class="p">:</span> <span class="nx">none</span><span class="p">;</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">bottom</span><span class="p">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">li</span> <span class="p">{</span>
+      <span class="nx">padding</span><span class="o">-</span><span class="nx">bottom</span><span class="p">:</span> <span class="mi">5</span><span class="nx">px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">p</span> <span class="p">{</span>
+      <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="p">:</span> <span class="mi">40</span><span class="nx">px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>위와 같이 요소를 묶어주어 선택자의 반복을 줄여 가독성을 높여주며 코드를 짧게 해준다. </center>
+<p><br /></p>
+<hr />
+
+<h3 id="ampersand-상위-선택자-참조">Ampersand (상위 선택자 참조)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">header</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nx">fixed</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">z</span><span class="o">-</span><span class="nx">index</span><span class="p">:</span> <span class="mi">10000</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="mi">60</span><span class="o">%</span><span class="p">;</span>
+    <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="mi">20</span><span class="o">%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="mi">60</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">f4f4f2</span><span class="p">;</span>
+    <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span><span class="nx">px</span> <span class="mi">2</span><span class="nx">px</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">),</span> <span class="mi">0</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">0</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">144</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">);</span>
+
+    <span class="o">&amp;</span><span class="p">:</span><span class="nx">hover</span> <span class="p">.</span><span class="nx">nav</span> <span class="nx">li</span> <span class="p">{</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="nl">transition</span><span class="p">:</span> <span class="nx">all</span> <span class="mf">0.5</span><span class="nx">s</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">&amp;</span><span class="p">:</span><span class="nx">not</span><span class="p">(:</span><span class="nx">hover</span><span class="p">)</span> <span class="p">.</span><span class="nx">nav</span> <span class="nx">li</span> <span class="p">{</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">;</span>
+      <span class="nl">transition</span><span class="p">:</span> <span class="nx">all</span> <span class="mf">0.5</span><span class="nx">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>Nesting 안에서 &amp; 키워드는 상위(부모) 선택자를 참조하여 치환함</center>
+<p><br /></p>
+<hr />
+
+<h3 id="속성-중첩">속성 중첩</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nx">box</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">weight</span><span class="p">:</span> <span class="nx">bold</span><span class="p">;</span>
+    <span class="nl">size</span><span class="p">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">family</span><span class="p">:</span> <span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">top</span><span class="p">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">bottom</span><span class="p">:</span> <span class="mi">40</span><span class="nx">px</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>가독성을 높여준다.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="변수variables">변수(Variables)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$color</span><span class="o">-</span><span class="nx">primary</span><span class="p">:</span> <span class="err">#</span><span class="nx">e96900</span><span class="p">;</span>
+<span class="nx">$url</span><span class="o">-</span><span class="nx">images</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/assets/images/</span><span class="dl">"</span><span class="p">;</span>
+<span class="nl">$w</span><span class="p">:</span> <span class="mi">200</span><span class="nx">px</span><span class="p">;</span>
+
+<span class="p">.</span><span class="nx">box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="nx">$w</span><span class="p">;</span>
+  <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="p">:</span> <span class="nx">$w</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">$color</span><span class="o">-</span><span class="nx">primary</span> <span class="nx">url</span><span class="p">(</span><span class="nx">$url</span><span class="o">-</span><span class="nx">images</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">bg.jpg</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>자주 사용되는 값 변수저장 가능</center>
+<p><br /></p>
+<hr />
+
+<h3 id="연산가능">연산가능</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">width</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>  <span class="c1">// 단위 모순 에러(Incompatible units error)</span>
+<span class="nl">width</span><span class="p">:</span> <span class="nx">calc</span><span class="p">(</span><span class="mi">50</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">);</span>  <span class="c1">// 연산 가능</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>연산가능 / 나누기는 ()괄호에 넣어줘야함.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="mixin재활용">@mixin(재활용)</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">mixin</span> <span class="nx">작명</span> <span class="p">{</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="p">:</span> <span class="mi">22</span><span class="nx">px</span><span class="p">;</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">weight</span><span class="p">:</span> <span class="nx">bold</span><span class="p">;</span>
+  <span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="p">:</span> <span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">orange</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">h1</span> <span class="p">{</span>
+  <span class="p">@</span><span class="nd">include</span> <span class="nx">작명</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>아주 훌륭한기능. 코드를 줄여준다.</center>
+<p><br /></p>
+<hr />
+
+<h3 id="if">@if()</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">if</span> <span class="p">(</span><span class="nx">조건1</span><span class="p">)</span> <span class="p">{</span>
+<span class="sr">/_ 조건1이 참일 때 구문 _/</span>
+<span class="p">}</span> <span class="p">@</span><span class="nd">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">조건2</span><span class="p">)</span> <span class="p">{</span>
+<span class="sr">/_ 조건2가 참일 때 구문 _/</span>
+<span class="p">}</span> <span class="p">@</span><span class="nd">else</span> <span class="p">{</span>
+<span class="o">/</span><span class="nx">_</span> <span class="nx">모두</span> <span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">구문</span> <span class="nx">_</span><span class="o">/</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>js의 if와 같은기능</center>
+<p><br /></p>
+<hr />
+
+<p>참조 <a href="https://heropy.blog/2018/01/31/sass/">https://heropy.blog/2018/01/31/sass/</a></p>
+:ET

@@ -1,0 +1,613 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>react 기초문법 | POPO</title>
+<meta name="description" content="기초문법&lt;1&gt; 여러가지들🍓">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="react 기초문법">
+<meta property="og:url" content="http://localhost:4000/react-02/">
+
+
+  <meta property="og:description" content="기초문법&lt;1&gt; 여러가지들🍓">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react-02/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">react 기초문법</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="react 기초문법"
+    /> <meta
+      itemprop="description"
+      content="기초문법&lt;1&gt; 여러가지들🍓"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-11-01T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/react-02/" class="u-url" itemprop="url"
+            ><p>react 기초문법</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-01T00:00:00+09:00">2021-11-01</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="기초문법1-여러가지들">기초문법&lt;1&gt; 여러가지들🍓</h2>
+
+<p>저번 글과 같이 계속해서 기초 문법을 알아보자.</p>
+
+<center><p style="color:seagreen">기초 문법🚩</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">button</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span> <span class="n">modal</span><span class="o">===</span><span class="n">false</span> <span class="err">?</span> <span class="n">modalModify</span><span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">:</span> <span class="n">modalModify</span><span class="p">(</span><span class="n">false</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="n">눌러주세요</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span> <span class="o">//</span> <span class="err">!</span><span class="n">modal</span>
+
+    <span class="p">{</span>
+      <span class="n">modal</span> <span class="o">===</span> <span class="n">true</span> <span class="err">?</span> <span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&lt;/</span><span class="n">Model</span><span class="o">&gt;</span> <span class="p">:</span> <span class="n">null</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>react에서는 {}을 사용하여 js문법을 사용하는데 아쉽게도 if는 기능지원을 하지않는다.</p>
+
+<p>그래서 삼항연산자 ‘조건 ? true : false’를 사용한다.</p>
+
+<p>‘modal===false ? modalModify(true) : modalModify(false)’ ➡️ modalModify(!modal) 이렇게 쉽게 바꿔줄 수 도있다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="n">title</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    	<span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">className</span><span class="o">=</span><span class="s">"list"</span><span class="o">&gt;</span>  <span class="o">//</span><span class="n">key</span><span class="o">=</span><span class="p">{</span><span class="n">index</span><span class="p">}</span>
+            <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span> <span class="p">{</span><span class="n">a</span><span class="p">}</span> <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">01</span> <span class="n">만듬</span> <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">hr</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+   			 <span class="p">)</span>
+    <span class="p">}</span> <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>react에서의 반복문 {}안에 map을 사용하여 반복문을 작성한다. //key={index} 써줘도되고 안써줘도됨</p>
+
+<p>//map( (item, index)=&gt; { } )</p>
+
+<p>새로운 함수를 만들어 for문을 사용하고 그걸 return 안으로 호출하는 방법도 있다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">modal</span> <span class="o">===</span> <span class="n">true</span> <span class="err">?</span> <span class="o">&lt;</span><span class="n">Model</span> <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">title</span><span class="p">}</span> <span class="n">clickNum</span><span class="o">=</span><span class="p">{</span><span class="n">clickNum</span><span class="p">}</span><span class="o">&gt;&lt;/</span><span class="n">Model</span><span class="o">&gt;</span> <span class="p">:</span> <span class="n">null</span>
+ <span class="o">//</span>	<span class="n">부모</span> <span class="n">컴포넌트의</span> <span class="n">콜위치에</span> <span class="n">작명</span><span class="o">=</span><span class="p">{</span><span class="n">state변수</span><span class="p">}</span>
+
+<span class="n">function</span> <span class="n">Model</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">className</span><span class="o">=</span><span class="s">"mo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="n">props</span><span class="p">.</span><span class="n">title</span><span class="p">[</span><span class="n">props</span><span class="p">.</span><span class="n">clickNum</span><span class="p">]}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">날짜</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">상세내용</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">함수에는</span> <span class="n">매개변수를</span> <span class="n">하나</span> <span class="n">써주면</span> <span class="n">되고</span> <span class="n">매개변수</span><span class="p">.</span><span class="n">state변수를</span> <span class="n">써주면</span> <span class="n">부모자식간에</span> <span class="n">변수를</span> <span class="n">활용가능</span>
+</code></pre></div></div>
+
+<p>이렇게 부모 컴포넌트의 변수를 자식 컴포넌트가 사용할 수 있게 하는것을 <strong>‘props’</strong>라고 한다.</p>
+
+<p>‘<strong>onClick={ ()=&gt;{ [modalModify(!modal), clickNumModify(index)] } }</strong>‘배열형식으로 쓸수있음.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nb">input</span> <span class="n">className</span><span class="o">=</span><span class="s">'search'</span> <span class="n">onChange</span><span class="o">=</span><span class="p">{</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span> <span class="n">inputValModify</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">value</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>e.target.value ➡️ input에서의 값을 가져온다는 뜻 매개변수도 써줘야함.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="n">a</span><span class="p">;</span> <span class="o">//</span> <span class="n">a라는</span> <span class="n">변수를</span> <span class="n">쓸</span> <span class="n">수</span> <span class="n">있게해줌</span>
+</code></pre></div></div>
+
+<p>src폴더에 새로운 파일을 만들어 다음과 같이 코딩을 함.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">item</span> <span class="k">from</span> <span class="s">"./data.js"</span><span class="p">;</span> <span class="o">//</span><span class="kn">import</span> <span class="nn">작명</span> <span class="k">from</span> <span class="n">경로</span>
+
+<span class="n">let</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">aModify</span><span class="p">]</span> <span class="o">=</span> <span class="n">useState</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>data.js라는 곳에서 a라는 변수를 item에 집어넣음 ➡️ 간단하게 다른곳에서의 변수를 사용가능</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-01T00:00:00+09:00">2021-11-01</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=react+%EA%B8%B0%EC%B4%88%EB%AC%B8%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Freact-02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freact-02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freact-02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/react-01/" class="pagination--pager" title="react 사용이유
+">이전</a>
+    
+    
+      <a href="/react-03/" class="pagination--pager" title="react 기초문법
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

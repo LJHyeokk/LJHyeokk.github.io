@@ -1,0 +1,137 @@
+I"�Q<h2 id="algorithm">Algorithm🤮</h2>
+
+<center class="notice--danger">키패드 누르기 기초문제를 풀어보자</center>
+
+<p>이문제는 접근을 어떻게할지 몰라 접근하는데만 30분을 소비했다…
+하지만 이문제를 풀면서 JS의 기초를 좀 더 쌓을 수 있었기에 리뷰한다.</p>
+
+<center><img src="../images/2021-10-27-first/key.png" alt="key" style="zoom:60%;" /></center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/key22.png" alt="key22" /></center>
+<p><br /></p>
+
+<center class="notice--danger">나의 풀이</center>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="nx">hand</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">distance</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">579</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">246</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="mi">1</span><span class="p">,</span>
+    <span class="p">{</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">135</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">486</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">790</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="mi">3</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">,</span>
+    <span class="p">{</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2468</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13790</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+    <span class="mi">6</span><span class="p">,</span>
+    <span class="mi">7</span><span class="p">,</span>
+    <span class="p">{</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5790</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">246</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+  <span class="p">];</span>
+
+  <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span> <span class="o">===</span> <span class="mi">7</span> <span class="o">||</span> <span class="nx">e</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">||</span> <span class="nx">e</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span> <span class="o">===</span> <span class="mi">9</span> <span class="o">||</span> <span class="nx">e</span> <span class="o">===</span> <span class="mi">6</span> <span class="o">||</span> <span class="nx">e</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">leftDistance</span><span class="p">;</span>
+      <span class="kd">let</span> <span class="nx">rightDistance</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">val</span> <span class="k">in</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+              <span class="nx">rightDistance</span> <span class="o">=</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">val</span><span class="p">];</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">distance</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">rightDistance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">distance</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">rightDistance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">hand</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+              <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+              <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">val</span> <span class="k">in</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+              <span class="nx">leftDistance</span> <span class="o">=</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">val</span><span class="p">];</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">distance</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">leftDistance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">distance</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">leftDistance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">hand</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+              <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+              <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">val</span> <span class="k">in</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">])</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nx">leftDistance</span> <span class="o">=</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">val</span><span class="p">];</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">val</span> <span class="k">in</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">])</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">right</span><span class="p">[</span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nx">rightDistance</span> <span class="o">=</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">val</span><span class="p">];</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">leftDistance</span> <span class="o">&lt;</span> <span class="nx">rightDistance</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+          <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">leftDistance</span> <span class="o">&gt;</span> <span class="nx">rightDistance</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+          <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">hand</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">result</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">R</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">right</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>코드가 상당히 더럽지만 요약하자면
+<br />
+우선 0,2,5,8 키에서의 다른번호의 키로 가는 거리값을 배열에 저장시켰다.
+<br />
+그리고 1,4,7은 왼손으로 누르고 그값을 left변수에 저장, 마찬가지로 3,6,9는 오른손으로 누르고 그값을 right변수에 저장
+<br />
+만약 left or right에 값이 들어가있지않다면 (=&gt; 처음부터 0,2,5,8 중하나를 누름)
+<br />
+값이 없는 변수와 값이 들어가있는 left of right distance를 비교한다.
+<br />
+또한 왼손인지 오른손인지 또한 비교한다.</p>
+
+<p>끝.</p>
+:ET

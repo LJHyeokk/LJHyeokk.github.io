@@ -1,0 +1,51 @@
+I"T<h2 id="exprot-import를-알아보자">exprot import를 알아보자🍓</h2>
+
+<h3 id="1-default-export">1. Default Export</h3>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//export</span>
+<span class="kd">function</span> <span class="nx">Abcd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Abcd</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//import</span>
+<span class="k">import</span> <span class="nx">아무렇게나작명</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">Abcd의 장소</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>하나의 파일에서 단 하나의 변수 또는 클래스 등만 export가능. (let, const를 바로 default export할 수는 없다.)</center>
+<p><br /></p>
+<hr />
+
+<h3 id="2-named-export">2. Named Export</h3>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//export</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Abcd</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Ppap</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//import</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Abcd</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">Abcd의 장소</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Abcd</span><span class="p">,</span> <span class="nx">Ppap</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">장소</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Abcd</span> <span class="k">as</span> <span class="nx">아무렇게나작명</span><span class="p">,</span> <span class="nx">Ppap</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">장소</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>반드시 중괄호로 감싸주어야하고 몇개든 맘대로 호출 가능하며 이름을 바꿀 수 도 있다.</center>
+<p><br /></p>
+<hr />
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//export</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">z</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<div class="language-react highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">장소</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center>이런것도 가능</center>
+<p><br /></p>
+<hr />
+
+:ET

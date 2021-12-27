@@ -1,0 +1,189 @@
+I"u6<h3 id="기초문법3-여러가지들">기초문법&lt;3&gt; 여러가지들🍓</h3>
+
+<hr />
+
+<p>저번 글과 같이 계속해서 기초 문법을 알아보자.</p>
+
+<center><p style="color:seagreen">기초 문법🚩</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="n">styled</span><span class="o">-</span><span class="n">components</span>
+</code></pre></div></div>
+
+<p>className이 중복되지않게 class선언없이 components에 css를 직접 넣기위해 깔아줌.(CSS in js)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">styled</span> <span class="k">from</span> <span class="s">"styled-components"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>셋팅은 이렇게 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">Box</span> <span class="o">=</span> <span class="n">styled</span><span class="p">.</span><span class="n">div</span><span class="err">`</span>
+  <span class="n">padding</span><span class="p">:</span> <span class="mi">20</span><span class="n">px</span><span class="p">;</span>
+<span class="err">`</span><span class="p">;</span>
+
+<span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span><span class="n">이렇게</span><span class="o">&lt;/</span><span class="n">Box</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>사용 예시</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Abcd</span> <span class="n">extends</span> <span class="n">React</span><span class="p">.</span><span class="n">Component</span> <span class="p">{</span>
+    <span class="n">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="n">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Lifecycle &amp; Hook</strong>이라고 한다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">React</span><span class="p">,</span> <span class="p">{</span> <span class="n">useEffect</span><span class="p">,</span> <span class="n">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="s">"react"</span><span class="p">;</span>
+
+
+<span class="n">function</span> <span class="n">Abcd</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)}</span>
+
+  <span class="p">},[]);</span> <span class="o">//</span> <span class="p">[]</span> <span class="n">안에</span> <span class="n">실행조건을</span> <span class="n">쓰면된다</span><span class="p">.</span> <span class="n">변수들</span><span class="p">.</span> <span class="n">빈칸을</span> <span class="n">넣으면</span> <span class="n">한번만</span> <span class="n">실행</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>최신문법의 Hook안 useEffect는 랜더링될때, 업데이트될때 ‘<strong>1</strong>‘을 보여주고 Abcd라는 컴포넌트가 끝날때 ‘<strong>2</strong>‘라는 값을 보여준다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="n">timer</span> <span class="o">=</span> <span class="n">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="n">bloolMo</span><span class="p">(</span><span class="n">false</span><span class="p">)</span> <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="n">clearTimeout</span><span class="p">(</span><span class="n">timer</span><span class="p">)</span> <span class="p">};</span>
+
+  <span class="p">},</span> <span class="p">[]);</span>
+
+</code></pre></div></div>
+
+<p>‘setTimeout’콜백함수와 ms를 사용하고 ‘2초 후에 함수안의 일을 해라’라는 뜻</p>
+
+<p>또한 관습적으로 변수에 저장해두고 useEffect와 함께 사용시에는 timer를 clear 해준다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">axios</span> <span class="k">from</span> <span class="s">"axios"</span><span class="p">;</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+
+    <span class="n">axios</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'url'</span><span class="p">)</span>
+
+    <span class="p">.</span><span class="n">then</span><span class="p">(</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">)}</span> <span class="p">)</span> <span class="o">//</span> <span class="n">성공시</span>
+
+    <span class="p">.</span><span class="n">catch</span><span class="p">(</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)}</span> <span class="p">)</span>			  <span class="o">//</span> <span class="n">실패시</span>
+
+<span class="p">}</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>npm install axios ➡️ Ajax를 사용하기위해.</p>
+
+<p>해당 url로 get요청을 날림</p>
+
+<p>그리고 나서 해야할일을 then에 넣는다.</p>
+
+<p>axios라는 라이브러리는 json파일을 ““을 다 지워준 object타입으로 만들어준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">axios</span><span class="p">.</span><span class="n">post</span><span class="p">(</span> <span class="s">'url'</span><span class="p">,</span> <span class="p">{</span><span class="n">객체</span><span class="p">}</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>post요청은 해당 url로 필요한것을 보낸다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">]</span>
+<span class="n">let</span> <span class="n">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'d'</span><span class="p">,</span><span class="s">'e'</span><span class="p">,</span><span class="s">'f'</span><span class="p">]</span>
+
+<span class="n">let</span> <span class="n">arr3</span> <span class="o">=</span> <span class="p">[...</span><span class="n">arr1</span><span class="p">,...</span><span class="n">arr2</span><span class="p">]</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">,</span><span class="s">'d'</span><span class="p">,</span><span class="s">'e'</span><span class="p">,</span><span class="s">'f'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>‘<strong>…</strong>‘이란 대괄호를 벗겨주세요 라는뜻이다. 새로운 배열을 만들때 유용하다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">stackContext</span> <span class="o">=</span> <span class="n">React</span><span class="p">.</span><span class="n">createContext</span><span class="p">();</span>
+
+<span class="n">function</span> <span class="n">App</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="p">[</span><span class="n">stack</span><span class="p">,</span><span class="n">stackModify</span><span class="p">]</span> <span class="o">=</span> <span class="n">useState</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">return</span><span class="p">(</span>
+
+        <span class="o">&lt;</span><span class="n">stackContext</span><span class="p">.</span><span class="n">Provider</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">stack</span><span class="p">}</span><span class="o">&gt;</span>
+        	<span class="o">&lt;</span><span class="n">A</span> <span class="o">/&gt;</span>	<span class="o">//</span><span class="n">사용할</span> <span class="n">공간</span>
+        <span class="o">&lt;/</span><span class="n">stackContext</span><span class="p">.</span><span class="n">Provider</span><span class="o">&gt;</span>
+
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">function</span> <span class="n">A</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">useContext</span><span class="p">(</span><span class="n">stackContext</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="o">&lt;</span><span class="n">B</span> <span class="o">/&gt;</span>
+<span class="p">}</span>
+
+<span class="n">function</span> <span class="n">B</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">let</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">useContext</span><span class="p">(</span><span class="n">stackContext</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">stack</span><span class="p">}</span> <span class="o">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>‘<strong>context 활용하기</strong>’</p>
+
+<p>App에서 만든 변수 ➡️ A ➡️ B에서 자유롭게 사용할 수 있음</p>
+
+<p>근데 불편하다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">React</span><span class="p">,</span> <span class="p">{</span><span class="n">useState</span><span class="p">,</span> <span class="n">useContext</span><span class="p">,</span> <span class="n">lazy</span><span class="p">,</span> <span class="n">Suspense</span><span class="p">}</span> <span class="k">from</span> <span class="s">'react'</span><span class="p">;</span>
+
+<span class="n">let</span> <span class="n">Detail</span> <span class="o">=</span> <span class="n">lazy</span><span class="p">(</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span> <span class="k">return</span> <span class="k">import</span><span class="p">(</span><span class="s">'./Detail.js'</span><span class="p">)</span> <span class="p">}</span> <span class="p">);</span>
+
+  <span class="o">&lt;</span><span class="n">Suspense</span> <span class="n">fallback</span><span class="o">=</span><span class="p">{</span> <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="n">로딩중입니다</span><span class="o">~</span><span class="err">!</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span> <span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Detail</span><span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">Suspense</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>‘<strong>lazy, Suspense 활용하기</strong>’</p>
+
+<p>위와같이 셋팅해주면 detail이라는 컴포넌트 즉 페이지로 들어갈때 import해준다.</p>
+
+<p>컴포넌트들이 많아지면 import하는 것만으로 부담을 주기때문에</p>
+
+<p>필요할때만 import해주는것이 좋다.</p>
+:ET

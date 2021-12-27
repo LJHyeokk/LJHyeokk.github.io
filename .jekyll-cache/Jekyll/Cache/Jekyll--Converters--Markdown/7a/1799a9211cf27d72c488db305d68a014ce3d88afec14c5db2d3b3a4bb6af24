@@ -1,0 +1,85 @@
+I"$<h2 id="기초문법1-여러가지들">기초문법&lt;1&gt; 여러가지들🍓</h2>
+
+<p>저번 글과 같이 계속해서 기초 문법을 알아보자.</p>
+
+<center><p style="color:seagreen">기초 문법🚩</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">button</span> <span class="n">onClick</span><span class="o">=</span><span class="p">{</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span> <span class="n">modal</span><span class="o">===</span><span class="n">false</span> <span class="err">?</span> <span class="n">modalModify</span><span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">:</span> <span class="n">modalModify</span><span class="p">(</span><span class="n">false</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="n">눌러주세요</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span> <span class="o">//</span> <span class="err">!</span><span class="n">modal</span>
+
+    <span class="p">{</span>
+      <span class="n">modal</span> <span class="o">===</span> <span class="n">true</span> <span class="err">?</span> <span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&lt;/</span><span class="n">Model</span><span class="o">&gt;</span> <span class="p">:</span> <span class="n">null</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>react에서는 {}을 사용하여 js문법을 사용하는데 아쉽게도 if는 기능지원을 하지않는다.</p>
+
+<p>그래서 삼항연산자 ‘조건 ? true : false’를 사용한다.</p>
+
+<p>‘modal===false ? modalModify(true) : modalModify(false)’ ➡️ modalModify(!modal) 이렇게 쉽게 바꿔줄 수 도있다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="n">title</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    	<span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">className</span><span class="o">=</span><span class="s">"list"</span><span class="o">&gt;</span>  <span class="o">//</span><span class="n">key</span><span class="o">=</span><span class="p">{</span><span class="n">index</span><span class="p">}</span>
+            <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span> <span class="p">{</span><span class="n">a</span><span class="p">}</span> <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">01</span> <span class="n">만듬</span> <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">hr</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+   			 <span class="p">)</span>
+    <span class="p">}</span> <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>react에서의 반복문 {}안에 map을 사용하여 반복문을 작성한다. //key={index} 써줘도되고 안써줘도됨</p>
+
+<p>//map( (item, index)=&gt; { } )</p>
+
+<p>새로운 함수를 만들어 for문을 사용하고 그걸 return 안으로 호출하는 방법도 있다.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">modal</span> <span class="o">===</span> <span class="n">true</span> <span class="err">?</span> <span class="o">&lt;</span><span class="n">Model</span> <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">title</span><span class="p">}</span> <span class="n">clickNum</span><span class="o">=</span><span class="p">{</span><span class="n">clickNum</span><span class="p">}</span><span class="o">&gt;&lt;/</span><span class="n">Model</span><span class="o">&gt;</span> <span class="p">:</span> <span class="n">null</span>
+ <span class="o">//</span>	<span class="n">부모</span> <span class="n">컴포넌트의</span> <span class="n">콜위치에</span> <span class="n">작명</span><span class="o">=</span><span class="p">{</span><span class="n">state변수</span><span class="p">}</span>
+
+<span class="n">function</span> <span class="n">Model</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">className</span><span class="o">=</span><span class="s">"mo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="n">props</span><span class="p">.</span><span class="n">title</span><span class="p">[</span><span class="n">props</span><span class="p">.</span><span class="n">clickNum</span><span class="p">]}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">날짜</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">상세내용</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">함수에는</span> <span class="n">매개변수를</span> <span class="n">하나</span> <span class="n">써주면</span> <span class="n">되고</span> <span class="n">매개변수</span><span class="p">.</span><span class="n">state변수를</span> <span class="n">써주면</span> <span class="n">부모자식간에</span> <span class="n">변수를</span> <span class="n">활용가능</span>
+</code></pre></div></div>
+
+<p>이렇게 부모 컴포넌트의 변수를 자식 컴포넌트가 사용할 수 있게 하는것을 <strong>‘props’</strong>라고 한다.</p>
+
+<p>‘<strong>onClick={ ()=&gt;{ [modalModify(!modal), clickNumModify(index)] } }</strong>‘배열형식으로 쓸수있음.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nb">input</span> <span class="n">className</span><span class="o">=</span><span class="s">'search'</span> <span class="n">onChange</span><span class="o">=</span><span class="p">{</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span> <span class="n">inputValModify</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">value</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>e.target.value ➡️ input에서의 값을 가져온다는 뜻 매개변수도 써줘야함.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="n">a</span><span class="p">;</span> <span class="o">//</span> <span class="n">a라는</span> <span class="n">변수를</span> <span class="n">쓸</span> <span class="n">수</span> <span class="n">있게해줌</span>
+</code></pre></div></div>
+
+<p>src폴더에 새로운 파일을 만들어 다음과 같이 코딩을 함.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">item</span> <span class="k">from</span> <span class="s">"./data.js"</span><span class="p">;</span> <span class="o">//</span><span class="kn">import</span> <span class="nn">작명</span> <span class="k">from</span> <span class="n">경로</span>
+
+<span class="n">let</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">aModify</span><span class="p">]</span> <span class="o">=</span> <span class="n">useState</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>data.js라는 곳에서 a라는 변수를 item에 집어넣음 ➡️ 간단하게 다른곳에서의 변수를 사용가능</p>
+:ET

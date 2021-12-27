@@ -1,0 +1,170 @@
+I"�5<h2 id="for문">For문🍍</h2>
+
+<h3 id="for-for-in-for-of-foreach-를-배워보자">(for), (for in), (for of), (forEach) 를 배워보자</h3>
+
+<p><br /></p>
+<div style="background-color: #FFD47E; color: #2C5E6B; width:90%; margin:0 auto; border-radius: 10px; font-size:20px; padding:10px; font-weight: bold; text-align: center;">반복문의 필요이유와 사용방법</div>
+<blockquote>
+  <ol>
+    <li>코드가 길어짐을 방지</li>
+    <li>중복된 코드의 오류</li>
+    <li>중복은 중복을 강요
+<br /></li>
+  </ol>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">getAllLetters</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="n">let</span> <span class="n">strArray</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">let</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">str</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">strArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">strArray</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">getAllLetters</span><span class="p">(</span><span class="n">flower</span><span class="p">));</span>
+<span class="o">//</span><span class="p">[</span><span class="s">'f'</span><span class="p">,</span><span class="s">'l'</span><span class="p">,</span><span class="s">'o'</span><span class="p">,</span><span class="s">'w'</span><span class="p">,</span><span class="s">'e'</span><span class="p">,</span><span class="s">'r'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>for문 기초 - 문자를 쪼개어 각 인덱스에 넣어보기</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">helloBot</span> <span class="o">=</span> <span class="n">people</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="n">let</span> <span class="n">greetings</span> <span class="o">=</span> <span class="p">[</span><span class="s">'안녕하세요'</span><span class="p">,</span><span class="s">'또 만나네요'</span><span class="p">];</span>
+  <span class="n">let</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">people</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">===</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">result</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">greetings</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="n">result</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">greetings</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>0,1로 이루어진 배열을 helloBot함수에 인자로 넣어주면 그에 맞는 인사말이 나옴</p>
+
+<hr />
+
+<p><br /></p>
+
+<center><p style="color:seagreen">For in문</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">변수</span> <span class="ow">in</span> <span class="n">객체식</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">문장</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for in 문의 기본 문법</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">Object</span><span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">'LJH'</span><span class="p">,</span>
+    <span class="n">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span> <span class="n">let</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">object</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">' : '</span> <span class="o">+</span> <span class="nb">object</span><span class="p">[</span><span class="n">key</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">name</span> <span class="p">:</span> <span class="n">LJH</span>
+<span class="o">//</span> <span class="n">age</span>	<span class="p">:</span> <span class="mi">28</span>
+</code></pre></div></div>
+
+<p>객체의 프로퍼티명과 프로퍼티값을 열거함</p>
+
+<blockquote>
+  <p>주의사항</p>
+
+  <ol>
+    <li>for in 문법은 순서를 보장하지않음. 위의 코드는 결과가 순서에 맞게 나왔으나 그러지 않을때도 있음, 그러므로 배열과 같은 순서를 의식한 데이터 타입은 for in문 사용을 지양함</li>
+    <li>나열할 수 없는 것도 있음( 추후 살펴볼예정)</li>
+    <li>프로토타입에서 상속한 프로퍼티도 나열됨</li>
+  </ol>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<center><p style="color:seagreen">For of문</p></center>
+
+<blockquote>
+  <p>for … of 문은 반복가능한 객체(Array, Map, Set, String, TypeArray, arguments 객체등)를 반복하는 문법</p>
+
+  <p>for (변수 of 객체식) {
+// 문장
+}</p>
+</blockquote>
+
+<p>for of 문의 기본 문법</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">Object</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">key</span> <span class="n">of</span> <span class="n">Object</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>배열의 요소들만 열거함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">key</span> <span class="n">of</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</code></pre></div></div>
+
+<p>set과 for of문을 활용하여 중복값 제거 후 열거</p>
+
+<hr />
+
+<p><br /></p>
+
+<center><p style="color:seagreen">forEach문</p></center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">callback</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">array</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>기본문법</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span> <span class="p">(</span><span class="n">ele</span><span class="p">,</span><span class="n">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">ele</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
+<span class="p">})</span>
+
+<span class="o">//</span><span class="mi">1</span> <span class="mi">0</span>
+<span class="o">//</span><span class="mi">2</span> <span class="mi">1</span>
+<span class="o">//</span><span class="mi">3</span> <span class="mi">2</span>
+<span class="o">//</span><span class="mi">4</span> <span class="mi">3</span>
+<span class="o">//</span><span class="mi">5</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<p>기본 사용예시</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+<span class="p">];</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">ele</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="n">ele</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">ele</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">ele</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="o">//</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</code></pre></div></div>
+
+<p>2차원배열 사용예시</p>
+
+<h3 id="foreach문은-배열에서만-사용하는-메서드이다-배열에서는-for-in보다-foreach문을-사용하도록-지향하자">forEach문은 배열에서만 사용하는 메서드이다. 배열에서는 for in보다 foreach문을 사용하도록 지향하자.</h3>
+:ET

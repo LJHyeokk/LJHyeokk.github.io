@@ -1,0 +1,128 @@
+I"�*<h2 id="useeffect">useEffect?🍓</h2>
+
+<center class="notice--danger">Side Effect : 부수적인 효과로 함수가 어떤동작을 할때 input, output이외의 다른값이 조작된다면 그것은 side Effect가 있다고 한다.</center>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">greetWithSideEffect</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Input</span>
+  <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Side Effect!</span>
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">님 안녕하세요!`</span><span class="p">;</span> <span class="c1">// Output</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<center>side Effect의 예시</center>
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">greetWithSideEffect</span><span class="p">({</span> <span class="nx">name</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="c1">// Input</span>
+  <span class="c1">// Bad!</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">님 안녕하세요!`</span><span class="p">;</span> <span class="c1">// Side Effect</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">님 안녕하세요!`</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;; /</span><span class="o">/</span> <span class="nx">Output</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<center>side Effect의 잘못된 예시)=&gt;</center>
+<p><br /></p>
+<center>함수 컴포넌트의 리턴 값은 UI 요소이고, state, props의 변화가 있을 때마다 함수가 실행된다. 이 말은 매 렌더링 때마다 함수 body에 있는 렌더링과 무관한 로직이 렌더링 과정에서 실행되기 때문에 렌더링 자체에 영향을 줘 성능 상 악영향을 끼칠 수도 있다.</center>
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<center class="notice--danger">useEffect : 함수형 컴포넌트의 훅(기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게해주는 기능)으로서 컴포넌트가 렌더링 이후에 수행해야 할 일을 리액트에 전달하는 기능을 가지고 있다. 즉)Side Effect가 렌더링에 영향을 주지 않도록 설계됨 </center>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="c1">// 사용법</span>
+<span class="nx">useEffect</span><span class="p">(</span> <span class="nx">실행시킬</span> <span class="nx">동작</span><span class="p">,</span> <span class="p">[</span> <span class="nx">타이밍</span> <span class="p">]</span> <span class="p">)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">타이밍</span><span class="dl">"</span><span class="p">,</span> <span class="nx">실행시킬</span> <span class="nx">동작</span><span class="p">)</span> <span class="c1">// 추상화 한 예시</span>
+
+<span class="c1">// 매 렌더링마다 Side Effect가 실행되어야 하는 경우</span>
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Side Effect</span>
+<span class="p">})</span>
+
+<span class="c1">// Side Effect가 첫 번째 렌더링 이후 한번 실행 되고,</span>
+<span class="c1">// 이후 특정 값의 업데이트를 감지했을 때마다 실행되어야 하는 경우</span>
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Side Effect</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">value</span><span class="p">])</span>
+
+<span class="c1">// Side Effect가 첫 번째 렌더링 이후 한번 실행 되고,</span>
+<span class="c1">// 이후 어떤 값의 업데이트도 감지하지 않도록 해야 하는 경우</span>
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Side Effect</span>
+<span class="p">},</span> <span class="p">[])</span>
+</code></pre></div></div>
+
+<center>useEffect의 사용법</center>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+<center class="notice--danger">Clean up Effect : useEffect의 return값에 이전에 일으킨 Side Effect를 정리하는code를 작성하는 하는것이다. </center>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">handleScroll</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleScroll</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventLisnter</span><span class="p">(</span><span class="dl">"</span><span class="s2">scroll</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleScroll</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>return값에 이벤트를 지워주는 로직을 생성함으로써 페이지를 이동할때(component가 unmount될때)</p>
+
+<p>이벤트가 정리되어 성능저하를 막을 수 있음.</p>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">render</span><span class="dl">"</span><span class="p">,</span> <span class="nx">count</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">useEffect Callback</span><span class="dl">"</span><span class="p">,</span> <span class="nx">count</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">cleanUp</span><span class="dl">"</span><span class="p">,</span> <span class="nx">count</span><span class="p">);</span>
+		<span class="p">});</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">하잉</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Foo</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<center>버튼을 한번 눌렀을때 찍히는 콘솔의 값들을 예상해보자.</center>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">render</span><span class="p">,</span> <span class="mi">0</span>
+<span class="nx">useEffect</span> <span class="nx">Callback</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="c1">// 클릭</span>
+
+<span class="nx">render</span><span class="p">,</span> <span class="mi">1</span>
+<span class="nx">cleanUp</span><span class="p">,</span> <span class="mi">0</span>
+<span class="nx">useEffect</span> <span class="nx">Callback</span><span class="p">,</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<center>이 code를 통해 cleanup 함수가 deps에 아무값도 넣지않았을 경우에는 컴포넌트가 unmount 될때만 실행되고</center>
+<p><br /></p>
+<center>deps에 특정값을 넣었다면 그 값이 업데이트되기 직전에 실행되는것을 알 수 있다. </center>
+<p><br /></p>
+<center>참고* deps는 useEffect의 2번째 인자인 [] 배열을 뜻한다.</center>
+:ET

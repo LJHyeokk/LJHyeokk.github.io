@@ -1,0 +1,107 @@
+I"'<h2 id="mysql">MYSQL👾</h2>
+
+<center class="notice--danger">database : 서로 연관된 데이터(table)들을 모아놓은것 쉽게말해 폴더같은느낌, SCHEMA라고도 불린다.</center>
+
+<center class="notice--danger">database server : 여러개의 schema들을 모아놓은곳 </center>
+
+<center><img src="../images/2021-10-27-first/database.png" alt="database" /></center>
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="간단한-명령어들">간단한 명령어들</h3>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">CREATE DATABASE '작명';</code> ➡️ 스키마 생성</p>
+
+<p><code class="language-plaintext highlighter-rouge">DROP DATABASE 'table이름';</code> ➡️ 스키마 delete</p>
+
+<p><code class="language-plaintext highlighter-rouge">SHOW DATABASES;</code> ➡️ 스키마들을 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">USE 'table이름'</code> ➡️ 해당 스키마에서 작업을 하겠다.</p>
+
+<center>테이블 만들기</center>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="k">data</span><span class="p">(</span>
+<span class="o">//</span> <span class="k">table</span> <span class="err">을</span> <span class="err">만들겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="n">auto_increment</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">id</span><span class="err">는</span> <span class="err">숫자로</span> <span class="mi">11</span><span class="err">번째까지</span> <span class="err">보여주고</span> <span class="err">빈값은</span> <span class="err">허용하지않으며</span> <span class="err">자동적으로</span> <span class="mi">1</span><span class="err">씩늘려가겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">title</span><span class="err">은</span> <span class="mi">100</span><span class="err">글자까지</span> <span class="err">보여주고</span> <span class="err">빈값은</span> <span class="err">허용하지않겠다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">des</span> <span class="nb">text</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">des</span><span class="err">는</span> <span class="err">텍스트타입이며</span> <span class="err">빈값을</span> <span class="err">허용한다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">created</span> <span class="nb">datetime</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="err">시간타입이며</span> <span class="err">빈값을</span> <span class="err">허용하지않는다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="n">author</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">null</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">author</span><span class="err">은</span> <span class="mi">30</span><span class="err">글자만</span> <span class="err">보여주고</span> <span class="err">빈값을</span> <span class="err">허용한다</span><span class="p">.</span>
+
+    <span class="o">-&gt;</span> <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+<span class="o">//</span> <span class="err">가장중요한</span> <span class="err">값으로</span> <span class="n">id</span><span class="err">를</span> <span class="err">정했고</span> <span class="err">그값은</span> <span class="err">중복을</span> <span class="err">허용하지않는다</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SHOW TABLES</code> ➡️ 해당 스키마가 가지고있는 table을 보여준다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DESC 'table이름'</code> ➡️ table의 구조를 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">INSERT INTO 'table이름' (필드들) values ('필드에 넣을값들')</code> ➡️ 작성했던 테이블에 데이터 넣기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름';</code> ➡️ table로 부터 모든것을 가져오겠다 ( 보여준다. )</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">data</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="o">|</span> <span class="n">id</span> <span class="o">|</span> <span class="n">title</span>        <span class="o">|</span> <span class="n">des</span>             <span class="o">|</span> <span class="n">created</span>             <span class="o">|</span> <span class="n">author</span>    <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="err">배고프다</span>     <span class="o">|</span> <span class="err">진짜로많이</span>      <span class="o">|</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">14</span> <span class="mi">01</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">40</span> <span class="o">|</span> <span class="err">이준혁</span>    <span class="o">|</span>
+<span class="o">+</span><span class="c1">----+--------------+-----------------+---------------------+-----------+</span>
+<span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT id,title FROM 'table이름'</code> ➡️ 원하는 값들만 골라서 보여줄 수도 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁"</code> ➡️ author가 “이준혁”인 값들만 보이게 가능</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁" ORDER BY id DESC</code> ➡️ id값을 기준으로 내림차순으로 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' WHERE author="이준혁" ORDER BY id DESC LIMIT 2</code> ➡️ select된 데이터가 몇개든 최대2개까지 보여줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">UPDATE 'table이름' SET '필드'='바꾸고싶은값으로' WHERE id=2</code> ➡️ table의 필드의 값을 바꾸고싶을때 이때 where을 쓰지않고 그냥하면 모든 필드의 값이 바뀌어버리니 조심할것</p>
+
+<p><code class="language-plaintext highlighter-rouge">DELETE FROM 'table이름' WHERE id=5</code> ➡️ 삭제기능 WHERE을 꼭 쓰자</p>
+
+<p><code class="language-plaintext highlighter-rouge">RENAME TABLE 'table이름' TO '바꿀이름'</code> ➡️ 테이블 이름바꾸기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' LEFT JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ join시키기 ON 뒤쪽에 기준을 정해준다. (NULL값이 뜬다면 한쪽에 값이 없다는것이다.)</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' INNER JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ NULL값을 제외한, 즉 교집합만을 join시킨다. (엄격하다고 볼수있음)</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT * FROM 'table이름' FULL OUTER JOIN '합칠 tabled이름' ON ABC.id = QWE.id</code> ➡️ 모두보여줌(지원하지않으면 left right를 UNION으로 결함)</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER TABLE [table이름] AUTO_INCREMENT = [시작할 값];</code> ➡️ id값을 초기화해줌</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER TABLE 'table이름' ADD FOREIGN KEY(ID) REFERENCES 참조할테이블(ID);</code> ➡️ 필드값 나중에 추가해주기</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT songs.title, songs.lyrics FROM songs WHERE songs.lyrics LIKE '%넘실넘실%';</code> ➡️ LIKE를 사용하면 %%사이의 값이 포함된 값을 보여줌</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="관계형-데이터-모델링">관계형 데이터 모델링</h3>
+
+<center class="notice--danger">업무파악 ➡️ 개념적 데이터 모델링 ➡️ 논리적 데이터 모델링 ➡️ 물리적 데이터 모델링</center>
+
+<center><img src="../images/2021-10-27-first/database1.png" alt="database1" /></center>
+<p><br /></p>
+
+<center><img src="../images/2021-10-27-first/database2.png" alt="database2" /></center>
+<p><br /></p>
+:ET

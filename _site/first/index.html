@@ -1,0 +1,632 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Github Blog 만들기 | POPO</title>
+<meta name="description" content="나만의 Blog를 만들어 보자!🥝">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="Github Blog 만들기">
+<meta property="og:url" content="http://localhost:4000/first/">
+
+
+  <meta property="og:description" content="나만의 Blog를 만들어 보자!🥝">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-27T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/first/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Github Blog 만들기</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Github Blog 만들기"
+    /> <meta
+      itemprop="description"
+      content="나만의 Blog를 만들어 보자!🥝"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-10-27T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/first/" class="u-url" itemprop="url"
+            ><p>Github Blog 만들기</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-27T00:00:00+09:00">2021-10-27</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h1 id="나만의-blog를-만들어-보자">나만의 Blog를 만들어 보자!🥝</h1>
+
+<p>요즘 많은 분들이 자신만의 블로그를 갖고 있어서 나도 한번 만들어 보려고한다 ㅎㅎ</p>
+
+<p>블로그는 많은 플랫폼으로 만들 수 있지만 나는 그 중에서도 Github를 골랐다!</p>
+
+<p>이유는 다양하지만 가장 큰 이유는 <strong>Github와 연동이 된다는 점이다!</strong> 또한 jekyll, gatsby 등을 통해 커스터마이징 할 수 도 있다고 한다.</p>
+
+<p>단점으로는 진입장벽이 높다는 것인데… <strong>하지만!</strong> 이제 막 코딩 시작한 나도 만들었으니 끈기를 갖고 만들어보자…</p>
+
+<p>자 우선 Github으로 들어가서 로그인 해보자</p>
+
+<p>로그인을 했으면 <a href="https://github.com/topics/jekyll-theme">’‘<strong>Jekyll</strong>’’</a>를 사용하여 블로그의 테마 즉 틀부터 정해보도록 하자</p>
+
+<center><img src="../images/2021-10-27-first/1-1.png" alt="1-1" style="zoom:60%;" /></center>
+
+<p><br /></p>
+
+<p>제일 첫번째 테마가 Star 개수가 많은것을 보니 가장 인기있어 보인다. 이걸로 정했다.</p>
+
+<p><strong>minimal-mistakes</strong>를 누르면 해당 테마의 요소들이 있는 페이지로 오는데 ‘‘<strong>왼쪽 상단의 Fork</strong>'’를 눌러 요소들을 내 Github계정으로 복사하자.</p>
+
+<p><br /></p>
+
+<p>그 후 해야할일</p>
+
+<ol>
+  <li>settings에 들어가서 LJHyeokk.github.io로 이름을 바꾸어주기</li>
+  <li>테마 요소들중 _config.yml에서 url을 http//LJHyeokk.github.io로 바꾸어주기</li>
+  <li>LJHyeokk.github.io를 주소창에 쳐서 내 블로그가 만들어졌는지 확인</li>
+</ol>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<center><img src="../images/2021-10-27-first/2-2.png" alt="2-2" style="zoom:70%;" /></center>
+<p>이렇게 생성된 나의 첫 블로그… 감격스럽다…</p>
+
+<p>이제 블로그를 만들어 보았으니 첫 게시글을 작성해보자.</p>
+
+<p><br /></p>
+
+<p>해야할일</p>
+
+<ol>
+  <li>Github Desktop을 설치</li>
+  <li>Tyopora 설치</li>
+  <li>vscode 설치</li>
+</ol>
+
+<p><br /></p>
+
+<p><strong>Github Desktop</strong>은 윈도우와 맥 버전은 있으나 리눅스용이 없다…</p>
+
+<p>그러므로 <a href="https://shanepark.tistory.com/252">’‘<strong>여기</strong>’’</a>를 통해 다운받자.</p>
+
+<p>잘 깔렸으면 ‘clone a repository from internet…‘을 눌러 로그인하고</p>
+
+<p>클론 경로를 지정해주고 확인 후 ‘‘For my own purposes’‘를 누르자</p>
+
+<p><br /></p>
+
+<p>(나는 버전이 낮은것을 깔았더니 아래와 같은 오류가 계속 발생하였고 구글링해보니 지우고 높은 버전으로 다시깔아야 한다고한다…)</p>
+
+<center><img src="../images/2021-10-27-first/3.png" alt="3" style="zoom:60%;" /></center>
+
+<p><br /></p>
+
+<p>(근데 신기하게 터미널창에 github -v 명령어를 치니 잘 동작함..일단 이대로 쓰기로 한다)</p>
+
+<p>자 아래와 같이 되었다면 성공이다.</p>
+
+<center><img src="../images/2021-10-27-first/4.png" alt="4" style="zoom:60%;" /></center>
+
+<p><br /></p>
+
+<p>그 후 해야할일</p>
+
+<ol>
+  <li>Typora를 다운받아서 클론생성한 폴더를 열어라</li>
+  <li>파일-환경설정-이미지-custom -&gt; ../images/${filename} -&gt; 가능하다면 상대적위치 적용</li>
+  <li>왼쪽 하단에 트리로 보기 설정</li>
+</ol>
+
+<p><br /></p>
+
+<p>이제 Typora에 글을 써보도록 하자.</p>
+
+<p>글을 쓰고 저장하는 순간 Github Desktop에서 반응을 보일것이다.</p>
+
+<p>changes가 생겼다</p>
+
+<p><br /></p>
+
+<p>이러한 변경을 그대로 블로그에 나타나고 한다면~</p>
+
+<p>왼쪽 하단 <strong>Committing to master</strong> 누르기 -&gt; <strong>Push commit to the origin remote</strong> 누르기</p>
+
+<p>자 깃헙 블로그로 내가 쓴글이 푸시가 되었다.</p>
+
+<p><br /></p>
+
+<p>첫번째 난관 글쓰기가 모두 끝났다. 수고했다.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-10-27T00:00:00+09:00">2021-10-27</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Github+Blog+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Ffirst%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffirst%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ffirst%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/second/" class="pagination--pager" title="블로그 작성시
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

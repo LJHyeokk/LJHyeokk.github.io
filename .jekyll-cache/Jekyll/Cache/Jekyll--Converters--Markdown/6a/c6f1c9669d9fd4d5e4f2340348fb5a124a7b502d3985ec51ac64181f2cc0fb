@@ -1,0 +1,165 @@
+I"V/<h2 id="js의-문법총정리하">JS의 문법총정리(하)🍍</h2>
+
+<center class="notice--danger">🏳️ JS의 문법총정리(상)에 이어 계속해서 알아보자.</center>
+
+<hr />
+
+<p><br /></p>
+
+<center class="notice--primary">그전에 웹 브라우저의 동작원리를 알아보자</center>
+
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="n">setTimeout</span><span class="p">(</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)},</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">//</span> <span class="mi">1</span><span class="n">초뒤에</span> <span class="mi">3</span><span class="n">을</span> <span class="n">출력해줘</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p class="notice--info">일반적으로 위에서 밑으로 차례대로 코드를 실행시키기때문에 1 출력 (1초뒤)3 출력 2 출력 순으로 될것이라고 생각지만 실제로는 1 출력 2출력 3출력을 해준다.</p>
+
+<blockquote>
+  <p>JS의 동작순서</p>
+
+  <p>JS는 Stack이란 곳에서 코드를 위에서부터 차례로 실행시키고 Heap이란 곳에서 코드의 변수값을 받아서 처리한다.
+JS는 Stack이 한개로 single threaded라고하며 동기식 처리를한다.
+하지만 Ajax요청, addEventListener, setTimeout등과 같은 코드는 사용자지정시간만큼 web API에서 대기 후 Queue로 옮겨지고 그 후 Stack으로 옮겨지며 실행된다.
+결론 : JS는 일반적으론 동기식처리를하나 예외적으로 비동기식처리도 한다.</p>
+</blockquote>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Promise</span><span class="p">((</span><span class="n">성공</span><span class="p">,</span> <span class="n">실패</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+
+          <span class="n">성공</span><span class="p">();</span>
+
+        <span class="p">}</span> <span class="k">else</span> <span class="n">실패</span><span class="p">();</span>
+
+      <span class="p">});</span>
+
+      <span class="n">a</span><span class="p">.</span><span class="n">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">"성공"</span><span class="p">);</span>
+
+      <span class="p">}).</span><span class="n">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">"실패"</span><span class="p">);</span>
+
+      <span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>Promise 사용법</strong>’</p>
+
+<p class="notice--info">생성자로 만들며 성공, 실패를 판별해준다. 성공시에 출력할것은 then, 실패시에 출력할것은 catch에 쓴다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+      <span class="k">async</span> <span class="n">function</span> <span class="n">click</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Promise</span><span class="p">((</span><span class="n">성공</span><span class="p">,</span> <span class="n">실패</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+          <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">"button"</span><span class="p">).</span><span class="n">addEventListener</span><span class="p">(</span><span class="s">"click"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+            <span class="n">성공</span><span class="p">(</span><span class="s">"성공"</span><span class="p">);</span>
+
+          <span class="p">});</span>
+
+        <span class="p">});</span>
+
+        <span class="n">let</span> <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">a</span><span class="p">;</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+      <span class="p">}</span>
+
+      <span class="n">click</span><span class="p">().</span><span class="n">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">"잘했어"</span><span class="p">);</span>
+
+      <span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>async, await 사용법</strong>’</p>
+
+<p class="notice--info">평범한 함수에 asysc를 붙이면 곧바로 함수.then()이 가능하다. 위의 코드 해석 = 버튼을 클릭하면 성공을 출력하고 그다음 잘했어를 출력하시오.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">let</span> <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Map</span><span class="p">();</span>
+<span class="n">person</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'age'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">person</span><span class="p">)</span> <span class="o">//</span> <span class="n">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err"> </span><span class="p">{</span><span class="s">'age'</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">}</span>
+
+<span class="n">person</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'age'</span><span class="p">);</span> <span class="o">//</span><span class="n">자료</span> <span class="n">꺼내는</span> <span class="n">법</span>
+<span class="n">person</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'age'</span><span class="p">);</span> <span class="o">//</span><span class="n">자료</span> <span class="n">삭제하는</span> <span class="n">법</span>
+<span class="n">person</span><span class="p">.</span><span class="n">size</span><span class="p">;</span> <span class="o">//</span><span class="n">자료</span> <span class="n">몇갠지</span> <span class="n">알려줌</span>
+
+
+<span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">key</span> <span class="n">of</span> <span class="n">person</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">){</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">//</span><span class="n">자료를</span> <span class="n">직접</span> <span class="n">집어넣고</span> <span class="n">싶으면</span>
+
+<span class="n">let</span> <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="s">'age'</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'Kim'</span><span class="p">]</span>
+<span class="p">]);</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>map 사용법</strong>’</p>
+
+<p class="notice--info">map은 자료들 간의 연관성을 표현하기 위해 쓰는 자료형이다.</p>
+
+<hr />
+
+<p><br /></p>
+<blockquote>
+  <p>index.html</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">let</span> <span class="n">숫자</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">var</span> <span class="n">중복제거</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Set</span><span class="p">(</span><span class="n">숫자</span><span class="p">);</span> <span class="o">//</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+
+<span class="n">중복제거</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="o">//</span><span class="n">자료더하기</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="n">중복제거</span><span class="p">.</span><span class="n">has</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="o">//</span><span class="n">자료있는지</span> <span class="n">확인</span> <span class="n">true</span>
+<span class="n">중복제거</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>  <span class="o">//</span><span class="n">자료</span> <span class="n">몇갠지</span> <span class="n">세기</span> <span class="mi">5</span>
+
+<span class="n">숫자</span> <span class="o">=</span> <span class="p">[...</span><span class="n">중복제거</span><span class="p">]</span>  <span class="o">//</span> <span class="n">숫자</span> <span class="o">===</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>‘<strong>set 사용법</strong>’</p>
+
+<p class="notice--info">중복을 제거할때 사용하고 {}로 반환한다.</p>
+:ET

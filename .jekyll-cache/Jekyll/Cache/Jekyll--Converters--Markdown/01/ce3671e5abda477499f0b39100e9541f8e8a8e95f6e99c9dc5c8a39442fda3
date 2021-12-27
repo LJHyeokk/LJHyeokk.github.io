@@ -1,0 +1,18 @@
+I"u<h2 id="터미널을-써보자">터미널을 써보자🥝</h2>
+
+<p>github desktop…..commit,push가 너무 느리다</p>
+
+<p>터미널을 써서 빠르고 쉽게 잔디를 쌓아보자</p>
+
+<ol>
+    <li>내가 만든 폴더 or 파일의 경로에서 터미널을 킨다.</li><br />
+    <li>git init // .git 이라는 하위 디렉토리를 만든다 </li><br />
+    <li>git status // 수정된 파일이 있는지 확인</li><br />
+    <li>git add --all //git add (올릴 파일) 하나씩올려도 된다</li><br />
+    <li>git commit -m '메세지' // 날짜 또는 상직적의미</li><br />
+    <li>git remote -v // 원격저장소 이름알기 맨처음은 origin</li><br />
+    <li>git remote add origin https://github.com/LJHyeokk/작명</li><br />
+    <li>git push origin master // git push (원격저장소 이름) (브랜치 이름)</li><br />
+    <li>끝</li><br />
+</ol>
+:ET

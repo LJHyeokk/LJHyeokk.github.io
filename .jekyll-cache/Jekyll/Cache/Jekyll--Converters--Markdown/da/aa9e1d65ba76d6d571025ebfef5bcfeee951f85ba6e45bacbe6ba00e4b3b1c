@@ -1,0 +1,108 @@
+I"�#<h2 id="객체에-대해-알아보자">객체에 대해 알아보자.🍍</h2>
+
+<p><br /></p>
+<center class="notice--danger">🏳️ 객체의 정의란 무엇이며 필요한 이유</center>
+
+<center class="notice--info">객체란? 이름(key)과 값(value)으로 구성된 프로퍼티(property)의 정렬되지 않은 집합이다.</center>
+
+<ol>
+  <li>배열에 비해 직관적이다.</li>
+  <li>유지보수가 용이하다.</li>
+</ol>
+
+<center class="notice--danger">🏳️ 객체에서의 property, key, value</center>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">객체</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">name</span><span class="p">:</span> <span class="s">"LJH"</span><span class="p">,</span>
+  <span class="n">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="n">sub</span><span class="p">:</span> <span class="p">{</span>
+    <span class="n">bloodType</span><span class="p">:</span> <span class="s">"B"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="n">city</span><span class="p">:</span> <span class="s">"busan"</span><span class="p">,</span>
+  <span class="n">hi</span><span class="p">()</span> <span class="p">{</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'안녕'</span><span class="p">)</span> <span class="p">}</span>    <span class="o">//</span> <span class="n">hi</span><span class="p">:</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'안녕'</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">let</span> <span class="n">city</span> <span class="o">=</span> <span class="s">"age"</span><span class="p">;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">객체</span><span class="p">.</span><span class="n">city</span><span class="p">);</span> <span class="o">//</span><span class="n">busan</span>  <span class="n">dot</span> <span class="n">notation</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">객체</span><span class="p">[</span><span class="n">city</span><span class="p">]);</span> <span class="o">//</span><span class="mi">28</span>	   <span class="n">bracket</span> <span class="n">notation</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">객체</span><span class="p">[</span><span class="s">"age"</span><span class="p">]);</span> <span class="o">//</span><span class="mi">28</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">객체</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="o">//</span><span class="n">LJH</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">객체</span><span class="p">[</span><span class="s">"sub"</span><span class="p">].</span><span class="n">bloodType</span><span class="p">);</span> <span class="o">//</span> <span class="n">B</span>
+</code></pre></div></div>
+
+<p>객체의 기초 사용 예시</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">let</span> <span class="n">myDog</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"Happy Coder"</span><span class="p">,</span>
+    <span class="s">"legs"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s">"tails"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"friends"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Wecode Bootcamp"</span><span class="p">],</span>
+    <span class="s">"bark"</span><span class="p">:</span> <span class="s">"woof"</span>
+  <span class="p">};</span>
+
+  <span class="n">myDog</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'LJH'</span><span class="p">;</span> <span class="o">//</span> <span class="n">수정</span>
+  <span class="n">myDog</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span> 	 <span class="o">//</span> <span class="n">추가</span>
+  <span class="n">delete</span> <span class="n">myDog</span><span class="p">.</span><span class="n">bark</span><span class="p">;</span>  <span class="o">//</span> <span class="n">삭제</span>
+</code></pre></div></div>
+
+<p>객체의 수정, 추가, 삭제 사용해보기</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">let</span> <span class="n">myPlants</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nb">type</span><span class="p">:</span> <span class="s">"flowers"</span><span class="p">,</span>
+      <span class="nb">list</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s">"rose"</span><span class="p">,</span>
+        <span class="s">"tulip"</span><span class="p">,</span>
+        <span class="s">"dandelion"</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nb">type</span><span class="p">:</span> <span class="s">"trees"</span><span class="p">,</span>
+      <span class="nb">list</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s">"fir"</span><span class="p">,</span>
+        <span class="s">"pine"</span><span class="p">,</span>
+        <span class="s">"birch"</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">];</span>
+
+
+	<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">myPlants</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="o">//</span> <span class="n">pine</span>
+</code></pre></div></div>
+
+<p>객체와 배열에서 필요한 값 추출해내기</p>
+
+<p><br /></p>
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">const</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">name</span><span class="p">:</span> <span class="s">'melon'</span><span class="p">,</span>
+  <span class="n">weight</span><span class="p">:</span> <span class="mi">4350</span><span class="p">,</span>
+  <span class="n">price</span><span class="p">:</span> <span class="mi">16500</span><span class="p">,</span>
+  <span class="n">isFresh</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+
+<span class="n">Object</span><span class="p">.</span><span class="n">keys</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">//</span> <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'weight'</span><span class="p">,</span> <span class="s">'price'</span><span class="p">,</span> <span class="s">'isFresh'</span><span class="p">]</span>
+
+<span class="n">Object</span><span class="p">.</span><span class="n">values</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">//</span>  <span class="p">[</span><span class="s">'melon'</span><span class="p">,</span> <span class="mi">4350</span><span class="p">,</span> <span class="mi">16500</span><span class="p">,</span> <span class="n">true</span><span class="p">]</span>
+
+<span class="n">Object</span><span class="p">.</span><span class="n">entries</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="o">//</span>  <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'melon'</span><span class="p">],</span>
+<span class="o">//</span>  <span class="p">[</span><span class="s">'weight'</span><span class="p">,</span> <span class="mi">4350</span><span class="p">],</span>
+<span class="o">//</span>  <span class="p">[</span><span class="s">'price'</span><span class="p">,</span> <span class="mi">16500</span><span class="p">],</span>
+<span class="o">//</span>  <span class="p">[</span><span class="s">'isFresh'</span><span class="p">,</span> <span class="n">true</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>신문법&gt; 이것으로 반복문 사용가능</p>
+:ET

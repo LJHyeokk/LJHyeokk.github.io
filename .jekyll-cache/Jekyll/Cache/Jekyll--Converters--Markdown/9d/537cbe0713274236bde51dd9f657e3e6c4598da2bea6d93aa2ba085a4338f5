@@ -1,0 +1,29 @@
+I"�<h2 id="간단한-게시판-만들어보기">간단한 게시판 만들어보기🍓</h2>
+
+<center class="notice--danger">🏳️ 정말 간단한 게시판을 만들어보자</center>
+
+<p>주말에 react 예습할겸 재미로 만들어봐서 퀄리티가 많이 낮지만 기본문법을 손에 익히기에는 좋은 예제이다.<br /></p>
+
+<p>아래는 결과물이다.</p>
+
+<center><img src="../images/2021-10-27-first/result.gif" alt="result" style="zoom:80%;" /></center>
+
+<p><br />
+<br /></p>
+<center>전체적인 틀의 모습을 보자면 아래와 같다.</center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/react3.png" alt="react3" /></center>
+<p><br /></p>
+<center>네비게이션과 글을 작성할 수 있는 input, 각 페이지마다 작성한 글을 15개씩 slice 시켜 보여주기.</center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/react4.png" alt="react4" /></center>
+<p><br /></p>
+<center>글의 수가 15로 나눠떨어질때마다 pageNum에 아무값이나 넣어 인덱스 수를 늘려 그것을 바탕으로 페이지를 나누었다.</center>
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/react5.png" alt="react5" /></center>
+<p><br /></p>
+<center>15개마다 인덱스수가 늘어나는 pageNum을 map돌려 페이지1,2,3,...을 생성할 수 있고 그것을 클릭시에는 15개씩 slice된 글 목록들을 보여준다.</center>
+<p><br /><br /></p>
+
+<center class="notice--info">끝!</center>
+:ET

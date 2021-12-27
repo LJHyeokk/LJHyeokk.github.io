@@ -1,0 +1,695 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>JavaScript 1주차 | POPO</title>
+<meta name="description" content="number와 string의 메서드 각각 3개와 사용 방법🍍">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="JavaScript 1주차">
+<meta property="og:url" content="http://localhost:4000/javascript-02/">
+
+
+  <meta property="og:description" content="number와 string의 메서드 각각 3개와 사용 방법🍍">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript-02/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">JavaScript 1주차</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(1)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(5)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="JavaScript 1주차"
+    /> <meta
+      itemprop="description"
+      content="number와 string의 메서드 각각 3개와 사용 방법🍍"
+    /> <meta
+      itemprop="datePublished"
+      content="2021-10-28T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/javascript-02/" class="u-url" itemprop="url"
+            ><p>JavaScript 1주차</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-28T00:00:00+09:00">2021-10-28</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="number와-string의-메서드-각각-3개와-사용-방법">number와 string의 메서드 각각 3개와 사용 방법🍍</h2>
+
+<p><br /></p>
+
+<p><strong>number</strong>와 <strong>srting</strong>의 메서드(method)를 알아보자.</p>
+
+<p><br /></p>
+
+<p>우선 JavaScript의 모든 메서드는 <a href="https://www.w3schools.com/js/js_number_methods.asp" target="_blank">‘<strong>모든메서드</strong>’</a>에서 볼수있다.</p>
+
+<p>이중에서 나는 Number의 메서드 중 가장 마음에 드는 3가지를 골랐다.</p>
+
+<h3 id="number"><center>Number</center></h3>
+
+<hr />
+
+<p style="color:seagreen">1. toString()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">toString()</code>메서드는 숫자를 문자열로 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span> <span class="o">//</span> <span class="s">'12345'</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span> <span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span> <span class="o">//</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<p>간단하게 숫자-&gt;문자로 변환해준다.</p>
+
+<p>자매품으로 parseInt() 메서드가 있다.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">parseInt</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">()));</span> <span class="o">//</span> <span class="mi">9</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">parseInt</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">())))</span> <span class="o">//</span> <span class="n">number</span>
+</code></pre></div></div>
+
+<p>문자-&gt;숫자로 변환해준다. 요긴하게 쓸곳이 많을것 같다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">2. toPrecision()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">toPrecision()</code> 지정된 길이로 작성된 숫자와 함께 문자열을 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">9.213112</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toPrecision</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span> <span class="o">//</span> <span class="s">'9.21'</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">typeof</span> <span class="n">a</span><span class="p">.</span><span class="n">toPrecision</span><span class="p">());</span> <span class="o">//</span> <span class="n">string</span>
+</code></pre></div></div>
+
+<p>아직 어디에 써먹을진 모르겠지만 언젠가 쓸일이 있을것 같다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">3. isInteger()</p>
+
+<blockquote>
+  <p>Number.isInteger() 메서드는 값이 정수인지 여부를 결정합니다.</p>
+
+  <p>이 메서드는 값이 Number 유형이고 정수(소수점이 없는 숫자)인 경우 true를 반환합니다. 그렇지 않으면 false를 반환합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">9.213112</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">Number</span><span class="p">.</span><span class="n">isInteger</span><span class="p">(</span><span class="n">a</span><span class="p">));</span> <span class="o">//</span> <span class="n">false</span>
+</code></pre></div></div>
+
+<p>정수가 아닌경우엔 boolean타입으로 true, false를 반환해준다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="string"><center>String</center></h2>
+
+<p style="color:seagreen">1. substr()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">substr()</code>와 비슷합니다 <code class="language-plaintext highlighter-rouge">slice()</code>.</p>
+
+  <p>차이점은 두 번째 매개변수 가 추출된 부분 의 <strong>길이</strong> 를 지정한다는 것 입니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'abc def ghi'</span><span class="p">;</span> <span class="o">//</span> <span class="n">변수</span> <span class="n">선언</span> <span class="n">및</span> <span class="n">값</span> <span class="n">할당</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span> <span class="o">//</span> <span class="s">'def'</span>
+</code></pre></div></div>
+
+<p>1번째 인자는 시작할 위치, 2번째 인자는 문자열의 길이를 지정해준다.</p>
+
+<p>slice() 메서드와 비슷하지만 substr() 메서드가 좀더 직관적이다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">2. trim()</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">trim()</code>메서드는 문자열의 양쪽에서 공백을 제거합니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'               say  Hello                '</span><span class="p">;</span> <span class="o">//</span> <span class="n">양옆</span> <span class="n">공백이</span> <span class="n">많은</span> <span class="n">문자열</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">trim</span><span class="p">());</span> <span class="o">//</span> <span class="s">'say Hello'</span>
+</code></pre></div></div>
+
+<p>위에서 보시다시피 양옆의 공백이 제거되었다. 이를 사용할 예를 들면 검색기능을 구현하거나 주소창에 url을 변경할 때 사용자의 실수로 인한 공백 문자열을 포함하지 않게 할 수 있을것같다</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p style="color:seagreen">3. replace()</p>
+
+<blockquote>
+  <p>replace()메서드는 지정된 값을 문자열의 다른 값으로 바꿉니다.</p>
+</blockquote>
+
+<p>cheet sheet</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'가나나 가구니 가자회'</span><span class="p">;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'가'</span><span class="p">,</span><span class="s">'바'</span><span class="p">));</span> <span class="o">//</span> <span class="s">'바나나 가구니 가자회'</span>
+</code></pre></div></div>
+
+<p>1번째 인자는 바꿀 문자, 2번째 인자는 변환될 문자이다</p>
+
+<p>우리의 예상과 다르게 replace()는 맨처음 발견된 문자에만 적용이 된다.</p>
+
+<p>하지만 이를 정규표현식을 이용하게 되면 모든 문자를 바꿀 수도 있다.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'가나나 가구니 가자회'</span><span class="p">;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="o">/</span><span class="n">가</span><span class="o">/</span><span class="n">g</span><span class="p">,</span><span class="s">'바'</span><span class="p">));</span> <span class="o">//</span> <span class="s">'바나나 바구니 바자회'</span>
+</code></pre></div></div>
+
+<p>이렇게 정규표현식을 활용하여 바꾸어주자.</p>
+
+<p>정규표현식을 공부하고 싶다면 <a href="https://opentutorials.org/course/909/5142" target="_blank"><strong>정규표현식</strong></a> 에서 공부해보자.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-10-28T00:00:00+09:00">2021-10-28</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+1%EC%A3%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript-02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript-02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript-02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/javascript-01/" class="pagination--pager" title="JavaScript 1주차
+">이전</a>
+    
+    
+      <a href="/3st/" class="pagination--pager" title="터미널로 commit, push 하기
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
