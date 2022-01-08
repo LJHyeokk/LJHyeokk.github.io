@@ -1,0 +1,47 @@
+I"<h2 id="backend-시작--">backend 시작 ~ 🧑‍💻</h2>
+
+<center class="notice--danger">Wecode의 서버, node로 위벅스 서버 만들기</center>
+
+<h3 id="사전작업">사전작업.</h3>
+
+<ol>
+  <li>node -v , npm -v 버전정보 확인</li>
+  <li>git init -y ( package.json 생성확인 )</li>
+  <li>npm install express ( package.json dependencies에 생성되었는지 확인 - node5부터는 –save하지 않아도 dependency에 적용)</li>
+  <li>scripts부분에 “node server.js” 설정</li>
+  <li>npm start</li>
+</ol>
+
+<center>여기까지 잘되었다면 이제 시작해봅시다.</center>
+
+<blockquote>
+  <p>server.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">express</span> <span class="n">from</span> <span class="err">'</span><span class="n">express</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="err">{</span> <span class="nn">PrismaClient</span> <span class="o">}</span> <span class="n">from</span> <span class="err">'</span><span class="nd">@prisma</span><span class="o">/</span><span class="n">client</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">routes</span> <span class="n">from</span> <span class="err">'</span><span class="o">./</span><span class="n">pattern</span><span class="o">/</span><span class="n">routes</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cookieParser</span> <span class="n">from</span> <span class="err">'</span><span class="n">cookie</span><span class="o">-</span><span class="n">parser</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cors</span> <span class="n">from</span> <span class="err">'</span><span class="n">cors</span><span class="err">'</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">prisma</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrismaClient</span><span class="o">();</span>
+<span class="kd">const</span> <span class="no">PORT</span> <span class="o">=</span> <span class="mi">8060</span><span class="o">;</span>
+<span class="kd">const</span> <span class="n">app</span> <span class="o">=</span> <span class="n">express</span><span class="o">();</span>
+
+<span class="n">app</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="n">cors</span><span class="o">());</span>
+<span class="n">app</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="n">express</span><span class="o">.</span><span class="na">json</span><span class="o">());</span> <span class="c1">//미들</span>
+<span class="n">app</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="n">cookieParser</span><span class="o">());</span>
+<span class="n">app</span><span class="o">.</span><span class="na">use</span><span class="o">(</span><span class="n">routes</span><span class="o">);</span>
+
+<span class="kd">const</span> <span class="n">start</span> <span class="o">=</span> <span class="n">async</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="n">app</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="no">PORT</span><span class="o">,</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">console</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="err">`</span><span class="nc">Server</span> <span class="n">is</span> <span class="n">listening</span> <span class="n">on</span> <span class="err">$</span><span class="o">{</span><span class="no">PORT</span><span class="o">}</span><span class="err">`</span><span class="o">));</span>
+  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">err</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">err</span><span class="o">);</span>
+    <span class="n">await</span> <span class="n">prisma</span><span class="o">.</span><span class="n">$disconnect</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="n">start</span><span class="o">();</span>
+</code></pre></div></div>
+:ET
