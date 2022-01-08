@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>react Redux | POPO</title>
-<meta name="description" content="Redux(하)🍓">
+<!-- begin _includes/seo.html --><title>Webucks 만들기 - node.js | POPO</title>
+<meta name="description" content="backend 시작 ~ 🧑‍💻">
 
 
   <meta name="author" content="Lee Jun Hyeok">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="POPO">
-<meta property="og:title" content="react Redux">
-<meta property="og:url" content="http://localhost:4000/react-07/">
+<meta property="og:title" content="Webucks 만들기 - node.js">
+<meta property="og:url" content="http://localhost:4000/wecode-04/">
 
 
-  <meta property="og:description" content="Redux(하)🍓">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-11-04T00:00:00+09:00">
+  <meta property="og:description" content="backend 시작 ~ 🧑‍💻">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-12-28T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/react-07/">
+
+<link rel="canonical" href="http://localhost:4000/wecode-04/">
 
 
 
@@ -154,7 +154,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">react Redux</li>
+        <li class="current">Webucks 만들기 - node.js</li>
       
     
   </ol>
@@ -385,13 +385,13 @@
   >
     <meta
       itemprop="headline"
-      content="react Redux"
+      content="Webucks 만들기 - node.js"
     /> <meta
       itemprop="description"
-      content="Redux(하)🍓"
+      content="backend 시작 ~ 🧑‍💻"
     /> <meta
       itemprop="datePublished"
-      content="2021-11-04T00:00:00+09:00"
+      content="2021-12-28T00:00:00+09:00"
     /> 
 
     <div class="page__inner-wrap">
@@ -399,8 +399,8 @@
       <header>
         
         <h1 id="page-title" class="page__title p-name" itemprop="headline">
-          <a href="http://localhost:4000/react-07/" class="u-url" itemprop="url"
-            ><p>react Redux</p>
+          <a href="http://localhost:4000/wecode-04/" class="u-url" itemprop="url"
+            ><p>Webucks 만들기 - node.js</p>
 </a
           >
         </h1>
@@ -412,7 +412,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-11-04T00:00:00+09:00">2021-11-04</time>
+        <time datetime="2021-12-28T00:00:00+09:00">2021-12-28</time>
       </span>
     
 
@@ -436,80 +436,21 @@
       
 
       <section class="page__content e-content" itemprop="text">
-         <h3 id="redux하">Redux(하)🍓</h3>
+         <h2 id="backend-시작--">backend 시작 ~ 🧑‍💻</h2>
 
-<hr />
+<center class="notice--danger">Wecode의 서버, node로 위벅스 서버 만들기</center>
 
-<center><p style="color:seagreen">기초 문법🚩</p></center>
-<blockquote>
-  <p>index.js</p>
-</blockquote>
+<h3 id="사전작업">사전작업.</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">reducer</span><span class="p">(</span><span class="n">state</span> <span class="o">=</span> <span class="n">datastate</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+<ol>
+  <li>node -v , npm -v 버전정보 확인</li>
+  <li>git init -y ( package.json 생성확인 )</li>
+  <li>npm install express –save ( package.json dependencies에 생성되었는지 확인)</li>
+  <li>scripts부분에 “node server.js” 설정</li>
+  <li>npm start</li>
+</ol>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="nb">type</span> <span class="o">===</span> <span class="s">"add"</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="n">let</span> <span class="n">copy</span> <span class="o">=</span> <span class="p">[...</span><span class="n">state</span><span class="p">];</span>
-
-        <span class="n">copy</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">action</span><span class="p">.</span><span class="n">payload</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>App.js</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">props</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span> <span class="p">{</span> <span class="nb">type</span> <span class="p">:</span> <span class="s">"add"</span><span class="p">,</span> <span class="n">payload</span> <span class="p">:</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">}</span> <span class="p">}</span> <span class="p">);</span>
-</code></pre></div></div>
-
-<p><strong>‘Redux의 정보전달’</strong></p>
-
-<p>dispatch의 type옆에 작명하고 보내고 싶은 데이터를 쓴다.</p>
-
-<p>action.작명 ➡️ 메서드를 사용하듯이 보내준 데이터를 사용할 수 있다.</p>
-
-<p>즉, ‘<strong>{ type : “add”, payload : {a,b,c,d} }</strong>‘이 부분이 reducer➡️action의 프로퍼티라는 것이다.</p>
-
-<hr />
-
-<p><br /></p>
-
-<blockquote>
-  <p>App.js</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="n">state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="n">a</span><span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">reducer</span><span class="p">,</span>
-    <span class="n">b</span><span class="p">:</span> <span class="n">state</span><span class="p">.</span><span class="n">reducer2</span><span class="p">,</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="n">export</span> <span class="n">default</span> <span class="n">connect</span><span class="p">(</span><span class="n">state</span><span class="p">)(</span><span class="n">App</span><span class="p">);</span>
-<span class="o">----------------------------------------------</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="n">useSelector</span><span class="p">,</span> <span class="n">useDispatch</span> <span class="p">}</span> <span class="k">from</span> <span class="s">'react-redux'</span><span class="p">;</span>
-
-<span class="n">function</span> <span class="n">App</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">let</span> <span class="n">작명</span> <span class="o">=</span> <span class="n">useSelector</span><span class="p">(</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">reducer</span><span class="p">)</span> <span class="p">)</span>
-    <span class="n">let</span> <span class="n">작명</span> <span class="o">=</span> <span class="n">useSelector</span><span class="p">(</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">reducer2</span><span class="p">)</span> <span class="p">)</span>
-    <span class="n">let</span> <span class="n">작명</span> <span class="o">=</span> <span class="n">useDispactch</span><span class="p">();</span>
-
-    <span class="k">return</span>
-
-<span class="p">}</span>
-
-<span class="n">export</span> <span class="n">default</span> <span class="n">App</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>‘<strong>Redux 불러오기 셋팅 신문법</strong>’</p>
-
-<p>신문법을 쓰면 더이상 props를 앞에 붙이지 않아도 된다.</p>
+<center>여기까지 잘되었다면 이제 시작해봅시다.</center>
  
       </section>
 
@@ -518,7 +459,7 @@
 
  
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-11-04T00:00:00+09:00">2021-11-04</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-12-28T00:00:00+09:00">2021-12-28</time></p>
 
       </footer>
 
@@ -527,21 +468,20 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=react+Redux%20http%3A%2F%2Flocalhost%3A4000%2Freact-07%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Webucks+%EB%A7%8C%EB%93%A4%EA%B8%B0+-+node.js%20http%3A%2F%2Flocalhost%3A4000%2Fwecode-04%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freact-07%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwecode-04%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freact-07%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwecode-04%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
  
   <nav class="pagination">
     
-      <a href="/react-06/" class="pagination--pager" title="react Redux
+      <a href="/node-04/" class="pagination--pager" title="MiddleWare
 ">이전</a>
     
     
-      <a href="/javascript-06/" class="pagination--pager" title="JavaScript 쓰는 이유와 기초
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 

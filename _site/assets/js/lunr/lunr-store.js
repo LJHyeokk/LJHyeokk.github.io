@@ -268,4 +268,10 @@ var store = [{
         "tags": [],
         "url": "/node-04/",
         "teaser": null
+      },{
+        "title": "Webucks 만들기 - node.js",
+        "excerpt":"backend 시작 ~ 🧑‍💻   Wecode의 서버, node로 위벅스 서버 만들기  사전작업.      node -v , npm -v 버전정보 확인   git init -y ( package.json 생성확인 )   npm install express –save ( package.json dependencies에 생성되었는지 확인)   scripts부분에 “node server.js” 설정   npm start   여기까지 잘되었다면 이제 시작해봅시다. ","categories": [],
+        "tags": [],
+        "url": "/wecode-04/",
+        "teaser": null
       }]

@@ -1,0 +1,16 @@
+I"-<h2 id="backend-시작--">backend 시작 ~ 🧑‍💻</h2>
+
+<center class="notice--danger">Wecode의 서버, node로 위벅스 서버 만들기</center>
+
+<h3 id="사전작업">사전작업.</h3>
+
+<ol>
+  <li>node -v , npm -v 버전정보 확인</li>
+  <li>git init -y ( package.json 생성확인 )</li>
+  <li>npm install express –save ( package.json dependencies에 생성되었는지 확인)</li>
+  <li>scripts부분에 “node server.js” 설정</li>
+  <li>npm start</li>
+</ol>
+
+<center>여기까지 잘되었다면 이제 시작해봅시다.</center>
+:ET
