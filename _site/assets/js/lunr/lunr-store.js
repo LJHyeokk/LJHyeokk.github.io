@@ -270,8 +270,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Webucks 만들기 - node.js",
-        "excerpt":"backend 시작 ~ 🧑‍💻 Wecode의 서버, node로 위벅스 서버 만들기 사전작업. node -v , npm -v 버전정보 확인 git init -y ( package.json 생성확인 ) npm install express ( package.json dependencies에 생성되었는지 확인 - node5부터는 –save하지 않아도 dependency에 적용) npm install prisma –save-dev npm install @prisma/client npm install dotenv nodemon...","categories": [],
+        "excerpt":"backend 시작 ~ 🧑‍💻 Wecode의 서버, node로 위벅스 서버 만들기 사전작업. node -v , npm -v 버전정보 확인 git init -y ( package.json 생성확인 ) npm install express ( package.json dependencies에 생성되었는지 확인 - node5부터는 –save하지 않아도 dependency에 적용) npm install prisma –save-dev ( -dev란 개발자환경에서만 사용될때 ) npm install...","categories": [],
         "tags": [],
         "url": "/wecode-04/",
+        "teaser": null
+      },{
+        "title": "1차 Project 회고록",
+        "excerpt":"📑 1차 프로젝트 output 및 소개 wetown 시연영상 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total : 14days ) 프로젝트 참여자 : 이준혁,...","categories": [],
+        "tags": [],
+        "url": "/wecode-05/",
         "teaser": null
       }]
