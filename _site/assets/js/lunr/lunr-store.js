@@ -263,8 +263,8 @@ var store = [{
         "url": "/node-03/",
         "teaser": null
       },{
-        "title": "MiddleWare",
-        "excerpt":"MiddleWare 🙀  ","categories": [],
+        "title": "Layered Pattern",
+        "excerpt":"Layered Pattern이란 🙀 백엔드 API를 구현할때 널리 쓰이는 패턴중 레이어드 아키텍처(Layered achitecture) 패턴이 있다. 레이어드 아키텍쳐로 API를 구현할때는 역할에 따라 독립된 모듈로 나누어서 코드를 구현한다. Route, Controller, Service, Model 각각의 레이어가 하나의 폴더이자 역할을 의미한다. 큰 박스에서 작은 박스로 갈 수록 더 데이터를 다루는 로직(데이터베이스 접근하는 로직)에 근접하게 된다. 또한,...","categories": [],
         "tags": [],
         "url": "/node-04/",
         "teaser": null
@@ -279,5 +279,11 @@ var store = [{
         "excerpt":"📑 1차 프로젝트 output 및 소개 wetown 시연영상 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total : 14days ) 프로젝트 참여자 : 이준혁,...","categories": [],
         "tags": [],
         "url": "/wecode-05/",
+        "teaser": null
+      },{
+        "title": "Unit Test",
+        "excerpt":"유닛테스트 🙀 유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다 Google Test Automation Conference에서 제안된 테스트 피라미드 시스템을 테스트 할때 크게 3가지 방법으로 나눌 수 있다. 전체 테스트 비중을 아래와 같은 수치로 구현하는 것이 권장됨 E2E(UI) Testing - 10% Integrating Testing - 20% Unit Testing -...","categories": [],
+        "tags": [],
+        "url": "/node-05/",
         "teaser": null
       }]

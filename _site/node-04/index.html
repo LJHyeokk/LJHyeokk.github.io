@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>MiddleWare | POPO</title>
-<meta name="description" content="MiddleWare 🙀">
+<!-- begin _includes/seo.html --><title>Layered Pattern | POPO</title>
+<meta name="description" content="Layered Pattern이란 🙀">
 
 
   <meta name="author" content="Lee Jun Hyeok">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="POPO">
-<meta property="og:title" content="MiddleWare">
+<meta property="og:title" content="Layered Pattern">
 <meta property="og:url" content="http://localhost:4000/node-04/">
 
 
-  <meta property="og:description" content="MiddleWare 🙀">
+  <meta property="og:description" content="Layered Pattern이란 🙀">
 
 
 
@@ -154,7 +154,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">MiddleWare</li>
+        <li class="current">Layered Pattern</li>
       
     
   </ol>
@@ -305,7 +305,7 @@
         
         <ul>
           
-            <li><a href="/Every/Node/node/">Node.Js(4)</a></li>
+            <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
           
         </ul>
         
@@ -385,10 +385,10 @@
   >
     <meta
       itemprop="headline"
-      content="MiddleWare"
+      content="Layered Pattern"
     /> <meta
       itemprop="description"
-      content="MiddleWare 🙀"
+      content="Layered Pattern이란 🙀"
     /> <meta
       itemprop="datePublished"
       content="2021-12-22T00:00:00+09:00"
@@ -400,7 +400,7 @@
         
         <h1 id="page-title" class="page__title p-name" itemprop="headline">
           <a href="http://localhost:4000/node-04/" class="u-url" itemprop="url"
-            ><p>MiddleWare</p>
+            ><p>Layered Pattern</p>
 </a
           >
         </h1>
@@ -425,7 +425,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -436,7 +436,132 @@
       
 
       <section class="page__content e-content" itemprop="text">
-         <h2 id="middleware-">MiddleWare 🙀</h2>
+         <h2 id="layered-pattern이란-">Layered Pattern이란 🙀</h2>
+
+<center class="notice--danger">백엔드 API를 구현할때 널리 쓰이는 패턴중 레이어드 아키텍처(Layered achitecture) 패턴이 있다. 레이어드 아키텍쳐로 API를 구현할때는 역할에 따라 독립된 모듈로 나누어서 코드를 구현한다.</center>
+
+<center><img src="../images/2021-10-27-first/layered-1.png" alt="layered-1" /></center>
+
+<p><strong>Route, Controller, Service, Model</strong> 각각의 레이어가 하나의 폴더이자 역할을 의미한다.</p>
+
+<ol>
+  <li>큰 박스에서 작은 박스로 갈 수록 더 데이터를 다루는 로직(데이터베이스 접근하는 로직)에 근접하게 된다.</li>
+  <li>또한, 각각의 레이어는 <strong>오로지</strong> 바로 아래에 있는 레이어에만 의존하게 된다.
+    <ul>
+      <li>Route → Controller</li>
+      <li>Controller → Service</li>
+      <li>Service → Model</li>
+    </ul>
+  </li>
+</ol>
+
+<p>예를들어, Route 는 Service 로직을 전혀 모르고 아예 관여 조차 하지 않는다.
+따라서, Service 로직을 변경해도 Route 와 Controller 의 코드는 바뀔 필요가 없다.</p>
+
+<p>즉 다음과 같은 상황에서 유연하게 대처할 수 있다는 의미이다.</p>
+
+<p>때때로, 서비스를 구현하다가 RDBMS(관계형 데이터 베이스) → NoSQL(ex. mongoDB) 로 이전하는 경우가 있는데, Route와 Controller 의 로직은 전혀 바뀌지 않은채로 데이터를 다루는 Service 와 Model 의 로직만 변경 해 주면 된다.</p>
+
+<h2 id="실습">실습</h2>
+
+<blockquote>
+  <p>model</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="err">{</span> <span class="nn">PrismaClient</span> <span class="o">}</span> <span class="n">from</span> <span class="err">'</span><span class="nd">@prisma</span><span class="o">/</span><span class="n">client</span><span class="err">'</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">prisma</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PrismaClient</span><span class="o">();</span>
+
+<span class="kd">const</span> <span class="n">productDetail</span> <span class="o">=</span> <span class="n">async</span> <span class="n">productId</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">await</span> <span class="n">prisma</span><span class="o">.</span><span class="n">$queryRaw</span><span class="err">`</span>
+    <span class="no">SELECT</span>
+      <span class="n">products</span><span class="o">.</span><span class="na">id</span><span class="o">,</span>
+      <span class="n">eng_name</span><span class="o">,</span>
+      <span class="n">price</span><span class="o">,</span>
+      <span class="n">is_new</span><span class="o">,</span>
+      <span class="n">is_main</span><span class="o">,</span>
+      <span class="n">quantity</span><span class="o">,</span>
+      <span class="n">sale_rate</span><span class="o">,</span>
+      <span class="n">categories</span><span class="o">.</span><span class="na">name</span> <span class="n">as</span> <span class="n">cate_name</span><span class="o">,</span>
+      <span class="n">subcategories</span><span class="o">.</span><span class="na">name</span> <span class="n">as</span> <span class="n">subcate_name</span><span class="o">,</span>
+      <span class="n">url</span><span class="o">,</span>
+      <span class="n">images</span><span class="o">.</span><span class="na">id</span> <span class="n">as</span> <span class="n">image_id</span>
+    <span class="no">FROM</span>
+      <span class="n">products</span>
+    <span class="no">JOIN</span>
+      <span class="n">categories</span> <span class="n">on</span> <span class="n">category_id</span> <span class="o">=</span> <span class="n">categories</span><span class="o">.</span><span class="na">id</span>
+    <span class="no">JOIN</span>
+      <span class="n">images</span> <span class="n">on</span> <span class="n">products</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="na">product_id</span>
+    <span class="no">JOIN</span>
+      <span class="n">subcategories</span> <span class="n">on</span> <span class="n">subcategories</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">subcategory_id</span>
+    <span class="no">WHERE</span>
+      <span class="n">products</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="err">$</span><span class="o">{</span><span class="n">productId</span><span class="o">};</span>
+  <span class="err">`</span><span class="o">;</span>
+
+  <span class="k">return</span> <span class="n">detail</span><span class="o">;</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="o">{</span> <span class="n">productDetail</span> <span class="o">};</span>
+
+</code></pre></div></div>
+
+<blockquote>
+  <p>service</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="err">{</span> <span class="nn">productDetailDao</span> <span class="o">}</span> <span class="n">from</span> <span class="err">'</span><span class="o">../</span><span class="n">models</span><span class="err">'</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">productDetail</span> <span class="o">=</span> <span class="n">async</span> <span class="n">productId</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">await</span> <span class="n">productDetailDao</span><span class="o">.</span><span class="na">productDetail</span><span class="o">(</span><span class="n">productId</span><span class="o">);</span>
+
+  <span class="kd">const</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">detail</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+
+  <span class="n">tmp</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">detail</span><span class="o">.</span><span class="na">map</span><span class="o">((</span><span class="n">e</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="o">{</span> <span class="nl">id:</span> <span class="n">detail</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="err">'</span><span class="n">image_id</span><span class="err">'</span><span class="o">],</span> <span class="nl">image:</span> <span class="n">detail</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">url</span> <span class="o">};</span>
+  <span class="o">});</span>
+
+  <span class="k">return</span> <span class="n">detail</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="o">{</span> <span class="n">productDetail</span> <span class="o">};</span>
+
+</code></pre></div></div>
+
+<blockquote>
+  <p>controller</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="err">{</span> <span class="nn">productDetailServices</span> <span class="o">}</span> <span class="n">from</span> <span class="err">'</span><span class="o">../</span><span class="n">services</span><span class="err">'</span><span class="o">;</span>
+
+<span class="kd">const</span> <span class="n">productDetail</span> <span class="o">=</span> <span class="n">async</span> <span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="kd">const</span> <span class="o">{</span> <span class="n">productId</span> <span class="o">}</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">params</span><span class="o">;</span>
+
+    <span class="kd">const</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">await</span> <span class="n">productDetailServices</span><span class="o">.</span><span class="na">productDetail</span><span class="o">(</span><span class="n">productId</span><span class="o">);</span>
+
+    <span class="n">res</span><span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="mi">200</span><span class="o">).</span><span class="na">send</span><span class="o">(</span><span class="n">detail</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">err</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">err</span><span class="o">);</span>
+    <span class="n">res</span><span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="mi">500</span><span class="o">).</span><span class="na">send</span><span class="o">(</span><span class="n">err</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="o">{</span> <span class="n">productDetail</span> <span class="o">};</span>
+
+</code></pre></div></div>
+
+<p>처음에는 이런 모듈화를 왜하는지 이해가 되지않았는데</p>
+
+<p>협업을 하는과정에서 이 과정이 왜 필요한가를 아주 깊이 깨달았다.</p>
+
+<p>만약 모듈화를 하지않았다면 팀원들이 작성한 코드를 분석하는데 있어서 상당한 시간이 걸렸을것이다.</p>
+
+<p>다행히 layered pattern을 사용하니 팀원들이 무엇을 생각하며 코드를 짜고</p>
+
+<p>어떤 API를 만들었는지 한눈에 알수있었고</p>
+
+<p>수정 또한 어느부분을 수정해야하는지 바로 알수있었다.</p>
  
       </section>
 
@@ -454,7 +579,7 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=MiddleWare%20http%3A%2F%2Flocalhost%3A4000%2Fnode-04%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Layered+Pattern%20http%3A%2F%2Flocalhost%3A4000%2Fnode-04%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnode-04%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 

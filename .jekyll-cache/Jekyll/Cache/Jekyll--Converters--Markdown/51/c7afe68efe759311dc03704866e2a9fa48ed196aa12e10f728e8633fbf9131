@@ -1,0 +1,16 @@
+I"*<h2 id="유닛테스트-">유닛테스트 🙀</h2>
+
+<center class="notice--danger">유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다</center>
+
+<ul>
+  <li>Google Test Automation Conference에서 제안된 테스트 피라미드</li>
+  <li>시스템을 테스트 할때 크게 3가지 방법으로 나눌 수 있습니다.</li>
+  <li>전체 테스트 비중을 아래와 같은 수치로 구현하는 것이 권장됨
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">**E2E(UI) Testing**</code> - 10%</li>
+      <li><code class="language-plaintext highlighter-rouge">**Integrating Testing**</code> - 20%</li>
+      <li><code class="language-plaintext highlighter-rouge">**Unit Testing</code>** - 70%</li>
+    </ul>
+  </li>
+</ul>
+:ET

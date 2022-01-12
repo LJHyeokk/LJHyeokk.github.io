@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-12T03:14:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">1차 Project 회고록</title><link href="http://localhost:4000/wecode-05/" rel="alternate" type="text/html" title="1차 Project 회고록" /><published>2022-01-08T00:00:00+09:00</published><updated>2022-01-08T00:00:00+09:00</updated><id>http://localhost:4000/wecode-05</id><content type="html" xml:base="http://localhost:4000/wecode-05/">&lt;h2 id=&quot;-1차-프로젝트-output-및-소개&quot;&gt;📑 1차 프로젝트 output 및 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-12T17:29:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Unit Test</title><link href="http://localhost:4000/node-05/" rel="alternate" type="text/html" title="Unit Test" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/node-05</id><content type="html" xml:base="http://localhost:4000/node-05/">&lt;h2 id=&quot;유닛테스트-&quot;&gt;유닛테스트 🙀&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Google Test Automation Conference에서 제안된 테스트 피라미드&lt;/li&gt;
+  &lt;li&gt;시스템을 테스트 할때 크게 3가지 방법으로 나눌 수 있다.&lt;/li&gt;
+  &lt;li&gt;전체 테스트 비중을 아래와 같은 수치로 구현하는 것이 권장됨
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;E2E(UI) Testing&lt;/strong&gt; - 10%&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Integrating Testing&lt;/strong&gt; - 20%&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Unit Testing&lt;/strong&gt; - 70%&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ui-testing&quot;&gt;UI Testing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;크롬 브라우저를 띄운다음에 내가 만든 검색페이지로 들어가서 검색을 해보고 검색한 내용이 제대로 나오는지 화면상에서 확인하거나 직접 회원가입을 해보고 회원가입후에 로그인 되는지 직접 브라우저 상에서 값을 입력해서 테스트 하는방법&lt;/li&gt;
+  &lt;li&gt;UI Testing이 가장 어렵고 까다로움.&lt;/li&gt;
+  &lt;li&gt;Manual Testing은 실행하기 쉽다는 장점이 있지만 비용이 많이 들고 부정확 하며 실행 시간이 오래 걸림.&lt;/li&gt;
+  &lt;li&gt;자동화 할 수 있지만 UI Testing은 자동화 하기가 가장 까다롭고 또 실행하기도 까다로움.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;integration-testing&quot;&gt;Integration Testing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최소 두개이상의 클래스 또는 서브 시스템의 결합을 테스트하는 방법&lt;/li&gt;
+  &lt;li&gt;예를들면 노드로 서버를 띄우고 모델 클래스와 결합하여 데이터베이스 시스템과 연동한 테스트&lt;/li&gt;
+  &lt;li&gt;Postman 또는 httpie로 호출해서 Json response가 제대로 출력되는지 확인&lt;/li&gt;
+  &lt;li&gt;Integration Testing이 E2E Testing 다음으로 공수가 많이 듭니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unit-testing&quot;&gt;Unit Testing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유닛 테스트는 UI Test 또는 Integration Test 보다 테스트 비용이 싸다고 할 수 있다. 왜냐하면 UI Test는 백엔드 서버와 프론트를 연동하여 사람이 직접 테스트하지만, 유닛 테스트는 사람이 스크립트로 한꺼번에 자동으로 실행하기 때문이다.&lt;/li&gt;
+  &lt;li&gt;또한, 유닛 테스트는 다른 테스트에 비해서 실행 속도가 매우 빠르다. 그래서 유닛테스트를 활용하면 하루에도 배포를 여러번 할 수 있어 개발 및 배포 속도에 중요한 영향을 주기 때문에 개발할 때 최대한 활용하는게 좋다.&lt;/li&gt;
+  &lt;li&gt;새로운 기능을 구현할때 유닛 테스트를 잘 작성해놓으면 중장기적으로 유지 보수가 쉬운 장점이 있다. 즉, 이전에 통과했던 테스트 집합을 가지고 버그를 찾기 위해서 이전에 테스트 되었던 유닛테스트를 반복하는것을 regression 테스트라고 하는데 유닛테스트만 반복하면 되기 때문에 regression 테스트도 반복적으로 수행 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;유닛테스트를 잘 짜놓으면 유닛테스트가 되었던 코드에서는 버그가 거의 발견되지 않고 대부분 버그가 발견되는 경우는 유닛테스트가 없어서 발생하는 경우가 많고 만약 사후에 발견된 버그에 대해서도 버그를 수정한 후 유닛테스트를 작성해놓으면 버그를 방지할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;실습&quot;&gt;실습&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install --save-dev jest&lt;/code&gt; 명령어를 통해 다운받기&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__TEST__&lt;/code&gt; -&amp;gt; detail.test.js&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;productDetailController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;../&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;controllers&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Detail&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;params:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;productId:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;status:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;send:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;번&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;상품의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;값이&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;잘&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;받아져오는가&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetailController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;productDetail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toBeCalledWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;eng_name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Cozy&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Cushion&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;House&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;price:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32210&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;is_new:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;is_main:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;quantity:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;sale_rate:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;cate_name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dog&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;subcate_name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;house&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;url:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;image:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;productListMain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dog_house_02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;png&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;image:&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ae01.alicdn.com/kf/H5098255cba874443bca7453d76e710fbV/-.jpg_Q90.jpg_.webp',&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;image:&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ae01.alicdn.com/kf/H8debf1b4e60b4565aeb5f6e1920971f1S/-.jpg_Q90.jpg_.webp',&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nl&quot;&gt;image:&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ae01.alicdn.com/kf/Hd3456218cc1b49dcbcf1a6aa47e878c5K/-.jpg_Q90.jpg_.webp',&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;image_id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;no&quot;&gt;PASS&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;__TEST__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;js&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Detail&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;✓&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;번&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;상품의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;값이&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;잘&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;받아져오는가&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;144&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;Suites:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;passed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;Tests:&lt;/span&gt;       &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;passed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;Snapshots:&lt;/span&gt;   &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;Time:&lt;/span&gt;        &lt;span class=&quot;mf&quot;&gt;0.733&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;estimated&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Ran&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suites&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;솔직하게 아직은 unit test보다는 postMan을 통해 수작업으로 테스트 하는것이 편하다.&lt;/p&gt;
+
+&lt;p&gt;물론 내가 정확한 사용방법을 숙지하지 못하고 활용하지 못하기 때문일것이다.&lt;/p&gt;
+
+&lt;p&gt;지금은 unit test라는 것이 있고 이것이 무엇을 위해 만들어졌는지만 아는것으로 넘어가지만&lt;/p&gt;
+
+&lt;p&gt;추후 제대로 활용할줄 알게된다면 포스트업데이트를 할 것이다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">유닛테스트 🙀</summary></entry><entry><title type="html">1차 Project 회고록</title><link href="http://localhost:4000/wecode-05/" rel="alternate" type="text/html" title="1차 Project 회고록" /><published>2022-01-08T00:00:00+09:00</published><updated>2022-01-08T00:00:00+09:00</updated><id>http://localhost:4000/wecode-05</id><content type="html" xml:base="http://localhost:4000/wecode-05/">&lt;h2 id=&quot;-1차-프로젝트-output-및-소개&quot;&gt;📑 1차 프로젝트 output 및 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;p style=&quot;font-weight:bold&quot;&gt;wetown 시연영상&lt;/p&gt;&lt;/center&gt;
@@ -623,7 +740,132 @@ init();
 &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;주로 인증에 사용된다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Bcrypt &amp;amp; Jsonwebtoken 🙀</summary></entry><entry><title type="html">MiddleWare</title><link href="http://localhost:4000/node-04/" rel="alternate" type="text/html" title="MiddleWare" /><published>2021-12-22T00:00:00+09:00</published><updated>2021-12-22T00:00:00+09:00</updated><id>http://localhost:4000/node-04</id><content type="html" xml:base="http://localhost:4000/node-04/">&lt;h2 id=&quot;middleware-&quot;&gt;MiddleWare 🙀&lt;/h2&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">MiddleWare 🙀</summary></entry><entry><title type="html">Babel</title><link href="http://localhost:4000/interview-05/" rel="alternate" type="text/html" title="Babel" /><published>2021-12-18T00:00:00+09:00</published><updated>2021-12-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-05</id><content type="html" xml:base="http://localhost:4000/interview-05/">&lt;h2 id=&quot;babel-&quot;&gt;Babel? 💯&lt;/h2&gt;
+&lt;p&gt;주로 인증에 사용된다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Bcrypt &amp;amp; Jsonwebtoken 🙀</summary></entry><entry><title type="html">Layered Pattern</title><link href="http://localhost:4000/node-04/" rel="alternate" type="text/html" title="Layered Pattern" /><published>2021-12-22T00:00:00+09:00</published><updated>2021-12-22T00:00:00+09:00</updated><id>http://localhost:4000/node-04</id><content type="html" xml:base="http://localhost:4000/node-04/">&lt;h2 id=&quot;layered-pattern이란-&quot;&gt;Layered Pattern이란 🙀&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;백엔드 API를 구현할때 널리 쓰이는 패턴중 레이어드 아키텍처(Layered achitecture) 패턴이 있다. 레이어드 아키텍쳐로 API를 구현할때는 역할에 따라 독립된 모듈로 나누어서 코드를 구현한다.&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/layered-1.png&quot; alt=&quot;layered-1&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;Route, Controller, Service, Model&lt;/strong&gt; 각각의 레이어가 하나의 폴더이자 역할을 의미한다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;큰 박스에서 작은 박스로 갈 수록 더 데이터를 다루는 로직(데이터베이스 접근하는 로직)에 근접하게 된다.&lt;/li&gt;
+  &lt;li&gt;또한, 각각의 레이어는 &lt;strong&gt;오로지&lt;/strong&gt; 바로 아래에 있는 레이어에만 의존하게 된다.
+    &lt;ul&gt;
+      &lt;li&gt;Route → Controller&lt;/li&gt;
+      &lt;li&gt;Controller → Service&lt;/li&gt;
+      &lt;li&gt;Service → Model&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;예를들어, Route 는 Service 로직을 전혀 모르고 아예 관여 조차 하지 않는다.
+따라서, Service 로직을 변경해도 Route 와 Controller 의 코드는 바뀔 필요가 없다.&lt;/p&gt;
+
+&lt;p&gt;즉 다음과 같은 상황에서 유연하게 대처할 수 있다는 의미이다.&lt;/p&gt;
+
+&lt;p&gt;때때로, 서비스를 구현하다가 RDBMS(관계형 데이터 베이스) → NoSQL(ex. mongoDB) 로 이전하는 경우가 있는데, Route와 Controller 의 로직은 전혀 바뀌지 않은채로 데이터를 다루는 Service 와 Model 의 로직만 변경 해 주면 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;실습&quot;&gt;실습&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;model&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PrismaClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PrismaClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$queryRaw&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;eng_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;is_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;is_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;quantity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sale_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cate_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcate_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image_id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;product_id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcategory_id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;service&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;productDetailDao&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;../&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetailDao&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;productDetail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image_id&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;image:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;controller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;productDetailServices&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;../&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetailServices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;productDetail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;productId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productDetail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;처음에는 이런 모듈화를 왜하는지 이해가 되지않았는데&lt;/p&gt;
+
+&lt;p&gt;협업을 하는과정에서 이 과정이 왜 필요한가를 아주 깊이 깨달았다.&lt;/p&gt;
+
+&lt;p&gt;만약 모듈화를 하지않았다면 팀원들이 작성한 코드를 분석하는데 있어서 상당한 시간이 걸렸을것이다.&lt;/p&gt;
+
+&lt;p&gt;다행히 layered pattern을 사용하니 팀원들이 무엇을 생각하며 코드를 짜고&lt;/p&gt;
+
+&lt;p&gt;어떤 API를 만들었는지 한눈에 알수있었고&lt;/p&gt;
+
+&lt;p&gt;수정 또한 어느부분을 수정해야하는지 바로 알수있었다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Layered Pattern이란 🙀</summary></entry><entry><title type="html">Babel</title><link href="http://localhost:4000/interview-05/" rel="alternate" type="text/html" title="Babel" /><published>2021-12-18T00:00:00+09:00</published><updated>2021-12-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-05</id><content type="html" xml:base="http://localhost:4000/interview-05/">&lt;h2 id=&quot;babel-&quot;&gt;Babel? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;babel : JS의 ES6+ 코드를 현재 및 과거의 브라우저와 같은 환경에서 호환되는 버전으로 변환하는데 주로 사용되는 컴파일러이다.&lt;/center&gt;
 
@@ -1082,103 +1324,4 @@ init();
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;p style=&quot;color:seagreen&quot;&gt;요약 : 개발환경에서는 react dev server를 사용하기에 백엔드 서버와 통신을 할때 port가 다르기에 CORS정책에 위반되게 되는데 proxy를 통해 해결가능하다.&lt;/p&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">react의 마지막 실습 ~ 🧑‍💻</summary></entry><entry><title type="html">react 관련 면접</title><link href="http://localhost:4000/interview-04/" rel="alternate" type="text/html" title="react 관련 면접" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>http://localhost:4000/interview-04</id><content type="html" xml:base="http://localhost:4000/interview-04/">&lt;h2 id=&quot;면접준비-&quot;&gt;면접준비 💯&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;🏳️ react 면접을 준비해보자. 나의 말투로 정리를 해봐야겠다.&lt;/center&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JSX란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;자바스크립트 익스텐션, JS의 확장된 문법으로 JS코드를 HTML처럼 표현가능하게 해주는것입니다. (HTML을 작성하는것과 유사하기때문에 컴포넌트를 생성하기 좋습니다. 이러한 이유로 react에서는 jsx의 사용을 권장하고 있습니다.)&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;React란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;JS의 라이브러리 중 하나로써 주로 사용자 인터페이스를 만들기 위해 사용됩니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;React를 사용하는 이유는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;보다 쉽게 사용자 인터페이스를 만들 수 있기때문에 사용합니다. react는 가상돔이라는 개념을 사용하여 지속적으로 빠르게 변화하는 웹어플리케이션과 같은 퍼포먼스에 최적화되어있습니다. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;CRA란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;create react app이라는 뜻으로 react 초기설정의 어려움을 덜어주기위해 CRA라는 명령어로 기초 개발환경을 셋팅해 줄 수 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;컴포넌트란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;컴포넌트란 프로그래밍에 있어 재사용이 가능한 각각의 독립된 모듈입니다. react에서는 앱을 이루는 최소한의 단위로 데이터를 입력받아 DomNode를 출력하는 함수입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;React Sass란 무엇인가요? 사용하는 이유는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;Sass는 css의 전처리기로 네스팅, mixin, 변수 등을 지원하기 때문에 코드의 재활용성을 높여주고, 코드 가독성 높여주기 때문에 코드를 유지보수 하기 쉽게해줍니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;React Router란 무엇인가요? 사용하는 이유는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;react-router는 써드파티 라이브러리로 주소에 따라 다른 뷰를 보여주는 기능을 가지고 있습니다. 리액트 자체에는 이 기능이 내장되어있지 않기때문에 사용됩니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;라이브러리와 프레임워크의 차이점은 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;라이브러리는 단순활용가능한 도구들의 집합이고 프레임워크는 이러한 라이브러의 컬렉션이라고 할 수 있습니다. 차이점으론 프레임워크는 제어흐름의 주도성이 프레임워크 스스로 가지고 있는반면, 라이브러리는 사용자가 제어흐름을 주도하고 있다는 것입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;mock data를 사용하는 이유는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;mock data는 단어 그대로 가짜 데이터라는 뜻입니다. 사용하는 이유는 프로젝트를 진행하다보면 API가 나오기 전에 페이지 레이아웃이 먼저 나오는 경우가 대부분이기 때문에 Mock Data를 활용해 데이터가 계획된 대로 레이아웃에 잘 나타나는지를 테스트하기 위함입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;SPA란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;페이지가 하나로 구성된 웹 어플리케이션 입니다. SPA는 필요한 데이터만 서버로부터 JSON으로 전달 받아 동적으로 렌더링하는 특징을 가지고 있기때문에 트래픽이적고 페이지 이동이 빠릅니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;useEffect는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;렌더링이 일어난 직후 어떤 일을 수행해야 하는 지를 설정하는 react의 훅입니다. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;함수형 컴포넌트에서 side effect를 발생해야하는 경우는 언제인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;컴포넌트가 화면에 렌더링 된 이후에 비동기적으로 처리되어야하는 일이 필요할때 발생해야합니다. 예를들면 Data Fetching, DOM에 직접 접근(ex. Event Listener 등록), 구독(ex. setInterval) 이있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;state와 props의 차이는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;state는 현재컴포넌트의 상태값이고 언제든지 변할 수 있습니다. 반면 props는 부모컴포넌트로 부터 전달받은 값으로 불변입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;state를 선언하기 위해서 어떤 훅을 사용하나요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;useState라는 훅(기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게해주는 기능)을 사용합니다. useState란 현재상태값 변수와 그 상태값을 변경할 수 있게 해주는 setter함수를 반환하는 함수입니다. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;React의 특징(으로 시작해서 연계 질문 계속 가능)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;react는 jsx와 단뱡향데이터바인딩을 사용하고 가상돔이라는 개념을 사용하여 웹어플리케이션 퍼포먼스를 최적화시킬 수 있는 특징이있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;map 함수가 무엇인지 설명해주세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;배열에 사용할 수 있는 내장메서드입니다. map의 기능으로는 콜백함수를 각각의 요소에대해 한번씩 순서대로 불러 그 함수의 return값으로 새로운 배열을 만드는것이고, 문법은 callback함수를 매개변수로 받으며 callback함수는 요소,인덱스,map을 호출한 배열 이렇게 3가지를 인자로 받습니다. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;버튼을 클릭했을 때 alert 창을 띄우고 싶습니다. 리액트에서 어떻게 구현할까요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;JS처럼 버튼의 onClick이벤트에 alert함수를 호출하면, 페이지가 랜더링될때 alert이 팝업되고 버튼을 눌러도 아무런 응답이 없을것입니다. 이유는 페이지가 랜더링될때 함수가 호출되고 호출의 결과인 'undefined'가 onClick이벤트에 남기때문입니다. React는 이벤트가 발생했을 때 표현식에 정의된 함수를 자동으로 호출해주기 때문에 함수의 호출이 아닌 정의, 즉 함수 그자체를 써주면 됩니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Virtual DOM이란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;DOM의 상태를 메모리에 저장하고 변경 전과 변경 후의 상태를 비교한 뒤 최소한의 내용만 반영 하는 기능입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;리액트에서 단방향 데이터 흐름이란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;단방향 데이터 흐름이란 쉽게말해 부모로부터 자식으로만 데이터가 전달이 가능하다는 뜻입니다 . 이러한 방식은 코드를 이해하기 쉬워 데이터의 추적과 디버깅, 유지보수가 편합니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;fetch 함수는 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;JS의 내장함수로 비동기적으로 서버와 네트워크 요청을 보내고 응답을 받을 수 있습니다. fetch는 promise를 반환하기때문에 async/await을 사용할 수 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;코드리뷰란 무엇인가요? 코드리뷰는 필요한가요? 왜 필요한가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;개발자들 끼리 서로 만든 코드를 점검하고 피드백을 주는 과정입니다. 팀의 협업과 서로가 작성한 코드의 이해도를 높여주고 버그와 의도하지 않은 동작을 조기 발견하고 예방할 수 있기때문에 필요합니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;json이란 무엇인가요?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;텍스트를 기반으로하여 key와 value로 구성되었고 서버와 통신을 하기위한 markup언어입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;json 목 데이터와 javascript 변수로 만든 목 데이터의 차이에 대해 설명해주세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;상수 데이터는 변수에 저장된 값을 사용하는 반면 json mockdata는 실제 http통신을 하는것과 같은 방식으로 데이터를 활용하는 차이점이 있습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;인증 인가 흐름에 대해서 설명해주세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;color:blue&quot;&gt;인증은 사용자가 누구인지 확인하는 절차이고 인가는 사용자가 요청하는 요청(Request)을 실행할 수 있는 권한 여부를 확인하는 절차입니다. 사용자에게서 아이디, 비밀번호를 입력받아 DB에 저장된 데이터와 일치하는지 비교 후 일치한다면 access token을 틀리다면 로그인실패메세지를 보내고, token을 통해 사용자의 권한을 확인하고 요청을 승인할지 거부할지 판단한다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">면접준비 💯</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">react의 마지막 실습 ~ 🧑‍💻</summary></entry></feed>

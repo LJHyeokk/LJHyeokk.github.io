@@ -1,0 +1,25 @@
+I"f<h2 id="유닛테스트-">유닛테스트 🙀</h2>
+
+<center class="notice--danger">유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다</center>
+
+<ul>
+  <li>Google Test Automation Conference에서 제안된 테스트 피라미드</li>
+  <li>시스템을 테스트 할때 크게 3가지 방법으로 나눌 수 있다.</li>
+  <li>전체 테스트 비중을 아래와 같은 수치로 구현하는 것이 권장됨
+    <ul>
+      <li><strong>E2E(UI) Testing</strong> - 10%</li>
+      <li><strong>Integrating Testing</strong> - 20%</li>
+      <li><strong>Unit Testing</strong> - 70%</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ui-testing">UI Testing</h3>
+
+<ul>
+  <li>크롬 브라우저를 띄운다음에 내가 만든 검색페이지로 들어가서 검색을 해보고 검색한 내용이 제대로 나오는지 화면상에서 확인하거나 직접 회원가입을 해보고 회원가입후에 로그인 되는지 직접 브라우저 상에서 값을 입력해서 테스트 하는방법</li>
+  <li>UI Testing이 가장 어렵고 까다로움.</li>
+  <li>Manual Testing은 실행하기 쉽다는 장점이 있지만 비용이 많이 들고 부정확 하며 실행 시간이 오래 걸림.</li>
+  <li>자동화 할 수 있지만 UI Testing은 자동화 하기가 가장 까다롭고 또 실행하기도 까다로움.</li>
+</ul>
+:ET
