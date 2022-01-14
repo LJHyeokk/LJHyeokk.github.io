@@ -19,7 +19,7 @@ main-sidebar:
         url: /Every/Algorithm/Algorithm
   - title: 'Database'
     children:
-      - title: 'mySQL(1)'
+      - title: 'mySQL(2)'
         url: /Every/Sql/sql/
       - title: 'mongoDB(0)'
         url: /
@@ -29,7 +29,7 @@ main-sidebar:
         url: /Every/Blog/Blog/
   - title: 'etc'
     children:
-      - title: '이것저것(5)'
+      - title: '이것저것(6)'
         url: /Every/etc/etc/
       - title: 'Wecode(5)'
         url: /Every/Wecode/wecode/

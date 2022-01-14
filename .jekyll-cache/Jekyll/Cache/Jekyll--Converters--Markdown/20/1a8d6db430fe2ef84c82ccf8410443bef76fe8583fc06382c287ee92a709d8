@@ -1,5 +1,0 @@
-I"i<h2 id="layered-pattern이란-">Layered Pattern이란 🙀</h2>
-
-<center class="notice--danger">백엔드 API를 구현할때 널리 쓰이는 패턴중 레이어드 아키텍처(Layered achitecture) 패턴이 있습니다.
-레이어드 아키텍쳐로 API를 구현할때는 역할에 따라 독립된 모듈로 나누어서 코드를 구현합니다</center>
-:ET

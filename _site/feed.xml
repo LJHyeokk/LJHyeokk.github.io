@@ -1,4 +1,225 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-12T17:29:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Unit Test</title><link href="http://localhost:4000/node-05/" rel="alternate" type="text/html" title="Unit Test" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/node-05</id><content type="html" xml:base="http://localhost:4000/node-05/">&lt;h2 id=&quot;유닛테스트-&quot;&gt;유닛테스트 🙀&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-14T11:39:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">AWS</title><link href="http://localhost:4000/interview-06/" rel="alternate" type="text/html" title="AWS" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/interview-06</id><content type="html" xml:base="http://localhost:4000/interview-06/">&lt;h2 id=&quot;aws란-&quot;&gt;AWS란? 💯&lt;/h2&gt;
+
+&lt;center class=&quot;notice--info&quot;&gt;AWS : 아마존닷컴에서 개발한 클라우드 컴퓨팅 플랫폼 - 비즈니스와 개발자가 웹 서비스를 사용하여 확장 가능하고 정교한 애플리케이션 구축하도록 지원하여 준다.&lt;/center&gt;
+
+&lt;p&gt;EC2&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Elastic Compute Cloud&lt;/li&gt;
+  &lt;li&gt;AWS 상에서 사용하는 Server로, EC2 서버에 API를 배포하게 됨.&lt;/li&gt;
+  &lt;li&gt;EC2는 다양한 사양 옵션을 제공함. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t2.nano&lt;/code&gt; (CPU 1, 0.5 GB memory) 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x1.32xlarge&lt;/code&gt; (CPU 128, RAM 1952 GB) 까지 다양하게 제공함으로 필요한 사양의 EC2 인스턴스(instnace)를 선택해서 사용할 수 있음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Security Group&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;EC2 인스턴스에 대한 네트워크 트래픽을 제어하는 가상 방화벽 역할.&lt;/li&gt;
+  &lt;li&gt;즉 security group 설정을 해줘야 EC2 인스턴스에 HTTP와 SSH 접속이 가능.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;RDS&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Relational Database Service&lt;/li&gt;
+  &lt;li&gt;AWS의 database 서비스.&lt;/li&gt;
+  &lt;li&gt;RDS를 사용하면 사용자가 직접 서버를 생성해서 데이터 베이스를 설치하고 설정하고 관리 하지 않음.&lt;/li&gt;
+  &lt;li&gt;사용자가 직접 데이터 베이스를 설치하고 운영하는 것보다 RDS를 사용하는것이 더 저렴함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Load Balancer&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로드발란서는 HTTP 요청들을 여러 서버에 분산할때 사용됩니다.&lt;/li&gt;
+  &lt;li&gt;HTTP 요청이 많을때는 서버 하나만으로 모두 처리 하기 힘들기 때문에 서버 수를 늘리는것이 일반적. 여러 서버를 실행하고 로드발런서가 HTTP 요청들을 서버들에 분산 해주는 형태로 시스템이 구성됨.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Route 53&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AWS의 DNS 서비스.&lt;/li&gt;
+  &lt;li&gt;API 시스템을 실제 도메인과 연결.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;aws-s3&quot;&gt;AWS S3&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AWS S3(Simple Storage Service)는 이름 그대로 파일을 쉽게 저장할 수 있는 공간을 제공하는 서비스입니다.&lt;/li&gt;
+  &lt;li&gt;파일을 저장 할 수 있을 뿐만이 아니라, 업로드된 파일마다 고유 주소를 부여해주기 때문에 S3에 저장한 파일을 웹상에서 쉽게 읽어들일수 있습니다.&lt;/li&gt;
+  &lt;li&gt;주로 사이트상의 이미지들을 저장하고 사이트에서 읽어들여 렌더링 해주는데 사용합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;클라우드-컴퓨팅---인터넷을통해-it-리소스와-애플리케이션을-온디맨드로-제공하는서비스&quot;&gt;클라우드 컴퓨팅 - 인터넷을통해 IT 리소스와 애플리케이션을 온디맨드로 제공하는서비스&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;기존의 물리적인 형태의 실물 컴퓨팅 리소스를 네트워크 기반 서비스 형태로 제공하는 것.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자로 하여금 네트워크 상에서 클라우드 서비스의 자원을 사용하는 것을 의미한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다음과 같이 3가지 분류로 나누기도 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;▶ IaaS(Infrastructure as a Service)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS, 네이버플랫폼 과 같은 인프라스트럭쳐를 제공하는 서비스.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가상 서버 또는 스토리지, 가상 네트워크 등의 리소스를 서비스 형태로 제공한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자는 물리적인 하드웨어를 직접 관리할 필요가 없으며, 직접적으로 서비스 이용을 통해 컴퓨터 리소스를 사용 할 수 있다. (AWS, 마이크로소프트(MS) 애저, IBM 소프트레이어 등의 업체들이 있다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클라우드 IT의 기본 구성 요소 (네트워킹, 컴퓨터, 데이터 스토리지 공간)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;▶ PaaS(Platform as a Service)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DB 또는 Application 서버 등의 이미 미들웨어를 제공한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;하드웨어/OS/미들웨어 에 대한 관리는 서비스 제공자가 하며, 사용자는 제공된 미들웨어만 사용 할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;주로 개발 환경과 관련한 서비스를 제공한다.(OS, DB, WAS, JDK)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기본 인프라 (ex. 하드웨어와 운영 체제)를 관리할 필요 없이 애플리케이션을 실행할 수 있게 해준다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;▶ SaaS(Software as a Service)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소프트웨어 또는 애플리케이션의 기능만 제공합니다. 네이버클라우드, 웹 메일, ERP 등과 같은 형태의 서비스를 사용자에게 제공한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;aws-클라우드-컴퓨팅의-장점&quot;&gt;AWS 클라우드 컴퓨팅의 장점&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;저렴한 비용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;AWS는 사전 확약금이나 장기 약정 없이 저렴한 종량 과금제 방식으로 운영된다.&lt;/p&gt;
+
+&lt;p&gt;확장형 글로벌 인프라를 구축 및 관리하고, 더 저렴한 요금의 형태로 사용자에게 비용 절감 혜택을 고스란히 돌려준다.&lt;/p&gt;
+
+&lt;p&gt;자본비용을 가변비용으로 대체하여 시간대별로도 자원을 끌수있음.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;속도 및 민첩성 개선&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;데이터센터운영 및 유지관리에 비용투자 불필요&lt;/p&gt;
+
+&lt;p&gt;몇분만에 전세게에 배포&lt;/p&gt;
+
+&lt;p&gt;AWS는 언어 및 운영 체제에 구애받지 않는 플랫폼이다. 따라서 사용자의 비즈니스에 가장 적합한 개발 플랫폼 또는 프로그래밍 모델을 선택할 수 있다. 사용할 서비스를 한 개 또는 여러 개 선택하고, 그 사용 방식도 선택할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;민첩성, 즉각적 융통성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;몇 주 또는 몇 개월 동안 물리적인 서버를 구축하길 기다리는 대신 즉시 새로운 앱을 배포하고, 수요를 기준으로 축소할 수도 있다. 필요한 가상 서버가 한 대든 아니면 수천 대든, 가상 서버가 필요한 시간이 몇 시간이든 사용한 양만큼 비용이 청구된다. 즉 한 줄로 요약하면 설치가 빠르고 관리가 편하다는 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;직접-배포해보기&quot;&gt;직접 배포해보기&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;front package.json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;distribute&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;npm i &amp;amp;&amp;amp; npm run build &amp;amp;&amp;amp; pm2 serve build 3000 --name &amp;lt;project-front&amp;gt; --spa&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm i ➡️ gitignore에 nodemodule이 들어가있으니 클론받을시에 nodemodule이 없다. 즉 install 받아줘야함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm run build ➡️ 프로그램을 build 시킴&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pm2 serve build 3000 –name &lt;project-front&gt; --spa ➡️ pm2 프로그램의 serve 명령어를 통해서 build 폴더를 serving시킴&lt;/project-front&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;back package.json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;distribute&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;npm i &amp;amp;&amp;amp; npx prisma generate &amp;amp;&amp;amp; pm2 start server.js --name &amp;lt;project-back&amp;gt; -i max&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 기본&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;바벨사용시&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;babel-node server.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;distribute&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;npm i &amp;amp;&amp;amp; prisma generate &amp;amp;&amp;amp; pm2 start --name &amp;lt;project-back&amp;gt; -i max npm -- run start&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;pm2 start ➡️ js파일실행 - 기존 node 명령어는 전역 에러가 날 시 재 시작이 되지 않지만 pm2 start를 이용하면 재시작됨&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;AWS에서 EC2, RDS를 셋팅 후&lt;/p&gt;
+
+&lt;p&gt;인스턴스를 생성하여 key.pem을 다운받자.&lt;/p&gt;
+
+&lt;p&gt;key.pem이 있는 폴더위치에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh -i key.pem ec2-user@&amp;lt;확인한 public ip&amp;gt;&lt;/code&gt; 실행&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo yum install git
+git clone &amp;lt;repo_front&amp;gt;
+git clone &amp;lt;repo_back&amp;gt;
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+export NVM_DIR=&quot;$([ -z &quot;${XDG_CONFIG_HOME-}&quot; ] &amp;amp;&amp;amp; printf %s &quot;${HOME}/.nvm&quot; || printf %s &quot;${XDG_CONFIG_HOME}/nvm&quot;)&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;amp;&amp;amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+
+nvm install --lts
+nvm use --lts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제부터 npm을 사용할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;front .env&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;REACT_APP_BASE_URL='http://13.125.235.62:8000'
+GENERATE_SOURCEMAP=false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GENERATE_SOURCEMAP ➡️ create-react-app으로 React 프로젝트를 빌드하여 배포하는 경우, 기본적으로 webpack에 의해 번들링 된 파일과 해당 파일에 대응되는 sourcemap이 생성됨
+sourcemap은 간단히 말하면, 디버깅을 위한 파일이다. 해당 파일이 있다면 압축되고 난독화된 파일을 브라우저 내에서 다시 원본 소스처럼 확인할 수 있음. 하지만, 실제 배포 시 sourcemap은 제거되어야 함. 내부 코드가 그대로 노출되므로, 난독화의 이점을 모두 상실. 노출되지 않아야 하는 프로젝트일수록 더욱 치명적일 수 있음. 빌드 시 메모리 부족(OOM) 이슈가 발생할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;back .env&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DATABASE_URL=&quot;mysql://junHyeok:dlwnsgur1@project-wetown.ccrudlxgt09s.ap-northeast-2.rds.amazonaws.com:3306/wetown&quot;
+JWT_SECRET=&quot;1234&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;back, front 모두 환경변수파일 생성(gitignore 되어있기때문)&lt;/p&gt;
+
+&lt;p&gt;그리고 각자의 클론 폴더에서 npm run distribute 명령어를 실행시켜 배포함&lt;/p&gt;
+
+&lt;p&gt;끝&lt;/p&gt;
+
+&lt;h2 id=&quot;내가-직접-배포한-사이트&quot;&gt;내가 직접 배포한 사이트&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://13.125.235.62:3000/&quot; target=&quot;_blank&quot;&gt;WETOWN&lt;/a&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">AWS란? 💯</summary></entry><entry><title type="html">Unit Test</title><link href="http://localhost:4000/node-05/" rel="alternate" type="text/html" title="Unit Test" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/node-05</id><content type="html" xml:base="http://localhost:4000/node-05/">&lt;h2 id=&quot;유닛테스트-&quot;&gt;유닛테스트 🙀&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다&lt;/center&gt;
 
@@ -115,7 +336,63 @@
 
 &lt;p&gt;지금은 unit test라는 것이 있고 이것이 무엇을 위해 만들어졌는지만 아는것으로 넘어가지만&lt;/p&gt;
 
-&lt;p&gt;추후 제대로 활용할줄 알게된다면 포스트업데이트를 할 것이다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">유닛테스트 🙀</summary></entry><entry><title type="html">1차 Project 회고록</title><link href="http://localhost:4000/wecode-05/" rel="alternate" type="text/html" title="1차 Project 회고록" /><published>2022-01-08T00:00:00+09:00</published><updated>2022-01-08T00:00:00+09:00</updated><id>http://localhost:4000/wecode-05</id><content type="html" xml:base="http://localhost:4000/wecode-05/">&lt;h2 id=&quot;-1차-프로젝트-output-및-소개&quot;&gt;📑 1차 프로젝트 output 및 소개&lt;/h2&gt;
+&lt;p&gt;추후 제대로 활용할줄 알게된다면 포스트업데이트를 할 것이다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">유닛테스트 🙀</summary></entry><entry><title type="html">Workbench</title><link href="http://localhost:4000/sql-02/" rel="alternate" type="text/html" title="Workbench" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/sql-02</id><content type="html" xml:base="http://localhost:4000/sql-02/">&lt;h2 id=&quot;workbench&quot;&gt;Workbench👾&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;DBMS의 종류중 하나인 mysql의 workbench를 사용해보자.&lt;/center&gt;
+
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/workbench-1.png&quot; alt=&quot;workbench-1&quot; style=&quot;zoom:60%&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;두번째 번개모양을 누르면 마우스커서가 있는 곳의 명령어가 실행이된다.(ctrl + enter와 같은 기능)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--&lt;/code&gt;를 써주면 주석&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;action output을 통해 실행이 제대로 되었는지 확인할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mysql-데이터-타입&quot;&gt;mysql 데이터 타입&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정수형
+    &lt;ul&gt;
+      &lt;li&gt;TINYINT : 1바이트&lt;/li&gt;
+      &lt;li&gt;SMALLINT : 2바이트&lt;/li&gt;
+      &lt;li&gt;MEDIUMINT : 3바이트&lt;/li&gt;
+      &lt;li&gt;INT : 4바이트&lt;/li&gt;
+      &lt;li&gt;BIGINT : 8바이트&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실수형
+    &lt;ul&gt;
+      &lt;li&gt;FLOAT : 4바이트&lt;/li&gt;
+      &lt;li&gt;DOUBLE : 8바이트&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문자형
+    &lt;ul&gt;
+      &lt;li&gt;CHAR : 255바이트 (고정길이문자형 - 지정해둔 공간 그대로 저장)&lt;/li&gt;
+      &lt;li&gt;VARCHAR : 65535바이트 (변동길이문자형 - 지정해두어도 사용하지 않으면 자동 삭제)&lt;/li&gt;
+      &lt;li&gt;TINYTEXT : 255(지정 x 고정 o)&lt;/li&gt;
+      &lt;li&gt;TEXT : 65535(지정 x 고정 o)&lt;/li&gt;
+      &lt;li&gt;MEDIUMTEXT : 1600백만(지정 x 고정 o)&lt;/li&gt;
+      &lt;li&gt;LONGTEXT : 42억(지정 x 고정 o)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;날짜형
+    &lt;ul&gt;
+      &lt;li&gt;DATE : 3바이트 ( 9999-12-31 )&lt;/li&gt;
+      &lt;li&gt;DATETIME : 3바이트 ( 9999-12-31 23:59:59 )&lt;/li&gt;
+      &lt;li&gt;TIME : 4바이트 ( 838:59:59 )&lt;/li&gt;
+      &lt;li&gt;YEAR : 1바이트 ( 1901 ~ 2155 )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Workbench👾</summary></entry><entry><title type="html">1차 Project 회고록</title><link href="http://localhost:4000/wecode-05/" rel="alternate" type="text/html" title="1차 Project 회고록" /><published>2022-01-08T00:00:00+09:00</published><updated>2022-01-08T00:00:00+09:00</updated><id>http://localhost:4000/wecode-05</id><content type="html" xml:base="http://localhost:4000/wecode-05/">&lt;h2 id=&quot;-1차-프로젝트-output-및-소개&quot;&gt;📑 1차 프로젝트 output 및 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;p style=&quot;font-weight:bold&quot;&gt;wetown 시연영상&lt;/p&gt;&lt;/center&gt;
@@ -1134,194 +1411,4 @@ init();
 
 &lt;p&gt;명령어를 사용하여 설치하면 참조당하는 곳에&lt;/p&gt;
 
-&lt;p&gt;‘참조하는 테이블’ ‘참조하는 테이블’ [] 이라고 쓰면 자동으로 FK가 설정된다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">ORM 🙀</summary></entry><entry><title type="html">MYSQL 첫걸음</title><link href="http://localhost:4000/sql-01/" rel="alternate" type="text/html" title="MYSQL 첫걸음" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>http://localhost:4000/sql-01</id><content type="html" xml:base="http://localhost:4000/sql-01/">&lt;h2 id=&quot;mysql&quot;&gt;MYSQL👾&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;database : 서로 연관된 데이터(table)들을 모아놓은것 쉽게말해 폴더같은느낌, SCHEMA라고도 불린다.&lt;/center&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;database server : 여러개의 schema들을 모아놓은곳 &lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/database.png&quot; alt=&quot;database&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;간단한-명령어들&quot;&gt;간단한 명령어들&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CREATE DATABASE '작명';&lt;/code&gt; ➡️ 스키마 생성&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DROP DATABASE 'table이름';&lt;/code&gt; ➡️ 스키마 delete&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHOW DATABASES;&lt;/code&gt; ➡️ 스키마들을 보여줌&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;USE 'table이름'&lt;/code&gt; ➡️ 해당 스키마에서 작업을 하겠다.&lt;/p&gt;
-
-&lt;center&gt;테이블 만들기&lt;/center&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;만들겠다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto_increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;숫자로&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;번째까지&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;보여주고&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빈값은&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용하지않으며&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;자동적으로&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;씩늘려가겠다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;은&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;글자까지&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;보여주고&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빈값은&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용하지않겠다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;des&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;des&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;텍스트타입이며&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빈값을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용한다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;created&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시간타입이며&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빈값을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용하지않는다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;은&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;글자만&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;보여주고&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빈값을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용한다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;가장중요한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값으로&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;정했고&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그값은&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;중복을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;허용하지않는다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHOW TABLES&lt;/code&gt; ➡️ 해당 스키마가 가지고있는 table을 보여준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DESC 'table이름'&lt;/code&gt; ➡️ table의 구조를 보여줌&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INSERT INTO 'table이름' (필드들) values ('필드에 넣을값들')&lt;/code&gt; ➡️ 작성했던 테이블에 데이터 넣기&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름';&lt;/code&gt; ➡️ table로 부터 모든것을 가져오겠다 ( 보여준다. )&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----+--------------+-----------------+---------------------+-----------+&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;des&lt;/span&gt;             &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;created&lt;/span&gt;             &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----+--------------+-----------------+---------------------+-----------+&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;배고프다&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;진짜로많이&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2021&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이준혁&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;----+--------------+-----------------+---------------------+-----------+&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;00&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT id,title FROM 'table이름'&lt;/code&gt; ➡️ 원하는 값들만 골라서 보여줄 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' WHERE author=&quot;이준혁&quot;&lt;/code&gt; ➡️ author가 “이준혁”인 값들만 보이게 가능&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' WHERE author=&quot;이준혁&quot; ORDER BY id DESC&lt;/code&gt; ➡️ id값을 기준으로 내림차순으로 보여줌&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' WHERE author=&quot;이준혁&quot; ORDER BY id DESC LIMIT 2&lt;/code&gt; ➡️ select된 데이터가 몇개든 최대2개까지 보여줌&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UPDATE 'table이름' SET '필드'='바꾸고싶은값으로' WHERE id=2&lt;/code&gt; ➡️ table의 필드의 값을 바꾸고싶을때 이때 where을 쓰지않고 그냥하면 모든 필드의 값이 바뀌어버리니 조심할것&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DELETE FROM 'table이름' WHERE id=5&lt;/code&gt; ➡️ 삭제기능 WHERE을 꼭 쓰자&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RENAME TABLE 'table이름' TO '바꿀이름'&lt;/code&gt; ➡️ 테이블 이름바꾸기&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' LEFT JOIN '합칠 tabled이름' ON ABC.id = QWE.id&lt;/code&gt; ➡️ join시키기 ON 뒤쪽에 기준을 정해준다. (NULL값이 뜬다면 한쪽에 값이 없다는것이다.)&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' INNER JOIN '합칠 tabled이름' ON ABC.id = QWE.id&lt;/code&gt; ➡️ NULL값을 제외한, 즉 교집합만을 join시킨다. (엄격하다고 볼수있음)&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT * FROM 'table이름' FULL OUTER JOIN '합칠 tabled이름' ON ABC.id = QWE.id&lt;/code&gt; ➡️ 모두보여줌(지원하지않으면 left right를 UNION으로 결함)&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ALTER TABLE [table이름] AUTO_INCREMENT = [시작할 값];&lt;/code&gt; ➡️ id값을 초기화해줌&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ALTER TABLE 'table이름' ADD FOREIGN KEY(ID) REFERENCES 참조할테이블(ID);&lt;/code&gt; ➡️ 필드값 나중에 추가해주기&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT songs.title, songs.lyrics FROM songs WHERE songs.lyrics LIKE '%넘실넘실%';&lt;/code&gt; ➡️ LIKE를 사용하면 %%사이의 값이 포함된 값을 보여줌&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;관계형-데이터-모델링&quot;&gt;관계형 데이터 모델링&lt;/h3&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;업무파악 ➡️ 개념적 데이터 모델링 ➡️ 논리적 데이터 모델링 ➡️ 물리적 데이터 모델링&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/database1.png&quot; alt=&quot;database1&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/database2.png&quot; alt=&quot;database2&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">MYSQL👾</summary></entry><entry><title type="html">react에서 fetch함수로 데이터받아오기</title><link href="http://localhost:4000/wecode-03/" rel="alternate" type="text/html" title="react에서 fetch함수로 데이터받아오기" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/wecode-03</id><content type="html" xml:base="http://localhost:4000/wecode-03/">&lt;h2 id=&quot;react의-마지막-실습--&quot;&gt;react의 마지막 실습 ~ 🧑‍💻&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;postman을 통해 backend서버로 아이디와 비밀번호를 보내 회원가입을 해보자.&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/postman.png&quot; alt=&quot;postman&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;body에 json타입으로 객체를 만들어 해당 주소로 post요청을 보냈다.&lt;/p&gt;
-
-&lt;p&gt;그 결과 회원번호 148을 가진 회원으로 가입이 되었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/fetch.png&quot; alt=&quot;fetch&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;login페이지에서 사용자가 회원가입된 ID, PW를 DB에 일치하는 값으로 작성하였을때 token을 주고 list페이지로 이동하는 로직이다&lt;/p&gt;
-
-&lt;p&gt;분명 올바른 url과 ID,PW값 문법도 틀리지 않는 로직인데 자꾸만 net 400번 에러가 발생하였다.&lt;/p&gt;
-
-&lt;p&gt;한참을 고민하였지만 이유를 알 수 없었다.&lt;/p&gt;
-
-&lt;p&gt;나중에야 proxy라는 키워드를 알게되서 해결하였지만&lt;/p&gt;
-
-&lt;p&gt;나는 정말 큰 실수를 저질렀었다.&lt;/p&gt;
-
-&lt;p&gt;분명 cors라는 에러가 뜨는것을 봤었고 그 에러가 왜 떴는지 알아보고 해결했어도 됐지만&lt;/p&gt;
-
-&lt;p&gt;급한마음에 해결책부분으로 mode: “no-cors” 라고 쓰면 에러가 없어지는 글만 보고 에러를 제거해버렸던 것이다.&lt;/p&gt;
-
-&lt;p&gt;그렇게 2시간내내 내코드에는 mode: “no-cors” 가 있었고 괜히 header값만 이것저것 바꿔보고 있었던 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/fetch1.png&quot; alt=&quot;fetch1&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;package.json에 “proxy”: “http://52.79.143.176:8000” 를 추가하고&lt;/p&gt;
-
-&lt;p&gt;코드에서는 url변경, mode : “no-cors”을 제거하였다.&lt;/p&gt;
-
-&lt;p&gt;곧 바로 로그인이 되었고 token도 localStorage에 잘 저장이 되었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;우리가 CRA 명령어로 만든 react환경은 server(react dev server)까지 제공해준다. 서버는 port는 3000번으로 쓰이는데 이 서버를 통해 브라우저가 우리가 작성한 JS, sass 등을 다운로드 받아 react App이 실행되는것이다. &lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/server.png&quot; alt=&quot;server&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;브라우저는 필요한 데이터를 얻기위해 8000번 포트의 서버로 접속을 하게되는데&lt;/p&gt;
-
-&lt;p&gt;CORS(Cross-Origin-Resource-Sharing)에 의해 통신이 불가능하게된다.&lt;/p&gt;
-
-&lt;p&gt;react 앱은 3000번에서 서비스되고있는데 다른 port로 접근하려고 하면 브라우저의 보안기능, CORS에서 정해놓은 정책에 의해 막히게 된다는 뜻이다.&lt;/p&gt;
-
-&lt;p&gt;이럴때 사용되는것이 proxy 이다.&lt;/p&gt;
-
-&lt;p&gt;( server 측에서 CORS를 허용하게 해주면 가능하게되기도 한다. )&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;proxy : 쉽게말해 현재의 port 서버에서 원하는것이 없다면 자동으로 지정해놓은 다른 서버에 접속할 수 있게 지정할 수 있게 해주는 것이다.(이러한 서버를 proxy서버 라고한다)&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/server2.png&quot; alt=&quot;server2&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;package.json에다가 “proxy” : “http://localhost:8000” 를 추가하게되면 이제 react dev server는 proxy server가 되는것이다.&lt;/p&gt;
-
-&lt;p&gt;그렇다면 위의 사진과 같은 동작을 통해 필요한것을 가져오게되는데&lt;/p&gt;
-
-&lt;p&gt;이러한 방법은 port를 하나만 사용하기에 CORS정책에 위반되지도않고 cookie또한 공유할 수 있게된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;p style=&quot;color:seagreen&quot;&gt;요약 : 개발환경에서는 react dev server를 사용하기에 백엔드 서버와 통신을 할때 port가 다르기에 CORS정책에 위반되게 되는데 proxy를 통해 해결가능하다.&lt;/p&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">react의 마지막 실습 ~ 🧑‍💻</summary></entry></feed>
+&lt;p&gt;‘참조하는 테이블’ ‘참조하는 테이블’ [] 이라고 쓰면 자동으로 FK가 설정된다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">ORM 🙀</summary></entry></feed>

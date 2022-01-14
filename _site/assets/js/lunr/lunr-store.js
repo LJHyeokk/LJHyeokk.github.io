@@ -286,4 +286,16 @@ var store = [{
         "tags": [],
         "url": "/node-05/",
         "teaser": null
+      },{
+        "title": "Workbench",
+        "excerpt":"Workbench👾 DBMS의 종류중 하나인 mysql의 workbench를 사용해보자. 두번째 번개모양을 누르면 마우스커서가 있는 곳의 명령어가 실행이된다.(ctrl + enter와 같은 기능) --를 써주면 주석 action output을 통해 실행이 제대로 되었는지 확인할 수 있다. mysql 데이터 타입 정수형 TINYINT : 1바이트 SMALLINT : 2바이트 MEDIUMINT : 3바이트 INT : 4바이트 BIGINT : 8바이트...","categories": [],
+        "tags": [],
+        "url": "/sql-02/",
+        "teaser": null
+      },{
+        "title": "AWS",
+        "excerpt":"AWS란? 💯 AWS : 아마존닷컴에서 개발한 클라우드 컴퓨팅 플랫폼 - 비즈니스와 개발자가 웹 서비스를 사용하여 확장 가능하고 정교한 애플리케이션 구축하도록 지원하여 준다. EC2 Elastic Compute Cloud AWS 상에서 사용하는 Server로, EC2 서버에 API를 배포하게 됨. EC2는 다양한 사양 옵션을 제공함. t2.nano (CPU 1, 0.5 GB memory) 부터 x1.32xlarge (CPU 128, RAM 1952 GB)...","categories": [],
+        "tags": [],
+        "url": "/interview-06/",
+        "teaser": null
       }]
