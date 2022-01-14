@@ -623,7 +623,7 @@ function prev(){
   if(curPos > 0){
     nextBtn.removeAttribute("disabled")
     postion += IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}vw)`;
+    images.style.transform = `translateX(${postion}%)`;
     curPos = curPos - 1;
   }
   if(curPos == 0){
@@ -634,7 +634,7 @@ function next(){
   if(curPos < 5){
     prevBtn.removeAttribute("disabled")
     postion -= IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}vw)`;
+    images.style.transform = `translateX(${postion}%)`;
     curPos = curPos + 1;
   }
   if(curPos == 5){

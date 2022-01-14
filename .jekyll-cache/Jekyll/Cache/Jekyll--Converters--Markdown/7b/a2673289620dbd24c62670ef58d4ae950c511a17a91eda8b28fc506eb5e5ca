@@ -1,4 +1,4 @@
-I"-D<h2 id="-1차-프로젝트-output-및-소개">📑 1차 프로젝트 output 및 소개</h2>
+I"+D<h2 id="-1차-프로젝트-output-및-소개">📑 1차 프로젝트 output 및 소개</h2>
 
 <p><br /></p>
 <center><p style="font-weight:bold">wetown 시연영상</p></center>
@@ -185,7 +185,7 @@ function prev(){
   if(curPos > 0){
     nextBtn.removeAttribute("disabled")
     postion += IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}vw)`;
+    images.style.transform = `translateX(${postion}%)`;
     curPos = curPos - 1;
   }
   if(curPos == 0){
@@ -196,7 +196,7 @@ function next(){
   if(curPos < 5){
     prevBtn.removeAttribute("disabled")
     postion -= IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}vw)`;
+    images.style.transform = `translateX(${postion}%)`;
     curPos = curPos + 1;
   }
   if(curPos == 5){
