@@ -305,8 +305,8 @@ var store = [{
         "url": "/sql-03/",
         "teaser": null
       },{
-        "title": "Algorithm 06",
-        "excerpt":" ","categories": [],
+        "title": "Linked List",
+        "excerpt":"Linked List🤮  ","categories": [],
         "tags": [],
         "url": "/Algorithm-06/",
         "teaser": null
