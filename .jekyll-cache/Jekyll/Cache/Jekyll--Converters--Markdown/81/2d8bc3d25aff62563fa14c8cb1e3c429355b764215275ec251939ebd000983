@@ -1,0 +1,106 @@
+I"�<h2 id="linked-list">Linked List🤮</h2>
+
+<h2 id="사전지식">사전지식</h2>
+
+<ul>
+  <li>
+    <p>Storage ➡️ (HDD/SSD) 가격이 저렴하며 용량이 크고 전원이 꺼져도 데이터가 저장됨</p>
+  </li>
+  <li>
+    <p>Memory ➡️ (DRAM) 가격이 비싸고 용량이 적고 전원이 꺼지면 데이터가 사라짐 But 속도가 빠르다</p>
+  </li>
+  <li>
+    <p>CPU ➡️ 데이터를 끌어다 쓸때 Storage가 아닌 Memory안의 데이터를 끌어다 씀 ( Memory가 속도가 빠르기 때문 )</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/link-1.png" alt="link-1" style="zoom:50%;" /></center>
+<p><br />
+Array List ➡️ [추가/삭제 : 느림 ( 메모리주소를 한칸한칸씩 땡겨야하기때문 )] [인덱스 조회: 빠름 ( 주소를 알고있음 )]</p>
+
+<p>Linked List ➡️ [추가/삭제 : 빠름 ( 연결만 재설정 해주면되기때문 )] [인덱스 조회: 느림 ( 하나하나 타고 조회해야함 )]</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/link-2.png" alt="link-2" style="zoom:50%;" /></center>
+<p><br /></p>
+<ul>
+  <li>
+    <p>node ➡️ dataField + linkField 그림에서는 총 4개의 node가 존재함 (JS는 객체지향이므로 이것을 객체로 표현)</p>
+  </li>
+  <li>
+    <p>data field ➡️ 실제 값</p>
+  </li>
+  <li>
+    <p>link field ➡️ 다음 node가 무엇인가에 대해 저장되어있음</p>
+  </li>
+  <li>
+    <p>Head ➡️ 첫번쩨 node가 무엇인가에 대해 저장되어있음</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="실제로-만들어보기">실제로 만들어보기</h2>
+
+<blockquote>
+  <p>test.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nc">LinkedList</span> <span class="o">=</span> <span class="n">function</span> <span class="o">()</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">};</span>
+
+<span class="kd">const</span> <span class="nc">Node</span> <span class="o">=</span> <span class="n">function</span> <span class="o">(</span><span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">link</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<p>앞으로 찍어낼 객체를 만들 함수들</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LinkedList</span><span class="o">.</span><span class="na">prototype</span><span class="o">.</span><span class="na">add</span> <span class="o">=</span> <span class="n">function</span> <span class="o">(</span><span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">head</span> <span class="o">===</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span> <span class="c1">// Node { data: 5, link: null } // 헤드에 주소넣어주기</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">size</span><span class="o">++;</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">let</span> <span class="n">currentNode</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">head</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">currentNode</span><span class="o">.</span><span class="na">link</span> <span class="o">!==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">currentNode</span> <span class="o">=</span> <span class="n">currentNode</span><span class="o">.</span><span class="na">link</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">currentNode</span><span class="o">.</span><span class="na">link</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">size</span><span class="o">++;</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<p>생성자에 의해 생성될 객체가 사용할 수 있게 프로토타입으로 add 함수 구현</p>
+
+<p>add() ➡️ 링크리스트에 값을 넣어주는 함수로 디자인함</p>
+
+<ol>
+  <li>
+    <p>노드객체를 생성 한다.</p>
+  </li>
+  <li>
+    <p>head값이 null이라면 head에 새로 생성한 노드를 넣는다.</p>
+  </li>
+  <li>
+    <p>head값이 있다면 링크를 타고타고 들어가 링크값이 null일때, 즉 마지막 노드의 값에 새로 생성된 노드를 넣는다.</p>
+  </li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LinkedList</span><span class="o">.</span><span class="na">prototype</span><span class="o">.</span><span class="na">insertFirstNode</span> <span class="o">=</span> <span class="n">function</span> <span class="o">(</span><span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+  <span class="n">newNode</span><span class="o">.</span><span class="na">link</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">head</span><span class="o">;</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">size</span><span class="o">++;</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<p>insertFirstNode() ➡️ 첫번째노드에 ‘값이 추가되도록’ 디자인함</p>
+
+<p>-</p>
+:ET

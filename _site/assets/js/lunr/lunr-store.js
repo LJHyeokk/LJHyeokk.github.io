@@ -306,7 +306,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Linked List",
-        "excerpt":"Linked List🤮  ","categories": [],
+        "excerpt":"Linked List🤮 사전지식 Storage ➡️ (HDD/SSD) 가격이 저렴하며 용량이 크고 전원이 꺼져도 데이터가 저장됨 Memory ➡️ (DRAM) 가격이 비싸고 용량이 적고 전원이 꺼지면 데이터가 사라짐 But 속도가 빠르다 CPU ➡️ 데이터를 끌어다 쓸때 Storage가 아닌 Memory안의 데이터를 끌어다 씀 ( Memory가 속도가 빠르기 때문 ) Array List ➡️ [추가/삭제 :...","categories": [],
         "tags": [],
         "url": "/Algorithm-06/",
         "teaser": null

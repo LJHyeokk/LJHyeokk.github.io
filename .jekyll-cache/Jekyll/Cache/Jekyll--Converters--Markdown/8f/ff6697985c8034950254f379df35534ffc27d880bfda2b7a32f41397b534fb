@@ -1,0 +1,114 @@
+I"�<h2 id="linked-list">Linked List🤮</h2>
+
+<h2 id="사전지식">사전지식</h2>
+
+<ul>
+  <li>
+    <p>Storage ➡️ (HDD/SSD) 가격이 저렴하며 용량이 크고 전원이 꺼져도 데이터가 저장됨</p>
+  </li>
+  <li>
+    <p>Memory ➡️ (DRAM) 가격이 비싸고 용량이 적고 전원이 꺼지면 데이터가 사라짐 But 속도가 빠르다</p>
+  </li>
+  <li>
+    <p>CPU ➡️ 데이터를 끌어다 쓸때 Storage가 아닌 Memory안의 데이터를 끌어다 씀 ( Memory가 속도가 빠르기 때문 )</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/link-1.png" alt="link-1" style="zoom:50%;" /></center>
+<p><br />
+Array List ➡️ [추가/삭제 : 느림 ( 메모리주소를 한칸한칸씩 땡겨야하기때문 )] [인덱스 조회: 빠름 ( 주소를 알고있음 )]</p>
+
+<p>Linked List ➡️ [추가/삭제 : 빠름 ( 연결만 재설정 해주면되기때문 )] [인덱스 조회: 느림 ( 하나하나 타고 조회해야함 )]</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/link-2.png" alt="link-2" style="zoom:50%;" /></center>
+<p><br /></p>
+<ul>
+  <li>
+    <p>node ➡️ dataField + linkField 그림에서는 총 4개의 node가 존재함 (JS는 객체지향이므로 이것을 객체로 표현)</p>
+  </li>
+  <li>
+    <p>data field ➡️ 실제 값</p>
+  </li>
+  <li>
+    <p>link field ➡️ 다음 node가 무엇인가에 대해 저장되어있음</p>
+  </li>
+  <li>
+    <p>Head ➡️ 첫번쩨 node가 무엇인가에 대해 저장되어있음</p>
+  </li>
+</ul>
+
+<h2 id="실제로-만들어보기">실제로 만들어보기</h2>
+
+<blockquote>
+  <p>test.js</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const LinkedList = function () {
+  this.head = null;
+  this.size = 0;
+};
+
+const Node = function (data) {
+  this.data = data;
+  this.link = null;
+};
+
+LinkedList.prototype.add = function (data) {
+  const newNode = new Node(data);
+  if (this.head === null) {
+    this.head = newNode; // Node { data: 5, link: null } // 헤드에 주소넣어주기
+    this.size++;
+  } else {
+    let currentNode = this.head;
+    while (currentNode.link !== null) {
+      currentNode = currentNode.link;
+    }
+    currentNode.link = newNode;
+    this.size++;
+  }
+};
+// 새로운 노드를 만들고 새로운 노드의 링크에는 헤드의 값을 넣어준다. 그리고 헤드에는 새로운 노드의 값을 넣어준다
+LinkedList.prototype.insertFirstNode = function (data) {
+  const newNode = new Node(data);
+  newNode.link = this.head;
+  this.head = newNode;
+  this.size++;
+};
+
+LinkedList.prototype.insertMiddleNode = function (data, index) {
+  const newNode = new Node(data);
+  let beforeNode = this.head;
+  while (--index !== 0) {
+    beforeNode = beforeNode.link;
+  }
+  let afterNode = beforeNode.link;
+  beforeNode.link = newNode;
+  newNode.link = afterNode;
+  this.size++;
+};
+
+LinkedList.prototype.delete = function (index) {
+  let beforeNode = this.head;
+  while (--index !== 0) {
+    beforeNode = beforeNode.link;
+  }
+  let tobeDelete = beforeNode.link;
+  let afterNode = beforeNode.link.link;
+  beforeNode.link = afterNode;
+  delete tobeDelete;
+  this.size--;
+};
+
+LinkedList.prototype.showData = function () {
+  let currentNode = this.head;
+  const result = Array(this.size).fill(0);
+  for (let i = 0; i &lt; this.size; i++) {
+    result[i] = currentNode.data;
+    currentNode = currentNode.link;
+  }
+  return result;
+};
+</code></pre></div></div>
+:ET
