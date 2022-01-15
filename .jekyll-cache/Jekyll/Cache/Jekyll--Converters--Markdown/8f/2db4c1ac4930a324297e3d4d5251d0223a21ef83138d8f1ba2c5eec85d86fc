@@ -1,0 +1,23 @@
+I"<h2 id="기초-명령어">기초 명령어👾</h2>
+
+<ol>
+  <li>
+    <p class="notice--danger">select distinct [컬럼이름] from [테이블 이름]; ➡️ 중복된값 제외하기</p>
+  </li>
+  <li>
+    <p class="notice--danger">show databases;</p>
+  </li>
+  <li>
+    <p class="notice--danger">select * from [테이블 이름] where speed 50 and 100;</p>
+  </li>
+  <li>
+    <p class="notice--danger">create table [테이블 이름] ([컬럼이름] [데이터타입], [컬럼이름] [데이터타입]);</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table produc rename product; ➡️ 테이블 이름 바꾸기</p>
+  </li>
+  <li>
+    <p>alter table [테이블 이름] add column [컬럼이름] [데이터타입]; ➡️ 테이블에 컬럼 추가하기</p>
+  </li>
+</ol>
+:ET

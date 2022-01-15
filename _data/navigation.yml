@@ -19,7 +19,7 @@ main-sidebar:
         url: /Every/Algorithm/Algorithm
   - title: 'Database'
     children:
-      - title: 'mySQL(2)'
+      - title: 'mySQL(3)'
         url: /Every/Sql/sql/
       - title: 'mongoDB(0)'
         url: /

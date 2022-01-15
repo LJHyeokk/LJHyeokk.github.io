@@ -333,7 +333,7 @@
         
         <ul>
           
-            <li><a href="/Every/Sql/sql/">mySQL(2)</a></li>
+            <li><a href="/Every/Sql/sql/">mySQL(3)</a></li>
           
             <li><a href="/">mongoDB(0)</a></li>
           
@@ -425,7 +425,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -491,6 +491,73 @@
       <li>TIME : 4바이트 ( 838:59:59 )</li>
       <li>YEAR : 1바이트 ( 1901 ~ 2155 )</li>
     </ul>
+  </li>
+</ul>
+
+<h2 id="기초-명령어">기초 명령어</h2>
+
+<ol>
+  <li>
+    <p class="notice--danger">create database [데이터베이스 이름];</p>
+  </li>
+  <li>
+    <p class="notice--danger">show databases;</p>
+  </li>
+  <li>
+    <p class="notice--danger">use [데이터베이스 이름];</p>
+  </li>
+  <li>
+    <p class="notice--danger">create table [테이블 이름] ([컬럼이름] [데이터타입], [컬럼이름] [데이터타입]);</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table produc rename product; ➡️ 테이블 이름 바꾸기</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table [테이블 이름] add column [컬럼이름] [데이터타입]; ➡️ 테이블에 컬럼 추가하기</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table [테이블 이름] modify column [컬럼이름] [새로운 데이터타입]; ➡️ 테이블에 컬럼 데이터타입 재정의하기</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table [테이블 이름] change column [컬럼이름] [새로운 컬럼이름] [새로운 데이터타입] ➡️ 컬럼이름과 데이터타입 같이 재정의하기</p>
+  </li>
+  <li>
+    <p class="notice--danger">alter table [테이블 이름] drop column [컬럼이름]; ➡️ 컬럼지우기</p>
+  </li>
+  <li>
+    <p class="notice--danger">drop database [데이터베이스 이름];</p>
+  </li>
+  <li>
+    <p class="notice--danger">drop table [테이블 이름];</p>
+  </li>
+  <li>
+    <p class="notice--danger">truncate table [테이블 이름]; ➡️ 테이블내의 값만 모두 삭제</p>
+  </li>
+  <li>
+    <p class="notice--danger">drop table if exists [테이블 이름]; ➡️ 테이블이 존재하면 지워라</p>
+  </li>
+  <li>
+    <p class="notice--danger">insert into [테이블 이름] ([컬럼이름], [컬럼이름1], [컬럼이름2]) values([값], [값1], [값2]),([값], [값1], [값2]);</p>
+  </li>
+  <li>
+    <p class="notice--danger">update [테이블 이름] set [컬럼이름] = [새로운 값] where [조건];</p>
+  </li>
+</ol>
+
+<p>데이터베이스, 테이블, 컬럼 이름짓기 정하는 규칙</p>
+
+<ul>
+  <li>
+    <p>문자(영문 소문자), 숫자, _</p>
+  </li>
+  <li>
+    <p>단어와 단어 사이에는 _ 사용</p>
+  </li>
+  <li>
+    <p>데이터베이스이름 중복 x</p>
+  </li>
+  <li>
+    <p>예약어 사용 x</p>
   </li>
 </ul>
  

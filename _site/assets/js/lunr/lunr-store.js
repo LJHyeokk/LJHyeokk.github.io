@@ -276,7 +276,7 @@ var store = [{
         "teaser": null
       },{
         "title": "1차 Project 회고록",
-        "excerpt":"📑 1차 프로젝트 output 및 소개 wetown 시연영상 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total : 14days ) 프로젝트 참여자 : 이준혁,...","categories": [],
+        "excerpt":"📑 1차 프로젝트 output 및 소개 배포 완료 : WETOWN wetown 시연영상 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total : 14days )...","categories": [],
         "tags": [],
         "url": "/wecode-05/",
         "teaser": null
@@ -297,5 +297,11 @@ var store = [{
         "excerpt":"AWS란? 💯 AWS : 아마존닷컴에서 개발한 클라우드 컴퓨팅 플랫폼 - 비즈니스와 개발자가 웹 서비스를 사용하여 확장 가능하고 정교한 애플리케이션 구축하도록 지원하여 준다. EC2 Elastic Compute Cloud AWS 상에서 사용하는 Server로, EC2 서버에 API를 배포하게 됨. EC2는 다양한 사양 옵션을 제공함. t2.nano (CPU 1, 0.5 GB memory) 부터 x1.32xlarge (CPU 128, RAM 1952 GB)...","categories": [],
         "tags": [],
         "url": "/interview-06/",
+        "teaser": null
+      },{
+        "title": "기초 명령어",
+        "excerpt":"기초 명령어👾 select distinct [컬럼이름] from [테이블 이름]; ➡️ 중복된값 제외하기 select name, a+b+c as total from [테이블 이름]; ➡️ 컬럼간에는 연산이 가능하다 select * from [테이블 이름] where speed between 50 and 100; ➡️ 사이값 select [컬럼이름] from [테이블 이름] where [컬럼이름] in(“값”,”값1”) ➡️ 컬럼이름중에서 값 or 값1 이...","categories": [],
+        "tags": [],
+        "url": "/sql-03/",
         "teaser": null
       }]

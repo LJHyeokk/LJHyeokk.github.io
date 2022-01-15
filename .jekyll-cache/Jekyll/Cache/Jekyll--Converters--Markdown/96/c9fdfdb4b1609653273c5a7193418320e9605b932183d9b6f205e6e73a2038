@@ -1,0 +1,283 @@
+I"pD<h2 id="-1차-프로젝트-output-및-소개">📑 1차 프로젝트 output 및 소개</h2>
+
+<center><p style="font-weight:bold">wetown 시연영상</p></center>
+<p><br /></p>
+<center><p style="font-weight:bold">wetown 시연영상</p></center>
+
+<iframe src="https://www.youtube.com/embed/knwIbo3Z_UM" name="iframe2" title="구름이의 클라우드" style="width:90%;  height:500px; margin-left:5%"></iframe>
+
+<p><br /></p>
+<div style="border: 3px solid #222441; padding-left:20px; border-radius:15px; width:70%; margin-left:15%; font-size:15px">
+<br />
+<center><div style="font-weight:bold; font-size:30px;">프로젝트 소개 🎥</div></center>
+<br />
+<span style="font-weight:bold">클론 사이트 : </span> <span><a href="https://smtownandstore.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=pc&amp;utm_content=%ED%99%95%EC%9E%A5_%ED%95%9C%EA%B5%AD&amp;utm_term=SMTOWN&amp;gclid=CjwKCAiA5t-OBhByEiwAhR-hm78q-9TO-Opb7ndK0lDUKdN0XgyvlJcYvsdA2u_COQk89r8F4IFBVhoCR3kQAvD_BwE" target="_blank"> SMTOWN &amp;STORE</a></span><br />
+<br />
+<span style="font-weight:bold">팀 명 : </span><span> WETOWN</span><br />
+<br />
+<span style="font-weight:bold">프로젝트 목표 : </span><span> Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기</span><br />
+<br />
+<span style="font-weight:bold">진행기간 : </span><span> 2021년 12월 27일 ~ 2022년 1월 7일</span> <span style="font-weight:bold">( total : 14days )</span> 
+<br />
+<br />
+<center><img src="../images/2021-10-27-first/wetown-1.png" alt="wetown-1" style="zoom:50%;" /></center>
+<br />
+
+<span style="font-weight:bold">프로젝트 참여자 : </span><span> 이준혁, 박태준, 최은비, 황희윤</span>
+<br /><br />
+
+<span style="font-weight:bold">Position : </span><span> 나의 포지션은 backend 였으나 팀회의를 거쳐 나온 database tables의 수가 생각보다 적었고 클라이언트로 보내줘야 할 API 또한 몇가지 없었기에 front도 겸하게 되었다.</span>
+<br /><br />
+
+</div>
+<p><br /></p>
+
+<div style="display:flex; justify-content:space-between; border: 3px solid #222441; padding-top:30px; border-radius:15px;font-size:15px; width:70%; margin-left:15%;">
+  <div style="margin-left:100px">
+  <center><p style="font-weight:bold; font-size:25px">- 기술스택 -</p></center>
+ <span style="font-weight:bold">FrontEnd 기술 스택  </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+<span>⭕ [React]</span><span>⭕ [Router]</span><span>⭕ [Sass]</span><span>⭕ [Restful API]</span><span>⭕ [Git &amp; GitHub]</span>
+
+  </div></span><br />
+  <span style="font-weight:bold">BackEnd 기술 스택  </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+<span>⭕ [Node.js]</span><span>⭕ [Express]</span><span>⭕ [MySQL]</span><span>⭕ [Bcrypt, JWT]</span><span>⭕ [Prisma]</span><span>⭕ [babel]</span><span>⭕ [Git &amp; GitHub]</span>
+
+  </div></span><br />
+  </div>
+
+  <div style="margin-right:50px">
+    <center><p style="font-weight:bold; font-size:25px">- Page &amp; API -</p></center>
+
+<span style="font-weight:bold">이준혁 </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+<span>[front] 상품상세페이지, 카트페이지</span><span>[back] detail API, filter API</span>
+
+  </div></span><br />
+  <span style="font-weight:bold">박태준  </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+  <span>[front] 상품리스트페이지, footer</span><span>[back] cart API</span>
+
+  </div></span><br />
+
+<span style="font-weight:bold">최은비 </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+<span>[front] 로그인페이지, 회원가입페이지</span><span>[PM] 프로젝트 전체적인 일정과 방향을 조율</span>
+
+  </div></span><br />
+
+<span style="font-weight:bold">황희윤 </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
+<span>[front] 메인페이지, Nav</span><span>[back] signin API, signup API</span>
+
+  </div></span><br />
+
+  </div>
+</div>
+
+<h2 id="-backend-wetown">🧑‍💻 Backend (WETOWN)</h2>
+
+<center class="notice--danger">팀회의를 거쳐 나온 첫 Database schema modeling</center>
+
+<center><img src="../images/2021-10-27-first/wetown-2.png" alt="wetown-2" style="width:70%;" /></center>
+<p><br /></p>
+
+<center class="notice--danger">리팩토링을 하며 가장 재밌었던 코드</center>
+
+<center><img src="../images/2021-10-27-first/wetown-3.gif" alt="wetown-3" style="border: 3px solid #222441; width:70%;" /></center>
+<p><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">productFilter</span> <span class="o">=</span> <span class="n">async</span> <span class="o">(</span>
+  <span class="n">category</span><span class="o">,</span>
+  <span class="n">is_subcategory</span><span class="o">,</span>
+  <span class="n">subcategory</span><span class="o">,</span>
+  <span class="n">sortMethod</span>
+<span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">await</span> <span class="n">prisma</span><span class="o">.</span><span class="n">$queryRaw</span><span class="err">`</span>
+    <span class="no">SELECT</span>
+      <span class="n">products</span><span class="o">.</span><span class="na">id</span><span class="o">,</span>
+      <span class="n">eng_name</span><span class="o">,</span>
+      <span class="n">price</span><span class="o">,</span>
+      <span class="n">is_new</span><span class="o">,</span>
+      <span class="n">sale_rate</span><span class="o">,</span>
+      <span class="n">categories</span><span class="o">.</span><span class="na">name</span> <span class="n">as</span> <span class="n">cate_name</span><span class="o">,</span>
+      <span class="n">subcategories</span><span class="o">.</span><span class="na">name</span> <span class="n">as</span> <span class="n">subcate_name</span><span class="o">,</span>
+      <span class="n">url</span>
+    <span class="no">FROM</span>
+      <span class="n">products</span>
+    <span class="no">JOIN</span>
+      <span class="n">categories</span> <span class="n">on</span> <span class="n">category_id</span> <span class="o">=</span> <span class="n">categories</span><span class="o">.</span><span class="na">id</span>
+    <span class="no">JOIN</span>
+      <span class="n">images</span> <span class="n">on</span> <span class="n">products</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="na">product_id</span>
+    <span class="no">JOIN</span>
+      <span class="n">subcategories</span> <span class="n">on</span> <span class="n">subcategories</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">subcategory_id</span>
+    <span class="no">WHERE</span>
+      <span class="nf">if</span><span class="o">(</span><span class="err">$</span><span class="o">{</span><span class="n">is_subcategory</span><span class="o">},</span>
+        <span class="n">categories</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="err">$</span><span class="o">{</span><span class="n">category</span><span class="o">}</span> <span class="n">and</span> <span class="n">subcategories</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="err">$</span><span class="o">{</span><span class="n">subcategory</span><span class="o">}</span> <span class="n">and</span> <span class="n">images</span><span class="o">.</span><span class="na">is_main</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
+        <span class="n">categories</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="err">$</span><span class="o">{</span><span class="n">category</span><span class="o">}</span> <span class="n">and</span>  <span class="n">images</span><span class="o">.</span><span class="na">is_main</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="no">ORDER</span> <span class="no">BY</span>
+      <span class="k">case</span> <span class="no">WHEN</span> <span class="err">$</span><span class="o">{</span><span class="n">sortMethod</span><span class="o">}</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">then</span> <span class="n">created_at</span> <span class="n">end</span> <span class="no">ASC</span><span class="o">,</span>
+      <span class="k">case</span> <span class="no">WHEN</span> <span class="err">$</span><span class="o">{</span><span class="n">sortMethod</span><span class="o">}</span> <span class="o">=</span> <span class="mi">2</span> <span class="n">then</span> <span class="n">eng_name</span> <span class="n">end</span> <span class="no">ASC</span><span class="o">,</span>
+      <span class="k">case</span> <span class="no">WHEN</span> <span class="err">$</span><span class="o">{</span><span class="n">sortMethod</span><span class="o">}</span> <span class="o">=</span> <span class="mi">3</span> <span class="n">then</span> <span class="n">price</span> <span class="n">end</span> <span class="no">ASC</span><span class="o">,</span>
+      <span class="k">case</span> <span class="no">WHEN</span> <span class="err">$</span><span class="o">{</span><span class="n">sortMethod</span><span class="o">}</span> <span class="o">=</span> <span class="mi">4</span> <span class="n">then</span> <span class="n">price</span> <span class="n">end</span> <span class="no">DESC</span><span class="o">;</span>
+  <span class="err">`</span><span class="o">;</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<div>
+  <div>
+   
+  </div>
+  <div>
+    <p>원래는 API 주소를 category, subcategory 각각 사용하였는데 멘토님이 하나로 합쳐보라고 하였다.</p>
+    <p>그래서 subcategory값과 sortMethod값을 Query String으로 받았고 category값은 Path Variable로 받았다.</p>
+    <p>subcategory값의 유무에 따라 클라이언트에 주는 데이터를 달리하였고</p>
+    <p>order by에 case문을 주어 sortMethod값에 따라 정렬기준을 주었다.</p>
+    <p>처음의 방대한 양의 코드가 리팩토링 후 확 줄어든것을 보니 뿌듯하다.</p>
+  </div>
+</div>
+
+<h2 id="-front-wetown">🧑‍💻 Front (WETOWN)</h2>
+
+<center class="notice--danger">디테일페이지와 카트페이지를 맡았고 최대한 똑같이 그리고 기능또한 90%정도로 구현하였다.</center>
+
+<center><img src="../images/2021-10-27-first/wetown-4.gif" alt="wetown-2" /></center>
+<p><br /></p>
+
+<center class="notice--danger">여러가지 재밌는 코드들이 있었지만 카트페이지의 각 상품의 수량부분을 useState의 배열로 담아 처리하는 코드를 짤때 가장 재밌었다.</center>
+
+<p><img src="../images/2021-10-27-first/wetown-5.png" alt="wetown-2" />
+<img src="../images/2021-10-27-first/wetown-6.png" alt="wetown-2" /></p>
+
+<p>DB의 carts 테이블에 저장되어있는 각 상품의 수량을 fetch함수로 불러올때 </p>
+<p>map을 돌려 productQuantity state에 담아 보관한다.</p>
+<p>CartList 컴포넌트에서 사용된 button을 클릭시에 상품의 수량이 개별적으로 바뀌어야하는데</p>
+<p>이때 productQuantity를 Spread Opertor를 통해 레퍼런스를 끊어 copy하여 해당 인덱스번째의 값만 바꾸어 set시킨다</p>
+
+<center class="notice--info">front쪽을 하다보니 좀 더 클라이언트가 사용하기 쉬운 모양으로 API를 만들어야함을 느꼈고 버튼 하나하나에 hover등 디테일이 살아있어야지만 위화감을 느끼지않는것을 알게되었다.</center>
+
+<h2 id="-협업-git--github">🧑 협업 Git &amp; Github</h2>
+
+<p><strong>Communication 스택</strong></p>
+
+<center> Slack <img src="../images/2021-10-27-first/wetown-9.png" alt="wetown-7" style=" width:30px; height:30px;" /> &amp; Github <img src="../images/2021-10-27-first/wetown-10.png" alt="wetown-7" style=" width:30px; height:30px;" /> &amp; Notion<img src="../images/2021-10-27-first/wetown-11.png" alt="wetown-7" style=" width:40px; height:40px;" /></center>
+
+<p><br /></p>
+
+<div class="container" style="  width: 850px;margin: 0 auto; position:relative">
+    <div class="album" style="  height: 850px; width: 850px; overflow: hidden; border: 1px solid #222441;">
+      <div class="images" style="  position: relative;display: flex; height: 850px; transition: 0.5s;">
+        <img src="../images/2021-10-27-first/wetown-7.png" alt="wetown-7" style="width: 850px; object-fit: contain;" />
+        <img src="../images/2021-10-27-first/wetown-8.png" alt="wetown-8" style="width: 850px; object-fit: contain;" />
+        <img src="../images/2021-10-27-first/wetown-12.png" alt="wetown-8" style="width: 850px; object-fit: contain;" />
+        <img src="../images/2021-10-27-first/wetown-13.png" alt="wetown-8" style="width: 850px; object-fit: contain;" />
+        <img src="../images/2021-10-27-first/wetown-14.png" alt="wetown-8" style="width: 850px; object-fit: contain;" />
+        <img src="../images/2021-10-27-first/wetown-15.png" alt="wetown-8" style="width: 850px; object-fit: contain;" />
+      </div>
+    </div>
+  <button class="prev" style="position: absolute; top:50%; left:-7%; width:40px; height:40px">&lt;</button>
+  <button class="next" style="position: absolute; top:50%; right:-7%; width:40px; height:40px;">&gt;</button>
+  </div>
+
+<script>
+let curPos = 0;
+let postion = 0;
+const IMAGE_WIDTH = 100;
+const prevBtn = document.querySelector(".prev")
+const nextBtn = document.querySelector(".next")
+const images = document.querySelector(".images")
+ 
+function prev(){
+  if(curPos > 0){
+    nextBtn.removeAttribute("disabled")
+    postion += IMAGE_WIDTH;
+    images.style.transform = `translateX(${postion}%)`;
+    curPos = curPos - 1;
+  }
+  if(curPos == 0){
+    prevBtn.setAttribute('disabled', 'true')
+  }
+}
+function next(){
+  if(curPos < 5){
+    prevBtn.removeAttribute("disabled")
+    postion -= IMAGE_WIDTH;
+    images.style.transform = `translateX(${postion}%)`;
+    curPos = curPos + 1;
+  }
+  if(curPos == 5){
+    nextBtn.setAttribute('disabled', 'true')
+  }
+}
+ 
+function init(){
+  prevBtn.setAttribute('disabled', 'true')
+  prevBtn.addEventListener("click", prev)
+  nextBtn.addEventListener("click", next)
+}
+ 
+init();
+ </script>
+
+<p><br /></p>
+
+<center><span style="font-weight:bold">협업을 진행하며 깨달은점 및 좋은점</span></center>
+<p><br /></p>
+
+<p>🔹 코드리뷰를 받으며 내가 몰랐던것들, 깜빡했던것들 등 다양한 리뷰를 받아 업그레이드 되는 code를 맛볼수있다.</p>
+
+<p>🔹 나와는 다른생각을 갖고 짠 새로운 code를 경험할 수 있다.</p>
+
+<p>🔹 시간약속을 잘지키는것이 정말 중요하고 그 사람에 대한 신뢰도를 결정짓는다는 것을 느끼게되었다.</p>
+
+<p>🔹 내 코드를 내가 리뷰하며 어느부분은 이해가 잘되고 어느부분은 어렵다는것을 알게됐고 코드를 간결하게 짜는것 보다 남들이 봤을때 이해하기 쉽게 쓰게 되었다.</p>
+
+<h2 id="-회고">🧑 회고</h2>
+
+<p><br /></p>
+
+<p>팀원 모두 프로젝트 경험이 전무하기 때문에 초반에 고생을 좀 하였다.</p>
+
+<p>하지만 팀원분들이 모두 온화한 성격을 가지고 계신탓인지 분위기 만큼은 좋았고</p>
+
+<p>다른팀들에 비해 의견충돌도 거의 없었다.</p>
+
+<p>( 첫 프로젝트라 욕심부리지말고 기본에만 충실하자라는 생각으로 회의를 해서 그런가? )</p>
+
+<p>모두들 잘해주었고 문제없이 진행되고 있었다.</p>
+
+<p><br /></p>
+
+<p>하지만 그 순간이 태풍이 눈이었을까…</p>
+
+<p>back은 코드가 깔끔하게 잘짜져서 곧 바로 커밋, 푸쉬를 하였지만</p>
+
+<p>front는 코드가 더럽고 알아보기 힘들것 같아 내선에서 약간의 리팩토링을 거치고 커밋을 한다는게</p>
+
+<p>하루..이틀..일주일이 지나도록 한번도 커밋을 하지 않고 있었던 것이다.</p>
+
+<p>그제서야 내가한것을 푸시하기 위해 develop 브랜치에서 pull을 받았는데 충돌이 났고</p>
+
+<p>pull, branch 등 Git에 대해 제대로된 숙지를 못하고 있던 나는 이것저것 시도해보다</p>
+
+<p>일주일치의 파일이 통째로 사라지게 되었다..</p>
+
+<p><br /></p>
+
+<p>눈앞이 캄캄해졌고 현실을 받아들이기 어려웠지만</p>
+
+<p>팀원들에게 너무 미안한 마음에 초인적인 스피드로 다시 그리기 시작했다.</p>
+
+<p>백업파일의 필요성을 뼈저리게 느꼈고 결국 그 날 밤을 새워 똑같이 다시 구현해냈다.</p>
+
+<p><br /></p>
+
+<p>근데 오히려 실수를 하고 나니 좋은점들이 더 많이 파생되었다.</p>
+
+<p>그 날 이후 기능단위로 커밋을 무조건하였고 노트북을 닫기전에는 backup파일을 만들어 두는것이 습관화 되었다.</p>
+
+<p>또한 손이 빨리지게 되었고 Git에 대해 제대로 숙지가 되었다. ( 모를땐 신중하게 대처하는건 덤 )</p>
+
+<p><br /></p>
+
+<p>이번 프로젝트를 통해 정말 많은것을 얻게되었고</p>
+
+<p>함께한 태준님, 은비님, 희윤님 모두 잘해주셔서 고맙습니다.</p>
+
+<p>감사합니다</p>
+:ET
