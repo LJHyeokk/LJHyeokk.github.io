@@ -1,8 +1,5 @@
-a {
-  text-decoration: none !important;
-}
 a:hover {
-  text-decoration: none !important;
+  text-decoration: underline !important;
 }
 
 .table-of-contents-list a:link {

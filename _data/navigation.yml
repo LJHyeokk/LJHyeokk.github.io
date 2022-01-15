@@ -15,7 +15,7 @@ main-sidebar:
         url: /Every/Node/node/
   - title: 'Algorithm'
     children:
-      - title: '알고리즘(5)'
+      - title: '알고리즘(6)'
         url: /Every/Algorithm/Algorithm
   - title: 'Database'
     children:

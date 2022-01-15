@@ -2,7 +2,9 @@
    STYLE RESETS
    ========================================================================== */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   /* apply a natural box layout model to all elements */
@@ -28,7 +30,9 @@ html {
 
 /* Remove margin */
 
-body { margin: 0; }
+body {
+  margin: 0;
+}
 
 /* Selected elements */
 
@@ -86,9 +90,19 @@ a:focus {
 
 /* Remove outline from links */
 
-a:hover,
+a:hover {
+  text-decoration: underline !important;
+}
 a:active {
   outline: 0;
+}
+a:link {
+  color: black !important;
+  text-decoration: none;
+}
+a:visited {
+  color: black !important;
+  text-decoration: none;
 }
 
 /* Prevent sub and sup affecting line-height in all browsers */
@@ -147,7 +161,8 @@ input {
 }
 
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* inner padding and border oddities in FF3/4*/
+input::-moz-focus-inner {
+  /* inner padding and border oddities in FF3/4*/
   padding: 0;
   border: 0;
 }
@@ -156,28 +171,29 @@ button,
 html input[type="button"], // avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* corrects inability to style clickable `input` types in iOS*/
-    cursor: pointer; /* improves usability and consistency of cursor style between image-type `input` and others*/
+  -webkit-appearance: button; /* corrects inability to style clickable `input` types in iOS*/
+  cursor: pointer; /* improves usability and consistency of cursor style between image-type `input` and others*/
 }
 
 label,
 select,
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-    cursor: pointer; /* improves usability and consistency of cursor style between image-type `input` and others*/
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+input[type='radio'],
+input[type='checkbox'] {
+  cursor: pointer; /* improves usability and consistency of cursor style between image-type `input` and others*/
 }
 
-input[type="search"] { /* Appearance in Safari/Chrome*/
+input[type='search'] {
+  /* Appearance in Safari/Chrome*/
   box-sizing: border-box;
   -webkit-appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button {
   -webkit-appearance: none; /* inner-padding issues in Chrome OSX, Safari 5*/
 }
 
