@@ -1,4 +1,276 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-16T04:00:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Linked List</title><link href="http://localhost:4000/Algorithm-06/" rel="alternate" type="text/html" title="Linked List" /><published>2022-01-15T00:00:00+09:00</published><updated>2022-01-15T00:00:00+09:00</updated><id>http://localhost:4000/Algorithm-06</id><content type="html" xml:base="http://localhost:4000/Algorithm-06/">&lt;h2 id=&quot;linked-list&quot;&gt;Linked List🤮&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-04T12:35:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">HTTP Status Code</title><link href="http://localhost:4000/interview-07/" rel="alternate" type="text/html" title="HTTP Status Code" /><published>2022-01-31T00:00:00+09:00</published><updated>2022-01-31T00:00:00+09:00</updated><id>http://localhost:4000/interview-07</id><content type="html" xml:base="http://localhost:4000/interview-07/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
+
+&lt;center class=&quot;notice--info&quot;&gt;HTTP Status Code : 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함.&lt;/center&gt;
+
+&lt;h2 id=&quot;2xx-success&quot;&gt;2XX SUCCESS&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;200번대의 상태코드는 서버가 클라이언트에게 요청이 성공적으로 처리되었을때 보내는 코드들이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;200번(OK) ▶
+클라이언트의 요청을 서버가 정상적으로 처리했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OK&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;result&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;status&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같이 성공했다는 200코드를 보냈지만 실제내용은 실패인 경우로 쓰이는 사례가 있다면 당장 수정하자.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;201번(Created) ▶
+클라이언트의 요청을 서버가 정상적으로 처리했고 새로운 리소스가 생겼다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;201 상태 코드는 POST, PUT 요청에 대한 응답에 주로 사용된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;202번(Accepted) ▶
+클라이언트의 요청은 정상적이나, 서버가 아직 요청을 완료하지 못했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;클라이언트의 요청이 정상적이면 서버에선 작업의 성공/실패 응답하는 게 일반적이나, 작업 완료를 위한 일련의 작업들이 오래 걸리기 때문에 나중에 알려주겠다는 의미다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;204번(No Content) ▶
+클라이언트의 요청은 정상적이다. 하지만 컨텐츠를 제공하지 않는다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;자원 삭제 요청을 했고 이 요청이 유효하니 서버는 해당 자원을 삭제했다. 더 이상 응답할 컨텐츠가 없기 때문에 컨텐츠가 없는 204로 응답한다.&lt;/p&gt;
+
+&lt;p&gt;(여기서 주의할 점은 200으로 응답하고 응답 body에 null, {}, [], false 등으로 응답하는 것과 다르다는 것이다.
+204의 경우 HTTP Response body가 아예 존재하지 않는 경우다.)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Example&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;PUT&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자원 수정 요청의 결과가 기존의 자원 내용과 동일하여 변경된 내용이 없을 때 204로 응답할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;만약 수정 요청으로 자원의 내용이 변경된다면 201로 응답할 것이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DELETE&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;삭제 요청으로 자원을 삭제하여 더 이상 존재하지 않고 그 자원을 참조하는 모든 자원도 삭제되어 더 이상 HTTP body를 응답하는 것이 무의미해졌을 때 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4xx-client-errors&quot;&gt;4XX Client errors&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;4XX의 상태 코드들은 클라이언트의 요청이 유효하지 않아 서버가 해당 요청을 수행하지 않았다는 의미다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;400번(Bad Request) ▶
+클라이언트의 요청이 유효하지 않아 더 이상 작업을 진행하지 않는 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;클라이언트로부터 요청이 들어오면 작업을 바로 진행하지않고 유효성검사부터 하는것이 옳다.&lt;/p&gt;
+
+&lt;p&gt;대부분의 API는 사전에 유효성 검증을 통해 400 상태 코드로 클라이언트에게 유효하지 않은 요청임을 응답한다.&lt;/p&gt;
+
+&lt;p&gt;그러나, 400 상태 코드로 응답하는 것만으로는 부족하다.&lt;/p&gt;
+
+&lt;p&gt;오류 발생 시 파라미터의 위치(path, query, body), 사용자 입력 값, 에러 이유를 꼭 명시하는 것이 좋다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Example&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequiredKeys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;REQUIRED_KEYS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;REQUIRED_KEYS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;REQUIRED_KEYS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;REQUIRED_KEYS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;REQUIRED_KEYS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;REQUIRED_KEYS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;정보가&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;올바르지&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;않습니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;401번(Unauthorized) ▶
+클라이언트가 권한이 없기 때문에 작업을 진행할 수 없는 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;상태 코드 이름만 보면 권한(authorized)에 대한 내용처럼 보이지만, 사실 인증(authenticated)에 대한 이야기다.&lt;/p&gt;
+
+&lt;p&gt;401은 비인증이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;403번(Forbidden) ▶
+클라이언트가 권한이 없기 때문에 작업을 진행할 수 없는 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;403은 권한(authorized)에 대한 내용이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;404번(Not Found) ▶
+클라이언트가 요청한 자원이 존재하지 않다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;404번에러는 크게 2가지로 나뉜다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;경로가 존재하지 않음&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;존재하지 않은 경로는 쉽게 404로 응답.(라우터에서 처리)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;자원이 존재하지 않음&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;/users/:id 에서 id값이 만약 DB에 없는 값이라면 자원이 존재하지 않다는 의미이다.&lt;/p&gt;
+
+  &lt;p&gt;따라서 존재하는 경로에 대한 요청이라도 자원이 존재하는지 파악 후, 존재하지 않는다면 404 상태 코드로 응답해야 한다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;405번(Method Not Allowed) ▶
+클라이언트의 요청이 허용되지 않는 메소드인 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;자원(URI)은 존재하지만 해당 자원이 지원하지 않는 메소드일 때 응답하는 상태 코드다.&lt;/p&gt;
+
+&lt;p&gt;완성도 높은 API를 제공하기 위해서는 사용하는것을 추천한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;409번(Conflict) ▶
+클라이언트의 요청이 서버의 상태와 충돌이 발생한 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;400, 401, 403, 404, 405 상태 코드에 속하기 애매한 오류의 상황들을 409로 응답한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Example&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;자원(URI) /users/1에 존재하는 메소드고 Not 405&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;/users/:id에서 :id가 유효한 형식이고 Not 400&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;1 사용자도 존재하고 Not 404&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;헤더의 인증(X-TOKEN)도 정확하고 Not 401&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;삭제 권한도 있는 경우 Not 403&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;대부분의 예외처리를 해주었지만 로직자체가 문제있을 수 있다. 예를들면&lt;/p&gt;
+
+&lt;p&gt;사용자의 게시물이 존재하는 경우 사용자를 삭제할 수 없다는 비지니스 로직이 있을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 API 사용에 있어 비지니스 로직상 모순이 발생하여 처리가 불가능한 경우 응답하는 상태 코드다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isExistItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IsExistItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;409&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;isExistItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;existErr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;이미&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;품목에&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;있습니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;오류 상황과 마찬가지로 응답 시 오류의 원인을 알려야 한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;429번(Too Many Requests) ▶
+클라이언트가 일정 시간 동안 너무 많은 요청을 보낸 경우&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;해커는 사용자의 비밀번호를 알아내기 위해 POST /login API에 password를 무차별로 대입하면서 요청할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;서버 입장에선 자원의 기밀성(Confidentiality)에 피해를 입을 수 있는 공격이면서, 이러한 무차별 요청으로 다른 요청을 처리할 수 없거나 처리가 늦을 수 있는 가용성(Availability)에 피해를 입을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;서버는 이러한 공격에 대비해 인증 API의 경우 각 클라이언트는 n 시간 동안 n 회만 요청 가능하다는 룰을 정하고 이것을 초과하면 429 상태 코드를 응답해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5xx-server-errors&quot;&gt;5XX SERVER ERRORS&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;5XX 상태 코드들은 서버 오류로 인해 요청을 수행할 수 없다는 의미다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;API를 사용하는 클라이언트에게 5XX 상태 코드는 나타내지 말아야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;최신의 웹 애플리케이션 프레임워크는 자체 웹서버를 내장하고 있어서 웹서버(Apache, Nginx) 없이 운영할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그러나, 보통 운영 레벨에서 이렇게 하는 경우는 드물고 앞에 웹서버를 두고 웹 애플리케이션을 연결해서 운영한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;따라서, 상단의 웹서버(Apache, Nginx)에서 발생하는 어쩔 수 없는 오류를 제외하고 API에선 5XX 상태 코드가 응답되선 안된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;API 레벨에선 완벽한 예외처리를 통해 5XX 서버 오류 상태 코드를 방지해야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP Status Code? 💯</summary></entry><entry><title type="html">Linked List</title><link href="http://localhost:4000/Algorithm-06/" rel="alternate" type="text/html" title="Linked List" /><published>2022-01-15T00:00:00+09:00</published><updated>2022-01-15T00:00:00+09:00</updated><id>http://localhost:4000/Algorithm-06</id><content type="html" xml:base="http://localhost:4000/Algorithm-06/">&lt;h2 id=&quot;linked-list&quot;&gt;Linked List🤮&lt;/h2&gt;
 
 &lt;h2 id=&quot;사전지식&quot;&gt;사전지식&lt;/h2&gt;
 
@@ -307,7 +579,7 @@ Array List ➡️ [추가/삭제 : 느림 ( 메모리주소를 한칸한칸씩 �
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/link-3.png&quot; alt=&quot;link-3&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;성공~&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Linked List🤮</summary></entry><entry><title type="html">AWS</title><link href="http://localhost:4000/interview-06/" rel="alternate" type="text/html" title="AWS" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/interview-06</id><content type="html" xml:base="http://localhost:4000/interview-06/">&lt;h2 id=&quot;aws란-&quot;&gt;AWS란? 💯&lt;/h2&gt;
+&lt;p&gt;성공!!&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Linked List🤮</summary></entry><entry><title type="html">AWS</title><link href="http://localhost:4000/interview-06/" rel="alternate" type="text/html" title="AWS" /><published>2022-01-14T00:00:00+09:00</published><updated>2022-01-14T00:00:00+09:00</updated><id>http://localhost:4000/interview-06</id><content type="html" xml:base="http://localhost:4000/interview-06/">&lt;h2 id=&quot;aws란-&quot;&gt;AWS란? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;AWS : 아마존닷컴에서 개발한 클라우드 컴퓨팅 플랫폼 - 비즈니스와 개발자가 웹 서비스를 사용하여 확장 가능하고 정교한 애플리케이션 구축하도록 지원하여 준다.&lt;/center&gt;
 
@@ -1547,79 +1819,4 @@ init();
 
 &lt;p&gt;어떤 API를 만들었는지 한눈에 알수있었고&lt;/p&gt;
 
-&lt;p&gt;수정 또한 어느부분을 수정해야하는지 바로 알수있었다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Layered Pattern이란 🙀</summary></entry><entry><title type="html">Babel</title><link href="http://localhost:4000/interview-05/" rel="alternate" type="text/html" title="Babel" /><published>2021-12-18T00:00:00+09:00</published><updated>2021-12-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-05</id><content type="html" xml:base="http://localhost:4000/interview-05/">&lt;h2 id=&quot;babel-&quot;&gt;Babel? 💯&lt;/h2&gt;
-
-&lt;center class=&quot;notice--info&quot;&gt;babel : JS의 ES6+ 코드를 현재 및 과거의 브라우저와 같은 환경에서 호환되는 버전으로 변환하는데 주로 사용되는 컴파일러이다.&lt;/center&gt;
-
-&lt;h2 id=&quot;탄생배경&quot;&gt;탄생배경&lt;/h2&gt;
-
-&lt;center class=&quot;notice--info&quot;&gt;Cross Browsing : 다른 기종 혹은 플랫폼에 따라 달리 구현되는 기술을 비슷하게 만듦과 동시에 어느 한쪽에 최적화되어 치우지지 않도록 공통 요소를 사용하여 웹 페이지를 제작하는 기법을 말한다. 또한, 지원할 수 없는 다른 웹 브라우저를 위한 장치를 구현하여 모든 웹 브라우저 사용자가 방문했을 때 정보로서의 소외감을 느끼지 않도록 하는 방법론적 가이드를 의미한다.&lt;/center&gt;
-
-&lt;p&gt;IE에서만 해도 ES6의 문법들을 지원하지않는다. 그렇기에 ES6 문법들로 구성된 코드들은 IE에서는 제대로된 기능을 하지못할것이다.&lt;/p&gt;
-
-&lt;p&gt;그렇기에 개발자들에게 크로스 브라우징 이슈는 코드의 일관성도 망가트리고 혼란스럽게 만드는 요소 중 하나이다.&lt;/p&gt;
-
-&lt;p&gt;이러한 크로스 브라우징 이슈를 해결하기 위해 생겨난 툴이 바벨이다&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://kangax.github.io/compat-table/es6/&quot; target=&quot;_blank&quot;&gt;브라우저별 ES6 지원현황 click&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot; https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/&quot; target=&quot;_blank&quot;&gt;출처 click&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;사용방법&quot;&gt;사용방법&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install @babel/node&lt;/code&gt; ➡️ Babel-node는 Babel-cli에서 독립된 모듈로 node cli(Command-lind Interface) 처럼 동작함. 이에 따라 node index.js 명령어를 babel-node index.js로 쓸 수 있음. 뿐만 아니라 Node.js 실행 전 Babel의 설정과 플러그인을 고려하여 컴파일 해주는 이점이 있음. ( 주의) 무겁기때문에 개발단계에서만 확인용으로 사용 )&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install @babel/core&lt;/code&gt; ➡️ 바벨(Babel)의 핵심(주요) 기능들을 담고 있는 모듈&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install @babel/preset-env&lt;/code&gt; ➡️ 프리셋(Preset)은 바벨(Babel) 플러그인(Plugin) 들을 묶음(Bundle)로 만들어놓은 것. 프리셋(Preset)을 통해 간편하게 Trans File 설정을 할 수 있음. 여기서는 범용적으로 쓰이는 env 프리셋을 사용&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;.babelrc&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;presets&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@babel/preset-env&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;package.json&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;s&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;nodemon server.js --exec babel-node &quot;&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;server.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;express&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// ES6 import 문법 사용&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// const express = require('express'); -&amp;gt; import express from &quot;express&quot;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;home&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Welcome&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Listening&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Listening&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;on:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:${PORT}`);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Listening&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;center&gt;import 부분에 에러가 나지 않았다면 babel이 정상작동하는 것&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;끝&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Babel? 💯</summary></entry></feed>
+&lt;p&gt;수정 또한 어느부분을 수정해야하는지 바로 알수있었다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Layered Pattern이란 🙀</summary></entry></feed>

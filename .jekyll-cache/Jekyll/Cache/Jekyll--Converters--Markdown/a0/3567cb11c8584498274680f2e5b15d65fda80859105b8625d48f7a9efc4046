@@ -1,0 +1,22 @@
+I"<h2 id="http-status-code-">HTTP Status Code? 💯</h2>
+
+<center class="notice--info">HTTP Status Code : 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함.</center>
+
+<h2 id="2xx-success">2XX SUCCESS</h2>
+
+<p><br /></p>
+
+<p>200번대의 상태코드는 서버가 클라이언트에게 요청이 성공적으로 처리되었을때 보내는 코드들이다.</p>
+
+<blockquote>
+  <p>200번 ▶
+클라이언트의 요청을 서버가 정상적으로 처리했다.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="no">OK</span>
+<span class="o">{</span>
+<span class="s">"result"</span> <span class="o">:</span> <span class="kc">false</span>
+<span class="s">"status"</span> <span class="o">:</span> <span class="mi">400</span>
+<span class="o">}</span>
+</code></pre></div></div>
+:ET

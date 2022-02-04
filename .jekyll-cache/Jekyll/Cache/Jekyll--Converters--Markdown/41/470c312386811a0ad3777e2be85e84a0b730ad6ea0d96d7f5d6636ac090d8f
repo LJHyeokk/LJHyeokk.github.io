@@ -1,0 +1,157 @@
+I"�<h2 id="http-status-code-">HTTP Status Code? 💯</h2>
+
+<center class="notice--info">HTTP Status Code : 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함.</center>
+
+<h2 id="2xx-success">2XX SUCCESS</h2>
+
+<p><br /></p>
+
+<p>200번대의 상태코드는 서버가 클라이언트에게 요청이 성공적으로 처리되었을때 보내는 코드들이다.</p>
+
+<blockquote>
+  <p>200번(OK) ▶
+클라이언트의 요청을 서버가 정상적으로 처리했다.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="no">OK</span>
+<span class="o">{</span>
+<span class="s">"result"</span> <span class="o">:</span> <span class="kc">false</span>
+<span class="s">"status"</span> <span class="o">:</span> <span class="mi">400</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위와 같이 성공했다는 200코드를 보냈지만 실제내용은 실패인 경우로 쓰이는 사례가 있다면 당장 수정하자.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>201번(Created) ▶
+클라이언트의 요청을 서버가 정상적으로 처리했고 새로운 리소스가 생겼다.</p>
+</blockquote>
+
+<p>201 상태 코드는 POST, PUT 요청에 대한 응답에 주로 사용된다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>202번(Accepted) ▶
+클라이언트의 요청은 정상적이나, 서버가 아직 요청을 완료하지 못했다.</p>
+</blockquote>
+
+<p>클라이언트의 요청이 정상적이면 서버에선 작업의 성공/실패 응답하는 게 일반적이나, 작업 완료를 위한 일련의 작업들이 오래 걸리기 때문에 나중에 알려주겠다는 의미다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>204번(No Content) ▶
+클라이언트의 요청은 정상적이다. 하지만 컨텐츠를 제공하지 않는다.</p>
+</blockquote>
+
+<p>자원 삭제 요청을 했고 이 요청이 유효하니 서버는 해당 자원을 삭제했다. 더 이상 응답할 컨텐츠가 없기 때문에 컨텐츠가 없는 204로 응답한다.</p>
+
+<p>(여기서 주의할 점은 200으로 응답하고 응답 body에 null, {}, [], false 등으로 응답하는 것과 다르다는 것이다.
+204의 경우 HTTP Response body가 아예 존재하지 않는 경우다.)</p>
+
+<blockquote>
+  <p>Example</p>
+</blockquote>
+
+<p>PUT</p>
+
+<ul>
+  <li>
+    <p>자원 수정 요청의 결과가 기존의 자원 내용과 동일하여 변경된 내용이 없을 때 204로 응답할 수 있다.</p>
+  </li>
+  <li>
+    <p>만약 수정 요청으로 자원의 내용이 변경된다면 201로 응답할 것이다.</p>
+  </li>
+</ul>
+
+<p>DELETE</p>
+
+<ul>
+  <li>삭제 요청으로 자원을 삭제하여 더 이상 존재하지 않고 그 자원을 참조하는 모든 자원도 삭제되어 더 이상 HTTP body를 응답하는 것이 무의미해졌을 때 사용한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="4xx-client-errors">4XX Client errors</h2>
+
+<p><br /></p>
+
+<p>4XX의 상태 코드들은 클라이언트의 요청이 유효하지 않아 서버가 해당 요청을 수행하지 않았다는 의미다.</p>
+
+<blockquote>
+  <p>400번(Bad Request) ▶
+클라이언트의 요청이 유효하지 않아 더 이상 작업을 진행하지 않는 경우</p>
+</blockquote>
+
+<p>클라이언트로부터 요청이 들어오면 작업을 바로 진행하지않고 유효성검사부터 하는것이 옳다.</p>
+
+<p>대부분의 API는 사전에 유효성 검증을 통해 400 상태 코드로 클라이언트에게 유효하지 않은 요청임을 응답한다.</p>
+
+<p>그러나, 400 상태 코드로 응답하는 것만으로는 부족하다.</p>
+
+<p>오류 발생 시 파라미터의 위치(path, query, body), 사용자 입력 값, 에러 이유를 꼭 명시하는 것이 좋다.</p>
+
+<blockquote>
+  <p>Example</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">RequiredKeys</span> <span class="o">{</span>
+  <span class="n">constructor</span><span class="o">(</span><span class="no">REQUIRED_KEYS</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">REQUIRED_KEYS</span> <span class="o">=</span> <span class="no">REQUIRED_KEYS</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="n">verify</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">let</span> <span class="n">key</span> <span class="n">in</span> <span class="k">this</span><span class="o">.</span><span class="na">REQUIRED_KEYS</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">REQUIRED_KEYS</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">.</span><span class="na">REQUIRED_KEYS</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">!==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">const</span> <span class="n">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Error</span><span class="o">(</span><span class="err">`$</span><span class="o">{</span><span class="n">key</span><span class="o">}</span> <span class="n">정보가</span> <span class="n">올바르지</span> <span class="n">않습니다</span><span class="o">.</span><span class="err">`</span><span class="o">);</span>
+        <span class="n">err</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="mi">400</span><span class="o">;</span>
+        <span class="k">throw</span> <span class="n">err</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>401번(Unauthorized) ▶
+클라이언트가 권한이 없기 때문에 작업을 진행할 수 없는 경우</p>
+</blockquote>
+
+<p>상태 코드 이름만 보면 권한(authorized)에 대한 내용처럼 보이지만, 사실 인증(authenticated)에 대한 이야기다.</p>
+
+<p>401은 비인증이다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>403번(Forbidden) ▶
+클라이언트가 권한이 없기 때문에 작업을 진행할 수 없는 경우</p>
+</blockquote>
+
+<p>403은 권한(authorized)에 대한 내용이다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>404번(Not Found) ▶
+클라이언트가 요청한 자원이 존재하지 않다.</p>
+</blockquote>
+
+<p>403은 권한(authorized)에 대한 내용이다.</p>
+:ET
