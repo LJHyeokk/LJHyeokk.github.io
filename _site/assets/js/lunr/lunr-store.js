@@ -276,7 +276,7 @@ var store = [{
         "teaser": null
       },{
         "title": "1차 Project 회고록",
-        "excerpt":"📑 1차 프로젝트 output 및 소개 배포 완료 : click ➡️WETOWN wetown 시연영상 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total : 14days...","categories": [],
+        "excerpt":"📑 1차 프로젝트 output 및 소개 배포 완료 : click ➡️WETOWN 직접 해보기 ⬆️ 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total :...","categories": [],
         "tags": [],
         "url": "/wecode-05/",
         "teaser": null
@@ -315,5 +315,11 @@ var store = [{
         "excerpt":"HTTP Status Code? 💯 HTTP Status Code : 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함. 2XX SUCCESS 200번대의 상태코드는 서버가 클라이언트에게 요청이 성공적으로 처리되었을때 보내는 코드들이다. 200번(OK) ▶ 클라이언트의 요청을 서버가 정상적으로 처리했다. HTTP/1.1 200 OK { \"result\" : false \"status\" :...","categories": [],
         "tags": [],
         "url": "/interview-07/",
+        "teaser": null
+      },{
+        "title": "2차 Project 회고록",
+        "excerpt":"📑 2차 프로젝트 소개 프로젝트 소개 🎥 클론 사이트 : NIKE 팀 명 : Just Do It 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 1월 17일 ~ 2022년 1월 29일 ( total : 7days ) 프로젝트 참여자 : 이준혁, 김영욱, 이진웅, 황희윤...","categories": [],
+        "tags": [],
+        "url": "/wecode-06/",
         "teaser": null
       }]
