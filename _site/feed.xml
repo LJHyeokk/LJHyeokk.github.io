@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-05T23:28:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-07T02:43:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -12,7 +12,7 @@
 &lt;br /&gt;
 &lt;span style=&quot;font-weight:bold&quot;&gt;프로젝트 목표 : &lt;/span&gt;&lt;span&gt; Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기&lt;/span&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;진행기간 : &lt;/span&gt;&lt;span&gt; 2021년 1월 17일 ~ 2022년 1월 29일&lt;/span&gt; &lt;span style=&quot;font-weight:bold&quot;&gt;( total : 7days )&lt;/span&gt;
+&lt;span style=&quot;font-weight:bold&quot;&gt;진행기간 : &lt;/span&gt;&lt;span&gt; 2021년 1월 17일 ~ 2022년 1월 29일&lt;/span&gt; &lt;span style=&quot;font-weight:bold&quot;&gt;( total : 12days )&lt;/span&gt;
 
 &lt;br /&gt;
 &lt;br /&gt;
@@ -63,7 +63,80 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;-회고&quot;&gt;🧑 회고&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;1차 프로젝트는 e-commerce사이트를 클론하였기에 2차 프로젝트는 e-commerce사이트가 아닌 다른 플랫폼을 하고 싶었지만&lt;/p&gt;
+
+&lt;p&gt;아쉽게도 나이키를 클론하는 프로젝트를 맡게되었다.&lt;/p&gt;
+
+&lt;p&gt;그래도 나이키만의 감성이 있으니.. 상관은 없다.&lt;/p&gt;
+
+&lt;p&gt;회고는 기억에 남는것 몇가지만 쓰도록 하겠다.&lt;/p&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;-회고-1-db-데이터작업&quot;&gt;🤮 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[회고-1]&lt;/code&gt; DB 데이터작업&lt;/h5&gt;
+
+&lt;p&gt;우선 나이키의 특징은 많은 제품들, 그리고 그 제품들을 세분화시켜주는 필터기능, 추첨기능 이렇게 3가지이다.&lt;/p&gt;
+
+&lt;p&gt;나랑 영욱님은 DB 모델링이 끝나자마자 나이키의 특징을 살리기 위해 DB에 들어갈 제품들, 제품사진들을&lt;/p&gt;
+
+&lt;p&gt;수집하고 집어넣었는데.. 총 166개의 제품과 x4 만큼의 사진을 DB에 넣었다.&lt;/p&gt;
+
+&lt;p&gt;특히 각 제품별 사이즈의 수량을 집어넣는 과정이 괴랄했는데&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ACA&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ACB&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ACC&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ACD&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ACE&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;${style_code[j]}-000${k}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 정확히 생각은 안나지만 대충 이러한 형식이었던 것 같다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;도저히 수작업으론 할 수가 없다고 판단하여 알리고즘을 통해 DB에 넣었다.&lt;/p&gt;
+
+&lt;p&gt;몇몇 다른작업들도 수작업이 힘들다 싶을땐 알고리즘을 통해 간편하게 생성하여 DB에 넣었다.&lt;/p&gt;
+
+&lt;p&gt;전혀 생각치도 못한 부분에서 시간을 많이 잡아먹어서 조금 놀랬는데,&lt;/p&gt;
+
+&lt;p&gt;앞으로 DB 데이터작업이 많은 프로젝트라면 샘플로 몇개만 넣고&lt;/p&gt;
+
+&lt;p&gt;모든 API가 완성되어졌을때 데이터를 넣는것이 현명한 판단일 것 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;-회고-2-소통&quot;&gt;😁 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[회고-2]&lt;/code&gt; 소통&lt;/h5&gt;
+
+&lt;p&gt;데이터작업, prisma로 스키마 만들기 등 다양한 것들을&lt;/p&gt;
+
+&lt;p&gt;vsCode의 Rive Share와 Zoom, Slack을 이용하여 영욱님과 함께하니 크로스체킹을 통해 놓치는 것이 없었다.&lt;/p&gt;
+
+&lt;p&gt;(물론 둘다 몰랐던것을 제외하곤)&lt;/p&gt;
+
+&lt;p&gt;이러한 과정때문이었을까? 영욱님과 케미가 잘맞았고 소통에 대한 불편함?은 느끼지 못했다.&lt;/p&gt;
+
+&lt;p&gt;또한 영욱님이 책임감도 갖고 프로젝트에 임하는걸 알게되어 믿고 맡길 수 있었고&lt;/p&gt;
+
+&lt;p&gt;솔직히 프로젝트 기간내내 백엔드 작업은 재밌었다.&lt;/p&gt;
+
+&lt;p&gt;하지만 front와의 소통이 문제였다.&lt;/p&gt;
+
+&lt;p&gt;두명이서 UI작업을 모두 하려고 하다보니 너무 바쁜것 같았고&lt;/p&gt;
+
+&lt;p&gt;그 때문에 생각보다 우리와의 교류가 없었다.&lt;/p&gt;
+
+&lt;p&gt;‘API를 ~~~한 형태로 보내줬으면 좋겠다.’ 라는 것 또한 없었기에&lt;/p&gt;
+
+&lt;p&gt;1차 프로젝트때 front를 했던 경험을 살려 front가 사용하기 편한 형태로 API를 만들었다.&lt;/p&gt;
+
+&lt;p&gt;그리고 front분들이 ‘어떻게 요청을 날려야하는지를’ 알기위해 back의 code를 보며&lt;/p&gt;
+
+&lt;p&gt;시간을 허비하는것을 막기위해 각 API마다 명세서를 파일로 만들어서 Slack방에다가 공유하였다.&lt;/p&gt;
+
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/nike-8.png&quot; alt=&quot;nike-8&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -118,6 +191,24 @@ function init(){
  
 init();
  &lt;/script&gt;
+
+&lt;center&gt;(추첨 API.md의 내용)&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위와같이 API 명세서를 만들어 front에게 전달하니&lt;/p&gt;
+
+&lt;p&gt;나의 의도를 상세히 말할 수 있었고 상대방 또한 빠르게 이해했다.&lt;/p&gt;
+
+&lt;p&gt;프론트입장에서 API형태를 요청을 날리지 않아도 알 수 있었고&lt;/p&gt;
+
+&lt;p&gt;back을 신경쓰지않고 작업에 몰두할 수 있게되어 좋았다고 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;-회고-3-느낀점&quot;&gt;🤔 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[회고-3]&lt;/code&gt; 느낀점&lt;/h5&gt;
+
+&lt;p&gt;있&lt;/p&gt;
 
 &lt;h2 id=&quot;-backend-just-do-it&quot;&gt;🧑‍💻 Backend (Just Do It)&lt;/h2&gt;
 
@@ -447,7 +538,7 @@ init();
 
 &lt;p&gt;addLottoBox, addWinnerBox함수를 통해 DB의 snkrs_data, snkrs_winner 테이블에 데이터를 저장한다.&lt;/p&gt;
 
-&lt;p style=&quot;color:#4c7a8a;&quot;&gt;(물론 이때 Dao단에서는 Affected Row를 통해 제대로 생성이 되었는지를 확인하고 아니라면 에러를 띄우는 코드가 존재한다.)&lt;/p&gt;
+&lt;p style=&quot;color:#4c7a8a;&quot;&gt;(Dao단에서는 Affected Row를 통해 제대로 생성이 되었는지를 확인하고 아니라면 에러를 띄우는 코드가 존재한다.)&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;services/snkrsServices.js&lt;/p&gt;
