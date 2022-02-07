@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-07T02:43:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-07T22:57:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -6,11 +6,11 @@
 &lt;br /&gt;
 &lt;center&gt;&lt;div style=&quot;font-weight:bold; font-size:30px;&quot;&gt;프로젝트 소개 🎥&lt;/div&gt;&lt;/center&gt;
 &lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;클론 사이트 : &lt;/span&gt; &lt;span&gt;&lt;a href=&quot;https://www.nike.com/kr/ko_kr/&quot; target=&quot;_blank&quot;&gt; NIKE &lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:bold&quot;&gt;관찰 사이트 : &lt;/span&gt; &lt;span&gt;&lt;a href=&quot;https://www.nike.com/kr/ko_kr/&quot; target=&quot;_blank&quot;&gt; NIKE &lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
 &lt;br /&gt;
 &lt;span style=&quot;font-weight:bold&quot;&gt;팀 명 : &lt;/span&gt;&lt;span&gt; Just Do It &lt;/span&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;프로젝트 목표 : &lt;/span&gt;&lt;span&gt; Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:bold&quot;&gt;프로젝트 목표 : &lt;/span&gt;&lt;span&gt; Wecode에서 배운내용을 활용하여 관찰한 사이트의 기능개발 및 레이아웃 그리기&lt;/span&gt;&lt;br /&gt;
 &lt;br /&gt;
 &lt;span style=&quot;font-weight:bold&quot;&gt;진행기간 : &lt;/span&gt;&lt;span&gt; 2021년 1월 17일 ~ 2022년 1월 29일&lt;/span&gt; &lt;span style=&quot;font-weight:bold&quot;&gt;( total : 12days )&lt;/span&gt;
 
@@ -29,14 +29,14 @@
  &lt;span style=&quot;font-weight:bold&quot;&gt;FrontEnd 기술 스택  &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
 &lt;span&gt;⭕ [React]&lt;/span&gt;&lt;span&gt;⭕ [Router]&lt;/span&gt;&lt;span&gt;⭕ [Sass]&lt;/span&gt;&lt;span&gt;⭕ [Restful API]&lt;/span&gt;&lt;span&gt;⭕ [Git &amp;amp; GitHub]&lt;/span&gt;
 
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
+  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
   &lt;span style=&quot;font-weight:bold&quot;&gt;BackEnd 기술 스택  &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
 &lt;span&gt;⭕ [Node.js]&lt;/span&gt;&lt;span&gt;⭕ [Express]&lt;/span&gt;&lt;span&gt;⭕ [MySQL]&lt;/span&gt;&lt;span&gt;⭕ [Bcrypt, JWT]&lt;/span&gt;&lt;span&gt;⭕ [Prisma]&lt;/span&gt;&lt;span&gt;⭕ [babel]&lt;/span&gt;&lt;span&gt;⭕ [node-cron]&lt;/span&gt;
-&lt;span&gt;⭕ [Jest]&lt;/span&gt;
+&lt;span&gt;⭕ [Jest]&lt;/span&gt;&lt;span&gt;⭕ [supertest]&lt;/span&gt;
   &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
   &lt;/div&gt;
 
-  &lt;div style=&quot;margin-right:50px&quot;&gt;
+  &lt;div style=&quot;margin-right:100px&quot;&gt;
     &lt;center&gt;&lt;p style=&quot;font-weight:bold; font-size:25px&quot;&gt;- Page &amp;amp; API -&lt;/p&gt;&lt;/center&gt;
 
 &lt;span style=&quot;font-weight:bold&quot;&gt;이준혁 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
@@ -49,12 +49,12 @@
   &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:bold&quot;&gt;이진웅 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;[front] 로그인페이지, 회원가입페이지&lt;/span&gt;&lt;span&gt;[PM] 프로젝트 전체적인 일정과 방향을 조율&lt;/span&gt;
+&lt;span&gt;[Front]&lt;/span&gt;&lt;span&gt;- 로그인 페이지&lt;/span&gt;&lt;span&gt;- 리스트 페이지&lt;/span&gt;&lt;span&gt;- 대문 페이지&lt;/span&gt;&lt;span&gt;- 카트 페이지&lt;/span&gt;
 
   &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:bold&quot;&gt;황희윤 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;[front] 메인페이지, Nav&lt;/span&gt;&lt;span&gt;[back] signin API, signup API&lt;/span&gt;
+&lt;span&gt;[Front]&lt;/span&gt;&lt;span&gt;- 디테일 페이지&lt;/span&gt;&lt;span&gt;- snkrs 디테일 페이지&lt;/span&gt;
 
   &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
 
@@ -69,9 +69,9 @@
 
 &lt;p&gt;1차 프로젝트는 e-commerce사이트를 클론하였기에 2차 프로젝트는 e-commerce사이트가 아닌 다른 플랫폼을 하고 싶었지만&lt;/p&gt;
 
-&lt;p&gt;아쉽게도 나이키를 클론하는 프로젝트를 맡게되었다.&lt;/p&gt;
+&lt;p&gt;아쉽게도 나이키를 모티브로하는 프로젝트를 맡게되었다.&lt;/p&gt;
 
-&lt;p&gt;그래도 나이키만의 감성이 있으니.. 상관은 없다.&lt;/p&gt;
+&lt;p&gt;그래도 나이키만의 감성이 있으니 상관은 없다.&lt;/p&gt;
 
 &lt;p&gt;회고는 기억에 남는것 몇가지만 쓰도록 하겠다.&lt;/p&gt;
 
@@ -206,13 +206,25 @@ init();
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;-회고-3-느낀점&quot;&gt;🤔 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[회고-3]&lt;/code&gt; 느낀점&lt;/h5&gt;
+&lt;h5 id=&quot;-회고-3-sql을-좀-더-공부해보자&quot;&gt;🤔 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[회고-3]&lt;/code&gt; SQL을 좀 더 공부해보자&lt;/h5&gt;
 
-&lt;p&gt;있&lt;/p&gt;
+&lt;p&gt;이번 프로젝트를 하면서 SQL로 할 수 있는것이 생각보다 많다는 것을 알게되었다.&lt;/p&gt;
+
+&lt;p&gt;지금까지 Dao단에서는 기초적인것들로 구현하고 모든 가공을 Service단에서 처리하였는데&lt;/p&gt;
+
+&lt;p&gt;그러다보니 쓸데없는 DB의 접속이 늘었고 코드 또한 가독성이 좋지 않았다.&lt;/p&gt;
+
+&lt;p&gt;이러한 부분을 코드리뷰로 지적받아 구글링을 하다보니 ‘쿼리문으로 이런것도 할 수 있어?’ 라는 생각과 함께 나의 무지함을 알게되었다.&lt;/p&gt;
+
+&lt;p&gt;초급수준인 나에겐 그 깊이는 아득했기에 한동안 정보의 늪에 빠져 약간의 좌절감에 빠져있었다.&lt;/p&gt;
+
+&lt;p&gt;하지만 이제 시작하는 단계임을 인정하자 마음이 조금 편해졌고 매일 새롭게 알게되는 쿼리문을 정리하기로 마음먹었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;-backend-just-do-it&quot;&gt;🧑‍💻 Backend (Just Do It)&lt;/h2&gt;
 
-&lt;center class=&quot;notice--danger&quot;&gt;아쉽게도 2차 프로젝트 또한 e-commerce사이트를 클론하게 되어 새로운 기능을 많이 추가하지는 못하였다.&lt;/center&gt;
+&lt;center class=&quot;notice--danger&quot;&gt;아쉽게도 2차 프로젝트 또한 e-commerce사이트를 코딩하게 되어 새로운 기능을 많이 추가하지는 못하였다.&lt;/center&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;하지만 1차 프로젝트에서는 하지 못했던 &quot;예외처리 및 HTTP STATUS CODE, Unit Test&quot; 등을 적극 활용하여 완성도 높은 API를 만들기 위해 노력하였다.&lt;/center&gt;
 
@@ -235,6 +247,140 @@ init();
 &lt;p&gt;또한 추첨기능을 구현하기위해 추첨을 한 사람들을 관리하는 table인 snkrs_data&lt;/p&gt;
 
 &lt;p&gt;당첨된 사람들을 관리하는 table인 snkrs_winners를 만들었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;detail-api&quot;&gt;Detail API&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;models/productDao.js&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getProductData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$queryRaw&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;product_colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;product_colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color_hex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;product_genders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;normal_price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sale_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sale_price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;is_member&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shoes_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_clothes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clothes_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_accessories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;acc_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;JSON_ARRAYAGG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;JSON_OBJECT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_img_urls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_main&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_img_urls&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_img_urls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_img_urls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;JSON_ARRAYAGG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;JSON_OBJECT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quantity&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_with_sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;quantity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_with_sizes&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_with_sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_sizes&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_size_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_with_sizes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;product_colors&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_colors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;product_genders&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_genders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_icon&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_icon_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_brand&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_brand_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_clothes&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_clothes_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_clothes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sub_accessories&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_accessories_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_accessories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;style_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상품의 디테일 정보를 가져오는 쿼리문이다.&lt;/p&gt;
+
+&lt;p&gt;하나의 제품에 4개씩 있는 이미지와 10개씩 있는 사이즈를 ‘어떻게 객체화 시켜서 가져올까?’에 대해 많이 고민했었다.&lt;/p&gt;
+
+&lt;p&gt;처음에는 GROUP_CONCAT과 CONCAT으로 [,]으로 배열의 모양을 만들고 그것을 {,}로 객체를 만들려고 하였다.&lt;/p&gt;
+
+&lt;p&gt;어찌저찌 만들긴 하였으나 재활용하기에는 너무나 코드가 가독성이 떨어지고 복잡해보였다.&lt;/p&gt;
+
+&lt;p&gt;그러던중 JSON을 사용하여 손쉽게 배열과 객체를 만들 수 있다는 것을 구글링을 통해 알아냈다.!&lt;/p&gt;
+
+&lt;p&gt;JSON_OBJECT으로 각 데이터를 객체화 시키고 JSON_ARRAYAGG을 통해 배열로 만들어준다.&lt;/p&gt;
+
+&lt;p&gt;생각보다 사용법도 간단하고 결과물도 좋아서 자주 사용할 것 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;성공&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;style_code&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;AAA-0001&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나이키 에어포스 1 GORE-TEX&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;category&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;shoes&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;주황색&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;hex&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#EB621D&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;gender&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;남성&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;normal_price&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;189000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;sale_rate&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;sale_price&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;is_member&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;shoes_type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;에어 포스 1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;brand&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나이키 스포츠웨어&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;clothes_type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;acc_type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;img&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Images/Men/Shoes/Airforce/1/1-1.png&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;is_main&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Images/Men/Shoes/Airforce/1/1-2.png&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;is_main&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Images/Men/Shoes/Airforce/1/1-3.png&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;is_main&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Images/Men/Shoes/Airforce/1/1-4.png&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;is_main&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;220&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;quantity&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;230&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;quantity&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;240&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;quantity&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+
+          &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+        &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -302,7 +448,9 @@ init();
 &lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequiredKeys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AffectedRow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IsExistItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;자주 사용되는 에러함수들을 캡슐화 하여 관리함.&lt;/p&gt;
+&lt;p&gt;자주 사용되는 에러함수들을 캡슐화 하여 관리하였다.&lt;/p&gt;
+
+&lt;p&gt;하나로 합칠까 생각하였지만 일단은 각각 나눠놓았다.&lt;/p&gt;
 
 &lt;p&gt;(너무 길어지므로 나머지는 생략)&lt;/p&gt;
 
@@ -445,10 +593,10 @@ init();
 
 &lt;hr /&gt;
 
-&lt;p&gt;나이키의 꽃 추첨기능이다. 하지만 알고리즘이 너무 단순하다…&lt;/p&gt;
+&lt;p&gt;나이키의 꽃 추첨기능이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/nike-4.png&quot; alt=&quot;nike-4&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/nike-4.png&quot; alt=&quot;nike-4&quot; style=&quot;zoom:70%;&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
