@@ -1,4 +1,10 @@
-I"�<h2 id="-2차-프로젝트-소개">📑 2차 프로젝트 소개</h2>
+I"�<h2 id="-2차-프로젝트-소개">📑 2차 프로젝트 소개</h2>
+
+<p><br /></p>
+
+<center>유튜브 영상</center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3guL-Zx5MwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p><br /></p>
 
@@ -29,14 +35,14 @@
  <span style="font-weight:bold">FrontEnd 기술 스택  </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
 <span>⭕ [React]</span><span>⭕ [Router]</span><span>⭕ [Sass]</span><span>⭕ [Restful API]</span><span>⭕ [Git &amp; GitHub]</span>
 
-  </div></span><br />
+  </div></span><br /><br /><br />
   <span style="font-weight:bold">BackEnd 기술 스택  </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
 <span>⭕ [Node.js]</span><span>⭕ [Express]</span><span>⭕ [MySQL]</span><span>⭕ [Bcrypt, JWT]</span><span>⭕ [Prisma]</span><span>⭕ [babel]</span><span>⭕ [node-cron]</span>
 <span>⭕ [Jest]</span><span>⭕ [supertest]</span>
   </div></span><br />
   </div>
 
-  <div style="margin-right:50px">
+  <div style="margin-right:100px">
     <center><p style="font-weight:bold; font-size:25px">- Page &amp; API -</p></center>
 
 <span style="font-weight:bold">이준혁 </span><span><div style="display:flex; flex-direction: column; margin-left:20px ">
@@ -324,7 +330,7 @@ init();
 
 <p>JSON_OBJECT으로 각 데이터를 객체화 시키고 JSON_ARRAYAGG을 통해 배열로 만들어준다.</p>
 
-<p>생각보다 사용법도 편리하고 결과물도 좋아서 자주 사용할 것 같다.</p>
+<p>생각보다 사용법도 간단하고 결과물도 좋아서 자주 사용할 것 같다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
     <span class="s">"message"</span><span class="o">:</span> <span class="s">"성공"</span><span class="o">,</span>
@@ -374,34 +380,15 @@ init();
                 <span class="s">"size"</span><span class="o">:</span> <span class="s">"240"</span><span class="o">,</span>
                 <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
             <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"250"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"260"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"270"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"280"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"290"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">},</span>
-            <span class="o">{</span>
-                <span class="s">"size"</span><span class="o">:</span> <span class="s">"300"</span><span class="o">,</span>
-                <span class="s">"quantity"</span><span class="o">:</span> <span class="mi">80</span>
-            <span class="o">}</span>
+
+          <span class="o">...</span>
+
         <span class="o">]</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+
+<p><br /></p>
 
 <h3 id="cart-api">Cart API</h3>
 
@@ -467,7 +454,9 @@ init();
 <span class="n">export</span> <span class="o">{</span> <span class="nc">RequiredKeys</span><span class="o">,</span> <span class="nc">AffectedRow</span><span class="o">,</span> <span class="nc">IsExistItem</span> <span class="o">};</span>
 </code></pre></div></div>
 
-<p>자주 사용되는 에러함수들을 캡슐화 하여 관리함.</p>
+<p>자주 사용되는 에러함수들을 캡슐화 하여 관리하였다.</p>
+
+<p>하나로 합칠까 생각하였지만 일단은 각각 나눠놓았다.</p>
 
 <p>(너무 길어지므로 나머지는 생략)</p>
 
@@ -610,10 +599,10 @@ init();
 
 <hr />
 
-<p>나이키의 꽃 추첨기능이다. 하지만 알고리즘이 너무 단순하다…</p>
+<p>나이키의 꽃 추첨기능이다.</p>
 
 <p><br /></p>
-<center><img src="../images/2021-10-27-first/nike-4.png" alt="nike-4" /></center>
+<center><img src="../images/2021-10-27-first/nike-4.png" alt="nike-4" style="zoom:70%;" /></center>
 <p><br /></p>
 
 <blockquote>

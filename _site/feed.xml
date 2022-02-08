@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-07T22:57:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T12:44:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;p style=&quot;font-weight:bold&quot;&gt;유튜브 영상 😎&lt;/p&gt;&lt;/center&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3guL-Zx5MwM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -728,7 +734,12 @@ init();
 
 &lt;p&gt;마지막으로 당첨자가 뽑혔으니 임시로 응모한 사람들을 저장했던 snkrs_data 테이블은 삭제시켜준다.&lt;/p&gt;
 
-&lt;p style=&quot;color:#4c7a8a;&quot;&gt;(Dao단에서는 Affected Row를 통해 해당 상품에 참가한 인원만큼 데이터를 삭제시켰는지 확인하는 코드가 존재한다.)&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">📑 2차 프로젝트 소개</summary></entry><entry><title type="html">HTTP Status Code</title><link href="http://localhost:4000/interview-07/" rel="alternate" type="text/html" title="HTTP Status Code" /><published>2022-01-31T00:00:00+09:00</published><updated>2022-01-31T00:00:00+09:00</updated><id>http://localhost:4000/interview-07</id><content type="html" xml:base="http://localhost:4000/interview-07/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
+&lt;p style=&quot;color:#4c7a8a;&quot;&gt;(Dao단에서는 Affected Row를 통해 해당 상품에 참가한 인원만큼 데이터를 삭제시켰는지 확인하는 코드가 존재한다.)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;p style=&quot;font-weight:bold; color:red&quot;&gt;보러가기 ⬇️&lt;/p&gt;&lt;a href=&quot;https://ljhyeokk.github.io/wecode-05/&quot;&gt;1차 프로젝트 회고록&lt;/a&gt;&lt;/center&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">📑 2차 프로젝트 소개</summary></entry><entry><title type="html">HTTP Status Code</title><link href="http://localhost:4000/interview-07/" rel="alternate" type="text/html" title="HTTP Status Code" /><published>2022-01-31T00:00:00+09:00</published><updated>2022-01-31T00:00:00+09:00</updated><id>http://localhost:4000/interview-07</id><content type="html" xml:base="http://localhost:4000/interview-07/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;HTTP Status Code : 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함.&lt;/center&gt;
 

@@ -31,5 +31,5 @@ main-sidebar:
     children:
       - title: '이것저것(7)'
         url: /Every/etc/etc/
-      - title: 'Wecode(5)'
+      - title: 'Wecode(6)'
         url: /Every/Wecode/wecode/
