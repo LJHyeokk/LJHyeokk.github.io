@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T12:44:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T14:00:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -7,6 +7,11 @@
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3guL-Zx5MwM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;p style=&quot;font-weight:bold; color:blue&quot;&gt;보러가기 ⬇️&lt;/p&gt;&lt;a href=&quot;https://github.com/wecode-bootcamp-korea/fullstack3-2nd-just-do-it-backend&quot;&gt;Github [BackEnd]&lt;/a&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;div style=&quot;border: 3px solid #222441; padding-left:20px; border-radius:15px; width:70%; margin-left:15%; font-size:15px&quot;&gt;
 &lt;br /&gt;
@@ -1815,8 +1820,16 @@ JWT_SECRET=&quot;1234&quot;
 
 &lt;center&gt;&lt;p style=&quot;font-weight:bold; color:red;&quot;&gt;직접 해보기 ⬆️&lt;/p&gt;&lt;/center&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;display:flex; justify-content:center; border: 3px solid #222441; padding:10px&quot;&gt;
+&lt;span style=&quot;margin-right:200px&quot;&gt;&lt;a href=&quot;https://github.com/wecode-bootcamp-korea/fullstack3-1st-wetown-frontend&quot;&gt;Github [FrontEnd]&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;a href=&quot;https://github.com/wecode-bootcamp-korea/fullstack3-1st-wetown-backend&quot;&gt;Github [BackEnd]&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
 &lt;div style=&quot;border: 3px solid #222441; padding-left:20px; border-radius:15px; width:70%; margin-left:15%; font-size:15px&quot;&gt;
 &lt;br /&gt;
+
 &lt;center&gt;&lt;div style=&quot;font-weight:bold; font-size:30px;&quot;&gt;프로젝트 소개 🎥&lt;/div&gt;&lt;/center&gt;
 &lt;br /&gt;
 &lt;span style=&quot;font-weight:bold&quot;&gt;클론 사이트 : &lt;/span&gt; &lt;span&gt;&lt;a href=&quot;https://smtownandstore.com/?utm_source=google&amp;amp;utm_medium=cpc&amp;amp;utm_campaign=pc&amp;amp;utm_content=%ED%99%95%EC%9E%A5_%ED%95%9C%EA%B5%AD&amp;amp;utm_term=SMTOWN&amp;amp;gclid=CjwKCAiA5t-OBhByEiwAhR-hm78q-9TO-Opb7ndK0lDUKdN0XgyvlJcYvsdA2u_COQk89r8F4IFBVhoCR3kQAvD_BwE&quot; target=&quot;_blank&quot;&gt; SMTOWN &amp;amp;STORE&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;

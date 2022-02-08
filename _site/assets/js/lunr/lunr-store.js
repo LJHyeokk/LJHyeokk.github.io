@@ -276,7 +276,7 @@ var store = [{
         "teaser": null
       },{
         "title": "1차 Project 회고록",
-        "excerpt":"📑 1차 프로젝트 output 및 소개 배포 완료 : click ➡️WETOWN 직접 해보기 ⬆️ 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일 ( total :...","categories": [],
+        "excerpt":"📑 1차 프로젝트 output 및 소개 배포 완료 : click ➡️WETOWN 직접 해보기 ⬆️ Github [FrontEnd]Github [BackEnd] 프로젝트 소개 🎥 클론 사이트 : SMTOWN &amp;STORE 팀 명 : WETOWN 프로젝트 목표 : Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 12월 27일 ~ 2022년 1월 7일...","categories": [],
         "tags": [],
         "url": "/wecode-05/",
         "teaser": null
@@ -318,7 +318,7 @@ var store = [{
         "teaser": null
       },{
         "title": "2차 Project 회고록",
-        "excerpt":"📑 2차 프로젝트 소개 유튜브 영상 😎 프로젝트 소개 🎥 관찰 사이트 : NIKE 팀 명 : Just Do It 프로젝트 목표 : Wecode에서 배운내용을 활용하여 관찰한 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 1월 17일 ~ 2022년 1월 29일 ( total : 12days ) 프로젝트 참여자 : 이준혁,...","categories": [],
+        "excerpt":"📑 2차 프로젝트 소개 유튜브 영상 😎 보러가기 ⬇️ Github [BackEnd] 프로젝트 소개 🎥 관찰 사이트 : NIKE 팀 명 : Just Do It 프로젝트 목표 : Wecode에서 배운내용을 활용하여 관찰한 사이트의 기능개발 및 레이아웃 그리기 진행기간 : 2021년 1월 17일 ~ 2022년 1월 29일 ( total : 12days )...","categories": [],
         "tags": [],
         "url": "/wecode-06/",
         "teaser": null
