@@ -1,4 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-08T14:00:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-09T16:17:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Docker</title><link href="http://localhost:4000/interview-08/" rel="alternate" type="text/html" title="Docker" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/interview-08</id><content type="html" xml:base="http://localhost:4000/interview-08/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
+
+&lt;center class=&quot;notice--info&quot;&gt;Docker : Go언어로 작성된 리눅스 컨테이너 기반으로하는 오픈소스 가상화 플랫폼이다.&lt;/center&gt;
+
+&lt;h3 id=&quot;가상화를-사용하는-이유&quot;&gt;가상화를 사용하는 이유?&lt;/h3&gt;
+
+&lt;p&gt;이제는 향상된 컴퓨터의 성능을 더욱 효율적으로 사용하기 위해 가상화 기술이 많이 등장했다.
+서버 관리자 입장에서 CPU사용률이 10%대 밖에 되지 않는 활용도가 낮은 서버들의 리소스 낭비이다. 그렇다고 모든 서비스를 한 서버안에 올린다면 안정성에 문제가 생길수도 있다. 그래서 안정성을 높이며 리소스도 최대한 활용할 수 있는 방법으로 나타난게 서버 가상화이다. 모두가 아는 대표적인 가상화 플랫폼으로는 VM이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/doker-1.png&quot; alt=&quot;doker-1&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;기존에 우리에게 익숙한 VM같은 경우엔 Host OS 위에 가상화를 시키기 위한 Hypervisor 엔진 그리고 그 위에 Guest OS를 올려 사용한다. 이는 가상화된 하드웨어 위에 OS가 올라가는 형태로 거의 완벽하게 Host와 분리된다고 봐도 무방하다. 반면에 컨테이너 기반 가상화는 Docker 엔진 위에 Application 실행에 필요한 바이너리만 올라가게 된다. OS 가상화를 보면 Host OS와 완전히 분리되는 장점은 있지만 OS위에 OS를 올리기 때문에 무겁고 느릴수 밖에 없다. 하지만 컨테이너 기반 가상화는 Host OS 그리고 Docker 엔진위에서 바로 동작하며 Host의 커널을 공유한다. 커널을 공유하게 되면 io처리가 쉽게 되어 성능의 효율을 높일 수 있다. 컨테이너를 사용하는 것은 가상 머신을 생성하는 것이 아니라 Host OS가 사용하는 자원을 분리하여 여러 환경을 만들 수 있도록 하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;OS가상화는 컨테이너기반 가상화보다 더 높은 격리 레벨을 지원한다. 이는 보안적인 측면에서 더욱 유리하다.
+또한 OS가상화의 커널을 공유하지 않는 장점 또한 있다. 커널을 공유하지 않는 만큼 멀티 OS가 가능하다는 것이다. 커널을 공유하지 않아 멀티 OS가 불가능 하다는 것은 Linux위에 Window를 올릴 수 없다는 단점이 있는 것이다. 그럼에도 Docker를 쓰는 이유는 성능향상, 뛰어난 이식성, 쉽게 Scale Out을 할 수 있는 유연성이라고 생각된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;실습하기&quot;&gt;실습하기😺&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Docker install(Ubantu)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;https&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ca&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;certificates&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;common&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fsSL&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//download.docker.com/linux/ubuntu/gpg | sudo apt-key add -&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repository&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cache&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;policy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ce&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ce&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker
+
+docker ps
+#(실행중인 컨테이너를 보여주는 커맨드)
+docker ps -a
+#(실행이 종료된 것을 포함해서 모든 컨테이너를 보는 커맨드 및 옵션)
+docker images
+#(생성된 혹은 다운로드 된 이미지를 보여주는 커맨드)
+docker images -a
+#(모든 이미지를 보여주는 커맨드 및 옵션)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도커하려는 폴더에 Dockerfile 만들기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#./Dockerfile
+FROM node:14
+# 기반이 될 이미지
+
+# 작업디렉토리(default) 설정
+WORKDIR /usr/src/app
+
+## Install packages
+# 현재 패키지 설치 정보를 도커 이미지에 복사. package-lock.json도 복사하는 것이 안전.
+COPY package*.json ./
+# 프리즈마 스키마의 위치를 한 디렉토리 상위로 이동하여 복사
+COPY ./prisma/schema.prisma ./
+# 설치정보를 읽어 들여서 패키지를 설치
+RUN npm install
+
+## Copy all src files
+# 현재 경로에 존재하는 모든 소스파일을 이미지에 복사
+COPY . .
+
+
+## Run the application on the port 8000
+# 8000번 포트를 외부에 개방하도록 설정
+EXPOSE 8000
+
+# === 도커가 이미지를 빌드할 때의 명렁어
+
+CMD [&quot;npm&quot;, &quot;start&quot;]
+
+# ========== 이미지가 실행됐을 때 처음에 실행될 명령어
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도커파일을 이용해 이미지 빌드 하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t '도커허브에 가입한 계정명'/'이미지명(프로젝트명 권장)':'버전' .
+ex) docker build -t clzlsqkq/justdoit:0.1.0 .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/docker-2.png&quot; alt=&quot;docker-2&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막의 .은 위치를 나타내는것으로 꼭 적어주어야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;빌드된 이미지를 실행해보기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name '컨테이너 명' -d'데몬으로 실행하기 위한 옵션' -p '호스트 포트':'컨테이너 포트' '이미지명'
+ex) docker run --name justdoit01 -d -p 8000:8000 clzlsqkq/justdoit:0.1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/docker-3.png&quot; alt=&quot;docker-3&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;잘 실행되고 있는 모습.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컨테이너 전부 삭제하는 명령어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm $(docker ps -a -q)
+#UBUNTU
+sudo docker rm $(sudo docker ps -a -q)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이미지 전부 삭제하는 명령어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rmi $(docker images -q)
+#ubuntu
+sudo docker rmi $(sudo docker images -q)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;p style=&quot;font-weight:bold; color:red&quot;&gt;----------------------------------*참고*----------------------------------&lt;/p&gt;&lt;/center&gt;
+
+&lt;p&gt;RDS가 아닌 로컬 DB랑 연결을 하고싶다면&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hoonpro.tistory.com/14&quot;&gt;‘이곳’&lt;/a&gt;을 참고하면 된다.&lt;/p&gt;
+
+&lt;p&gt;Docker 컨테이너 내에서 localhost는 컨테이너 자신의 주소이기 때문에 호스트 OS(macOS) 위에서 실행중인 DB에 연결이 안되는데&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker run --net=host -p &quot;3306&quot; --name justdoit04 -d -p 8000:8000 clzlsqkq/justdoit:0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 실행 시키면 아주 잘 연결되는것을 볼 수 있다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP Status Code? 💯</summary></entry><entry><title type="html">기초 명령어2</title><link href="http://localhost:4000/sql-04/" rel="alternate" type="text/html" title="기초 명령어2" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/sql-04</id><content type="html" xml:base="http://localhost:4000/sql-04/">&lt;h2 id=&quot;기초-명령어2&quot;&gt;기초 명령어2👾&lt;/h2&gt;
+
+&lt;center&gt;숫자형 데이터 함수&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ABS ➡️ ABS(숫자) 절대값으로 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CEILING ➡️ CEILING(숫자) 숫자를 정수로 올림해서 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;FLOOR ➡️ FLOOR(숫자) 숫자를 정수로 내림해서 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ROUND ➡️ ROUND(숫자, 자릿수) 숫자를 소수점까지 반올림해서 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TRUNCATE ➡️ TRUNCATE(숫자, 자릿수) 숫자를 소수점까지 버림해서 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;POWER ➡️ POWER(숫자1, 숫자2) 숫자1 제곱 숫자2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MOD ➡️ MOD(숫자1, 숫자2) 숫자1을 숫자2로 나눈 나머지 반환&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;날짜형 데이터 함수&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NOW ➡️ NOW() 현재날짜와 시간반환 ex) 2022-02-09 02:33:12&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CURRENT_DATE ➡️ CURRENT_DATE() 현재 날짜 반환 ex) 2022-02-09&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CURRENT_DATE ➡️ CURRENT_TIME() 현재 시간 반환 ex) 02:33:12&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;YEAR ➡️ YEAR(날짜) 날짜의 연도 반환 ex) YEAR(NOW()) 2022&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MONTH ➡️ MONTH(날짜) 날짜의 월 반환 ex) 12&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MONTHNAME ➡️ MONTHNAME(날짜) 날짜의 월을 영어로 반환 ex) February&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DAYNAME ➡️ DAYNAME(날짜) 날짜의 요일을 영어로 반환 ex) Wednesday&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DAYOFMONTH ➡️ DAYOFMONTH(날짜) 날짜의 일 반환 ex) 9&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DAYOFWEEK ➡️ DAYOFWEEK(날짜) 날짜의 요일을 숫자로 반환 ex) 4&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;WEEK ➡️ WEEK(날짜) 날짜가 해당연도의 몇번째 주인지 반환 ex) 7&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HOUR ➡️ HOUR(시간) 시간의 시 ex) 2&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MINUTE ➡️ MINUTE(시간) 시간의 분 ex) 33&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SECOND ➡️ SECONDE(시간) 시간의 초 ex) 12&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DATE_FORMAT ➡️ DATEFORMAT(날짜/시간, 형식) 형식으로 변환 ex) DATE_FORMAT(‘1994-04-15 16:45:32’. ‘%Y년 %m월 %d일 %H시 %i분 %s초’) = 1994년 4월 15일 16시 45분 32초&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/mysql-1.png&quot; alt=&quot;mysql-1&quot; /&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DATEDIFF ➡️ DATEDIFF(날짜1, 날짜2) (날짜1-날짜2) 차이반환 ex) DATEDIFF(‘2022-01-01 00:00:00’, ‘2021-12-25 12:00:00’) = 7&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TIMEDIFF ➡️ TIMEDIFF(시간1, 시간2) (시간1-시간2) 차이반환 ex) TIMEDIFF(‘2022-01-01 00:00:00’, ‘2021-12-25 12:00:00’) = 156:00:00&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;select distinct [컬럼이름] from [테이블 이름]; ➡️ 중복된값 제외하기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;select name, a+b+c as total from [테이블 이름]; ➡️ 컬럼간에는 연산이 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">기초 명령어2👾</summary></entry><entry><title type="html">2차 Project 회고록</title><link href="http://localhost:4000/wecode-06/" rel="alternate" type="text/html" title="2차 Project 회고록" /><published>2022-02-04T00:00:00+09:00</published><updated>2022-02-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-06</id><content type="html" xml:base="http://localhost:4000/wecode-06/">&lt;h2 id=&quot;-2차-프로젝트-소개&quot;&gt;📑 2차 프로젝트 소개&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -1573,7 +1825,65 @@ JWT_SECRET=&quot;1234&quot;
   &lt;li&gt;
     &lt;p class=&quot;notice--danger&quot;&gt;select * from [테이블 이름] where [칼럼이름] is null ➡️ null값이 포함된 것을 찾아라. ( 반대 is not null )&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">기초 명령어👾</summary></entry><entry><title type="html">Unit Test</title><link href="http://localhost:4000/node-05/" rel="alternate" type="text/html" title="Unit Test" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/node-05</id><content type="html" xml:base="http://localhost:4000/node-05/">&lt;h2 id=&quot;유닛테스트-&quot;&gt;유닛테스트 🙀&lt;/h2&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;alter table [테이블 이름] change column name [바꾸고싶은 이름] [데이터타입] ➡️ 테이블의 칼럼의 이름을 바꾸고 싶을때&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;order by [칼럼이름1], [칼럼이름2] ➡️ 칼럼이름1기준정렬 후 칼럼2로 정렬 (ASC 오름차순 생략가능)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;select name, categories from [테이블 이름] order by 1, 2 ➡️ 숫자로 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;select [칼럼이름], rank() over (order by [칼럼이름]) as 별명 from [테이블 이름] ➡️ [별명] n, n-1, n-2, n-3 (4,3,2,1) 이렇게 순위를 매겨준다 rank() over은 항상 order by와 함께 쓰인다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;select [칼럼이름], dense_rank() over (order by [칼럼이름]) as 별명 from [테이블 이름] ➡️ 공동 순위가 있어도 다음 순위로 건너띄지 않음&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p class=&quot;notice--danger&quot;&gt;select [칼럼이름], row_number() over (order by [칼럼이름]) as 별명 from [테이블 이름] ➡️ 공동 순위를 무시함&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;문자형 데이터 함수&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LOCATE ➡️ LOCATE(“A”,”ABC”) “ABC”에서 “A”가 몇번째에 있는지 위치반환 (없다면 0 반환)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;select LOCATE(‘a’,[칼럼이름]) from [테이블이름] ➡️ 각 행마다 a가있는 위치를 숫자로 반환&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;SUBSTRING ➡️ SUBSTRING(“ABC”,2) “ABC”에서 2번째 문자부터 반환 (입력한 숫자가 문자열 길이보다 크다면 아무것도 안가져옴)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RIGHT ➡️ RIGHT(“ABC”,1) 오른쪽에서 1번째 문자까지 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;LEFT ➡️ LEFT(“ABC”,1) 왼쪽에서 1번쨰 문자까지 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;UPPER ➡️ UPPER(“abc”) 대문자로 바꿔줌&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;LOWER ➡️ LOWER(“ABC”) 소문자로 바꿔줌&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;LENGTH ➡️ LENGTH(“ABC”) 글자수 반환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CONCAT ➡️ CONCAT(“ABC,”DEF”) “ABCDEF”반환&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;select CONCAT(LEFT([칼럼이름],3), RIGHT([칼럼이름],3) ) from [테이블이름] ➡️ 왼쪽에서 3개 오른쪽에서 3개의 문자열을 합침&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;REPLACE ➡️ REPLACE(“ABC”,”A”,”Z”) A를 Z로 바꿔줌&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">기초 명령어👾</summary></entry><entry><title type="html">Unit Test</title><link href="http://localhost:4000/node-05/" rel="alternate" type="text/html" title="Unit Test" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/node-05</id><content type="html" xml:base="http://localhost:4000/node-05/">&lt;h2 id=&quot;유닛테스트-&quot;&gt;유닛테스트 🙀&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;유닛 테스트 : 내가 작성한 코드의 가장 작은 단위인 함수를 테스트하는 메소드이다&lt;/center&gt;
 
@@ -2100,349 +2410,4 @@ init();
 
 &lt;p&gt;함께한 태준님, 은비님, 희윤님 모두 잘해주셔서 고맙습니다.&lt;/p&gt;
 
-&lt;p&gt;감사합니다&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">📑 1차 프로젝트 output 및 소개</summary></entry><entry><title type="html">Webucks 만들기 - node.js</title><link href="http://localhost:4000/wecode-04/" rel="alternate" type="text/html" title="Webucks 만들기 - node.js" /><published>2021-12-28T00:00:00+09:00</published><updated>2021-12-28T00:00:00+09:00</updated><id>http://localhost:4000/wecode-04</id><content type="html" xml:base="http://localhost:4000/wecode-04/">&lt;h2 id=&quot;backend-시작--&quot;&gt;backend 시작 ~ 🧑‍💻&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;Wecode의 서버, node로 위벅스 서버 만들기&lt;/center&gt;
-
-&lt;h3 id=&quot;사전작업&quot;&gt;사전작업.&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;node -v , npm -v 버전정보 확인&lt;/li&gt;
-  &lt;li&gt;git init -y ( package.json 생성확인 )&lt;/li&gt;
-  &lt;li&gt;npm install express ( package.json dependencies에 생성되었는지 확인 - node5부터는 –save하지 않아도 dependency에 적용)&lt;/li&gt;
-  &lt;li&gt;npm install prisma –save-dev ( -dev란 개발자환경에서만 사용될때 )&lt;/li&gt;
-  &lt;li&gt;npm install @prisma/client&lt;/li&gt;
-  &lt;li&gt;npm install dotenv nodemon -D&lt;/li&gt;
-  &lt;li&gt;npx prisma init&lt;/li&gt;
-  &lt;li&gt;prisma폴더와 .evn파일 생성확인&lt;/li&gt;
-  &lt;li&gt;layered pattern 적용시키기위해 폴더 생성&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/webucksNode-1.png&quot; alt=&quot;webucksNode-1&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center&gt;여기까지 잘되었다면 이제 시작해봅시다.&lt;/center&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;server.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PrismaClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;routes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pattern&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cookieParser&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cors&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PrismaClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8060&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//미들&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookieParser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listening&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$disconnect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;다른서버에서의 접속을 허용하기 위해 cors를 install 하였고&lt;/p&gt;
-
-&lt;p&gt;쿠키로 받은 값을 해석하기 위해 cookie-parser를 install 하였다.&lt;/p&gt;
-
-&lt;p&gt;use라는 것은 미들웨어로 사용하겠다는 뜻인데 모든 API 요청과 응답사이에는 미들웨어가 실행이 된다.&lt;/p&gt;
-
-&lt;p&gt;그렇기에 실행 순서가 중요하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;첫번째-prisma로-mysql과-연동하여-테이블-생성하기&quot;&gt;첫번째, prisma로 mySQL과 연동하여 테이블 생성하기&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;schema.prisma&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;prisma-client-js&quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;datasource&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mysql&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;DATABASE_URL&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;.env&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;DATABASE_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mysql://root:&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qqqqwwweer&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@localhost:3306/we_starbucks_2&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//&quot;mysql://USERNAME:PASSWORD@localhost:3306/DATABASE_NAME&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위와같이 설정시 mySQL과 연동이 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/webucksNode-2.png&quot; alt=&quot;webucksNode-2&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 사진과 같이 테이블을 작성한 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx prisma migrate dev --name &quot;작명&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;mySQL에 테이블이 생성된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;두번째-layered-pattern을-활용하여-dao단에서-테이블을-조작한다&quot;&gt;두번째, layered pattern을 활용하여 Dao단에서 테이블을 조작한다.&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;productDao.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// coffee list에 추가하기&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createProducts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;korean_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;english_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;drink_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;is_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$queryRaw&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INTO&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;drinks&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;korean_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;english_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;drink_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;is_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;VALUES&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;korean_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;english_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drink_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// coffee english_name 변경하기&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;updateProduct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drinks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;where:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;data:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;english_name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_coffe&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;queryRaw를 통해 mySQL의 명령어를 사용하여 테이블의 데이터를 조작하는 방법과&lt;/p&gt;
-
-&lt;p&gt;prisma의 가공된 메서드를 통해 테이블을 조작하는 방법이 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;세번째-router를-통해-controller단-middleware을-실행시킨다&quot;&gt;세번째, router를 통해 controller단, middleWare을 실행시킨다.&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;productsRouter.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;productController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;../&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;controllers&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;admin_authorization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;../../&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;middleWare&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin_authorization&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin_authorization&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin_authorization&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;updateProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin_authorization&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;deleteProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;likes&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;likeProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;클라이언트의 요청에 맞게 CRUD를 적어준다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">backend 시작 ~ 🧑‍💻</summary></entry><entry><title type="html">Bcrypt &amp;amp; Jsonwebtoken</title><link href="http://localhost:4000/node-03/" rel="alternate" type="text/html" title="Bcrypt &amp;amp; Jsonwebtoken" /><published>2021-12-22T00:00:00+09:00</published><updated>2021-12-22T00:00:00+09:00</updated><id>http://localhost:4000/node-03</id><content type="html" xml:base="http://localhost:4000/node-03/">&lt;h2 id=&quot;bcrypt--jsonwebtoken-&quot;&gt;Bcrypt &amp;amp; Jsonwebtoken 🙀&lt;/h2&gt;
-
-&lt;h3 id=&quot;보안-시스템은-가장-약한-연결-고리만큼만-강하다&quot;&gt;“보안 시스템은 가장 약한 연결 고리만큼만 강하다.”&lt;/h3&gt;
-
-&lt;p&gt;특정부분의 보안이 아무리 강하다고 하더라도 다른부분에서 보안이 뚫려버리면 의미가 없다.&lt;/p&gt;
-
-&lt;p&gt;따라서 보안 시스템의 안정성은 ‘강한 부분이 얼마나 강한가’보다는 ‘약한 부분이 얼마나 약한가’에 따라서 좌우된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;단방향-해시-함수&quot;&gt;단방향 해시 함수&lt;/h3&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;단방향 해시 함수 : 수학적인 연산을 통해 원본 메시지를 변환하여 암호화된 메시지인 다이제스트를 생성한다.. 원본 메시지를 알면 암호화된 메시지를 구하기는 쉽지만 암호화된 메시지로는 원본 메시지를 구할 수 없어야 하며 이를 '단방향성'이라고 한다.&lt;/center&gt;
-
-&lt;p&gt;예를 들면 “abcd”라는 문자열은 해시알고리즘에 의해 “adasfuaokfa32423823joegnsvd324refwdoiepoht23n34” 같은 문자열로 인코딩될 수 있다.&lt;/p&gt;
-
-&lt;p&gt;위의 값을 저장하면 사용자의 패스워드를 직접 저장하는 위험을 피할 수 있다. 그리고 사용자가 로그인할 때 패스워드를 입력하면, 이를 해시한 값을 저장된 값과 비교하여 일치 여부를 확인할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이 특징을 avalanche 효과라고 하며, 사용자의 원본 패스워드를 추론하기 어렵게 만드는 중요한 요소이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;단방향-해시-함수의-문제점&quot;&gt;단방향 해시 함수의 문제점&lt;/h3&gt;
-
-&lt;p&gt;동일한 메시지가 언제나 동일한 다이제스트를 갖는다면, 공격자가 전처리(pre-computing)된 다이제스트를 가능한 한 많이 확보한 다음 이를 탈취한 다이제스트와 비교해 원본 메시지를 찾아내거나 동일한 효과의 메시지를 찾을 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이와 같은 다이제스트 목록을 레인보우 테이블(rainbow table)이라 하고, 이와 같은 공격 방식을 레인보우 공격(rainbow attack)이라 한다. 게다가 다른 사용자의 패스워드가 같으면 다이제스트도 같으므로 한꺼번에 모두 정보가 탈취될 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;단방향-해시-함수-보완하기&quot;&gt;단방향 해시 함수 보완하기&lt;/h3&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;솔팅(salting) : 단방향 해시 함수에서 다이제스트를 생성할 때 추가되는 바이트 단위의 임의의 문자열이다. 그리고 이 원본 메시지에 문자열을 추가하여 다이제스를 생성하는 것을 솔팅(salting)이라 한다. 예를 들어 다음과 같이 &quot;abcd&quot;라는 문자열에 솔트인 &quot;8zff4fgflgfd93fgdl4fgdgf4mlf45p1&quot;를 추가해 다이제스트를 생성할 수 있다.&lt;/center&gt;
-
-&lt;p&gt;이 방법을 사용하면, 공격자가 “redfl0wer”의 다이제스트를 알아내더라도 솔팅된 다이제스트를 대상으로 패스워드 일치 여부를 확인하기 어렵다. 또한 사용자별로 다른 솔트를 사용한다면 동일한 패스워드를 사용하는 사용자의 다이제스트가 다르게 생성되어 인식 가능성 문제가 크게 개선된다.&lt;/p&gt;
-
-&lt;p&gt;솔트와 패스워드의 다이제스트를 데이터베이스에 저장하고, 사용자가 로그인할 때 입력한 패스워드를 해시하여 일치 여부를 확인할 수 있다. 이 방법을 사용할 때에는 모든 패스워드가 고유의 솔트를 갖고 솔트의 길이는 32바이트 이상이어야 솔트와 다이제스트를 추측하기 어렵다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;키 스트레칭(key stretching) : 입력한 패스워드의 다이제스트를 생성하고, 생성된 다이제스트를 입력 값으로 하여 다이제스트를 생성하고, 또 이를 반복하는 방법으로 다이제스트를 생성할 수도 있다. 이렇게 하면 입력한 패스워드를 동일한 횟수만큼 해시해야만 입력한 패스워드의 일치 여부를 확인할 수 있다. 이것이 기본적인 키 스트레칭 과정이다.&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;bcrypt&quot;&gt;bcrypt&lt;/h3&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;bcrypt : 애초부터 패스워드 저장을 목적으로 설계되었다. Niels Provos와 David Mazières가 1999년 발표했고 현재까지 사용되는 가장 강력한 해시 메커니즘 중 하나이다. bcrypt는 입력 값으로 72 bytes character를 사용해야 하는 제약이 있다.&lt;/center&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;terminal&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bcrypt&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bcrypt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bcrypt&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bcrypt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;genSaltSync&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bcrypt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hashSync&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;같은 패스워드라해도 솔트부분이 매번 바뀌는것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;bcrypt의 hashing의 경우에 CPU의 영향을 많이 받는데, sync로 사용하게 되면 이벤트 루프에서 block 당할 수 있기 때문이다. 그래서 간단하게 스크립트를 이용해서 사용할 때는 괜찮지만, 서버에서 사용할 땐 async 모드를 권장하고 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signIn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comparePw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bcrypt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coparePw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pw가&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;맞지&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;않습니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;jwt&quot;&gt;JWT&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;JWT(Json Web Token) : 각 객체 사이에서 속성 정보을 JSON 데이터 구조로 표현하고 암호화를 통해 정보를 전달하는 Token의 대표&lt;/center&gt;
-
-&lt;p&gt;JWT를 사용하는 가장 흔한 시나리오.&lt;/p&gt;
-
-&lt;p&gt;유저가 로그인을 하면, 서버는 유저의 정보에 기반한 토큰을 발급하여 유저에게 전달.&lt;/p&gt;
-
-&lt;p&gt;그 후, 유저가 서버에 요청을 할 때마다 JWT를 포함하여 전달.&lt;/p&gt;
-
-&lt;p&gt;서버가 클라이언트에게서 요청을 받을 때마다, 해당 토큰이 유효하고 인증됐는지 검증을 하고, 유저가 요청한 작업에 권한이 있는지 확인하여 작업을 처리.&lt;/p&gt;
-
-&lt;p&gt;즉, 서버 측에서는 유저의 세션을 유지할 필요가 없음.&lt;/p&gt;
-
-&lt;p&gt;유저가 로그인되어있는지 안되어있는지 신경 쓸 필요가 없고, 유저가 요청을 했을 때 토큰만 확인하면 되니, 세션 관리가 필요 없어서 서버 자원을 많이 아낄 수 있음.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;jmt-구조&quot;&gt;JMT 구조&lt;/h3&gt;
-
-&lt;p&gt;Header : 타입(JWT)과 알고리즘(BASE64 같은)을 담는다.&lt;/p&gt;
-
-&lt;p&gt;Payload : 보통 유저정보(id같은)와 만료기간이 객체형으로 담긴다.&lt;/p&gt;
-
-&lt;p&gt;Signature : header, payload를 인코딩 한 값을 합친뒤 SECRET_KEY로 해쉬한다.( 환경변수로 설정 )&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;사용법&quot;&gt;사용법&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# npm install jsonwebtoken
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;JWT_SECRET=JwTsEcReTkEyOrHaShInG
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;.evn에서 환경변수로 시크릿키 설정&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jwt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jsonwebtoken&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jwt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sign&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;JWT_SECRET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nl&quot;&gt;expiresIn:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 유효 시간은 60분&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;sign()&lt;/p&gt;
-
-&lt;p&gt;1번째 인자 : payload 즉, 보낼내용. (중요한 정보는 담지않도록 할것)&lt;/p&gt;
-
-&lt;p&gt;2번째 인자 : 비밀키 ( gitignore에 숨길것을 권장 )&lt;/p&gt;
-
-&lt;p&gt;3번째 인자 : 토큰정보 ( 주로 유효기간 )&lt;/p&gt;
-
-&lt;p&gt;4번째 인자 : 콜백함수 ( 사용하지않으면 동기식으로 처리된다. )&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verifyToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jwt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;JWT_SECRET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Authentication&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// token가져오기&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vaildToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verifyToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vaildToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;userId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vaildToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;토큰이&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;유효하지&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;않습니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;주로 인증에 사용된다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Bcrypt &amp;amp; Jsonwebtoken 🙀</summary></entry></feed>
+&lt;p&gt;감사합니다&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">📑 1차 프로젝트 output 및 소개</summary></entry></feed>

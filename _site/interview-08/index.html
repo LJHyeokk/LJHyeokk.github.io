@@ -1,0 +1,687 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Docker | POPO</title>
+<meta name="description" content="HTTP Status Code? 💯">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://localhost:4000/interview-08/">
+
+
+  <meta property="og:description" content="HTTP Status Code? 💯">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-09T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/interview-08/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Docker</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(4)</a></li>
+          
+            <li><a href="/">mongoDB(0)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(8)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Docker"
+    /> <meta
+      itemprop="description"
+      content="HTTP Status Code? 💯"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-02-09T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/interview-08/" class="u-url" itemprop="url"
+            ><p>Docker</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-09T00:00:00+09:00">2022-02-09</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="http-status-code-">HTTP Status Code? 💯</h2>
+
+<center class="notice--info">Docker : Go언어로 작성된 리눅스 컨테이너 기반으로하는 오픈소스 가상화 플랫폼이다.</center>
+
+<h3 id="가상화를-사용하는-이유">가상화를 사용하는 이유?</h3>
+
+<p>이제는 향상된 컴퓨터의 성능을 더욱 효율적으로 사용하기 위해 가상화 기술이 많이 등장했다.
+서버 관리자 입장에서 CPU사용률이 10%대 밖에 되지 않는 활용도가 낮은 서버들의 리소스 낭비이다. 그렇다고 모든 서비스를 한 서버안에 올린다면 안정성에 문제가 생길수도 있다. 그래서 안정성을 높이며 리소스도 최대한 활용할 수 있는 방법으로 나타난게 서버 가상화이다. 모두가 아는 대표적인 가상화 플랫폼으로는 VM이 있다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/doker-1.png" alt="doker-1" /></center>
+<p><br /></p>
+
+<p>기존에 우리에게 익숙한 VM같은 경우엔 Host OS 위에 가상화를 시키기 위한 Hypervisor 엔진 그리고 그 위에 Guest OS를 올려 사용한다. 이는 가상화된 하드웨어 위에 OS가 올라가는 형태로 거의 완벽하게 Host와 분리된다고 봐도 무방하다. 반면에 컨테이너 기반 가상화는 Docker 엔진 위에 Application 실행에 필요한 바이너리만 올라가게 된다. OS 가상화를 보면 Host OS와 완전히 분리되는 장점은 있지만 OS위에 OS를 올리기 때문에 무겁고 느릴수 밖에 없다. 하지만 컨테이너 기반 가상화는 Host OS 그리고 Docker 엔진위에서 바로 동작하며 Host의 커널을 공유한다. 커널을 공유하게 되면 io처리가 쉽게 되어 성능의 효율을 높일 수 있다. 컨테이너를 사용하는 것은 가상 머신을 생성하는 것이 아니라 Host OS가 사용하는 자원을 분리하여 여러 환경을 만들 수 있도록 하는 것이다.</p>
+
+<p>OS가상화는 컨테이너기반 가상화보다 더 높은 격리 레벨을 지원한다. 이는 보안적인 측면에서 더욱 유리하다.
+또한 OS가상화의 커널을 공유하지 않는 장점 또한 있다. 커널을 공유하지 않는 만큼 멀티 OS가 가능하다는 것이다. 커널을 공유하지 않아 멀티 OS가 불가능 하다는 것은 Linux위에 Window를 올릴 수 없다는 단점이 있는 것이다. 그럼에도 Docker를 쓰는 이유는 성능향상, 뛰어난 이식성, 쉽게 Scale Out을 할 수 있는 유연성이라고 생각된다.</p>
+
+<p><br /></p>
+
+<h3 id="실습하기">실습하기😺</h3>
+
+<ul>
+  <li>Docker install(Ubantu)</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">apt</span><span class="o">-</span><span class="n">transport</span><span class="o">-</span><span class="n">https</span> <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span> <span class="n">curl</span> <span class="n">software</span><span class="o">-</span><span class="n">properties</span><span class="o">-</span><span class="n">common</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="nl">https:</span><span class="c1">//download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span>
+<span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="s">"deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">cache</span> <span class="n">policy</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>명령어</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker
+
+docker ps
+#(실행중인 컨테이너를 보여주는 커맨드)
+docker ps -a
+#(실행이 종료된 것을 포함해서 모든 컨테이너를 보는 커맨드 및 옵션)
+docker images
+#(생성된 혹은 다운로드 된 이미지를 보여주는 커맨드)
+docker images -a
+#(모든 이미지를 보여주는 커맨드 및 옵션)
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>도커하려는 폴더에 Dockerfile 만들기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#./Dockerfile
+FROM node:14
+# 기반이 될 이미지
+
+# 작업디렉토리(default) 설정
+WORKDIR /usr/src/app
+
+## Install packages
+# 현재 패키지 설치 정보를 도커 이미지에 복사. package-lock.json도 복사하는 것이 안전.
+COPY package*.json ./
+# 프리즈마 스키마의 위치를 한 디렉토리 상위로 이동하여 복사
+COPY ./prisma/schema.prisma ./
+# 설치정보를 읽어 들여서 패키지를 설치
+RUN npm install
+
+## Copy all src files
+# 현재 경로에 존재하는 모든 소스파일을 이미지에 복사
+COPY . .
+
+
+## Run the application on the port 8000
+# 8000번 포트를 외부에 개방하도록 설정
+EXPOSE 8000
+
+# === 도커가 이미지를 빌드할 때의 명렁어
+
+CMD ["npm", "start"]
+
+# ========== 이미지가 실행됐을 때 처음에 실행될 명령어
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>도커파일을 이용해 이미지 빌드 하기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t '도커허브에 가입한 계정명'/'이미지명(프로젝트명 권장)':'버전' .
+ex) docker build -t clzlsqkq/justdoit:0.1.0 .
+</code></pre></div></div>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/docker-2.png" alt="docker-2" /></center>
+<p><br /></p>
+
+<p>마지막의 .은 위치를 나타내는것으로 꼭 적어주어야한다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>빌드된 이미지를 실행해보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --name '컨테이너 명' -d'데몬으로 실행하기 위한 옵션' -p '호스트 포트':'컨테이너 포트' '이미지명'
+ex) docker run --name justdoit01 -d -p 8000:8000 clzlsqkq/justdoit:0.1.0
+</code></pre></div></div>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/docker-3.png" alt="docker-3" /></center>
+<p><br /></p>
+
+<p>잘 실행되고 있는 모습.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>컨테이너 전부 삭제하는 명령어</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rm $(docker ps -a -q)
+#UBUNTU
+sudo docker rm $(sudo docker ps -a -q)
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>이미지 전부 삭제하는 명령어</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi $(docker images -q)
+#ubuntu
+sudo docker rmi $(sudo docker images -q)
+</code></pre></div></div>
+
+<p><br /></p>
+
+<center><p style="font-weight:bold; color:red">----------------------------------*참고*----------------------------------</p></center>
+
+<p>RDS가 아닌 로컬 DB랑 연결을 하고싶다면</p>
+
+<p><a href="https://hoonpro.tistory.com/14">‘이곳’</a>을 참고하면 된다.</p>
+
+<p>Docker 컨테이너 내에서 localhost는 컨테이너 자신의 주소이기 때문에 호스트 OS(macOS) 위에서 실행중인 DB에 연결이 안되는데</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo docker run --net=host -p "3306" --name justdoit04 -d -p 8000:8000 clzlsqkq/justdoit:0.1
+</code></pre></div></div>
+
+<p>이렇게 실행 시키면 아주 잘 연결되는것을 볼 수 있다.</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-09T00:00:00+09:00">2022-02-09</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Docker%20http%3A%2F%2Flocalhost%3A4000%2Finterview-08%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Finterview-08%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Finterview-08%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/wecode-06/" class="pagination--pager" title="2차 Project 회고록
+">이전</a>
+    
+    
+      <a href="/sql-04/" class="pagination--pager" title="기초 명령어2
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

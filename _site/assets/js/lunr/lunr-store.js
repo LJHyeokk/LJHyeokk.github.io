@@ -322,4 +322,16 @@ var store = [{
         "tags": [],
         "url": "/wecode-06/",
         "teaser": null
+      },{
+        "title": "Docker",
+        "excerpt":"HTTP Status Code? 💯 Docker : Go언어로 작성된 리눅스 컨테이너 기반으로하는 오픈소스 가상화 플랫폼이다. 가상화를 사용하는 이유? 이제는 향상된 컴퓨터의 성능을 더욱 효율적으로 사용하기 위해 가상화 기술이 많이 등장했다. 서버 관리자 입장에서 CPU사용률이 10%대 밖에 되지 않는 활용도가 낮은 서버들의 리소스 낭비이다. 그렇다고 모든 서비스를 한 서버안에 올린다면 안정성에 문제가...","categories": [],
+        "tags": [],
+        "url": "/interview-08/",
+        "teaser": null
+      },{
+        "title": "기초 명령어2",
+        "excerpt":"기초 명령어2👾 숫자형 데이터 함수 ABS ➡️ ABS(숫자) 절대값으로 반환 CEILING ➡️ CEILING(숫자) 숫자를 정수로 올림해서 반환 FLOOR ➡️ FLOOR(숫자) 숫자를 정수로 내림해서 반환 ROUND ➡️ ROUND(숫자, 자릿수) 숫자를 소수점까지 반올림해서 반환 TRUNCATE ➡️ TRUNCATE(숫자, 자릿수) 숫자를 소수점까지 버림해서 반환 POWER ➡️ POWER(숫자1, 숫자2) 숫자1 제곱 숫자2 MOD ➡️ MOD(숫자1,...","categories": [],
+        "tags": [],
+        "url": "/sql-04/",
+        "teaser": null
       }]
