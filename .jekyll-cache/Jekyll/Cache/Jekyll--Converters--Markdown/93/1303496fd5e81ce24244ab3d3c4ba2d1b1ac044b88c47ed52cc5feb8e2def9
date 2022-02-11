@@ -1,0 +1,61 @@
+I"K<h2 id="graphql의-핵심-요소-">GraphQL의 핵심 요소? 👀</h2>
+
+<h3 id="query">Query</h3>
+
+<p>Query란 데이터베이스로부터 데이터를 얻어오기 위해 사용하는 것으로,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type Query {
+
+         (쿼리명): (반환 타입) (!)
+
+}
+</code></pre></div></div>
+
+<p>의 형태로 선언합니다.</p>
+
+<p>만약 반환 타입 뒤 !(느낌표)를 붙일 시, 해당 요청이 들어오면 명시한 타입의 데이터를 반드시 반환해야만 하며, 사용자 정의 반환 타입을 생성하여 Query의 반환 타입에 적용이 가능하므로 임의의 객체를 반환하고자 할 때 반환 타입을 새로 만들어 타입 지정을 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">type</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="nl">name:</span> <span class="nc">String</span><span class="o">!</span>
+  <span class="nl">age:</span> <span class="nc">Int</span><span class="o">!</span>
+<span class="o">}</span>
+
+<span class="n">type</span> <span class="nc">Query</span> <span class="o">{</span>
+  <span class="nl">getName:</span> <span class="nc">String</span>
+  <span class="nl">getAge:</span> <span class="nc">Int</span><span class="o">!</span>
+  <span class="nl">getInfo:</span> <span class="nc">Person</span><span class="o">!</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="mutation">Mutation</h3>
+
+<p>Mutation이란 서버, 데이터베이스 혹은 메모리에서 ‘데이터를 변경할 때 사용’하며,</p>
+
+<p>CRUD(Create, Read, Update, Delete) 중 CUD 요청을 담당합니다.</p>
+
+<p>만약, GraphQL을 데이터베이스와 연동하여 사용하지 않는다면,</p>
+
+<p>Mutation을 하더라도 메모리에 변경사항이 적용되어 서버 재실행 시 초기화가 되므로 주의해야 하며, 선언은 Query의 방식과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">type</span> <span class="nc">Mutation</span> <span class="o">{</span>
+  <span class="nl">changeName:</span> <span class="o">(</span><span class="nl">age:</span> <span class="nc">Int</span><span class="o">!):</span> <span class="nc">Boolean</span><span class="o">!</span>
+  <span class="n">changeAge</span><span class="o">(</span><span class="nl">name:</span> <span class="nc">String</span><span class="o">!):</span> <span class="nc">Boolean</span><span class="o">!</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="resolver">Resolver</h3>
+
+<p>Resolver란 클라이언트로부터 요청된 Query 혹은 Mutation에 대해 반환할 결과를 생성하는 로직으로,</p>
+
+<p>GraphQL 서버가 Resolver를 찾아 Query와 Mutation에 해당하는 함수를 실행한다.</p>
+
+<p>또한, Resolver를 통해 데이터베이스, 메모리, 다른 API 등과 연결해 자유자재로 프로그래밍이 가능해지며,</p>
+
+<p>실행 함수의 첫 번째 인자로는 현재 Object가 넘어오고, 두 번째부터 요청된 Query나 Mutation에서 넘어온 인자가 객체의 형태로 전달되기 때문에</p>
+
+<p>( _, { arg1, arg2, … } )의 형태로 인자를 넘겨받아 사용합니다.</p>
+:ET

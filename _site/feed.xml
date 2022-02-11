@@ -1,4 +1,269 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-09T16:17:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Docker</title><link href="http://localhost:4000/interview-08/" rel="alternate" type="text/html" title="Docker" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/interview-08</id><content type="html" xml:base="http://localhost:4000/interview-08/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-11T22:07:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">GraphQL이란</title><link href="http://localhost:4000/GraphQL-01/" rel="alternate" type="text/html" title="GraphQL이란" /><published>2022-02-11T00:00:00+09:00</published><updated>2022-02-11T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-01</id><content type="html" xml:base="http://localhost:4000/GraphQL-01/">&lt;h2 id=&quot;graphql-&quot;&gt;GraphQL? 👀&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;GraphQL : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;
+
+&lt;p&gt;GQL즉, API를 위한 쿼리 언어이며, 타입 시스템을 사용하여 쿼리를 실행하는 서버사이드 런타임이다.&lt;/p&gt;
+
+&lt;p&gt;GraphQL은 특정한 데이터베이스나 스토리지에 귀속되어 있지 않으며, 기존 코드와 데이터에 의해 대체된다.&lt;/p&gt;
+
+&lt;p&gt;(일반적으로 GQL의 인터페이스간 송수신은 네트워크 레이어 L7의 HTTP POST 메서드와 웹소켓 프로토콜을 활용한다. 필요에 따라서는 얼마든지 L4의 TCP/UDP를 활용하거나 심지어 L2 형식의 이더넷 프레임을 활용 할 수도 있다.)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;gql-sql의-차이&quot;&gt;GQL, SQL의 차이&lt;/h3&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;SQL은 데이터베이스 시스템에 저장된 데이터를 효율적으로 가져오는 것이 목적이고,
+GQL은 웹 클라이언트가 데이터를 서버로 부터 효율적으로 가져오는 것이 목적이다.&lt;/center&gt;
+
+&lt;p&gt;SQL의 문장(statement)은 주로 백엔드 시스템에서 작성하고 호출하는 반면, GQL의 문장은 주로 클라이언트 시스템에서 작성하고 호출한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;rest-api의-한계&quot;&gt;REST API의 한계&lt;/h3&gt;
+
+&lt;p&gt;REST API의 개념을 간단하게 말하자면 모든 Resource들을 하나의 Endpoint에 연결하고 연결된 Endpoint는 Resource와 관련된 내용만 관리하게 하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;이는 단순한 서비스에서는 아주 좋지만 복잡한 서비스나 클라이언트의 요청사항에 따라 Over-Fetching과 Under-Fetching이 발생한다.&lt;/p&gt;
+
+&lt;p&gt;또한 REST API로 여러 환경에서 필요한 정보들을 Resource 별로 Endpoint를 갖도록 구현하는 것은 어렵다.&lt;/p&gt;
+
+&lt;p&gt;한마디로 비슷하지만 Endpoint가 다른 API가 많이 파생된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Over-Fetching&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /user/1/
+response body
+{
+&quot;user_no&quot;:1,
+&quot;user_name&quot;: &quot;test&quot;,
+&quot;user_grade&quot;: &quot;VVIP&quot;,
+&quot;zip&quot;: &quot;11053&quot;,
+&quot;last_login_timetamp&quot;: &quot;2019-08-08 12:11:44&quot;,
+...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;여기에서 클라이언트는 1번에 해당하는 유저의 이름만을 사용하고자 한다고 해도 유저 이름만 반환하는 API가 없다면 위와 같은 /user/1/API를 호출한 다음, user_name을 가져와 사용해야한다. 이 때, user_grade, zip 등등의 데이터는 사용하지 않는 데이터도 같이 반환받는다. 이는 곧 리소스의 낭비라고 볼 수 있고 이와 같은 낭비를 Over-Fetching이라 명한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Under-Fetching&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/user/1/
+/cart/
+/notification/
+/wish/
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;요청에 맞게 유효한 데이터를 보여주기 위해 여러 API를 호출하게 되는 경우를 Under-Fetching이라 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;요청쿼리&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;query{
+      user(user_no:1){
+            user_name
+      }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;반환데이터&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+      &quot;data&quot;: {
+            &quot;user&quot;: {
+                  &quot;user_name&quot;: &quot;jim&quot;,
+            }
+      }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;장점&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;클라이언트가 필요한 데이터만 반환할 수 있다.&lt;/li&gt;
+      &lt;li&gt;1번의 호출로 원하는 데이터를 한번에 가져올 수 있다.&lt;/li&gt;
+      &lt;li&gt;REST API의 N+1 Problem을 해결 할 수 있다.&lt;/li&gt;
+      &lt;li&gt;확장이 용이&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;단점&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;백엔드, 클라이언트 개발자 양쪽 다 러닝커브가 있다.&lt;/li&gt;
+      &lt;li&gt;단순한 서비스에서는 사용하기가 복잡하다.&lt;/li&gt;
+      &lt;li&gt;대부분의 언어에서 라이브러리로 제공한다.&lt;/li&gt;
+      &lt;li&gt;캐싱 기능의 구현이 복잡하다.&lt;/li&gt;
+      &lt;li&gt;요청이 text로 날아가기 때문에 File 전송 등을 구현하기가 어렵다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL? 👀</summary></entry><entry><title type="html">GraphQL의 핵심 요소</title><link href="http://localhost:4000/GraphQL-02/" rel="alternate" type="text/html" title="GraphQL의 핵심 요소" /><published>2022-02-11T00:00:00+09:00</published><updated>2022-02-11T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-02</id><content type="html" xml:base="http://localhost:4000/GraphQL-02/">&lt;h2 id=&quot;graphql의-핵심-요소-&quot;&gt;GraphQL의 핵심 요소? 👀&lt;/h2&gt;
+
+&lt;h3 id=&quot;query&quot;&gt;Query&lt;/h3&gt;
+
+&lt;p&gt;Query란 데이터베이스로부터 데이터를 얻어오기 위해 사용하는 것으로,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;type Query {
+
+         (쿼리명): (반환 타입) (!)
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;의 형태로 선언합니다.&lt;/p&gt;
+
+&lt;p&gt;만약 반환 타입 뒤 !(느낌표)를 붙일 시, 해당 요청이 들어오면 명시한 타입의 데이터를 반드시 반환해야만 하며, 사용자 정의 반환 타입을 생성하여 Query의 반환 타입에 적용이 가능하므로 임의의 객체를 반환하고자 할 때 반환 타입을 새로 만들어 타입 지정을 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;getName:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;getAge:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;getInfo:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mutation&quot;&gt;Mutation&lt;/h3&gt;
+
+&lt;p&gt;Mutation이란 서버, 데이터베이스 혹은 메모리에서 ‘데이터를 변경할 때 사용’하며,&lt;/p&gt;
+
+&lt;p&gt;CRUD(Create, Read, Update, Delete) 중 CUD 요청을 담당합니다.&lt;/p&gt;
+
+&lt;p&gt;만약, GraphQL을 데이터베이스와 연동하여 사용하지 않는다면,&lt;/p&gt;
+
+&lt;p&gt;Mutation을 하더라도 메모리에 변경사항이 적용되어 서버 재실행 시 초기화가 되므로 주의해야 하며, 선언은 Query의 방식과 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;changeName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!):&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;changeAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!):&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;subscription&quot;&gt;Subscription&lt;/h3&gt;
+
+&lt;p&gt;GraphQL에서 수행할 수 있는 Query, Mutation에 이은 세 번째 작업 타입이다.&lt;/p&gt;
+
+&lt;p&gt;데이터 조회에 Query를 사용하고 데이터 조작에 Mutation을 사용하면 Subscription은 어디에 사용할까? 바로 실시간 통신에 사용한다.&lt;/p&gt;
+
+&lt;p&gt;Subscription은 이름 그대로 구독/발행 모델을 기반으로 WebSocket을 통해 실시간 양방향 통신 기능을 제공한다.&lt;/p&gt;
+
+&lt;p&gt;구독을 통해 특정한 이벤트가 발생했을 때 서버에서 클라이언트로 데이터를 실시간으로 통신하게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-1.png&quot; alt=&quot;graphql-1&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Subscription은 다음과 같은 과정으로 진행된다.&lt;/p&gt;
+
+&lt;p&gt;처음에 사용자가 Mutation요청을 보내면 해당 Mutation의 Resolver 내부에서 Publish Event가 실행되며 Event Bus에게 알려준다.&lt;/p&gt;
+
+&lt;p&gt;그러면 Event Bus는 해당 이벤트를 구독하고 있는 Subscriber에게 이벤트가 발생되었다고 알려주게 된다.&lt;/p&gt;
+
+&lt;p&gt;Subscription을 사용하지 않고 서버의 상태 변화를 감지하기 위해서는 주기적으로 HTTP요청을 서버로 보내 변경된 상태가 있는지 지속적으로 확인하는 방법 또한 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 아무리 자주 호출하더라도 완벽하게 실시간으로 통신하기는 어렵고 클라이언트에서 주기적으로 요청을 보내줘야 하기 때문에 자원의 낭비가 심할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-2.png&quot; alt=&quot;graphql-2&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;구독과정&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;구독 과정은 다음과 같이 진행된다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;클라이언트가 서버로 Subscribe 요청(쿼리와 변수 포함)을 보낸다.&lt;/li&gt;
+  &lt;li&gt;서버는 해당 쿼리가 올바른 쿼리인지 확인한다.&lt;/li&gt;
+  &lt;li&gt;단일 PubSub객체를 통해 Event Bus에 이벤트 발생을 감지&lt;/li&gt;
+  &lt;li&gt;클라이언트가 요청한 Subscription 활성화&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;여기서 PubSub이란 Publish-Subscribe의 줄임말로 구독 이벤트 발생 및 감지를 위해 사용하는 객체이다. 그런데 여기서 Single PubSub을 사용하는 이유는 서버를 클러스터 모드(Node.js의 pm2 기준)로 실행하는 경우 각 인스턴스에 PubSub이 존재하게 된다. (서버를 여러 인스턴스로 실행하는 경우)&lt;/p&gt;
+
+&lt;p&gt;클라이언트에서 요청을 보낼 때 해당 인스턴스로 구독 이벤트가 발생이 되야 업데이트가 되는데 어떤 PubSub을 가진 인스턴스에게 요청을 보낼 지 모르기 때문에 이벤트 발생 감지를 불안정하게 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그렇기 때문에 redis등을 사용해 단일 PubSub을 사용하면 해당 문제가 발생하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-3.png&quot; alt=&quot;graphql-3&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;구독취소과정&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;구독 취소 과정은 좀 더 간단하다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;클라이언트가 서버로 구독 취소 요청을 보낸다. (양방향 연결 해제)&lt;/li&gt;
+  &lt;li&gt;PubSub은 Event Bus의 이벤트 발생 감지를 취소한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이벤트 발생 과정
+그렇다면 마지막으로 구독한 Subscription에 이벤트가 발생했을 경우 데이터를 받아오는 과정에 대해 살펴보자!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-4.png&quot; alt=&quot;graphql-4&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;이벤트발생과정&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음은 이벤트가 발생하고 클라이언트에게 구독 중인 데이터를 전송하는 과정이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;익명의 클라이언트가 서버로 Mutation 요청을 보낸다.&lt;/li&gt;
+  &lt;li&gt;해당 Mutation에서 PubSub객체를 통해 Event Bus로 이벤트가 발생했다고 알려준다.&lt;/li&gt;
+  &lt;li&gt;Event Bus에서 이벤트 발생을 감지하고 있던 PubSub에게 이벤트 발생을 알려준다.&lt;/li&gt;
+  &lt;li&gt;PubSub은 서버에서 해당 구독 이벤트의 반환값을 받는다.&lt;/li&gt;
+  &lt;li&gt;받은 반환값을 Client에게 전송해준다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resolver&quot;&gt;Resolver&lt;/h3&gt;
+
+&lt;p&gt;Resolver란 클라이언트로부터 요청된 Query 혹은 Mutation에 대해 반환할 결과를 생성하는 로직으로,&lt;/p&gt;
+
+&lt;p&gt;GraphQL 서버가 Resolver를 찾아 Query와 Mutation에 해당하는 함수를 실행한다.&lt;/p&gt;
+
+&lt;p&gt;또한, Resolver를 통해 데이터베이스, 메모리, 다른 API 등과 연결해 자유자재로 프로그래밍이 가능해지며,&lt;/p&gt;
+
+&lt;p&gt;실행 함수의 첫 번째 인자로는 현재 Object가 넘어오고, 두 번째부터 요청된 Query나 Mutation에서 넘어온 인자가 객체의 형태로 전달되기 때문에&lt;/p&gt;
+
+&lt;p&gt;( _, { arg1, arg2, … } )의 형태로 인자를 넘겨받아 사용합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resolvers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;Query:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;getName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;getAge:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;getInfo:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;Mutation:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;changeName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;changeAge:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL의 핵심 요소? 👀</summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/interview-08/" rel="alternate" type="text/html" title="Docker" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/interview-08</id><content type="html" xml:base="http://localhost:4000/interview-08/">&lt;h2 id=&quot;http-status-code-&quot;&gt;HTTP Status Code? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;Docker : Go언어로 작성된 리눅스 컨테이너 기반으로하는 오픈소스 가상화 플랫폼이다.&lt;/center&gt;
 
@@ -155,7 +420,7 @@ sudo docker rmi $(sudo docker images -q)
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker run --net=host -p &quot;3306&quot; --name justdoit04 -d -p 8000:8000 clzlsqkq/justdoit:0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;이렇게 실행 시키면 아주 잘 연결되는것을 볼 수 있다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP Status Code? 💯</summary></entry><entry><title type="html">기초 명령어2</title><link href="http://localhost:4000/sql-04/" rel="alternate" type="text/html" title="기초 명령어2" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/sql-04</id><content type="html" xml:base="http://localhost:4000/sql-04/">&lt;h2 id=&quot;기초-명령어2&quot;&gt;기초 명령어2👾&lt;/h2&gt;
+&lt;p&gt;이렇게 실행 시키면 아주 잘 연결되는것을 볼 수 있다.ㅎㅎ&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP Status Code? 💯</summary></entry><entry><title type="html">기초 명령어2</title><link href="http://localhost:4000/sql-04/" rel="alternate" type="text/html" title="기초 명령어2" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/sql-04</id><content type="html" xml:base="http://localhost:4000/sql-04/">&lt;h2 id=&quot;기초-명령어2&quot;&gt;기초 명령어2👾&lt;/h2&gt;
 
 &lt;center&gt;숫자형 데이터 함수&lt;/center&gt;
 
@@ -2000,414 +2265,4 @@ JWT_SECRET=&quot;1234&quot;
 
 &lt;p&gt;지금은 unit test라는 것이 있고 이것이 무엇을 위해 만들어졌는지만 아는것으로 넘어가지만&lt;/p&gt;
 
-&lt;p&gt;추후 제대로 활용할줄 알게된다면 포스트업데이트를 할 것이다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">유닛테스트 🙀</summary></entry><entry><title type="html">Workbench</title><link href="http://localhost:4000/sql-02/" rel="alternate" type="text/html" title="Workbench" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/sql-02</id><content type="html" xml:base="http://localhost:4000/sql-02/">&lt;h2 id=&quot;workbench&quot;&gt;Workbench👾&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;DBMS의 종류중 하나인 mysql의 workbench를 사용해보자.&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/workbench-1.png&quot; alt=&quot;workbench-1&quot; style=&quot;zoom:60%&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;두번째 번개모양을 누르면 마우스커서가 있는 곳의 명령어가 실행이된다.(ctrl + enter와 같은 기능)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--&lt;/code&gt;를 써주면 주석&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;action output을 통해 실행이 제대로 되었는지 확인할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;mysql-데이터-타입&quot;&gt;mysql 데이터 타입&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;정수형
-    &lt;ul&gt;
-      &lt;li&gt;TINYINT : 1바이트&lt;/li&gt;
-      &lt;li&gt;SMALLINT : 2바이트&lt;/li&gt;
-      &lt;li&gt;MEDIUMINT : 3바이트&lt;/li&gt;
-      &lt;li&gt;INT : 4바이트&lt;/li&gt;
-      &lt;li&gt;BIGINT : 8바이트&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;실수형
-    &lt;ul&gt;
-      &lt;li&gt;FLOAT : 4바이트&lt;/li&gt;
-      &lt;li&gt;DOUBLE : 8바이트&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;문자형
-    &lt;ul&gt;
-      &lt;li&gt;CHAR : 255바이트 (고정길이문자형 - 지정해둔 공간 그대로 저장)&lt;/li&gt;
-      &lt;li&gt;VARCHAR : 65535바이트 (변동길이문자형 - 지정해두어도 사용하지 않으면 자동 삭제)&lt;/li&gt;
-      &lt;li&gt;TINYTEXT : 255(지정 x 고정 o)&lt;/li&gt;
-      &lt;li&gt;TEXT : 65535(지정 x 고정 o)&lt;/li&gt;
-      &lt;li&gt;MEDIUMTEXT : 1600백만(지정 x 고정 o)&lt;/li&gt;
-      &lt;li&gt;LONGTEXT : 42억(지정 x 고정 o)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;날짜형
-    &lt;ul&gt;
-      &lt;li&gt;DATE : 3바이트 ( 9999-12-31 )&lt;/li&gt;
-      &lt;li&gt;DATETIME : 3바이트 ( 9999-12-31 23:59:59 )&lt;/li&gt;
-      &lt;li&gt;TIME : 4바이트 ( 838:59:59 )&lt;/li&gt;
-      &lt;li&gt;YEAR : 1바이트 ( 1901 ~ 2155 )&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기초-명령어&quot;&gt;기초 명령어&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;create database [데이터베이스 이름];&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;show databases;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;use [데이터베이스 이름];&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;create table [테이블 이름] ([컬럼이름] [데이터타입], [컬럼이름] [데이터타입]);&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;alter table produc rename product; ➡️ 테이블 이름 바꾸기&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;alter table [테이블 이름] add column [컬럼이름] [데이터타입]; ➡️ 테이블에 컬럼 추가하기&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;alter table [테이블 이름] modify column [컬럼이름] [새로운 데이터타입]; ➡️ 테이블에 컬럼 데이터타입 재정의하기&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;alter table [테이블 이름] change column [컬럼이름] [새로운 컬럼이름] [새로운 데이터타입] ➡️ 컬럼이름과 데이터타입 같이 재정의하기&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;alter table [테이블 이름] drop column [컬럼이름]; ➡️ 컬럼지우기&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;drop database [데이터베이스 이름];&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;drop table [테이블 이름];&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;truncate table [테이블 이름]; ➡️ 테이블내의 값만 모두 삭제&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;drop table if exists [테이블 이름]; ➡️ 테이블이 존재하면 지워라&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;insert into [테이블 이름] ([컬럼이름], [컬럼이름1], [컬럼이름2]) values([값], [값1], [값2]),([값], [값1], [값2]);&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p class=&quot;notice--danger&quot;&gt;update [테이블 이름] set [컬럼이름] = [새로운 값] where [조건];&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;데이터베이스, 테이블, 컬럼 이름짓기 정하는 규칙&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;문자(영문 소문자), 숫자, _&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단어와 단어 사이에는 _ 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터베이스이름 중복 x&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예약어 사용 x&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Workbench👾</summary></entry><entry><title type="html">1차 Project 회고록</title><link href="http://localhost:4000/wecode-05/" rel="alternate" type="text/html" title="1차 Project 회고록" /><published>2022-01-08T00:00:00+09:00</published><updated>2022-01-08T00:00:00+09:00</updated><id>http://localhost:4000/wecode-05</id><content type="html" xml:base="http://localhost:4000/wecode-05/">&lt;h2 id=&quot;-1차-프로젝트-output-및-소개&quot;&gt;📑 1차 프로젝트 output 및 소개&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;p style=&quot;font-weight:bold&quot;&gt;배포 완료 : click ➡️&lt;a href=&quot;http://13.125.235.62:3000/&quot; target=&quot;_blank&quot;&gt;WETOWN&lt;/a&gt; &lt;/p&gt;&lt;/center&gt;
-
-&lt;center&gt;&lt;p style=&quot;font-weight:bold; color:red;&quot;&gt;직접 해보기 ⬆️&lt;/p&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;display:flex; justify-content:center; border: 3px solid #222441; padding:10px&quot;&gt;
-&lt;span style=&quot;margin-right:200px&quot;&gt;&lt;a href=&quot;https://github.com/wecode-bootcamp-korea/fullstack3-1st-wetown-frontend&quot;&gt;Github [FrontEnd]&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;a href=&quot;https://github.com/wecode-bootcamp-korea/fullstack3-1st-wetown-backend&quot;&gt;Github [BackEnd]&lt;/a&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;border: 3px solid #222441; padding-left:20px; border-radius:15px; width:70%; margin-left:15%; font-size:15px&quot;&gt;
-&lt;br /&gt;
-
-&lt;center&gt;&lt;div style=&quot;font-weight:bold; font-size:30px;&quot;&gt;프로젝트 소개 🎥&lt;/div&gt;&lt;/center&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;클론 사이트 : &lt;/span&gt; &lt;span&gt;&lt;a href=&quot;https://smtownandstore.com/?utm_source=google&amp;amp;utm_medium=cpc&amp;amp;utm_campaign=pc&amp;amp;utm_content=%ED%99%95%EC%9E%A5_%ED%95%9C%EA%B5%AD&amp;amp;utm_term=SMTOWN&amp;amp;gclid=CjwKCAiA5t-OBhByEiwAhR-hm78q-9TO-Opb7ndK0lDUKdN0XgyvlJcYvsdA2u_COQk89r8F4IFBVhoCR3kQAvD_BwE&quot; target=&quot;_blank&quot;&gt; SMTOWN &amp;amp;STORE&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;팀 명 : &lt;/span&gt;&lt;span&gt; WETOWN&lt;/span&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;프로젝트 목표 : &lt;/span&gt;&lt;span&gt; Wecode에서 배운내용을 활용하여 클론 사이트의 기능개발 및 레이아웃 그리기&lt;/span&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:bold&quot;&gt;진행기간 : &lt;/span&gt;&lt;span&gt; 2021년 12월 27일 ~ 2022년 1월 7일&lt;/span&gt; &lt;span style=&quot;font-weight:bold&quot;&gt;( total : 14days )&lt;/span&gt; 
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/wetown-1.png&quot; alt=&quot;wetown-1&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/center&gt;
-&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:bold&quot;&gt;프로젝트 참여자 : &lt;/span&gt;&lt;span&gt; 이준혁, 박태준, 최은비, 황희윤&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:bold&quot;&gt;Position : &lt;/span&gt;&lt;span&gt; 나의 포지션은 backend 였으나 팀회의를 거쳐 나온 database tables의 수가 생각보다 적었고 클라이언트로 보내줘야 할 API 또한 몇가지 없었기에 front도 겸하게 되었다.&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;display:flex; justify-content:space-between; border: 3px solid #222441; padding-top:30px; border-radius:15px;font-size:15px; width:70%; margin-left:15%;&quot;&gt;
-  &lt;div style=&quot;margin-left:100px&quot;&gt;
-  &lt;center&gt;&lt;p style=&quot;font-weight:bold; font-size:25px&quot;&gt;- 기술스택 -&lt;/p&gt;&lt;/center&gt;
- &lt;span style=&quot;font-weight:bold&quot;&gt;FrontEnd 기술 스택  &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;⭕ [React]&lt;/span&gt;&lt;span&gt;⭕ [Router]&lt;/span&gt;&lt;span&gt;⭕ [Sass]&lt;/span&gt;&lt;span&gt;⭕ [Restful API]&lt;/span&gt;&lt;span&gt;⭕ [Git &amp;amp; GitHub]&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-  &lt;span style=&quot;font-weight:bold&quot;&gt;BackEnd 기술 스택  &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;⭕ [Node.js]&lt;/span&gt;&lt;span&gt;⭕ [Express]&lt;/span&gt;&lt;span&gt;⭕ [MySQL]&lt;/span&gt;&lt;span&gt;⭕ [Bcrypt, JWT]&lt;/span&gt;&lt;span&gt;⭕ [Prisma]&lt;/span&gt;&lt;span&gt;⭕ [babel]&lt;/span&gt;&lt;span&gt;⭕ [Git &amp;amp; GitHub]&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;margin-right:50px&quot;&gt;
-    &lt;center&gt;&lt;p style=&quot;font-weight:bold; font-size:25px&quot;&gt;- Page &amp;amp; API -&lt;/p&gt;&lt;/center&gt;
-
-&lt;span style=&quot;font-weight:bold&quot;&gt;이준혁 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;[front] 상품상세페이지, 카트페이지&lt;/span&gt;&lt;span&gt;[back] detail API, filter API&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-  &lt;span style=&quot;font-weight:bold&quot;&gt;박태준  &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-  &lt;span&gt;[front] 상품리스트페이지, footer&lt;/span&gt;&lt;span&gt;[back] cart API&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:bold&quot;&gt;최은비 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;[front] 로그인페이지, 회원가입페이지&lt;/span&gt;&lt;span&gt;[PM] 프로젝트 전체적인 일정과 방향을 조율&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:bold&quot;&gt;황희윤 &lt;/span&gt;&lt;span&gt;&lt;div style=&quot;display:flex; flex-direction: column; margin-left:20px &quot;&gt;
-&lt;span&gt;[front] 메인페이지, Nav&lt;/span&gt;&lt;span&gt;[back] signin API, signup API&lt;/span&gt;
-
-  &lt;/div&gt;&lt;/span&gt;&lt;br /&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;-backend-wetown&quot;&gt;🧑‍💻 Backend (WETOWN)&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;팀회의를 거쳐 나온 첫 Database schema modeling&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/wetown-2.png&quot; alt=&quot;wetown-2&quot; style=&quot;width:70%;&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;리팩토링을 하며 가장 재밌었던 코드&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/wetown-3.gif&quot; alt=&quot;wetown-3&quot; style=&quot;border: 3px solid #222441; width:70%;&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productFilter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;is_subcategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;subcategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;sortMethod&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prisma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$queryRaw&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;eng_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;is_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;sale_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cate_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcate_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;category_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;product_id&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;JOIN&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcategory_id&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_subcategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subcategories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subcategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;is_main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;is_main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sortMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;created_at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sortMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eng_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sortMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sortMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;div&gt;
-   
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;p&gt;원래는 API 주소를 category, subcategory 각각 사용하였는데 멘토님이 하나로 합쳐보라고 하였다.&lt;/p&gt;
-    &lt;p&gt;그래서 subcategory값과 sortMethod값을 Query String으로 받았고 category값은 Path Variable로 받았다.&lt;/p&gt;
-    &lt;p&gt;subcategory값의 유무에 따라 클라이언트에 주는 데이터를 달리하였고&lt;/p&gt;
-    &lt;p&gt;order by에 case문을 주어 sortMethod값에 따라 정렬기준을 주었다.&lt;/p&gt;
-    &lt;p&gt;처음의 방대한 양의 코드가 리팩토링 후 확 줄어든것을 보니 뿌듯하다.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;-front-wetown&quot;&gt;🧑‍💻 Front (WETOWN)&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;디테일페이지와 카트페이지를 맡았고 최대한 똑같이 그리고 기능또한 90%정도로 구현하였다.&lt;/center&gt;
-
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/wetown-5.gif&quot; alt=&quot;wetown-2&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;여러가지 재밌는 코드들이 있었지만 카트페이지의 각 상품의 수량부분을 useState의 배열로 담아 처리하는 코드를 짤때 가장 재밌었다.&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;../images/2021-10-27-first/wetown-5.png&quot; alt=&quot;wetown-2&quot; /&gt;
-&lt;img src=&quot;../images/2021-10-27-first/wetown-6.png&quot; alt=&quot;wetown-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;DB의 carts 테이블에 저장되어있는 각 상품의 수량을 fetch함수로 불러올때 &lt;/p&gt;
-&lt;p&gt;map을 돌려 productQuantity state에 담아 보관한다.&lt;/p&gt;
-&lt;p&gt;CartList 컴포넌트에서 사용된 button을 클릭시에 상품의 수량이 개별적으로 바뀌어야하는데&lt;/p&gt;
-&lt;p&gt;이때 productQuantity를 Spread Opertor를 통해 레퍼런스를 끊어 copy하여 해당 인덱스번째의 값만 바꾸어 set시킨다&lt;/p&gt;
-
-&lt;center class=&quot;notice--info&quot;&gt;front쪽을 하다보니 좀 더 클라이언트가 사용하기 쉬운 모양으로 API를 만들어야함을 느꼈고 버튼 하나하나에 hover등 디테일이 살아있어야지만 위화감을 느끼지않는것을 알게되었다.&lt;/center&gt;
-
-&lt;h2 id=&quot;-협업-git--github&quot;&gt;🧑 협업 Git &amp;amp; Github&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Communication 스택&lt;/strong&gt;&lt;/p&gt;
-
-&lt;center&gt; Slack &lt;img src=&quot;../images/2021-10-27-first/wetown-9.png&quot; alt=&quot;wetown-7&quot; style=&quot; width:30px; height:30px;&quot; /&gt; &amp;amp; Github &lt;img src=&quot;../images/2021-10-27-first/wetown-10.png&quot; alt=&quot;wetown-7&quot; style=&quot; width:30px; height:30px;&quot; /&gt; &amp;amp; Notion&lt;img src=&quot;../images/2021-10-27-first/wetown-11.png&quot; alt=&quot;wetown-7&quot; style=&quot; width:40px; height:40px;&quot; /&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;container&quot; style=&quot;  width: 850px;margin: 0 auto; position:relative&quot;&gt;
-    &lt;div class=&quot;album&quot; style=&quot;  height: 850px; width: 850px; overflow: hidden; border: 1px solid #222441;&quot;&gt;
-      &lt;div class=&quot;images&quot; style=&quot;  position: relative;display: flex; height: 850px; transition: 0.5s;&quot;&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-7.png&quot; alt=&quot;wetown-7&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-8.png&quot; alt=&quot;wetown-8&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-12.png&quot; alt=&quot;wetown-8&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-13.png&quot; alt=&quot;wetown-8&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-14.png&quot; alt=&quot;wetown-8&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-        &lt;img src=&quot;../images/2021-10-27-first/wetown-15.png&quot; alt=&quot;wetown-8&quot; style=&quot;width: 850px; object-fit: contain;&quot; /&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;button class=&quot;prev&quot; style=&quot;position: absolute; top:50%; left:-7%; width:40px; height:40px&quot;&gt;&amp;lt;&lt;/button&gt;
-  &lt;button class=&quot;next&quot; style=&quot;position: absolute; top:50%; right:-7%; width:40px; height:40px;&quot;&gt;&amp;gt;&lt;/button&gt;
-  &lt;/div&gt;
-
-&lt;script&gt;
-let curPos = 0;
-let postion = 0;
-const IMAGE_WIDTH = 100;
-const prevBtn = document.querySelector(&quot;.prev&quot;)
-const nextBtn = document.querySelector(&quot;.next&quot;)
-const images = document.querySelector(&quot;.images&quot;)
- 
-function prev(){
-  if(curPos &gt; 0){
-    nextBtn.removeAttribute(&quot;disabled&quot;)
-    postion += IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}%)`;
-    curPos = curPos - 1;
-  }
-  if(curPos == 0){
-    prevBtn.setAttribute('disabled', 'true')
-  }
-}
-function next(){
-  if(curPos &lt; 5){
-    prevBtn.removeAttribute(&quot;disabled&quot;)
-    postion -= IMAGE_WIDTH;
-    images.style.transform = `translateX(${postion}%)`;
-    curPos = curPos + 1;
-  }
-  if(curPos == 5){
-    nextBtn.setAttribute('disabled', 'true')
-  }
-}
- 
-function init(){
-  prevBtn.setAttribute('disabled', 'true')
-  prevBtn.addEventListener(&quot;click&quot;, prev)
-  nextBtn.addEventListener(&quot;click&quot;, next)
-}
- 
-init();
- &lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;span style=&quot;font-weight:bold&quot;&gt;협업을 진행하며 깨달은점 및 좋은점&lt;/span&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;🔹 코드리뷰를 받으며 내가 몰랐던것들, 깜빡했던것들 등 다양한 리뷰를 받아 업그레이드 되는 code를 맛볼수있다.&lt;/p&gt;
-
-&lt;p&gt;🔹 나와는 다른생각을 갖고 짠 새로운 code를 경험할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;🔹 시간약속을 잘지키는것이 정말 중요하고 그 사람에 대한 신뢰도를 결정짓는다는 것을 느끼게되었다.&lt;/p&gt;
-
-&lt;p&gt;🔹 내 코드를 내가 리뷰하며 어느부분은 이해가 잘되고 어느부분은 어렵다는것을 알게됐고 코드를 간결하게 짜는것 보다 남들이 봤을때 이해하기 쉽게 쓰게 되었다.&lt;/p&gt;
-
-&lt;h2 id=&quot;-회고&quot;&gt;🧑 회고&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;팀원 모두 프로젝트 경험이 전무하기 때문에 초반에 고생을 좀 하였다.&lt;/p&gt;
-
-&lt;p&gt;하지만 팀원분들이 모두 온화한 성격을 가지고 계신탓인지 분위기 만큼은 좋았고&lt;/p&gt;
-
-&lt;p&gt;다른팀들에 비해 의견충돌도 거의 없었다.&lt;/p&gt;
-
-&lt;p&gt;( 첫 프로젝트라 욕심부리지말고 기본에만 충실하자라는 생각으로 회의를 해서 그런가? )&lt;/p&gt;
-
-&lt;p&gt;모두들 잘해주었고 문제없이 진행되고 있었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;하지만 그 순간이 태풍이 눈이었을까…&lt;/p&gt;
-
-&lt;p&gt;back은 코드가 깔끔하게 잘짜져서 곧 바로 커밋, 푸쉬를 하였지만&lt;/p&gt;
-
-&lt;p&gt;front는 코드가 더럽고 알아보기 힘들것 같아 내선에서 약간의 리팩토링을 거치고 커밋을 한다는게&lt;/p&gt;
-
-&lt;p&gt;하루..이틀..일주일이 지나도록 한번도 커밋을 하지 않고 있었던 것이다.&lt;/p&gt;
-
-&lt;p&gt;그제서야 내가한것을 푸시하기 위해 develop 브랜치에서 pull을 받았는데 충돌이 났고&lt;/p&gt;
-
-&lt;p&gt;pull, branch 등 Git에 대해 제대로된 숙지를 못하고 있던 나는 이것저것 시도해보다&lt;/p&gt;
-
-&lt;p&gt;일주일치의 파일이 통째로 사라지게 되었다..&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;눈앞이 캄캄해졌고 현실을 받아들이기 어려웠지만&lt;/p&gt;
-
-&lt;p&gt;팀원들에게 너무 미안한 마음에 초인적인 스피드로 다시 그리기 시작했다.&lt;/p&gt;
-
-&lt;p&gt;백업파일의 필요성을 뼈저리게 느꼈고 결국 그 날 밤을 새워 똑같이 다시 구현해냈다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;근데 오히려 실수를 하고 나니 좋은점들이 더 많이 파생되었다.&lt;/p&gt;
-
-&lt;p&gt;그 날 이후 기능단위로 커밋을 무조건하였고 노트북을 닫기전에는 backup파일을 만들어 두는것이 습관화 되었다.&lt;/p&gt;
-
-&lt;p&gt;또한 손이 빨리지게 되었고 Git에 대해 제대로 숙지가 되었다. ( 모를땐 신중하게 대처하는건 덤 )&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번 프로젝트를 통해 정말 많은것을 얻게되었고&lt;/p&gt;
-
-&lt;p&gt;함께한 태준님, 은비님, 희윤님 모두 잘해주셔서 고맙습니다.&lt;/p&gt;
-
-&lt;p&gt;감사합니다&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">📑 1차 프로젝트 output 및 소개</summary></entry></feed>
+&lt;p&gt;추후 제대로 활용할줄 알게된다면 포스트업데이트를 할 것이다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">유닛테스트 🙀</summary></entry></feed>

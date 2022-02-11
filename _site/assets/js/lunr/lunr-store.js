@@ -334,4 +334,16 @@ var store = [{
         "tags": [],
         "url": "/sql-04/",
         "teaser": null
+      },{
+        "title": "GraphQL이란",
+        "excerpt":"GraphQL? 👀 GraphQL : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다. GQL즉, API를 위한 쿼리 언어이며, 타입 시스템을 사용하여 쿼리를 실행하는 서버사이드 런타임이다. GraphQL은 특정한 데이터베이스나 스토리지에 귀속되어 있지 않으며, 기존 코드와 데이터에 의해 대체된다. (일반적으로 GQL의 인터페이스간 송수신은 네트워크 레이어 L7의 HTTP POST 메서드와 웹소켓 프로토콜을 활용한다....","categories": [],
+        "tags": [],
+        "url": "/GraphQL-01/",
+        "teaser": null
+      },{
+        "title": "GraphQL의 핵심 요소",
+        "excerpt":"GraphQL의 핵심 요소? 👀 Query Query란 데이터베이스로부터 데이터를 얻어오기 위해 사용하는 것으로, type Query { (쿼리명): (반환 타입) (!) } 의 형태로 선언합니다. 만약 반환 타입 뒤 !(느낌표)를 붙일 시, 해당 요청이 들어오면 명시한 타입의 데이터를 반드시 반환해야만 하며, 사용자 정의 반환 타입을 생성하여 Query의 반환 타입에 적용이 가능하므로 임의의...","categories": [],
+        "tags": [],
+        "url": "/GraphQL-02/",
+        "teaser": null
       }]

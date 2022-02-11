@@ -21,8 +21,8 @@ main-sidebar:
     children:
       - title: 'mySQL(4)'
         url: /Every/Sql/sql/
-      - title: 'mongoDB(0)'
-        url: /
+      - title: 'GraphQL(2)'
+        url: /Every/GraphQL/GraphQL/
   - title: 'Blog'
     children:
       - title: '만들어보기(3)'

@@ -1,0 +1,11 @@
+I"<h2 id="graphql-">GraphQL? 👀</h2>
+
+<center class="notice--danger">GraphQL : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.</center>
+
+<p><br /></p>
+
+<h3 id="gql-sql의-차이">GQL, SQL의 차이</h3>
+
+<center class="notice--danger">SQL은 데이터베이스 시스템에 저장된 데이터를 효율적으로 가져오는 것이 목적이고,
+GQL은 웹 클라이언트가 데이터를 서버로 부터 효율적으로 가져오는 것이 목적이다.</center>
+:ET
