@@ -7,6 +7,8 @@ main-sidebar:
         url: /Every/HTMLCSS/HTMLCSS/
       - title: 'JavaScript(10)'
         url: /Every/JS/javascript/
+      - title: 'TypeScript(2)'
+        url: /Every/Typescript/Typescript/
       - title: 'React(11)'
         url: /Every/React/React/
   - title: 'BACK-END'
@@ -21,7 +23,7 @@ main-sidebar:
     children:
       - title: 'mySQL(4)'
         url: /Every/Sql/sql/
-      - title: 'GraphQL(2)'
+      - title: 'GraphQL(4)'
         url: /Every/GraphQL/GraphQL/
   - title: 'Blog'
     children:

@@ -1,0 +1,187 @@
+I"2,<h2 id="graphql-yoga-">GraphQL-yoga 👀</h2>
+
+<center class="notice--danger">create-react-app과 같이 초심자를 위해 환경설정 셋팅을 다 해놓아서 간단하게 서버를 구동시킬 수 있다.</center>
+
+<p><br /></p>
+
+<h3 id="실습해보기">실습해보기</h3>
+
+<ul>
+  <li>yoga install 하기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install graphql-yoga
+</code></pre></div></div>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-05.png" alt="graphql-05" /></center>
+<center>실행초기</center>
+<p><br /></p>
+
+<p>GQL-yoga를 통해 손쉽게 서버를 구동시킬 수 있다.</p>
+
+<p>하지만 이상태로는 서버가 동작하지 않을것이다.</p>
+
+<p>에러를 살펴보자 <code class="language-plaintext highlighter-rouge">Error: No schema defined</code></p>
+
+<p>스키마가 없다고 한다.</p>
+
+<p><br /></p>
+
+<p>graphql이라는 폴더를 만들어주고 그 안에 schema.graphql파일과 resolvers.js파일을 만들어준다.</p>
+
+<blockquote>
+  <p>graphql/schema.graphql</p>
+</blockquote>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>이렇게 선언해주면</p>
+
+<blockquote>
+  <p>graphql/resolvers.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">resolvers</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">Query:</span> <span class="o">{</span>
+    <span class="nl">name:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="no">LJH</span><span class="err">'</span><span class="o">,</span>
+  <span class="o">},</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="n">resolvers</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>Query를 resolvers.js을 통해 원하는 형태로 반환해줄 수 있다.</p>
+
+<p>(Database, 다른 Database, 메모리 등 다양한 곳에 접근하여 데이터 반환 가능)</p>
+
+<p><br /></p>
+
+<p>이제 정상적으로 서버가 구동되는것을 볼 수 있다. <code class="language-plaintext highlighter-rouge">GQL SERVER RUNNING</code></p>
+
+<p>주소창에 http://localhost:4000을 쳐서 들어가보자</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-6.png" alt="graphql-6" /></center>
+<center>실행결과</center>
+<p><br /></p>
+
+<p>리졸버로 만든 형태가 반환되는것을 볼 수 있다.</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<p>이번에는 GQL방식으로 반환되게 해보자</p>
+
+<blockquote>
+  <p>graphql/schema.graphql</p>
+</blockquote>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Namu</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+  </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+  </span><span class="n">gender</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">person</span><span class="p">:</span><span class="w"> </span><span class="n">Namu</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>graphql/resolvers.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">namu</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">name:</span> <span class="err">'</span><span class="no">LJH</span><span class="err">'</span><span class="o">,</span>
+  <span class="nl">age:</span> <span class="mi">18</span><span class="o">,</span>
+  <span class="nl">gender:</span> <span class="err">'</span><span class="n">male</span><span class="err">'</span><span class="o">,</span>
+<span class="o">};</span>
+
+<span class="kd">const</span> <span class="n">resolvers</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">Query:</span> <span class="o">{</span>
+    <span class="nl">person:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">namu</span><span class="o">,</span>
+  <span class="o">},</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="n">resolvers</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-7.png" alt="graphql-7" /></center>
+<center>실행결과</center>
+<p><br /></p>
+
+<p>원하는것만 뽑아서 볼 수 있게 되었다.</p>
+
+<p>(뭔가 상당히 좋다.. 라는것을 느꼈다.)</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<p>조금더 복잡하게 만들어보자</p>
+
+<blockquote>
+  <p>graphql/schema.graphql</p>
+</blockquote>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+  </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+  </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+  </span><span class="n">gender</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Person</span><span class="p">]!</span><span class="w">
+  </span><span class="n">person</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!):</span><span class="w"> </span><span class="n">Person</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>people은 배열로 받는다고 선언하기위해 []를 사용하였다.</p>
+
+<p>person은 id를 통해 각 데이터를 불러오기로 하였다.</p>
+
+<blockquote>
+  <p>graphql/resolvers.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">namu</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="no">LJH</span><span class="err">'</span><span class="o">,</span> <span class="nl">age:</span> <span class="mi">18</span><span class="o">,</span> <span class="nl">gender:</span> <span class="err">'</span><span class="n">male</span><span class="err">'</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">2</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="no">FER</span><span class="err">'</span><span class="o">,</span> <span class="nl">age:</span> <span class="mi">25</span><span class="o">,</span> <span class="nl">gender:</span> <span class="err">'</span><span class="n">female</span><span class="err">'</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">3</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="no">EFS</span><span class="err">'</span><span class="o">,</span> <span class="nl">age:</span> <span class="mi">35</span><span class="o">,</span> <span class="nl">gender:</span> <span class="err">'</span><span class="n">male</span><span class="err">'</span> <span class="o">},</span>
+<span class="o">];</span>
+
+<span class="kd">const</span> <span class="n">getById</span> <span class="o">=</span> <span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">peopleFilter</span> <span class="o">=</span> <span class="n">namu</span><span class="o">.</span><span class="na">filter</span><span class="o">((</span><span class="n">people</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">people</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">));</span>
+  <span class="k">return</span> <span class="n">peopleFilter</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+<span class="o">};</span>
+
+<span class="kd">const</span> <span class="n">resolvers</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">Query:</span> <span class="o">{</span>
+    <span class="nl">people:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">namu</span><span class="o">,</span>
+    <span class="nl">person:</span> <span class="o">(</span><span class="n">_</span><span class="o">,</span> <span class="o">{</span> <span class="n">id</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="n">getById</span><span class="o">(</span><span class="n">id</span><span class="o">),</span>
+  <span class="o">},</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="n">resolvers</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>people은 namu의 데이터를 전부 배열로 보여주고</p>
+
+<p>person은 첫번째 arg는 _로 필요없음 처리하고</p>
+
+<p>두번째 arg는 id를 통해 데이터를 주기로 하였다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-8.png" alt="graphql-8" /></center>
+<center>실행결과</center>
+<p><br /></p>
+:ET

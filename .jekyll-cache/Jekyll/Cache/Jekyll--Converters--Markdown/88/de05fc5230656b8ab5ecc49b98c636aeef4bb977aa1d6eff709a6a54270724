@@ -1,0 +1,96 @@
+I"'<h3 id="실습해보기2">실습해보기2</h3>
+
+<p>mutation을 사용해보자</p>
+
+<blockquote>
+  <p>graphql/schema.graphql</p>
+</blockquote>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Movie</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+  </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+  </span><span class="n">score</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Movie</span><span class="p">]!</span><span class="w">
+  </span><span class="n">movie</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!):</span><span class="w"> </span><span class="n">Movie</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">Mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addMovie</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!,</span><span class="w"> </span><span class="n">score</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!):</span><span class="w"> </span><span class="n">Movie</span><span class="p">!</span><span class="w">
+  </span><span class="n">deleteMovie</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!):</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>graphql/resolvers.js</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">movies</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">0</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="n">하울의</span> <span class="n">움직이는</span> <span class="n">성</span><span class="err">'</span><span class="o">,</span> <span class="nl">score:</span> <span class="mi">3</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">1</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="n">백설공주</span><span class="err">'</span><span class="o">,</span> <span class="nl">score:</span> <span class="mi">8</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">2</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="n">빨간머리</span> <span class="n">앤</span><span class="err">'</span><span class="o">,</span> <span class="nl">score:</span> <span class="mi">99</span> <span class="o">},</span>
+  <span class="o">{</span> <span class="nl">id:</span> <span class="mi">3</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="n">인어공주</span><span class="err">'</span><span class="o">,</span> <span class="nl">score:</span> <span class="mi">2</span> <span class="o">},</span>
+<span class="o">];</span>
+
+<span class="kd">const</span> <span class="n">getMovies</span> <span class="o">=</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">movies</span><span class="o">;</span>
+<span class="kd">const</span> <span class="n">getById</span> <span class="o">=</span> <span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">filterMovies</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="na">filter</span><span class="o">((</span><span class="n">movie</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">movie</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">));</span>
+  <span class="k">return</span> <span class="n">filterMovies</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+<span class="o">};</span>
+<span class="kd">const</span> <span class="n">deleteMovie</span> <span class="o">=</span> <span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">cleanedMovies</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="na">filter</span><span class="o">((</span><span class="n">movie</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">movie</span><span class="o">.</span><span class="na">id</span> <span class="o">!==</span> <span class="n">id</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">movies</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="n">cleanedMovies</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">movies</span> <span class="o">=</span> <span class="n">cleanedMovies</span><span class="o">;</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+<span class="kd">const</span> <span class="n">addMovie</span> <span class="o">=</span> <span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">score</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">newMovie</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nl">id:</span> <span class="n">movies</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span>
+    <span class="n">name</span><span class="o">,</span>
+    <span class="n">score</span><span class="o">,</span>
+  <span class="o">};</span>
+  <span class="n">movies</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">newMovie</span><span class="o">);</span>
+  <span class="k">return</span> <span class="n">newMovie</span><span class="o">;</span>
+<span class="o">};</span>
+
+<span class="kd">const</span> <span class="n">resolvers</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">Query:</span> <span class="o">{</span>
+    <span class="nl">movies:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">getMovies</span><span class="o">(),</span>
+    <span class="nl">movie:</span> <span class="o">(</span><span class="n">_</span><span class="o">,</span> <span class="o">{</span> <span class="n">id</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="n">getById</span><span class="o">(</span><span class="n">id</span><span class="o">),</span>
+  <span class="o">},</span>
+  <span class="nl">Mutation:</span> <span class="o">{</span>
+    <span class="nl">addMovie:</span> <span class="o">(</span><span class="n">_</span><span class="o">,</span> <span class="o">{</span> <span class="n">name</span><span class="o">,</span> <span class="n">score</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="n">addMovie</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">score</span><span class="o">),</span>
+    <span class="nl">deleteMovie:</span> <span class="o">(</span><span class="n">_</span><span class="o">,</span> <span class="o">{</span> <span class="n">id</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="n">deleteMovie</span><span class="o">(</span><span class="n">id</span><span class="o">),</span>
+  <span class="o">},</span>
+<span class="o">};</span>
+
+<span class="n">export</span> <span class="k">default</span> <span class="n">resolvers</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-9.png" alt="graphql-9" /></center>
+<center>addMovie 실행</center>
+<p><br /></p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-10.png" alt="graphql-10" /></center>
+<center>addMovie 실행결과</center>
+<p><br /></p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-11.png" alt="graphql-11" /></center>
+<center>deleteMovie 실행</center>
+<p><br /></p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/graphql-12.png" alt="graphql-12" /></center>
+<center>addMovie 실행결과</center>
+<p><br /></p>
+
+<p>mutation은 CRUD에서 CUD기능을 담당한다.</p>
+:ET

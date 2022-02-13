@@ -1,0 +1,33 @@
+I"C<h2 id="typescript-기초1-">Typescript 기초1 🔑</h2>
+
+<p>변수를 선언할때는 type을 지정해줘야 한다고 배웠다.</p>
+
+<p>하지만 사실 TS가 자동으로 타입을 지정해주기 때문에 하나하나 전부 타입지정을 해줄 필요가 없다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">kk</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="타입을-미리-지정하기-애매할때">타입을 미리 지정하기 애매할때</h3>
+
+<p>Union Type 사용</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">어레이</span><span class="p">:</span> <span class="p">(</span><span class="kr">number</span> <span class="o">|</span> <span class="kr">string</span><span class="p">)[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">오브젝트</span><span class="p">:</span> <span class="p">{</span> <span class="nl">data</span><span class="p">:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kr">string</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="dl">'</span><span class="s1">123</span><span class="dl">'</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>unKnown 사용</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">asd</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p>unknown은 아무타입이나 상관없이 되지만 이것을 대입하려할때는 에러를 띄운다</p>
+
+<p>(any대신 unknown을 활용하도록 하자)</p>
+:ET

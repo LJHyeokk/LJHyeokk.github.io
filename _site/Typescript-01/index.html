@@ -1,0 +1,689 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Typescript란? | POPO</title>
+<meta name="description" content="Typescript? 🔑">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="Typescript란?">
+<meta property="og:url" content="http://localhost:4000/Typescript-01/">
+
+
+  <meta property="og:description" content="Typescript? 🔑">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-13T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Typescript-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Typescript란?</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/Typescript/Typescript/">TypeScript(2)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(4)</a></li>
+          
+            <li><a href="/Every/GraphQL/GraphQL/">GraphQL(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(8)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Typescript란?"
+    /> <meta
+      itemprop="description"
+      content="Typescript? 🔑"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-02-13T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/Typescript-01/" class="u-url" itemprop="url"
+            ><p>Typescript란?</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-13T00:00:00+09:00">2022-02-13</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="typescript-">Typescript? 🔑</h2>
+
+<center class="notice--danger">Typescript : 타입스크립트는 자바스크립트에 타입을 부여한 언어이다.</center>
+
+<ul>
+  <li>
+    <p>MS에 의해 개발/관리되고 있는 오픈소스 프로그래밍 언어이다.</p>
+  </li>
+  <li>
+    <p>대규모 애플리케이션을 개발하는 데 자바스크립트가 어렵고 불편하다는 불만에 대응하기 위해 개발되었다.</p>
+  </li>
+  <li>
+    <p>TypeScript는 ES5의 Superset이므로 기존의 자바스크립트(ES5) 문법을 그대로 사용할 수 있다.</p>
+  </li>
+  <li>
+    <p>ES6의 새로운 기능들을 사용하기 위해 Babel과 같은 별도 트랜스파일러(Transpiler)를 사용하지 않아도 ES6의 새로운 기능을 기존의 자바스크립트 엔진(현재의 브라우저 또는 Node.js)에서 실행할 수 있다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="js-vs-ts">JS vs TS</h3>
+
+<ul>
+  <li>
+    <p>JS는 5 - ‘3’과 같은 Dynamic Typing이 가능하다.</p>
+  </li>
+  <li>
+    <p>TS는 ERROR MESSEGE가 정확하다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="설치">설치</h3>
+
+<ul>
+  <li>nodejs 설치</li>
+  <li>npm install typescript</li>
+  <li>tsconfig.json 파일 만들기(컴파일시 옵션설정하기 위함)</li>
+</ul>
+
+<blockquote>
+  <p>tsconfig.json</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+  <span class="s">"compilerOptions"</span><span class="o">:</span> <span class="o">{</span>
+    <span class="s">"target"</span><span class="o">:</span> <span class="s">"es5"</span><span class="o">,</span>
+    <span class="s">"module"</span><span class="o">:</span> <span class="s">"commonjs"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>commonjs는 require 문법</p>
+
+<p>es2015, esnext는 import 문법을 사용함</p>
+
+<ul>
+  <li>브라우저는 JS만 읽을 수 있기때문에 TS -&gt; JS로 변환시켜 줘야함( 터미널에 <code class="language-plaintext highlighter-rouge">tsc -w</code>)</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="문법">문법</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">kk</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// ERROR</span>
+
+<span class="dl">'</span><span class="s1">number</span><span class="dl">'</span> <span class="nx">형식은</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="nx">형식에</span> <span class="nx">할당할</span> <span class="nx">수</span> <span class="nx">없습니다</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>TS는 변수를 선언할때 타입을 지정해준다.</p>
+
+<p>지정해준타입이 아닌 다른 타입을 넣으면 ERROR를 발생시킨다.</p>
+
+<p>(string, number, boolean, null, undefiend, bigint, [], {}, string[], { name? : string } 등등)</p>
+
+<p>Union Type이라고 해서 <code class="language-plaintext highlighter-rouge">let a: string[] | number = 123;</code> 이런식으로 타입을 여러개 받을수도있다.</p>
+
+<p>Tuple Type <code class="language-plaintext highlighter-rouge">[number, boolean]</code></p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">MyType</span> <span class="o">=</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">MyType</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>타입선언이 길어지면 위와 같이 타입을 변수에 넣어서 사용하여도 된다.( 대문자로 사용하자. )</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">abc</span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">abc</span><span class="p">(</span><span class="dl">'</span><span class="s1">123</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p>함수에도 타입선언을 해줄 수 있다.</p>
+
+<p>arg를 숫자타입으로 지정해두었고, return 부분도 숫자타입으로 선언해주었다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Member</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">Member</span> <span class="o">=</span> <span class="p">{</span> <span class="na">abcdefg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">asd</span><span class="dl">'</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>string타입의 모든 키는 키값으로 string타입을 가지게 선언할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">User</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>class문법은 살짝 다르다.</p>
+
+<p><br />
+<br /></p>
+
+<blockquote>
+  <p>tsconfig.json</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+ <span class="s">"compilerOptions"</span><span class="o">:</span> <span class="o">{</span>
+
+  <span class="s">"target"</span><span class="o">:</span> <span class="s">"es5"</span><span class="o">,</span> <span class="c1">// 'es3', 'es5', 'es2015', 'es2016', 'es2017','es2018', 'esnext' 가능</span>
+  <span class="s">"module"</span><span class="o">:</span> <span class="s">"commonjs"</span><span class="o">,</span> <span class="c1">//무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'</span>
+  <span class="s">"allowJs"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">// js 파일들 ts에서 import해서 쓸 수 있는지</span>
+  <span class="s">"checkJs"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">// 일반 js 파일에서도 에러체크 여부</span>
+  <span class="s">"jsx"</span><span class="o">:</span> <span class="s">"preserve"</span><span class="o">,</span> <span class="c1">// tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'</span>
+  <span class="s">"declaration"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)</span>
+  <span class="s">"outFile"</span><span class="o">:</span> <span class="s">"./"</span><span class="o">,</span> <span class="c1">//모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)</span>
+  <span class="s">"outDir"</span><span class="o">:</span> <span class="s">"./"</span><span class="o">,</span> <span class="c1">//js파일 아웃풋 경로바꾸기</span>
+  <span class="s">"rootDir"</span><span class="o">:</span> <span class="s">"./"</span><span class="o">,</span> <span class="c1">//루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)</span>
+  <span class="s">"removeComments"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//컴파일시 주석제거</span>
+
+  <span class="s">"strict"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//strict 관련, noimplicit 어쩌구 관련 모드 전부 켜기</span>
+  <span class="s">"noImplicitAny"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//any타입 금지 여부</span>
+  <span class="s">"strictNullChecks"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//null, undefined 타입에 이상한 짓 할시 에러내기</span>
+  <span class="s">"strictFunctionTypes"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//함수파라미터 타입체크 강하게</span>
+  <span class="s">"strictPropertyInitialization"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//class constructor 작성시 타입체크 강하게</span>
+  <span class="s">"noImplicitThis"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//this 키워드가 any 타입일 경우 에러내기</span>
+  <span class="s">"alwaysStrict"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//자바스크립트 "use strict" 모드 켜기</span>
+
+  <span class="s">"noUnusedLocals"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//쓰지않는 지역변수 있으면 에러내기</span>
+  <span class="s">"noUnusedParameters"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//쓰지않는 파라미터 있으면 에러내기</span>
+  <span class="s">"noImplicitReturns"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//함수에서 return 빼먹으면 에러내기</span>
+  <span class="s">"noFallthroughCasesInSwitch"</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span> <span class="c1">//switch문 이상하면 에러내기</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이러한 것들이 있다~</p>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-13T00:00:00+09:00">2022-02-13</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Typescript%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2FTypescript-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTypescript-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FTypescript-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/GraphQL-04/" class="pagination--pager" title="GraphQL-yoga 간단한 실습2
+">이전</a>
+    
+    
+      <a href="/Typescript-02/" class="pagination--pager" title="Typescript 기초1
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -346,4 +346,34 @@ var store = [{
         "tags": [],
         "url": "/GraphQL-02/",
         "teaser": null
+      },{
+        "title": "GraphQL-yoga 간단한 실습1",
+        "excerpt":"GraphQL-yoga 👀 create-react-app과 같이 초심자를 위해 환경설정 셋팅을 다 해놓아서 간단하게 서버를 구동시킬 수 있다. 실습해보기 yoga install 하기 npm install graphql-yoga 실행초기 GQL-yoga를 통해 손쉽게 서버를 구동시킬 수 있다. 하지만 이상태로는 서버가 동작하지 않을것이다. 에러를 살펴보자 Error: No schema defined 스키마가 없다고 한다. graphql이라는 폴더를 만들어주고 그 안에 schema.graphql파일과...","categories": [],
+        "tags": [],
+        "url": "/GraphQL-03/",
+        "teaser": null
+      },{
+        "title": "GraphQL-yoga 간단한 실습2",
+        "excerpt":"실습해보기2 mutation을 사용해보자 graphql/schema.graphql type Movie { id: Int! name: String! score: Int! } type Query { movies: [Movie]! movie(id: Int!): Movie } type Mutation { addMovie(name: String!, score: Int!): Movie! deleteMovie(id: Int!): Boolean! } graphql/resolvers.js let movies = [ { id: 0, name: '하울의 움직이는 성', score: 3 },...","categories": [],
+        "tags": [],
+        "url": "/GraphQL-04/",
+        "teaser": null
+      },{
+        "title": "Typescript란?",
+        "excerpt":"Typescript? 🔑 Typescript : 타입스크립트는 자바스크립트에 타입을 부여한 언어이다. MS에 의해 개발/관리되고 있는 오픈소스 프로그래밍 언어이다. 대규모 애플리케이션을 개발하는 데 자바스크립트가 어렵고 불편하다는 불만에 대응하기 위해 개발되었다. TypeScript는 ES5의 Superset이므로 기존의 자바스크립트(ES5) 문법을 그대로 사용할 수 있다. ES6의 새로운 기능들을 사용하기 위해 Babel과 같은 별도 트랜스파일러(Transpiler)를 사용하지 않아도 ES6의 새로운...","categories": [],
+        "tags": [],
+        "url": "/Typescript-01/",
+        "teaser": null
+      },{
+        "title": "Typescript 기초1",
+        "excerpt":"Typescript 기초1 🔑 변수를 선언할때는 type을 지정해줘야 한다고 배웠다. 하지만 사실 TS가 자동으로 타입을 지정해주기 때문에 하나하나 전부 타입지정을 해줄 필요가 없다. let a = 'kk'; a = 123; // ERROR 타입을 미리 지정하기 애매할때 Union Type 사용 var 어레이: (number | string)[] = [1, '2', 3]; var 오브젝트: {...","categories": [],
+        "tags": [],
+        "url": "/Typescript-02/",
+        "teaser": null
+      },{
+        "title": "Typescript 03",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/Typescript-03/",
+        "teaser": null
       }]
