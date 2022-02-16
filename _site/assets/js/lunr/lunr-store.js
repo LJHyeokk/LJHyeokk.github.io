@@ -371,9 +371,21 @@ var store = [{
         "url": "/Typescript-02/",
         "teaser": null
       },{
-        "title": "Typescript 03",
-        "excerpt":" ","categories": [],
+        "title": "Typescript 기초2",
+        "excerpt":"Typescript 기초2 🔑 Literal Type let 숫자: 123; 숫자: 456; // ERROR 정해진 값만 들어오게 타입을 선언할 수 있다. let a = (x: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] =&gt; { return ['가위', '보']; }; 함수도 가능 var 자료 = { name: 'kim', }; function 내함수(a:...","categories": [],
         "tags": [],
         "url": "/Typescript-03/",
+        "teaser": null
+      },{
+        "title": "GraphQL Server",
+        "excerpt":"GraphQL Server 👀 apollo-server node.js에서 사용되는 많은 framework(express, koa, hapi….)를 지원한다. apollo-server-lambda도 있어 lamdba에 서버를 구축할 때 추가적인 구현이 필요 없다. apollo-server Standalone의 내부 구조를 보면 express를 내부적으로 사용하고 있고 apollo-server-express를 확장하여 사용하고 있다. apollo-server-express 기존에 apollo-server 를 사용하면 쉽고 빠르게 qraphql 서버를 구축할 수 있다 하지만 서버를 qraphql 말고...","categories": [],
+        "tags": [],
+        "url": "/GraphQL-05/",
+        "teaser": null
+      },{
+        "title": "EC2란?",
+        "excerpt":"EC2? 🍪     EC2 : Elastic Compute Cloud 컴퓨터 임대 서비스이다.          지역 정하기            인스턴스 시작 ( 컴퓨터 한대한대를 인스턴스라고 한다. )            인스턴스 세부정보 구성          인스턴스 갯수가 1개인것을 확인할것      키페어 생성   인바운드 규칙 : 외부에서 EC2로 접속 ( 최소한으로 열어놓는다 )   아웃바인드 규칙 : EC2에서 외부로 접속 ( 최대한 열어놓는다 )  ","categories": [],
+        "tags": [],
+        "url": "/AWS-01/",
         "teaser": null
       }]

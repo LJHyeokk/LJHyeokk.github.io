@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Typescript 03 | POPO</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>Typescript 기초2 | POPO</title>
+<meta name="description" content="Typescript 기초2 🔑">
 
 
   <meta name="author" content="Lee Jun Hyeok">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="POPO">
-<meta property="og:title" content="Typescript 03">
+<meta property="og:title" content="Typescript 기초2">
 <meta property="og:url" content="http://localhost:4000/Typescript-03/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Typescript 기초2 🔑">
 
 
 
@@ -96,7 +96,7 @@
 
   </head>
 
-  <body class="layout--single">
+  <body class="layout--single wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -154,7 +154,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Typescript 03</li>
+        <li class="current">Typescript 기초2</li>
       
     
   </ol>
@@ -291,7 +291,7 @@
           
             <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
           
-            <li><a href="/Every/Typescript/Typescript/">TypeScript(2)</a></li>
+            <li><a href="/Every/Typescript/Typescript/">TypeScript(3)</a></li>
           
             <li><a href="/Every/React/React/">React(11)</a></li>
           
@@ -308,6 +308,8 @@
         <ul>
           
             <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
+          
+            <li><a href="/Every/AWS/AWS/">AWS(1)</a></li>
           
         </ul>
         
@@ -387,10 +389,10 @@
   >
     <meta
       itemprop="headline"
-      content="Typescript 03"
+      content="Typescript 기초2"
     /> <meta
       itemprop="description"
-      content=""
+      content="Typescript 기초2 🔑"
     /> <meta
       itemprop="datePublished"
       content="2022-02-13T00:00:00+09:00"
@@ -402,7 +404,7 @@
         
         <h1 id="page-title" class="page__title p-name" itemprop="headline">
           <a href="http://localhost:4000/Typescript-03/" class="u-url" itemprop="url"
-            ><p>Typescript 03</p>
+            ><p>Typescript 기초2</p>
 </a
           >
         </h1>
@@ -427,7 +429,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -438,7 +440,248 @@
       
 
       <section class="page__content e-content" itemprop="text">
-         
+         <h2 id="typescript-기초2-">Typescript 기초2 🔑</h2>
+
+<h3 id="literal-type">Literal Type</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">숫자</span><span class="p">:</span> <span class="mi">123</span><span class="p">;</span>
+<span class="nl">숫자</span><span class="p">:</span> <span class="mi">456</span><span class="p">;</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p>정해진 값만 들어오게 타입을 선언할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="dl">'</span><span class="s1">가위</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">바위</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">보</span><span class="dl">'</span><span class="p">):</span> <span class="p">(</span><span class="dl">'</span><span class="s1">가위</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">바위</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">보</span><span class="dl">'</span><span class="p">)[]</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[</span><span class="dl">'</span><span class="s1">가위</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">보</span><span class="dl">'</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>함수도 가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">자료</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">내함수</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">내함수</span><span class="p">(</span><span class="nx">자료</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p>에러가 뜨는 이유는 <code class="language-plaintext highlighter-rouge">a: 'kim'</code>의 뜻은 ‘kim’이라는 type만 받겠다는거다.</p>
+
+<p>따라서 값이 ‘kim’인 자료.name을 넣으면 에러가 뜬다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">자료</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">as</span> <span class="kd">const</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">내함수</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="nx">내함수</span><span class="p">(</span><span class="nx">자료</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// ERROR</span>
+</code></pre></div></div>
+
+<p>이렇게 as const를 사용하면 Literal Type처럼 지정해주는데</p>
+
+<p>name: ‘kim’ 이렇게 타입이 지정된다.</p>
+
+<ol>
+  <li>키값을 타입으로 지정해줌</li>
+  <li>키를 readonly로 지정하여 값이 변하지 않게해줌</li>
+</ol>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="methods-안에-타입지정하기">methods 안에 타입지정하기</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Member</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">plusOne</span><span class="p">:</span> <span class="p">(</span><span class="na">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">changeName</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">회원정보</span><span class="p">:</span> <span class="nx">Member</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">plusOne</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">changeName</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">안녕</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nx">회원정보</span><span class="p">.</span><span class="nx">plusOne</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">회원정보</span><span class="p">.</span><span class="nx">changeName</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>메소드의 타입지정</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">CutType</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">string</span><span class="p">;</span>
+<span class="kd">type</span> <span class="nx">RemoveDash</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">cutZero</span><span class="p">:</span> <span class="nx">CutType</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^0+/</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">removeDash</span><span class="p">:</span> <span class="nx">RemoveDash</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">allFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">func1</span><span class="p">:</span> <span class="nx">CutType</span><span class="p">,</span> <span class="nx">func2</span><span class="p">:</span> <span class="nx">RemoveDash</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">func1</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">result2</span> <span class="o">=</span> <span class="nx">func2</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">allFunction</span><span class="p">(</span><span class="dl">'</span><span class="s1">010-1111-2222</span><span class="dl">'</span><span class="p">,</span> <span class="nx">cutZero</span><span class="p">,</span> <span class="nx">removeDash</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="class">class</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">// 필드값</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>필드값을 미리 선언해주어야 사용가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Word</span> <span class="p">{</span>
+  <span class="nx">num</span><span class="p">;</span>
+  <span class="nx">str</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(...</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">숫자들</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">let</span> <span class="nx">문자들</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="nx">param</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">i</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">문자들</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">숫자들</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">num</span> <span class="o">=</span> <span class="nx">숫자들</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">str</span> <span class="o">=</span> <span class="nx">문자들</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Word</span><span class="p">(</span><span class="dl">'</span><span class="s1">kim</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">'</span><span class="s1">park</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">num</span><span class="p">);</span> <span class="c1">//[3,5]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">str</span><span class="p">);</span> <span class="c1">//['kim', 'park']</span>
+</code></pre></div></div>
+
+<p>예시</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="interface">interface</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Square</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//type Square = { color: string; width: number };</span>
+
+<span class="kd">let</span> <span class="nx">square</span><span class="p">:</span> <span class="nx">Square</span> <span class="o">=</span> <span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span> <span class="na">width</span><span class="p">:</span> <span class="mi">100</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>object 타입지정시 interface 사용가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Teacher</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//--------------------------------------------------------------------------------name 같으므로 합친다</span>
+
+<span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Teacher</span> <span class="kd">extends</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>class 문법과 비슷하게 사용가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Student</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="kd">type</span> <span class="nx">Teacher</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span> <span class="p">};</span>
+
+<span class="c1">//--------------------------------------------------------------------------------name 같으므로 합친다</span>
+
+<span class="kd">type</span> <span class="nx">Student</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="kd">type</span> <span class="nx">Teacher</span> <span class="o">=</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="kr">number</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="nx">Student</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>type도 위와같이 사용가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Cart</span> <span class="p">{</span>
+  <span class="nl">product</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">장바구니</span><span class="p">:</span> <span class="nx">Cart</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">product</span><span class="p">:</span> <span class="dl">'</span><span class="s1">청소기</span><span class="dl">'</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="mi">7000</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">product</span><span class="p">:</span> <span class="dl">'</span><span class="s1">삼다수</span><span class="dl">'</span><span class="p">,</span> <span class="na">price</span><span class="p">:</span> <span class="mi">800</span> <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<p>배열안의 객체만들기</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">MathObj</span> <span class="p">{</span>
+  <span class="nl">plus</span><span class="p">:</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">minus</span><span class="p">:</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">오브젝트</span><span class="p">:</span> <span class="nx">MathObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">minus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>interface 메서드</p>
+
+<h3 id="interface-vs-type">Interface vs Type</h3>
+
+<p>Interface는 중복선언 가능
+Type 중복선언 불가능</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 중복선언하면</p>
+
+<p>type Student = { name: string, age: number}과 같다</p>
+
+<p>즉, 자동으로 extends해준다.</p>
+
+<p><br /></p>
  
       </section>
 
@@ -456,7 +699,7 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Typescript+03%20http%3A%2F%2Flocalhost%3A4000%2FTypescript-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Typescript+%EA%B8%B0%EC%B4%882%20http%3A%2F%2Flocalhost%3A4000%2FTypescript-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTypescript-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -469,7 +712,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/GraphQL-05/" class="pagination--pager" title="GraphQL Server
+">다음</a>
     
   </nav>
 
