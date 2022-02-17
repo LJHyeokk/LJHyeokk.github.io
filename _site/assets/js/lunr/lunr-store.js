@@ -383,8 +383,8 @@ var store = [{
         "url": "/GraphQL-05/",
         "teaser": null
       },{
-        "title": "EC2란?",
-        "excerpt":"EC2? 🍪     EC2 : Elastic Compute Cloud 컴퓨터 임대 서비스이다.          지역 정하기            인스턴스 시작 ( 컴퓨터 한대한대를 인스턴스라고 한다. )            인스턴스 세부정보 구성          인스턴스 갯수가 1개인것을 확인할것      키페어 생성   인바운드 규칙 : 외부에서 EC2로 접속 ( 최소한으로 열어놓는다 )   아웃바인드 규칙 : EC2에서 외부로 접속 ( 최대한 열어놓는다 )  ","categories": [],
+        "title": "AWS Http/Https?",
+        "excerpt":"HTTP? 🍪 HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다. HTTP서버는 80번 포트에서 서비스 대기중이며 클라이언트가 TCP 80 포트를 사용해 연결하면 서버는 요청에 응답하여 자료를 전달한다. HTTPS? 🍪 HTTPS : 기존 HTTP에 Secure Soket을 추가한 것이다. 데이터를 주고받는 과정에 ‘보안’요소가 추가되었다. 즉, HTTPS를 사용하면 서버와...","categories": [],
         "tags": [],
         "url": "/AWS-01/",
         "teaser": null

@@ -1,0 +1,93 @@
+I"<h2 id="http-">HTTP? 🍪</h2>
+
+<center class="notice--danger">  HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다.</center>
+
+<p>HTTP서버는 80번 포트에서 서비스 대기중이며 클라이언트가 TCP 80 포트를 사용해 연결하면 서버는 요청에 응답하여 자료를 전달한다.</p>
+
+<h2 id="https-">HTTPS? 🍪</h2>
+
+<center class="notice--danger">  HTTPS : 기존 HTTP에 Secure Soket을 추가한 것이다.</center>
+
+<p>데이터를 주고받는 과정에 ‘보안’요소가 추가되었다.</p>
+
+<p>즉, HTTPS를 사용하면 서버와 클라이언트 사이의 모든 통신내용이 암호화 된다.</p>
+
+<p>이러한 큰 장점이 있지만 보안요소가 추가된만큼 처리속도가 늦어질 수 밖에 없는데</p>
+
+<p>요즘엔 네트워크상태가 우수하기에 HTTP, HTTPS의 속도차이를 체감하기 어렵다.</p>
+
+<p><br /></p>
+
+<p>마켓팅 측면에서도 이득이다.</p>
+
+<p>대부분의 검색사이트에서 같은 내용을 검색하더라도 HTTP 사이트보다 HTTPS사이트가 상위노출되어 우선검색된다.</p>
+
+<p>(구글은 HTTPS를 장려하기 위해 HTTPS를 사용하면 검색순위결과에 가산점을 준다고 발표했다.(검색엔진최적화 : SEO))</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="dns">DNS</h3>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/http-1.png" alt="http-1" /></center>
+<center>순서</center>
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>등록자가 등록대행자를 통해 등록소에서 도메인을 산다.</p>
+  </li>
+  <li>
+    <p>route53을 통해 도메인네임서버를 임대받는다.(example.com의 주소는 92.231.123.2이다라고 저장시킴)</p>
+  </li>
+  <li>
+    <p>등록소가 갖고있는 도메인네임서버를 통해 (example.com)이 저장되어있는 곳은 Route53이다라고 기록함 ( 등록 완료 )</p>
+  </li>
+  <li>
+    <p>클라이언트가 example.com을 주소창에 치면, 인터넷이 연결되어있다면 1,1,1,1이라는 DNS SERVER가 물어물어물어봐서 Routh 53을 통해 IP를 알아내어 전달한다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="route-53">Route 53</h3>
+
+<center class="notice--danger">  Route 53 : 도메인을 살수 있게해주는 등록대행자 역할을 하며 도메인네임서버를 임대해주는 AWS의 서비스이다.</center>
+
+<ul>
+  <li>Route53으로 도메인 구입</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Route53의 Registered domins클릭 ( register domin : 도메인 만들기 , transfer domin : 도메인 이전)</p>
+  </li>
+  <li>
+    <p>검색창에 원하는 도메인네임을 친다.</p>
+  </li>
+  <li>
+    <p>원하는것을 고른뒤 Registrant Contact에 정보 기입</p>
+  </li>
+  <li>
+    <p>정보확인후 도메인등록이 완료된다. ( 며칠 걸림 )</p>
+  </li>
+  <li>
+    <p>hosted zode으로간다.</p>
+  </li>
+  <li>
+    <p>Route 53을 통해 도메인을 샀다면 이미 도메인네임서버가 만들어져있는것을 볼 수 있다.</p>
+  </li>
+  <li>
+    <p>ip등록을 위해 create recode set을 누른다( type A : iPv4의 주소와 연결하고 싶을때, type CNAME : 도메인네임과 도메인네임을 연결하고 싶을때)</p>
+  </li>
+  <li>
+    <p>TTL :</p>
+  </li>
+</ol>
+:ET

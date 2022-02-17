@@ -1,30 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-16T22:31:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">EC2란?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="EC2란?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;ec2-&quot;&gt;EC2? 🍪&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-17T22:59:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
 
-&lt;center class=&quot;notice--danger&quot;&gt;  EC2 : Elastic Compute Cloud 컴퓨터 임대 서비스이다.&lt;/center&gt;
+&lt;center class=&quot;notice--danger&quot;&gt;  HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다.&lt;/center&gt;
+
+&lt;p&gt;HTTP서버는 80번 포트에서 서비스 대기중이며 클라이언트가 TCP 80 포트를 사용해 연결하면 서버는 요청에 응답하여 자료를 전달한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;https-&quot;&gt;HTTPS? 🍪&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  HTTPS : 기존 HTTP에 Secure Soket을 추가한 것이다.&lt;/center&gt;
+
+&lt;p&gt;데이터를 주고받는 과정에 ‘보안’요소가 추가되었다.&lt;/p&gt;
+
+&lt;p&gt;즉, HTTPS를 사용하면 서버와 클라이언트 사이의 모든 통신내용이 암호화 된다.&lt;/p&gt;
+
+&lt;p&gt;이러한 큰 장점이 있지만 보안요소가 추가된만큼 처리속도가 늦어질 수 밖에 없는데&lt;/p&gt;
+
+&lt;p&gt;요즘엔 네트워크상태가 우수하기에 HTTP, HTTPS의 속도차이를 체감하기 어렵다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마켓팅 측면에서도 이득이다.&lt;/p&gt;
+
+&lt;p&gt;대부분의 검색사이트에서 같은 내용을 검색하더라도 HTTP 사이트보다 HTTPS사이트가 상위노출되어 우선검색된다.&lt;/p&gt;
+
+&lt;p&gt;(구글은 HTTPS를 장려하기 위해 HTTPS를 사용하면 검색순위결과에 가산점을 준다고 발표했다.(검색엔진최적화 : SEO))&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dns&quot;&gt;DNS&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/http-1.png&quot; alt=&quot;http-1&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;순서&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;지역 정하기&lt;/p&gt;
+    &lt;p&gt;등록자가 등록대행자를 통해 등록소에서 도메인을 산다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;인스턴스 시작 ( 컴퓨터 한대한대를 인스턴스라고 한다. )&lt;/p&gt;
+    &lt;p&gt;route53을 통해 도메인네임서버를 임대받는다.(example.com의 주소는 92.231.123.2이다라고 저장시킴)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;인스턴스 세부정보 구성&lt;/p&gt;
+    &lt;p&gt;등록소가 갖고있는 도메인네임서버를 통해 (example.com)이 저장되어있는 곳은 Route53이다라고 기록함 ( 등록 완료 )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클라이언트가 example.com을 주소창에 치면, 인터넷이 연결되어있다면 1,1,1,1이라는 DNS SERVER가 물어물어물어봐서 Routh 53을 통해 IP를 알아내어 전달한다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;route-53&quot;&gt;Route 53&lt;/h3&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  Route 53 : 도메인을 살수 있게해주는 등록대행자 역할을 하며 도메인네임서버를 임대해주는 AWS의 서비스이다.&lt;/center&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;인스턴스 갯수가 1개인것을 확인할것&lt;/li&gt;
+  &lt;li&gt;Route53으로 도메인 구입&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;키페어 생성&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;인바운드 규칙 : 외부에서 EC2로 접속 ( 최소한으로 열어놓는다 )&lt;/p&gt;
-
-&lt;p&gt;아웃바인드 규칙 : EC2에서 외부로 접속 ( 최대한 열어놓는다 )&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">EC2? 🍪</summary></entry><entry><title type="html">GraphQL Server</title><link href="http://localhost:4000/GraphQL-05/" rel="alternate" type="text/html" title="GraphQL Server" /><published>2022-02-14T00:00:00+09:00</published><updated>2022-02-14T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-05</id><content type="html" xml:base="http://localhost:4000/GraphQL-05/">&lt;h2 id=&quot;graphql-server-&quot;&gt;GraphQL Server 👀&lt;/h2&gt;
+  &lt;li&gt;
+    &lt;p&gt;Route53의 Registered domins클릭 ( register domin : 도메인 만들기 , transfer domin : 도메인 이전)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;검색창에 원하는 도메인네임을 친다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;원하는것을 고른뒤 Registrant Contact에 정보 기입&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;정보확인후 도메인등록이 완료된다. ( 며칠 걸림 )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hosted zode으로간다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Route 53을 통해 도메인을 샀다면 이미 도메인네임서버가 만들어져있는것을 볼 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ip등록을 위해 create recode set을 누른다( type A : iPv4의 주소와 연결하고 싶을때, type CNAME : 도메인네임과 도메인네임을 연결하고 싶을때)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TTL(Time to live) : DNS 값을 전송했을 경우, 결과값이 캐시에 저장되는 시간을 의미한다. IP주소나 메일 서버를 자주 변경하지 않을 경우에는 가급적 TTL값을 큰 값으로 설정할 것을 권장함(TTL 값이 작으면 cache DNS에서 저장하고 있는 정보가 빨리 사라진다는 뜻)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;value에 IP적고 create 클릭 ( dig +trace를 통해 잘 셋팅되었는지 확인 )&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP? 🍪</summary></entry><entry><title type="html">GraphQL Server</title><link href="http://localhost:4000/GraphQL-05/" rel="alternate" type="text/html" title="GraphQL Server" /><published>2022-02-14T00:00:00+09:00</published><updated>2022-02-14T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-05</id><content type="html" xml:base="http://localhost:4000/GraphQL-05/">&lt;h2 id=&quot;graphql-server-&quot;&gt;GraphQL Server 👀&lt;/h2&gt;
 
 &lt;h3 id=&quot;apollo-server&quot;&gt;apollo-server&lt;/h3&gt;
 
