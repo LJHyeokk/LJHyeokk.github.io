@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-17T22:59:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-17T23:46:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;  HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다.&lt;/center&gt;
 
@@ -92,7 +92,112 @@
   &lt;li&gt;
     &lt;p&gt;value에 IP적고 create 클릭 ( dig +trace를 통해 잘 셋팅되었는지 확인 )&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP? 🍪</summary></entry><entry><title type="html">GraphQL Server</title><link href="http://localhost:4000/GraphQL-05/" rel="alternate" type="text/html" title="GraphQL Server" /><published>2022-02-14T00:00:00+09:00</published><updated>2022-02-14T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-05</id><content type="html" xml:base="http://localhost:4000/GraphQL-05/">&lt;h2 id=&quot;graphql-server-&quot;&gt;GraphQL Server 👀&lt;/h2&gt;
+  &lt;li&gt;
+    &lt;p&gt;완료&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;acmaws-certification-manager&quot;&gt;ACM(AWS Certification Manager)&lt;/h3&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  ACM : AWS에서 제공하는 웹 사이트 및 애플리케이션을 보호하는 퍼블릭 및 프라이빗 SSL/TLS 인증서와 키를 생성, 저장 및 갱신하는 과정을 처리하는 서비스 (ELB(Elastic LoadBalancer) 또는 Cloudfront에서 HTTPS 통신을 할때 사용하는무료 SSL인증서)&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Certification Manager -&amp;gt; 인증서 프로비저닝 -&amp;gt; 공인인증서요청 클릭&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;도메인이름 넣기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DNS 검증&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;각 도메인마다 레코드를 생성하여 인증한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/http-2.png&quot; alt=&quot;http-2&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;인증&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;route 53에서 인증서 만들어진거 확인가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;aws-elbelastic-load-balancer&quot;&gt;AWS ELB(Elastic Load Balancer)&lt;/h3&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  ELB : 서버에 가해지는 트래픽을 여러대의 서버에게 균등하게 분산시켜주는 역할을 한다.&lt;/center&gt;
+
+&lt;p&gt;서버가 하나일 때 트래픽이 적으면 서버는 무사히 응답을 한다. 하지만 트래픽이 서버 한개로는 감당할 수 없는 양이 되는 순간 서버는 다운될 것이고, 서비스 또한 작동을 멈출 것이다.&lt;/p&gt;
+
+&lt;p&gt;이러한 문제를 해결하기 위해서는 크게 두 가지 방법이 있다.&lt;/p&gt;
+
+&lt;p&gt;서버의 인스턴스 성능을 올리는 ‘스케일-업(Scale-up)’ 과 서버를 여러대로 나눠서 트래픽을 처리하는 ‘스케일-아웃(Scale-out)’ 방식이 있다.&lt;/p&gt;
+
+&lt;p&gt;스케일-아웃이 로드밸런스의 역할이다.&lt;/p&gt;
+
+&lt;p&gt;그리고 로드 밸런서는 지속적으로 IP주소가 바뀌기 떄문에 도메인 기반으로 사용해야 한다는 특징이 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;로드밸런스 생성 ( http/https )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이름적고 리스너 추가 ( htts로 설정하면 443 포트로 만들어질것임 )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가용영역은 모두다 설정해줘도 무방&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ACM인증으로 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;새 보안그룹 생성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로드밸런스를 적용할 인스턴스 추가&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;완료&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;도메인연결-및-ec2인증서-연결&quot;&gt;도메인연결 및 EC2인증서 연결&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;route 53에서 호스팅된 도메인에서 별칭을 누르고 만들어진 로드밸런스를 적용시킨다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EC2 인스턴스에서 작업을 선택해 보안그룹을 만들어준것으로 변경한다.(추가)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;참고&lt;/p&gt;
+
+&lt;p&gt;https://www.inflearn.com/course/aws-%EC%95%84%EB%A7%88%EC%A1%B4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%80%EC%9E%85%EB%B6%80%ED%84%B0-%ED%99%9C%EC%9A%A9%EA%B9%8C%EC%A7%80/lecture/2912?tab=curriculum&lt;/p&gt;
+
+&lt;p&gt;https://www.youtube.com/watch?v=Cjq4Cxoauvc&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">HTTP? 🍪</summary></entry><entry><title type="html">GraphQL Server</title><link href="http://localhost:4000/GraphQL-05/" rel="alternate" type="text/html" title="GraphQL Server" /><published>2022-02-14T00:00:00+09:00</published><updated>2022-02-14T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-05</id><content type="html" xml:base="http://localhost:4000/GraphQL-05/">&lt;h2 id=&quot;graphql-server-&quot;&gt;GraphQL Server 👀&lt;/h2&gt;
 
 &lt;h3 id=&quot;apollo-server&quot;&gt;apollo-server&lt;/h3&gt;
 
