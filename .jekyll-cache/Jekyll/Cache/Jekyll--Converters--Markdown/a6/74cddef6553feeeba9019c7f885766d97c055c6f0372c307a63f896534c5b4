@@ -1,0 +1,149 @@
+I"N<h2 id="redis-">Redis? 💯</h2>
+
+<center class="notice--info">Redis : Remote Dictionary Server의 약자로서, "key-value" 구조의 비정형 데이터를 저장하고 관리하기 위한 오픈 소스 기반의 비관계형 데이터베이스 관리 시스템이다.</center>
+
+<p>“key-value” 데이터 베이스이므로 NoSQL이며, In-memory 기반의 데이터 처리 및 저장을 제공하여 속도가 빠르지만 서버가 꺼지면 모든 데이터가 사라진다는 단점이 있다.</p>
+
+<p>이런 특징으로 인해서 Redis는 전체 서비스에서 속도 향상을 위한 보조 데이터베이스로 사용되는 것이 보편적이다.</p>
+
+<p>추가적인 특징으로는 데이터에 만료시간을 지정할 수 있어서 지정된 만료시간이 지나면 해당 데이터는 Redis에서 삭제되며, 만료되지 않았지만 메모리가 꽉 찼을때도 LRU(Least recently used) 알고리즘에 의해 데이터가 사라진다.</p>
+
+<p>그래서 Redis는 static page를 캐싱하거나 검색 또는 쿼리 결과를 캐싱하는데 주로 많이 활용된다.</p>
+
+<center class="notice--info">Cache : 컴퓨터(server)의 성능을 향상시키기 위해 사용되는 메모리</center>
+
+<ul>
+  <li>
+    <p>DISK</p>
+  </li>
+  <li>
+    <p>Memory</p>
+  </li>
+  <li>
+    <p>L3 cache</p>
+  </li>
+  <li>
+    <p>L2 cache</p>
+  </li>
+  <li>
+    <p>L1 cache</p>
+  </li>
+  <li>
+    <p>core</p>
+  </li>
+</ul>
+
+<p>윗쪽일수록 저장용량이 크고 아랫쪽일수록 속도가 빠르다</p>
+
+<p>SSD를 쓴다고하더라도 DISK와 Memory의 속도차이는 크다.</p>
+
+<h3 id="추상적인-웹서비스-구조">추상적인 웹서비스 구조</h3>
+
+<p><br /></p>
+<center><p style="font-weight:bold">Client -&gt; Server -&gt; DB</p> </center>
+
+<p><br /></p>
+
+<p>사실 DB에도 cache가 존재한다. 하지만 여러가지의 접근을 하게된다면 결국 disk접근을 통해 데이터를 가져와야한다.</p>
+
+<ol>
+  <li>Read-Through ( Lazy-loding )</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Cache miss : 데이터를 서버에 요청했을때 캐시에 데이터가 존재하는지 확인 후 없다면 DB에 요청 -&gt; 캐시에 저장</p>
+  </li>
+  <li>
+    <p>Cache hit : 데이터가 캐시에 있는것을 확인 후 곧 바로 클라이언트에게 응답함</p>
+  </li>
+</ul>
+
+<p>( 데이터가 자주 변하지않는 경우 사용 )</p>
+
+<ol>
+  <li>Write-Through</li>
+</ol>
+
+<ul>
+  <li>요청내역에 맞게 Cache업데이트 직후 클라이언트에게 데이터를 보냄과 동시에 DB에 업데이트함</li>
+</ul>
+
+<p>( 데이터가 자주 변하는 경우 사용 )</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-사용처">redis 사용처</h3>
+
+<ul>
+  <li>
+    <p>remote data store</p>
+
+    <ul>
+      <li>A,B,C서버의 데이터를 공유하고 싶을때</li>
+    </ul>
+  </li>
+  <li>
+    <p>한대에서만 필요로 한다면, 전역변수를 써도 될꺼같은데?</p>
+
+    <ul>
+      <li>redis 자체가 atomic을 보장해준다 ( 싱글 스레드이기때문 )</li>
+    </ul>
+  </li>
+  <li>
+    <p>주로 많이 쓰이는 곳</p>
+    <ul>
+      <li>인증토큰( string, hash )</li>
+      <li>랭킹보드( sorted set )</li>
+      <li>유저 API limit</li>
+      <li>잡큐 list</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-collections">redis collections</h3>
+
+<ul>
+  <li>
+    <p>strings : key , value ( set, get, mset, mget )</p>
+  </li>
+  <li>
+    <p>list : 자료구조 ( 중간에 데이터 삽입시는 느려서 사용 x ), (lpush, rpush, lpop, rpop )</p>
+  </li>
+  <li>
+    <p>set : 중복된 데이터를 없애기 위해 ( SADD, SMEMBERS, SISMEMBER )</p>
+  </li>
+  <li>
+    <p>sorted set : set에 score를 부여하여 순서를 보장 ( ZADD, ZRANGE )</p>
+  </li>
+  <li>
+    <p>hash : key 밑에 sub key가 존재 ( hmset, hgetall, hget, hmget )</p>
+  </li>
+</ul>
+
+<p>하나의 collections에는 너무 많은 아이템을 담으면 좋지 않다.(10000개 이하가 좋음)</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-운영">redis 운영</h3>
+
+<ul>
+  <li>
+    <p>메모리 관리를 잘하자</p>
+  </li>
+  <li>
+    <p>O(N)</p>
+  </li>
+</ul>
+:ET

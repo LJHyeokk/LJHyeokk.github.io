@@ -388,4 +388,10 @@ var store = [{
         "tags": [],
         "url": "/AWS-01/",
         "teaser": null
+      },{
+        "title": "Redis",
+        "excerpt":"Redis? 💯 Redis : Remote Dictionary Server의 약자로서, \"key-value\" 구조의 비정형 데이터를 저장하고 관리하기 위한 오픈 소스 기반의 비관계형 데이터베이스 관리 시스템이다. “key-value” 데이터 베이스이므로 NoSQL이며, In-memory 기반의 데이터 처리 및 저장을 제공하여 속도가 빠르지만 서버가 꺼지면 모든 데이터가 사라진다는 단점이 있다. 이런 특징으로 인해서 Redis는 전체 서비스에서 속도 향상을...","categories": [],
+        "tags": [],
+        "url": "/interview-09/",
+        "teaser": null
       }]

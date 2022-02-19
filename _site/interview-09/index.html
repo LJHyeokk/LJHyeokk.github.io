@@ -1,0 +1,700 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Redis | POPO</title>
+<meta name="description" content="Redis? 💯">
+
+
+  <meta name="author" content="Lee Jun Hyeok">
+  
+  <meta property="article:author" content="Lee Jun Hyeok">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="POPO">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="http://localhost:4000/interview-09/">
+
+
+  <meta property="og:description" content="Redis? 💯">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/interview-09/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Lee Jun Hyeok",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="POPO Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo5.png" alt="POPO"></a>
+        
+        <a class="site-title" href="/">
+          POPO
+          <span class="site-subtitle">EZ coding</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Redis</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/tory3.png" alt="Lee Jun Hyeok" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Lee Jun Hyeok</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안녕하세요~😸</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Busan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:clzlsqkq@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>         
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/"><span class="nav__sub-title">Front-End</span></a>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/HTMLCSS/HTMLCSS/">HTML/CSS(3)</a></li>
+          
+            <li><a href="/Every/JS/javascript/">JavaScript(10)</a></li>
+          
+            <li><a href="/Every/Typescript/Typescript/">TypeScript(3)</a></li>
+          
+            <li><a href="/Every/React/React/">React(11)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">BACK-END</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
+          
+            <li><a href="/Every/AWS/AWS/">AWS(1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Algorithm/Algorithm">알고리즘(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Database</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Sql/sql/">mySQL(4)</a></li>
+          
+            <li><a href="/Every/GraphQL/GraphQL/">GraphQL(5)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Blog</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/Blog/Blog/">만들어보기(3)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/Every/etc/etc/">이것저것(9)</a></li>
+          
+            <li><a href="/Every/Wecode/wecode/">Wecode(6)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+  
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="Redis"
+    /> <meta
+      itemprop="description"
+      content="Redis? 💯"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-02-18T00:00:00+09:00"
+    /> 
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="http://localhost:4000/interview-09/" class="u-url" itemprop="url"
+            ><p>Redis</p>
+</a
+          >
+        </h1>
+         
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-18T00:00:00+09:00">2022-02-18</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+         <h2 id="redis-">Redis? 💯</h2>
+
+<center class="notice--info">Redis : Remote Dictionary Server의 약자로서, "key-value" 구조의 비정형 데이터를 저장하고 관리하기 위한 오픈 소스 기반의 비관계형 데이터베이스 관리 시스템이다.</center>
+
+<p>“key-value” 데이터 베이스이므로 NoSQL이며, In-memory 기반의 데이터 처리 및 저장을 제공하여 속도가 빠르지만 서버가 꺼지면 모든 데이터가 사라진다는 단점이 있다.</p>
+
+<p>이런 특징으로 인해서 Redis는 전체 서비스에서 속도 향상을 위한 보조 데이터베이스로 사용되는 것이 보편적이다.</p>
+
+<p>추가적인 특징으로는 데이터에 만료시간을 지정할 수 있어서 지정된 만료시간이 지나면 해당 데이터는 Redis에서 삭제되며, 만료되지 않았지만 메모리가 꽉 찼을때도 LRU(Least recently used) 알고리즘에 의해 데이터가 사라진다.</p>
+
+<p>그래서 Redis는 static page를 캐싱하거나 검색 또는 쿼리 결과를 캐싱하는데 주로 많이 활용된다.</p>
+
+<center class="notice--info">Cache : 컴퓨터(server)의 성능을 향상시키기 위해 사용되는 메모리</center>
+
+<ul>
+  <li>
+    <p>DISK</p>
+  </li>
+  <li>
+    <p>Memory</p>
+  </li>
+  <li>
+    <p>L3 cache</p>
+  </li>
+  <li>
+    <p>L2 cache</p>
+  </li>
+  <li>
+    <p>L1 cache</p>
+  </li>
+  <li>
+    <p>core</p>
+  </li>
+</ul>
+
+<p>윗쪽일수록 저장용량이 크고 아랫쪽일수록 속도가 빠르다</p>
+
+<p>SSD를 쓴다고하더라도 DISK와 Memory의 속도차이는 크다.</p>
+
+<h3 id="추상적인-웹서비스-구조">추상적인 웹서비스 구조</h3>
+
+<p><br /></p>
+<center><p style="font-weight:bold">Client -&gt; Server -&gt; DB</p> </center>
+
+<p><br /></p>
+
+<p>사실 DB에도 cache가 존재한다. 하지만 여러가지의 접근을 하게된다면 결국 disk접근을 통해 데이터를 가져와야한다.</p>
+
+<ol>
+  <li>Read-Through ( Lazy-loding )</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Cache miss : 데이터를 서버에 요청했을때 캐시에 데이터가 존재하는지 확인 후 없다면 DB에 요청 -&gt; 캐시에 저장</p>
+  </li>
+  <li>
+    <p>Cache hit : 데이터가 캐시에 있는것을 확인 후 곧 바로 클라이언트에게 응답함</p>
+  </li>
+</ul>
+
+<p>( 데이터가 자주 변하지않는 경우 사용 )</p>
+
+<ol>
+  <li>Write-Through</li>
+</ol>
+
+<ul>
+  <li>요청내역에 맞게 Cache업데이트 직후 클라이언트에게 데이터를 보냄과 동시에 DB에 업데이트함</li>
+</ul>
+
+<p>( 데이터가 자주 변하는 경우 사용 )</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-사용처">redis 사용처</h3>
+
+<ul>
+  <li>
+    <p>remote data store</p>
+
+    <ul>
+      <li>A,B,C서버의 데이터를 공유하고 싶을때</li>
+    </ul>
+  </li>
+  <li>
+    <p>한대에서만 필요로 한다면, 전역변수를 써도 될꺼같은데?</p>
+
+    <ul>
+      <li>redis 자체가 atomic을 보장해준다 ( 싱글 스레드이기때문 )</li>
+    </ul>
+  </li>
+  <li>
+    <p>주로 많이 쓰이는 곳</p>
+    <ul>
+      <li>인증토큰( string, hash )</li>
+      <li>랭킹보드( sorted set )</li>
+      <li>유저 API limit</li>
+      <li>잡큐 list</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-collections">redis collections</h3>
+
+<ul>
+  <li>
+    <p>strings : key , value ( set, get, mset, mget )</p>
+  </li>
+  <li>
+    <p>list : 자료구조 ( 중간에 데이터 삽입시는 느려서 사용 x ), (lpush, rpush, lpop, rpop )</p>
+  </li>
+  <li>
+    <p>set : 중복된 데이터를 없애기 위해 ( SADD, SMEMBERS, SISMEMBER )</p>
+  </li>
+  <li>
+    <p>sorted set : set에 score를 부여하여 순서를 보장 ( ZADD, ZRANGE )</p>
+  </li>
+  <li>
+    <p>hash : key 밑에 sub key가 존재 ( hmset, hgetall, hget, hmget )</p>
+  </li>
+</ul>
+
+<p>하나의 collections에는 너무 많은 아이템을 담으면 좋지 않다.(10000개 이하가 좋음)</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="redis-운영">redis 운영</h3>
+
+<ul>
+  <li>메모리 관리를 잘하자</li>
+</ul>
+
+<p>redis는 in-memory data store이다.</p>
+
+<p>physical memory 이상을 사용하면 문제가 발생 (swap이 있다해도 느림)</p>
+
+<p>메모리 파편화가 일어날 수 있다.(ex. 4GB로 설정했는데 사실은 5GB를 쓰고있을때)</p>
+
+<p>총 64GB인 redis라면 1개의 인스턴스가아니라 여러개의 인스턴스로 사용하는것이 안전하다.</p>
+
+<p>RSS 값을 모니터링 해야함</p>
+
+<ul>
+  <li>O(N) 관련 명령어는 주의하자.</li>
+</ul>
+
+<p>keys 같은 명령어는 쓰지말자</p>
+
+<ul>
+  <li>
+    <p>Replication</p>
+  </li>
+  <li>
+    <p>권장 설정 tip</p>
+  </li>
+</ul>
+ 
+      </section>
+
+      <footer class="page__meta">
+         
+
+ 
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-02-18T00:00:00+09:00">2022-02-18</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Redis%20http%3A%2F%2Flocalhost%3A4000%2Finterview-09%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Finterview-09%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Finterview-09%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+ 
+  <nav class="pagination">
+    
+      <a href="/AWS-01/" class="pagination--pager" title="AWS Http/Https?
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/LJHyeokk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Lee Jun Hyeok. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
