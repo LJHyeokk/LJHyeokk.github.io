@@ -25,7 +25,7 @@ main-sidebar:
     children:
       - title: 'mySQL(4)'
         url: /Every/Sql/sql/
-      - title: 'GraphQL(4)'
+      - title: 'GraphQL(5)'
         url: /Every/GraphQL/GraphQL/
   - title: 'Blog'
     children:
@@ -33,7 +33,7 @@ main-sidebar:
         url: /Every/Blog/Blog/
   - title: 'etc'
     children:
-      - title: '이것저것(8)'
+      - title: '이것저것(9)'
         url: /Every/etc/etc/
       - title: 'Wecode(6)'
         url: /Every/Wecode/wecode/
