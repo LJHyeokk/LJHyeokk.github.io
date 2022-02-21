@@ -15,7 +15,7 @@ main-sidebar:
     children:
       - title: 'Node.Js(5)'
         url: /Every/Node/node/
-      - title: 'AWS(1)'
+      - title: 'AWS(3)'
         url: /Every/AWS/AWS/
   - title: 'Algorithm'
     children:

@@ -394,4 +394,22 @@ var store = [{
         "tags": [],
         "url": "/interview-09/",
         "teaser": null
+      },{
+        "title": "GraphQL Subscription",
+        "excerpt":"GraphQL Subscription? 👀   GraphQL Subscription : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다. ","categories": [],
+        "tags": [],
+        "url": "/GraphQL-06/",
+        "teaser": null
+      },{
+        "title": "AWS Security Group",
+        "excerpt":"Security Group? 🍪 Security Group : 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 한다. VPC에서 인스턴스를 시작할때 최대 5개의 보안그룹에 인스턴스를 할당할 수 있다. 보안그룹은 서브넷수준이 아닌 인스턴스 수준에서 작동하므로 VPC에 있는 서브넷의 각 인스턴스를 서로다른 보안그룹 세트에 할당할 수 있다. 시작시 따로 설정해 두지않으면 VPC의 기본...","categories": [],
+        "tags": [],
+        "url": "/AWS-02/",
+        "teaser": null
+      },{
+        "title": "AWS ELB",
+        "excerpt":"Elastic Load Balancer? 🍪 Elastic Load Balancer : 들어오는 애플리케이션 트래픽을 Amazon EC2인스턴스, 컨테이너, IP주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킨다. Vertical Scale : 더 좋은것으로 바꾼다. Horizontal Scale : 같은성능인것을 여러개 쓴다. 특징 IP가 지속적으로 바뀜 : 도메인기반으로 해야함 Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함 3가지...","categories": [],
+        "tags": [],
+        "url": "/AWS-03/",
+        "teaser": null
       }]

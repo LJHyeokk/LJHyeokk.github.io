@@ -1,0 +1,38 @@
+I"�<h2 id="elastic-load-balancer-">Elastic Load Balancer? 🍪</h2>
+
+<center class="notice--danger">  Elastic Load Balancer : 들어오는 애플리케이션 트래픽을 Amazon EC2인스턴스, 컨테이너, IP주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킨다.</center>
+
+<ul>
+  <li>
+    <p>Vertical Scale : 더 좋은것으로 바꾼다.</p>
+  </li>
+  <li>
+    <p>Horizontal Scale : 같은성능인것을 여러개 쓴다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="특징">특징</h3>
+
+<ol>
+  <li>
+    <p>IP가 지속적으로 바뀜 : 도메인기반으로 해야함</p>
+  </li>
+  <li>
+    <p>Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함</p>
+  </li>
+  <li>
+    <p>3가지 종류가 존재함</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )</li>
+  <li>Network Load Balaner : 네트워크 레벨에서 동작 ( 빠름 )</li>
+  <li>Class</li>
+</ul>
+:ET

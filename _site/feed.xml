@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-19T23:43:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Redis</title><link href="http://localhost:4000/interview-09/" rel="alternate" type="text/html" title="Redis" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-09</id><content type="html" xml:base="http://localhost:4000/interview-09/">&lt;h2 id=&quot;redis-&quot;&gt;Redis? 💯&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-22T00:17:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">AWS Security Group</title><link href="http://localhost:4000/AWS-02/" rel="alternate" type="text/html" title="AWS Security Group" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/AWS-02</id><content type="html" xml:base="http://localhost:4000/AWS-02/">&lt;h2 id=&quot;security-group-&quot;&gt;Security Group? 🍪&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  Security Group : 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 한다.&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;VPC에서 인스턴스를 시작할때 최대 5개의 보안그룹에 인스턴스를 할당할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안그룹은 서브넷수준이 아닌 인스턴스 수준에서 작동하므로 VPC에 있는 서브넷의 각 인스턴스를 서로다른 보안그룹 세트에 할당할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시작시 따로 설정해 두지않으면 VPC의 기본 보안그룹에 할당됨&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안장치 : Network Access Control List(NACL)와 함께 방화벽의 역할을 하는 서비스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PORT 허용 : 트래픽이 지나갈 수 있는 Port와 Source를 설정 가능, DENY불가능(특정인 IP차단 불가) =&amp;gt; NACL로 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;인스턴스 단위 : 하나이상의 인스턴스에 하나이상의 SG설정 가능, NACL은 서브넷단위&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stateful : 인바운드로 들어온 트래픽이 별다른 아웃바운드 설정없이 나갈수 있음 (NCAL은 반대)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/aws-4.png&quot; alt=&quot;aws-4&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘80번포트로 들어와서 56630으로 응답을줘~’ 가 가능하다 (stateful)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;해보기&quot;&gt;해보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;인바운드 규칙 추가( 외부에서 인스턴스로 들어오는 요청 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/aws-5.png&quot; alt=&quot;aws-5&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;SSH는 나만 조작할 수 있게하기위해 나의 IP만 설정해두었다.&lt;/p&gt;
+
+&lt;p&gt;80, 433포트는 각 http, https로 요청을 받기 위해 설정해두었다.&lt;/p&gt;
+
+&lt;p&gt;ec2에서 돌려지고 있는 8000포트의 서버에 접근하기 위해 설정? ( 정확하게 설명을 못하겠다. 추후 알아보기로 )&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아웃바운드 규칙 추가( 인스턴스에서 외부로 나가는 트래픽 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/aws-6.png&quot; alt=&quot;aws-6&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위에서 설명했듯이 사실상 설정을 안해줘도 무방하지만 일단은 해두었다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Security Group? 🍪</summary></entry><entry><title type="html">AWS ELB</title><link href="http://localhost:4000/AWS-03/" rel="alternate" type="text/html" title="AWS ELB" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/AWS-03</id><content type="html" xml:base="http://localhost:4000/AWS-03/">&lt;h2 id=&quot;elastic-load-balancer-&quot;&gt;Elastic Load Balancer? 🍪&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;  Elastic Load Balancer : 들어오는 애플리케이션 트래픽을 Amazon EC2인스턴스, 컨테이너, IP주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킨다.&lt;/center&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Vertical Scale : 더 좋은것으로 바꾼다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Horizontal Scale : 같은성능인것을 여러개 쓴다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;IP가 지속적으로 바뀜 : 도메인기반으로 해야함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3가지 종류가 존재함&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )&lt;/li&gt;
+  &lt;li&gt;Network Load Balaner : 네트워크 레벨에서 동작 ( 빠름 )&lt;/li&gt;
+  &lt;li&gt;Class Load Balaner : 옛날에사용&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
+
+&lt;center class=&quot;notice--danger&quot;&gt;GraphQL Subscription : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Subscription? 👀</summary></entry><entry><title type="html">Redis</title><link href="http://localhost:4000/interview-09/" rel="alternate" type="text/html" title="Redis" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-09</id><content type="html" xml:base="http://localhost:4000/interview-09/">&lt;h2 id=&quot;redis-&quot;&gt;Redis? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;Redis : Remote Dictionary Server의 약자로서, &quot;key-value&quot; 구조의 비정형 데이터를 저장하고 관리하기 위한 오픈 소스 기반의 비관계형 데이터베이스 관리 시스템이다.&lt;/center&gt;
 
@@ -354,6 +467,29 @@
     &lt;p&gt;EC2 인스턴스에서 작업을 선택해 보안그룹을 만들어준것으로 변경한다.(추가)&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;삽질한것&quot;&gt;삽질한것&lt;/h3&gt;
+
+&lt;p&gt;ELB를 만들때 Target groups을 만들때 Health check를 하지 않았었다..&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/aws-8.png&quot; alt=&quot;aws-8&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Health check란 ELB가 일부러 트래픽을 발생시켜 해당 인스턴스가 살아있는지 확인하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;아직 Health check를 할만한 코드가 없기에 우선은 에러를 뜨는게 정상인것으로 해놓았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/aws-9.png&quot; alt=&quot;aws-9&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;back 코드를 작성했는데도 불구하고 health check할 만한 코드가 없다면 check용 코드를 따로 만드는 것도 생각해놔야겠다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1164,363 +1300,4 @@ Type 중복선언 불가능&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-8.png&quot; alt=&quot;graphql-8&quot; /&gt;&lt;/center&gt;
 &lt;center&gt;실행결과&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL-yoga 👀</summary></entry><entry><title type="html">GraphQL-yoga 간단한 실습2</title><link href="http://localhost:4000/GraphQL-04/" rel="alternate" type="text/html" title="GraphQL-yoga 간단한 실습2" /><published>2022-02-12T00:00:00+09:00</published><updated>2022-02-12T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-04</id><content type="html" xml:base="http://localhost:4000/GraphQL-04/">&lt;h3 id=&quot;실습해보기2&quot;&gt;실습해보기2&lt;/h3&gt;
-
-&lt;p&gt;mutation을 사용해보자&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;graphql/schema.graphql&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-graphql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Mutation&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addMovie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Movie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteMovie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;graphql/resolvers.js&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;하울의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;움직이는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;성&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;score:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;백설공주&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;score:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;빨간머리&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;앤&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;score:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;99&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;인어공주&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;score:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getMovies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getById&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filterMovies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filterMovies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deleteMovie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cleanedMovies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cleanedMovies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cleanedMovies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addMovie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newMovie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;id:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newMovie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newMovie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resolvers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;Query:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;movies:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getMovies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;movie:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;Mutation:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;addMovie:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addMovie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;deleteMovie:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deleteMovie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resolvers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-9.png&quot; alt=&quot;graphql-9&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;addMovie 실행&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-10.png&quot; alt=&quot;graphql-10&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;addMovie 실행결과&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-11.png&quot; alt=&quot;graphql-11&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;deleteMovie 실행&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-12.png&quot; alt=&quot;graphql-12&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;addMovie 실행결과&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;mutation은 CRUD에서 CUD기능을 담당한다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">실습해보기2</summary></entry><entry><title type="html">GraphQL이란</title><link href="http://localhost:4000/GraphQL-01/" rel="alternate" type="text/html" title="GraphQL이란" /><published>2022-02-11T00:00:00+09:00</published><updated>2022-02-11T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-01</id><content type="html" xml:base="http://localhost:4000/GraphQL-01/">&lt;h2 id=&quot;graphql-&quot;&gt;GraphQL? 👀&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;GraphQL : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;
-
-&lt;p&gt;GQL즉, API를 위한 쿼리 언어이며, 타입 시스템을 사용하여 쿼리를 실행하는 서버사이드 런타임이다.&lt;/p&gt;
-
-&lt;p&gt;GraphQL은 특정한 데이터베이스나 스토리지에 귀속되어 있지 않으며, 기존 코드와 데이터에 의해 대체된다.&lt;/p&gt;
-
-&lt;p&gt;(일반적으로 GQL의 인터페이스간 송수신은 네트워크 레이어 L7의 HTTP POST 메서드와 웹소켓 프로토콜을 활용한다. 필요에 따라서는 얼마든지 L4의 TCP/UDP를 활용하거나 심지어 L2 형식의 이더넷 프레임을 활용 할 수도 있다.)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;gql-sql의-차이&quot;&gt;GQL, SQL의 차이&lt;/h3&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;SQL은 데이터베이스 시스템에 저장된 데이터를 효율적으로 가져오는 것이 목적이고,
-GQL은 웹 클라이언트가 데이터를 서버로 부터 효율적으로 가져오는 것이 목적이다.&lt;/center&gt;
-
-&lt;p&gt;SQL의 문장(statement)은 주로 백엔드 시스템에서 작성하고 호출하는 반면, GQL의 문장은 주로 클라이언트 시스템에서 작성하고 호출한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;rest-api의-한계&quot;&gt;REST API의 한계&lt;/h3&gt;
-
-&lt;p&gt;REST API의 개념을 간단하게 말하자면 모든 Resource들을 하나의 Endpoint에 연결하고 연결된 Endpoint는 Resource와 관련된 내용만 관리하게 하는 것이다.&lt;/p&gt;
-
-&lt;p&gt;이는 단순한 서비스에서는 아주 좋지만 복잡한 서비스나 클라이언트의 요청사항에 따라 Over-Fetching과 Under-Fetching이 발생한다.&lt;/p&gt;
-
-&lt;p&gt;또한 REST API로 여러 환경에서 필요한 정보들을 Resource 별로 Endpoint를 갖도록 구현하는 것은 어렵다.&lt;/p&gt;
-
-&lt;p&gt;한마디로 비슷하지만 Endpoint가 다른 API가 많이 파생된다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Over-Fetching&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /user/1/
-response body
-{
-&quot;user_no&quot;:1,
-&quot;user_name&quot;: &quot;test&quot;,
-&quot;user_grade&quot;: &quot;VVIP&quot;,
-&quot;zip&quot;: &quot;11053&quot;,
-&quot;last_login_timetamp&quot;: &quot;2019-08-08 12:11:44&quot;,
-...
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기에서 클라이언트는 1번에 해당하는 유저의 이름만을 사용하고자 한다고 해도 유저 이름만 반환하는 API가 없다면 위와 같은 /user/1/API를 호출한 다음, user_name을 가져와 사용해야한다. 이 때, user_grade, zip 등등의 데이터는 사용하지 않는 데이터도 같이 반환받는다. 이는 곧 리소스의 낭비라고 볼 수 있고 이와 같은 낭비를 Over-Fetching이라 명한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Under-Fetching&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/user/1/
-/cart/
-/notification/
-/wish/
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;요청에 맞게 유효한 데이터를 보여주기 위해 여러 API를 호출하게 되는 경우를 Under-Fetching이라 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-
-&lt;p&gt;요청쿼리&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;query{
-      user(user_no:1){
-            user_name
-      }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;반환데이터&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-      &quot;data&quot;: {
-            &quot;user&quot;: {
-                  &quot;user_name&quot;: &quot;jim&quot;,
-            }
-      }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;장점&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;클라이언트가 필요한 데이터만 반환할 수 있다.&lt;/li&gt;
-      &lt;li&gt;1번의 호출로 원하는 데이터를 한번에 가져올 수 있다.&lt;/li&gt;
-      &lt;li&gt;REST API의 N+1 Problem을 해결 할 수 있다.&lt;/li&gt;
-      &lt;li&gt;확장이 용이&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단점&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;백엔드, 클라이언트 개발자 양쪽 다 러닝커브가 있다.&lt;/li&gt;
-      &lt;li&gt;단순한 서비스에서는 사용하기가 복잡하다.&lt;/li&gt;
-      &lt;li&gt;대부분의 언어에서 라이브러리로 제공한다.&lt;/li&gt;
-      &lt;li&gt;캐싱 기능의 구현이 복잡하다.&lt;/li&gt;
-      &lt;li&gt;요청이 text로 날아가기 때문에 File 전송 등을 구현하기가 어렵다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL? 👀</summary></entry><entry><title type="html">GraphQL의 핵심 요소</title><link href="http://localhost:4000/GraphQL-02/" rel="alternate" type="text/html" title="GraphQL의 핵심 요소" /><published>2022-02-11T00:00:00+09:00</published><updated>2022-02-11T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-02</id><content type="html" xml:base="http://localhost:4000/GraphQL-02/">&lt;h2 id=&quot;graphql의-핵심-요소-&quot;&gt;GraphQL의 핵심 요소? 👀&lt;/h2&gt;
-
-&lt;h3 id=&quot;query&quot;&gt;Query&lt;/h3&gt;
-
-&lt;p&gt;Query란 데이터베이스로부터 데이터를 얻어오기 위해 사용하는 것으로,&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;type Query {
-
-         (쿼리명): (반환 타입) (!)
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;의 형태로 선언합니다.&lt;/p&gt;
-
-&lt;p&gt;만약 반환 타입 뒤 !(느낌표)를 붙일 시, 해당 요청이 들어오면 명시한 타입의 데이터를 반드시 반환해야만 하며, 사용자 정의 반환 타입을 생성하여 Query의 반환 타입에 적용이 가능하므로 임의의 객체를 반환하고자 할 때 반환 타입을 새로 만들어 타입 지정을 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;getName:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;getAge:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;getInfo:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;mutation&quot;&gt;Mutation&lt;/h3&gt;
-
-&lt;p&gt;Mutation이란 서버, 데이터베이스 혹은 메모리에서 ‘데이터를 변경할 때 사용’하며,&lt;/p&gt;
-
-&lt;p&gt;CRUD(Create, Read, Update, Delete) 중 CUD 요청을 담당합니다.&lt;/p&gt;
-
-&lt;p&gt;만약, GraphQL을 데이터베이스와 연동하여 사용하지 않는다면,&lt;/p&gt;
-
-&lt;p&gt;Mutation을 하더라도 메모리에 변경사항이 적용되어 서버 재실행 시 초기화가 되므로 주의해야 하며, 선언은 Query의 방식과 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;changeName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!):&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;changeAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!):&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;subscription&quot;&gt;Subscription&lt;/h3&gt;
-
-&lt;p&gt;GraphQL에서 수행할 수 있는 Query, Mutation에 이은 세 번째 작업 타입이다.&lt;/p&gt;
-
-&lt;p&gt;데이터 조회에 Query를 사용하고 데이터 조작에 Mutation을 사용하면 Subscription은 어디에 사용할까? 바로 실시간 통신에 사용한다.&lt;/p&gt;
-
-&lt;p&gt;Subscription은 이름 그대로 구독/발행 모델을 기반으로 WebSocket을 통해 실시간 양방향 통신 기능을 제공한다.&lt;/p&gt;
-
-&lt;p&gt;구독을 통해 특정한 이벤트가 발생했을 때 서버에서 클라이언트로 데이터를 실시간으로 통신하게 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-1.png&quot; alt=&quot;graphql-1&quot; /&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Subscription은 다음과 같은 과정으로 진행된다.&lt;/p&gt;
-
-&lt;p&gt;처음에 사용자가 Mutation요청을 보내면 해당 Mutation의 Resolver 내부에서 Publish Event가 실행되며 Event Bus에게 알려준다.&lt;/p&gt;
-
-&lt;p&gt;그러면 Event Bus는 해당 이벤트를 구독하고 있는 Subscriber에게 이벤트가 발생되었다고 알려주게 된다.&lt;/p&gt;
-
-&lt;p&gt;Subscription을 사용하지 않고 서버의 상태 변화를 감지하기 위해서는 주기적으로 HTTP요청을 서버로 보내 변경된 상태가 있는지 지속적으로 확인하는 방법 또한 있다.&lt;/p&gt;
-
-&lt;p&gt;하지만 아무리 자주 호출하더라도 완벽하게 실시간으로 통신하기는 어렵고 클라이언트에서 주기적으로 요청을 보내줘야 하기 때문에 자원의 낭비가 심할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-2.png&quot; alt=&quot;graphql-2&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;구독과정&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;구독 과정은 다음과 같이 진행된다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;클라이언트가 서버로 Subscribe 요청(쿼리와 변수 포함)을 보낸다.&lt;/li&gt;
-  &lt;li&gt;서버는 해당 쿼리가 올바른 쿼리인지 확인한다.&lt;/li&gt;
-  &lt;li&gt;단일 PubSub객체를 통해 Event Bus에 이벤트 발생을 감지&lt;/li&gt;
-  &lt;li&gt;클라이언트가 요청한 Subscription 활성화&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;여기서 PubSub이란 Publish-Subscribe의 줄임말로 구독 이벤트 발생 및 감지를 위해 사용하는 객체이다. 그런데 여기서 Single PubSub을 사용하는 이유는 서버를 클러스터 모드(Node.js의 pm2 기준)로 실행하는 경우 각 인스턴스에 PubSub이 존재하게 된다. (서버를 여러 인스턴스로 실행하는 경우)&lt;/p&gt;
-
-&lt;p&gt;클라이언트에서 요청을 보낼 때 해당 인스턴스로 구독 이벤트가 발생이 되야 업데이트가 되는데 어떤 PubSub을 가진 인스턴스에게 요청을 보낼 지 모르기 때문에 이벤트 발생 감지를 불안정하게 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그렇기 때문에 redis등을 사용해 단일 PubSub을 사용하면 해당 문제가 발생하지 않는다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-3.png&quot; alt=&quot;graphql-3&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;구독취소과정&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;구독 취소 과정은 좀 더 간단하다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;클라이언트가 서버로 구독 취소 요청을 보낸다. (양방향 연결 해제)&lt;/li&gt;
-  &lt;li&gt;PubSub은 Event Bus의 이벤트 발생 감지를 취소한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이벤트 발생 과정
-그렇다면 마지막으로 구독한 Subscription에 이벤트가 발생했을 경우 데이터를 받아오는 과정에 대해 살펴보자!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-4.png&quot; alt=&quot;graphql-4&quot; /&gt;&lt;/center&gt;
-&lt;center&gt;이벤트발생과정&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음은 이벤트가 발생하고 클라이언트에게 구독 중인 데이터를 전송하는 과정이다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;익명의 클라이언트가 서버로 Mutation 요청을 보낸다.&lt;/li&gt;
-  &lt;li&gt;해당 Mutation에서 PubSub객체를 통해 Event Bus로 이벤트가 발생했다고 알려준다.&lt;/li&gt;
-  &lt;li&gt;Event Bus에서 이벤트 발생을 감지하고 있던 PubSub에게 이벤트 발생을 알려준다.&lt;/li&gt;
-  &lt;li&gt;PubSub은 서버에서 해당 구독 이벤트의 반환값을 받는다.&lt;/li&gt;
-  &lt;li&gt;받은 반환값을 Client에게 전송해준다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;resolver&quot;&gt;Resolver&lt;/h3&gt;
-
-&lt;p&gt;Resolver란 클라이언트로부터 요청된 Query 혹은 Mutation에 대해 반환할 결과를 생성하는 로직으로,&lt;/p&gt;
-
-&lt;p&gt;GraphQL 서버가 Resolver를 찾아 Query와 Mutation에 해당하는 함수를 실행한다.&lt;/p&gt;
-
-&lt;p&gt;또한, Resolver를 통해 데이터베이스, 메모리, 다른 API 등과 연결해 자유자재로 프로그래밍이 가능해지며,&lt;/p&gt;
-
-&lt;p&gt;실행 함수의 첫 번째 인자로는 현재 Object가 넘어오고, 두 번째부터 요청된 Query나 Mutation에서 넘어온 인자가 객체의 형태로 전달되기 때문에&lt;/p&gt;
-
-&lt;p&gt;( _, { arg1, arg2, … } )의 형태로 인자를 넘겨받아 사용합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resolvers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;Query:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;getName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;getAge:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;getInfo:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;Mutation:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;changeName:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;changeAge:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;함수로직&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL의 핵심 요소? 👀</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL-yoga 👀</summary></entry></feed>

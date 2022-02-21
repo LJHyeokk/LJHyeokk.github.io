@@ -309,7 +309,7 @@
           
             <li><a href="/Every/Node/node/">Node.Js(5)</a></li>
           
-            <li><a href="/Every/AWS/AWS/">AWS(1)</a></li>
+            <li><a href="/Every/AWS/AWS/">AWS(3)</a></li>
           
         </ul>
         
@@ -339,7 +339,7 @@
           
             <li><a href="/Every/Sql/sql/">mySQL(4)</a></li>
           
-            <li><a href="/Every/GraphQL/GraphQL/">GraphQL(5)</a></li>
+            <li><a href="/Every/GraphQL/GraphQL/">GraphQL(6)</a></li>
           
         </ul>
         
@@ -629,6 +629,29 @@
     <p>EC2 인스턴스에서 작업을 선택해 보안그룹을 만들어준것으로 변경한다.(추가)</p>
   </li>
 </ol>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="삽질한것">삽질한것</h3>
+
+<p>ELB를 만들때 Target groups을 만들때 Health check를 하지 않았었다..</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/aws-8.png" alt="aws-8" /></center>
+<p><br /></p>
+
+<p>Health check란 ELB가 일부러 트래픽을 발생시켜 해당 인스턴스가 살아있는지 확인하는 것이다.</p>
+
+<p>아직 Health check를 할만한 코드가 없기에 우선은 에러를 뜨는게 정상인것으로 해놓았다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/aws-9.png" alt="aws-9" /></center>
+<p><br /></p>
+
+<p>back 코드를 작성했는데도 불구하고 health check할 만한 코드가 없다면 check용 코드를 따로 만드는 것도 생각해놔야겠다.</p>
 
 <p><br /></p>
 <hr />
