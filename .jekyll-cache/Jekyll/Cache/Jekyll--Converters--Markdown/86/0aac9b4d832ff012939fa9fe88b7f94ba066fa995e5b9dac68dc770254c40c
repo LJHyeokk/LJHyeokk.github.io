@@ -1,4 +1,4 @@
-I"�.<h2 id="socket-io-">Socket IO 🙀</h2>
+I")\<h2 id="socket-io-">Socket IO 🙀</h2>
 
 <p>Socket?</p>
 
@@ -86,6 +86,10 @@
 
 <h3 id="구현하기">구현하기</h3>
 
+<blockquote>
+  <p>Back</p>
+</blockquote>
+
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">realTimeChat</span> <span class="o">=</span> <span class="n">io</span> <span class="o">=&gt;</span> <span class="o">{</span>
   <span class="n">io</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">connection</span><span class="err">'</span><span class="o">,</span> <span class="n">socket</span> <span class="o">=&gt;</span> <span class="o">{</span>
     <span class="n">socket</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">joinRoom</span><span class="err">'</span><span class="o">,</span> <span class="o">({</span> <span class="n">username</span><span class="o">,</span> <span class="n">room</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="o">{</span>
@@ -127,4 +131,80 @@
 
 <span class="n">export</span> <span class="k">default</span> <span class="n">realTimeChat</span><span class="o">;</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p>Front</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+      <span class="kd">const</span> <span class="n">chatForm</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getElementById</span><span class="o">(</span><span class="err">'</span><span class="n">chat</span><span class="o">-</span><span class="n">form</span><span class="err">'</span><span class="o">);</span>
+      <span class="kd">const</span> <span class="n">chatMessages</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">querySelector</span><span class="o">(</span><span class="err">'</span><span class="o">.</span><span class="na">chat</span><span class="o">-</span><span class="n">messages</span><span class="err">'</span><span class="o">);</span>
+      <span class="kd">const</span> <span class="n">roomName</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getElementById</span><span class="o">(</span><span class="err">'</span><span class="n">room</span><span class="o">-</span><span class="n">name</span><span class="err">'</span><span class="o">);</span>
+      <span class="kd">const</span> <span class="n">userList</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getElementById</span><span class="o">(</span><span class="err">'</span><span class="n">users</span><span class="err">'</span><span class="o">);</span>
+
+      <span class="kd">const</span> <span class="o">{</span> <span class="n">username</span><span class="o">,</span> <span class="n">room</span> <span class="o">}</span> <span class="o">=</span> <span class="nc">Qs</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">search</span><span class="o">,</span> <span class="o">{</span>
+        <span class="nl">ignoreQueryPrefix:</span> <span class="kc">true</span><span class="o">,</span>
+      <span class="o">});</span>
+
+      <span class="kt">var</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="err">'</span><span class="nl">https:</span><span class="c1">//www2.wecode.buzzntrend.com');</span>
+
+      <span class="n">socket</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="err">'</span><span class="n">joinRoom</span><span class="err">'</span><span class="o">,</span> <span class="o">{</span> <span class="n">username</span><span class="o">,</span> <span class="n">room</span> <span class="o">});</span>
+
+      <span class="n">socket</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">roomUsers</span><span class="err">'</span><span class="o">,</span> <span class="o">({</span> <span class="n">room</span><span class="o">,</span> <span class="n">users</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="n">roomName</span><span class="o">.</span><span class="na">innerText</span> <span class="o">=</span> <span class="n">room</span><span class="o">;</span>
+        <span class="n">userList</span><span class="o">.</span><span class="na">innerHTML</span> <span class="o">=</span> <span class="err">''</span><span class="o">;</span>
+        <span class="n">users</span><span class="o">.</span><span class="na">forEach</span><span class="o">((</span><span class="n">user</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+          <span class="kd">const</span> <span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">createElement</span><span class="o">(</span><span class="err">'</span><span class="n">li</span><span class="err">'</span><span class="o">);</span>
+          <span class="n">li</span><span class="o">.</span><span class="na">innerText</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="na">username</span><span class="o">;</span>
+          <span class="n">userList</span><span class="o">.</span><span class="na">appendChild</span><span class="o">(</span><span class="n">li</span><span class="o">);</span>
+        <span class="o">});</span>
+      <span class="o">});</span>
+
+      <span class="n">socket</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">message</span><span class="err">'</span><span class="o">,</span> <span class="o">(</span><span class="n">message</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="n">outputMessage</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+        <span class="n">chatMessages</span><span class="o">.</span><span class="na">scrollTop</span> <span class="o">=</span> <span class="n">chatMessages</span><span class="o">.</span><span class="na">scrollHeight</span><span class="o">;</span>
+      <span class="o">});</span>
+
+      <span class="n">chatForm</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="err">'</span><span class="n">submit</span><span class="err">'</span><span class="o">,</span> <span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">preventDefault</span><span class="o">();</span>
+        <span class="n">let</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">elements</span><span class="o">.</span><span class="na">msg</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">socket</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="err">'</span><span class="n">chatMessage</span><span class="err">'</span><span class="o">,</span> <span class="n">msg</span><span class="o">);</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">elements</span><span class="o">.</span><span class="na">msg</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="err">''</span><span class="o">;</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">elements</span><span class="o">.</span><span class="na">msg</span><span class="o">.</span><span class="na">focus</span><span class="o">();</span>
+      <span class="o">});</span>
+
+      <span class="n">function</span> <span class="nf">outputMessage</span><span class="o">(</span><span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">const</span> <span class="n">div</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">createElement</span><span class="o">(</span><span class="err">'</span><span class="n">div</span><span class="err">'</span><span class="o">);</span>
+        <span class="n">div</span><span class="o">.</span><span class="na">classList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">'</span><span class="n">message</span><span class="err">'</span><span class="o">);</span>
+        <span class="kd">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">createElement</span><span class="o">(</span><span class="sc">'p'</span><span class="o">);</span>
+        <span class="n">p</span><span class="o">.</span><span class="na">classList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">'</span><span class="n">meta</span><span class="err">'</span><span class="o">);</span>
+        <span class="n">p</span><span class="o">.</span><span class="na">innerText</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="na">username</span><span class="o">;</span>
+        <span class="n">p</span><span class="o">.</span><span class="na">innerHTML</span> <span class="o">+=</span> <span class="err">`</span><span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="err">$</span><span class="o">{</span><span class="n">message</span><span class="o">.</span><span class="na">time</span><span class="o">}&lt;/</span><span class="n">span</span><span class="o">&gt;</span><span class="err">`</span><span class="o">;</span>
+        <span class="n">div</span><span class="o">.</span><span class="na">appendChild</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+        <span class="kd">const</span> <span class="n">para</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">createElement</span><span class="o">(</span><span class="sc">'p'</span><span class="o">);</span>
+        <span class="n">para</span><span class="o">.</span><span class="na">classList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">'</span><span class="n">text</span><span class="err">'</span><span class="o">);</span>
+        <span class="n">para</span><span class="o">.</span><span class="na">innerText</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="na">text</span><span class="o">;</span>
+        <span class="n">div</span><span class="o">.</span><span class="na">appendChild</span><span class="o">(</span><span class="n">para</span><span class="o">);</span>
+        <span class="n">document</span><span class="o">.</span><span class="na">querySelector</span><span class="o">(</span><span class="err">'</span><span class="o">.</span><span class="na">chat</span><span class="o">-</span><span class="n">messages</span><span class="err">'</span><span class="o">).</span><span class="na">appendChild</span><span class="o">(</span><span class="n">div</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<center>실제 구현영상</center>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/socket-1.gif" alt="socket-1" /></center>
+<p><br /></p>
+
+<p>각각 생성된 방안의 모든 대화내용들은 Mongo DB에 저장되도록 구현하였다.</p>
+
+<p>역시 동적인걸 하니깐 너무 재밌다..</p>
 :ET

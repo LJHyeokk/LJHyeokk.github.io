@@ -1,4 +1,4 @@
-I"zZ<h2 id="socket-io-">Socket IO 🙀</h2>
+I"�[<h2 id="socket-io-">Socket IO 🙀</h2>
 
 <p>Socket?</p>
 
@@ -86,6 +86,10 @@
 
 <h3 id="구현하기">구현하기</h3>
 
+<blockquote>
+  <p>Back</p>
+</blockquote>
+
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">realTimeChat</span> <span class="o">=</span> <span class="n">io</span> <span class="o">=&gt;</span> <span class="o">{</span>
   <span class="n">io</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">connection</span><span class="err">'</span><span class="o">,</span> <span class="n">socket</span> <span class="o">=&gt;</span> <span class="o">{</span>
     <span class="n">socket</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="err">'</span><span class="n">joinRoom</span><span class="err">'</span><span class="o">,</span> <span class="o">({</span> <span class="n">username</span><span class="o">,</span> <span class="n">room</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="o">{</span>
@@ -127,6 +131,12 @@
 
 <span class="n">export</span> <span class="k">default</span> <span class="n">realTimeChat</span><span class="o">;</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p>Front</p>
+</blockquote>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
       <span class="kd">const</span> <span class="n">chatForm</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getElementById</span><span class="o">(</span><span class="err">'</span><span class="n">chat</span><span class="o">-</span><span class="n">form</span><span class="err">'</span><span class="o">);</span>
@@ -185,4 +195,16 @@
       <span class="o">}</span>
     <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<center>실제 구현영상</center>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/socket-1.gif" alt="socket-1" /></center>
+<p><br /></p>
+
+<p>모든 대화내용이 Mon</p>
+
+<p>역시 동적인걸 하니깐 너무 재밌다..</p>
 :ET

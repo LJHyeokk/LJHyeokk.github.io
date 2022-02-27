@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-27T13:27:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-27T13:32:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
 
 &lt;p&gt;Socket?&lt;/p&gt;
 
@@ -203,6 +203,8 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/socket-1.gif&quot; alt=&quot;socket-1&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;각각 생성된 방안의 모든 대화내용들은 Mongo DB에 저장되도록 구현하였다.&lt;/p&gt;
 
 &lt;p&gt;역시 동적인걸 하니깐 너무 재밌다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Socket IO 🙀</summary></entry><entry><title type="html">AWS Security Group</title><link href="http://localhost:4000/AWS-02/" rel="alternate" type="text/html" title="AWS Security Group" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/AWS-02</id><content type="html" xml:base="http://localhost:4000/AWS-02/">&lt;h2 id=&quot;security-group-&quot;&gt;Security Group? 🍪&lt;/h2&gt;
 
