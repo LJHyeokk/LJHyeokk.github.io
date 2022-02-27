@@ -412,4 +412,10 @@ var store = [{
         "tags": [],
         "url": "/AWS-03/",
         "teaser": null
+      },{
+        "title": "Socket IO",
+        "excerpt":"Socket IO 🙀 Socket? 소켓 → 프로토콜, ip주소, 포트넘버로 정의. 떨어져 있는 두 호스트를 연결해주는 도구로써 인터페이스 역할. 데이터를 주고 받을 수 있는 구조체로 소켓을 통해 데이터 통로가 만들어 진다. 소켓의 역할에 따라 클라이언트 소켓, 서버소켓으로 구분된다. Socket IO : Websocket을 기반으로 실시간 웹 애플리케이션을 위한 JavaScript 라이브러리이다. 웹 클라이언트와...","categories": [],
+        "tags": [],
+        "url": "/node-06/",
+        "teaser": null
       }]
