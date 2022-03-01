@@ -408,7 +408,7 @@ var store = [{
         "teaser": null
       },{
         "title": "AWS ELB",
-        "excerpt":"Elastic Load Balancer? 🍪 Elastic Load Balancer : 들어오는 애플리케이션 트래픽을 Amazon EC2인스턴스, 컨테이너, IP주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킨다. Vertical Scale : 더 좋은것으로 바꾼다. Horizontal Scale : 같은성능인것을 여러개 쓴다. 특징 IP가 지속적으로 바뀜 : 도메인기반으로 해야함 Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함 3가지...","categories": [],
+        "excerpt":"Elastic Load Balancer? 🍪 Elastic Load Balancer : 들어오는 애플리케이션 트래픽을 Amazon EC2인스턴스, 컨테이너, IP주소, Lambda 함수와 같은 여러 대상에 자동으로 분산시킨다. 다수의 서비스에 트래픽을 분산 시켜주는 서비스 Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함 Autoscaling과 연동 가능 여러 가용영역에 분산 가능 지속적으로 IP가 바뀌어 IP고정 불가능 : 항상...","categories": [],
         "tags": [],
         "url": "/AWS-03/",
         "teaser": null

@@ -1,4 +1,4 @@
-I"�[<h2 id="socket-io-">Socket IO 🙀</h2>
+I"�c<h2 id="socket-io-">Socket IO 🙀</h2>
 
 <p>Socket?</p>
 
@@ -204,7 +204,55 @@
 <center><img src="../images/2021-10-27-first/socket-1.gif" alt="socket-1" /></center>
 <p><br /></p>
 
-<p>모든 대화내용이 Mon</p>
+<p>각각 생성된 방안의 모든 대화내용들은 Mongo DB에 저장되도록 구현하였다.</p>
 
 <p>역시 동적인걸 하니깐 너무 재밌다..</p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+
+<h3 id="참고">참고</h3>
+
+<p>위의 코드대로 한다면 로드밸런싱에 의해 서버가 여러개 생성될시</p>
+
+<p>유저들끼리 채팅이 불가능할 것이다.</p>
+
+<p>ex. 나도 A방에 들어가고 다른사람도 A방에 들어갔는데 소통이안됌</p>
+
+<p>그럴때 필요한것이 socket.io-redis이다.</p>
+
+<p>기본적으로 redis의 pub/sub기능을 활용한 것인데 간단히 말하자면</p>
+
+<p>채널을 구독한 subscribe에게 모든 메세지를 전송 하는것이다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/redis-5.gif" alt="redis-5" /></center>
+<p><br /></p>
+
+<p>redis를 통해 실험을 해봤는데</p>
+
+<p>A를 구독한 터미널에는 A의 메세지만 B를 구독한 터미널에는 B의 메세지만 나오는것을 볼 수 있다.</p>
+
+<p><br /></p>
+
+<p>이제 이것을 내가만든 socket.io서버에 활용해보자.</p>
+
+<p>정말 간단하다</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">redisAdapter</span> <span class="o">=</span> <span class="n">require</span><span class="o">(</span><span class="s">"socket.io-redis"</span><span class="o">);</span>
+
+<span class="n">io</span><span class="o">.</span><span class="na">adapter</span><span class="o">(</span><span class="n">redisAdapter</span><span class="o">({</span> <span class="nl">host:</span> <span class="s">"localhost"</span><span class="o">,</span> <span class="nl">port:</span> <span class="mi">6379</span> <span class="o">}));</span>
+</code></pre></div></div>
+
+<p>이것만 선언해주면 알아서 to(“방이름”).emit에 redis의 pub/sub기능이 부착된다.</p>
+
+<p>(말그대로 어뎁터다..정말 편리함)</p>
+
+<p>redis adapter는 대충 아래그림과 같이 동작한다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/socket-2.gif" alt="socket-2" /></center>
+<p><br /></p>
 :ET

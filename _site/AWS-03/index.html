@@ -446,10 +446,31 @@
 
 <ul>
   <li>
-    <p>Vertical Scale : 더 좋은것으로 바꾼다.</p>
+    <p>다수의 서비스에 트래픽을 분산 시켜주는 서비스</p>
   </li>
   <li>
-    <p>Horizontal Scale : 같은성능인것을 여러개 쓴다.</p>
+    <p>Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함</p>
+  </li>
+  <li>
+    <p>Autoscaling과 연동 가능</p>
+  </li>
+  <li>
+    <p>여러 가용영역에 분산 가능</p>
+  </li>
+  <li>
+    <p>지속적으로 IP가 바뀌어 IP고정 불가능 : 항상 도메인 기반 사용</p>
+  </li>
+  <li>
+    <p>Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )</p>
+  </li>
+  <li>
+    <p>Network Load Balaner : 네트워크 레벨에서 동작, TCP기반, Elastic IP할당 가능 ( 빠름 )</p>
+  </li>
+  <li>
+    <p>Class Load Balaner : 옛날에사용</p>
+  </li>
+  <li>
+    <p>Gateway Load Balaner : 먼저 트래픽을 체크함, 가상어플리케이션 배포/확장 관리를 위한 서비스</p>
   </li>
 </ul>
 
@@ -458,24 +479,15 @@
 
 <p><br /></p>
 
-<h3 id="특징">특징</h3>
-
-<ol>
-  <li>
-    <p>IP가 지속적으로 바뀜 : 도메인기반으로 해야함</p>
-  </li>
-  <li>
-    <p>Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함</p>
-  </li>
-  <li>
-    <p>3가지 종류가 존재함</p>
-  </li>
-</ol>
+<h3 id="target-group">Target Group</h3>
 
 <ul>
-  <li>Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )</li>
-  <li>Network Load Balaner : 네트워크 레벨에서 동작 ( 빠름 )</li>
-  <li>Class Load Balaner : 옛날에사용</li>
+  <li>
+    <p>ALB가 라우팅할 대상의 집합</p>
+  </li>
+  <li>
+    <p>Instance, IP(private), lambda, ALB</p>
+  </li>
 </ul>
  
       </section>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-27T13:32:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-02T01:17:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
 
 &lt;p&gt;Socket?&lt;/p&gt;
 
@@ -206,7 +206,86 @@
 
 &lt;p&gt;각각 생성된 방안의 모든 대화내용들은 Mongo DB에 저장되도록 구현하였다.&lt;/p&gt;
 
-&lt;p&gt;역시 동적인걸 하니깐 너무 재밌다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Socket IO 🙀</summary></entry><entry><title type="html">AWS Security Group</title><link href="http://localhost:4000/AWS-02/" rel="alternate" type="text/html" title="AWS Security Group" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/AWS-02</id><content type="html" xml:base="http://localhost:4000/AWS-02/">&lt;h2 id=&quot;security-group-&quot;&gt;Security Group? 🍪&lt;/h2&gt;
+&lt;p&gt;역시 동적인걸 하니깐 너무 재밌다..&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+
+&lt;p&gt;위의 코드대로 한다면 로드밸런싱에 의해 서버가 여러개 생성될시&lt;/p&gt;
+
+&lt;p&gt;유저들끼리 채팅이 불가능할 것이다.&lt;/p&gt;
+
+&lt;p&gt;ex. 나도 A방에 들어가고 다른사람도 A방에 들어갔는데 소통이안됌&lt;/p&gt;
+
+&lt;p&gt;그럴때 필요한것이 socket.io-redis이다.&lt;/p&gt;
+
+&lt;p&gt;redis adapter는 대충 아래그림과 같이 동작한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/socket-1.png&quot; alt=&quot;socket-1&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;기본적으로 redis의 pub/sub기능을 활용한 것인데 간단히 말하자면&lt;/p&gt;
+
+&lt;p&gt;채널을 구독한 subscribe에게 모든 메세지를 전송 하는것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/redis-5.gif&quot; alt=&quot;redis-5&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;redis를 통해 실험을 해봤는데&lt;/p&gt;
+
+&lt;p&gt;A를 구독한 터미널에는 A의 메세지만 B를 구독한 터미널에는 B의 메세지만 나오는것을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 이것을 내가만든 socket.io서버에 활용해보자.&lt;/p&gt;
+
+&lt;p&gt;정말 간단하다&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redisAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;socket.io-redis&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;redisAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;host:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6379&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이것만 선언해주면 알아서 to(“방이름”).emit에 redis의 pub/sub기능이 부착된다.&lt;/p&gt;
+
+&lt;p&gt;(말그대로 어뎁터다..정말 편리함)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;*****************************중요사항*****************************&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘만약 redis가 죽어버리면’라는 가정의 예외처리를 해주지 않는다면 server 또한 죽어버리게된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;redisAdapter:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와같이 redis가 죽었을때의 예외처리를 해줘서 server는 꺼트리지 않도록하자&lt;/p&gt;
+
+&lt;p&gt;(물론 이렇게 됐을땐 redis가 살아날때까지 현재의 서버에 있는 클라이언트끼리만 채팅이 가능하다)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;참고사항의 socket.io-redis, 에러처리 모두 구문법이다.&lt;/p&gt;
+
+&lt;p&gt;현재는 @socket.io/redis-adapter라는 이름으로 바뀌었다.&lt;/p&gt;
+
+&lt;p&gt;내가 구문법을 쓴 이유는 사용하기에도 편하고 직관적이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;https://www.opensourceagenda.com/projects/socketio-redis/versions&lt;/p&gt;
+
+&lt;p&gt;https://socket.io/docs/v4/redis-adapter/&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Socket IO 🙀</summary></entry><entry><title type="html">AWS Security Group</title><link href="http://localhost:4000/AWS-02/" rel="alternate" type="text/html" title="AWS Security Group" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/AWS-02</id><content type="html" xml:base="http://localhost:4000/AWS-02/">&lt;h2 id=&quot;security-group-&quot;&gt;Security Group? 🍪&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;  Security Group : 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 한다.&lt;/center&gt;
 
@@ -287,10 +366,31 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Vertical Scale : 더 좋은것으로 바꾼다.&lt;/p&gt;
+    &lt;p&gt;다수의 서비스에 트래픽을 분산 시켜주는 서비스&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Horizontal Scale : 같은성능인것을 여러개 쓴다.&lt;/p&gt;
+    &lt;p&gt;Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autoscaling과 연동 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여러 가용영역에 분산 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;지속적으로 IP가 바뀌어 IP고정 불가능 : 항상 도메인 기반 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Network Load Balaner : 네트워크 레벨에서 동작, TCP기반, Elastic IP할당 가능 ( 빠름 )&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Class Load Balaner : 옛날에사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gateway Load Balaner : 먼저 트래픽을 체크함, 가상어플리케이션 배포/확장 관리를 위한 서비스&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -299,24 +399,15 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;IP가 지속적으로 바뀜 : 도메인기반으로 해야함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Health Check : 직접 트래픽을 발생시켜 살아있는지 확인함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;3가지 종류가 존재함&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;target-group&quot;&gt;Target Group&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Application Load Balancer : 어플리케이션 레벨에서 동작 ( 똑똑함 )&lt;/li&gt;
-  &lt;li&gt;Network Load Balaner : 네트워크 레벨에서 동작 ( 빠름 )&lt;/li&gt;
-  &lt;li&gt;Class Load Balaner : 옛날에사용&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ALB가 라우팅할 대상의 집합&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Instance, IP(private), lambda, ALB&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;GraphQL Subscription : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Subscription? 👀</summary></entry><entry><title type="html">Redis</title><link href="http://localhost:4000/interview-09/" rel="alternate" type="text/html" title="Redis" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-09</id><content type="html" xml:base="http://localhost:4000/interview-09/">&lt;h2 id=&quot;redis-&quot;&gt;Redis? 💯&lt;/h2&gt;
@@ -479,14 +570,104 @@
 
 &lt;p&gt;keys 같은 명령어는 쓰지말자&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Replication&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;권장 설정 tip -&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Redis? 💯</summary></entry><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;실습하기&quot;&gt;실습하기&lt;/h2&gt;
+
+&lt;p&gt;Docker로 redis를 띄우고 또 다른 Docker에 nodejs를 띄워 서로 연결시켜보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo docker run --name video --network redis-net -d -p 8000:8000 video&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo docker run --name redis --network redis-net -d -p 6379:6379 redis&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/redis-6.png&quot; alt=&quot;redis-6&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/redis-7.png&quot; alt=&quot;redis-7&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(network-bridge로 연결해주었다.)&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connectRedisServer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;host:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connected&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;video컨테이너에 돌아가고 있는 nodejs에 redis를 연결하였다.&lt;/p&gt;
+
+&lt;p&gt;코드는 아래 사이트를 참고하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://docs.redis.com/latest/rs/references/client_references/client_nodejs/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p style=&quot;color:red&quot;&gt;그런데 연결이되지않았다.&lt;/p&gt;
+
+&lt;p&gt;분명 로컬로 돌렸을때는 잘되었는데…&lt;/p&gt;
+
+&lt;p&gt;처음해보는거라 무엇이 문제인지 구글링을했다.&lt;/p&gt;
+
+&lt;p&gt;redis 바인딩이 안된건가?&lt;/p&gt;
+
+&lt;p&gt;network bridge로는 연결이 안되는건가?&lt;/p&gt;
+
+&lt;p&gt;포트포워딩이 안된건가?&lt;/p&gt;
+
+&lt;p&gt;정말 오랫동안 고민하였고 여러가지 시도를 해보았다.&lt;/p&gt;
+
+&lt;p&gt;그러다 마지막에는 애초에 안되는걸 하고있는지에 대해 의문이 들었다.&lt;/p&gt;
+
+&lt;p&gt;그래도 끝까지하면 무조건성공한다는 나의 성공경험을 바탕으로 계속 물고 늘어졌다.&lt;/p&gt;
+
+&lt;p&gt;결국에는 찾았는데 정말 어이가 없었다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connectRedisServer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;host:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;아무렇게나써줘도&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;port:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;47293329&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;공홈에서 가져온 코드라서 믿었건만 아무렇게 써줘도 로컬에서는 연결이 되는것이었다.&lt;/p&gt;
+
+&lt;p&gt;이부분을 찾아보았더니 아래의 사이트에서는 url로 표기를 하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://redis.js.org/&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;url:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;redis:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//alice:foobared@awesome.redis.server:6380'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis[s]://[[username][:password]@][host][:port][/db-number].&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이것을 내코드에 적용시켰다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connectRedisServer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;url:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;redis:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//@redis:6379',&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;바로 연결되었다…&lt;/p&gt;
+
+&lt;p&gt;위 사이트 둘다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install redis&lt;/code&gt;을 통해 createClient를 사용하는것인데 사용방법이 달랐다.&lt;/p&gt;
+
+&lt;p&gt;왜 다른지 찾아보았지만 뭐가뭔지 잘모르겠고 오늘은 피곤해서 자야겠다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Redis? 💯</summary></entry><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;  HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다.&lt;/center&gt;
 
