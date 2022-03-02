@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-02T01:17:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-03T00:03:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">Socket IO</title><link href="http://localhost:4000/node-06/" rel="alternate" type="text/html" title="Socket IO" /><published>2022-02-24T00:00:00+09:00</published><updated>2022-02-24T00:00:00+09:00</updated><id>http://localhost:4000/node-06</id><content type="html" xml:base="http://localhost:4000/node-06/">&lt;h2 id=&quot;socket-io-&quot;&gt;Socket IO 🙀&lt;/h2&gt;
 
 &lt;p&gt;Socket?&lt;/p&gt;
 
@@ -408,7 +408,120 @@
   &lt;li&gt;
     &lt;p&gt;Instance, IP(private), lambda, ALB&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;사용해보기&quot;&gt;사용해보기&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이미 만들어놓은 로드밸런서를 사용하기 위해 기존의 1번 인스턴스에 더해 2번 인스턴스를 만들어보았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/alb-2.png&quot; alt=&quot;alb-2&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;1번 인스턴스 : Docker[redis], Docker[nodejs-server]&lt;/p&gt;
+
+&lt;p&gt;2번 인스턴스 : Docker[nodejs-server]&lt;/p&gt;
+
+&lt;p&gt;여러개의 서버에서 채팅이 잘 연결되는지 확인하기위한&lt;/p&gt;
+
+&lt;p&gt;실험용으로 로드밸런서를 사용하려고 만든거라 구조가 조금 이상하다.(이해바람)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;추후 제대로 배포를 한다면&lt;/p&gt;
+
+&lt;p&gt;1번 인스턴스 : Docker[redis]&lt;/p&gt;
+
+&lt;p&gt;2번 인스턴스 : Docker[nodejs-server]&lt;/p&gt;
+
+&lt;p&gt;3번 인스턴스 : Docker[nodejs-server]&lt;/p&gt;
+
+&lt;p&gt;이렇게 쭉쭉 만들어서 1번 인스턴스를 제외한 나머지만 target group으로 만들어 로드밸런서를 돌리는게 나을것같다.&lt;/p&gt;
+
+&lt;p&gt;(그러면 1번 인스턴스만 메모리를 크게 설정하면 되기때문)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;채팅서버는 redis의 pub/sub기능을 이용하기에 2번의 인스턴스는 1번 인스턴스의 redis에 연결해줘야한다.!&lt;/p&gt;
+
+&lt;p&gt;(즉 같은 redis서버를 공유해야함)&lt;/p&gt;
+
+&lt;p&gt;서로 연결이 되는지 핑을 쏴보자.&lt;/p&gt;
+
+&lt;p&gt;아마 안될것이다.ㅠㅠ&lt;/p&gt;
+
+&lt;p&gt;2번인스턴스에서 1번인스턴스의 redis를 연결하기 위해서는 보안그룹을 이용할 것이다.&lt;/p&gt;
+
+&lt;p&gt;2번 인스턴스의 보안그룹에 인바운드규칙에 1번 인스턴스의 인바운드규칙을 넣으면 된다.&lt;/p&gt;
+
+&lt;p&gt;(1 -&amp;gt; 2도 동일하게 인바운드규칙에 추가)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/alb-4.png&quot; alt=&quot;alb-4&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;자. 이제 연결이 되었으니 redis서버에 연결을 해주자&lt;/p&gt;
+
+&lt;p&gt;그리고 로드밸런서의 target group에 인스턴스를 넣어주자.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/alb-6.png&quot; alt=&quot;alb-6&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;healthy check가 두개다 성공으로 뜬다면&lt;/p&gt;
+
+&lt;p&gt;이제 클라이언트가 요청을 보낼때마다 1,2번 서버에서 번갈아가며 응답을 해줄것이다.&lt;/p&gt;
+
+&lt;p&gt;성공!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;center&gt;*****************************삽질한것*****************************&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;분명 로드밸런서는 잘돌아가고있고&lt;/p&gt;
+
+&lt;p&gt;graphql도 응답을 잘하고 있다..&lt;/p&gt;
+
+&lt;p&gt;하지만 채팅서버만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message: &quot;Session ID unknown&quot;&lt;/code&gt;을 뱉어내며 연결이 되지않았다.&lt;/p&gt;
+
+&lt;p&gt;대체 무엇이 문제지? 또 반나절 구글링하며 삽질을 해본다.&lt;/p&gt;
+
+&lt;p&gt;사실 저 에러 메세지를 찾는데 반나절이 걸렸다고 보는게 맞는거같다..&lt;/p&gt;
+
+&lt;p&gt;그전까진 로드밸런서가 문제인가? 보안그룹이 문제인가? 계속 이것저것 바꿔보았다.&lt;/p&gt;
+
+&lt;p&gt;에러메세지로 찾아본 결과&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://github.com/socketio/socket.io/issues/1739#issuecomment-64244359&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이곳에서 정답을 얻게되었다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//www2.wecode.buzzntrend.com', {&lt;/span&gt;
+   &lt;span class=&quot;nl&quot;&gt;transports:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;websocket&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 선언해주니 잘 작동하였다.&lt;/p&gt;
+
+&lt;p&gt;이유는 nginx프록시가 잘못되서 요청이 순환되며 발생되는 에러같은데&lt;/p&gt;
+
+&lt;p&gt;기본적으로 transports: [‘websocket’]을 선언해주지 않는다면&lt;/p&gt;
+
+&lt;p&gt;폴링으로 되는건가?..&lt;/p&gt;
+
+&lt;p&gt;아직은 찾아봐도 어려운 단어들이 많다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;GraphQL Subscription : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Subscription? 👀</summary></entry><entry><title type="html">Redis</title><link href="http://localhost:4000/interview-09/" rel="alternate" type="text/html" title="Redis" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-09</id><content type="html" xml:base="http://localhost:4000/interview-09/">&lt;h2 id=&quot;redis-&quot;&gt;Redis? 💯&lt;/h2&gt;
 
