@@ -281,6 +281,10 @@
 <lastmod>2022-02-24T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/wecode-07/</loc>
+<lastmod>2022-03-04T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/Every/AWS/AWS/</loc>
 </url>
 <url>
@@ -357,5 +361,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page14/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page15/</loc>
 </url>
 </urlset>

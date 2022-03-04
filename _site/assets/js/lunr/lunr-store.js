@@ -418,4 +418,10 @@ var store = [{
         "tags": [],
         "url": "/node-06/",
         "teaser": null
+      },{
+        "title": "네트워크 특강",
+        "excerpt":"VPN 서비스 ‘마릴’ ~ 🧑‍💻 VPN 서비스 '마릴'을 운영하고 있는 empo 기업의 이재형, 최한동 대표님의 특강 IP = Internet protocol = 기기가 연결된 네트워크의 끝단 주소이다. xxx.xxx.xxx.xxx = IPv4 = 255의 4승인 46억개 정도가 있다 = 갯수가 한정적이다. 그렇기에 공용IP와 사설IP로 나뉘게된다. 부산광역시 수영구 xx동 xx아파트 x동 xxxx호 초록색 부분이...","categories": [],
+        "tags": [],
+        "url": "/wecode-07/",
+        "teaser": null
       }]
