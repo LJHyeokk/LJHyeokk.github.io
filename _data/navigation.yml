@@ -33,7 +33,7 @@ main-sidebar:
         url: /Every/Blog/Blog/
   - title: 'etc'
     children:
-      - title: '이것저것(9)'
+      - title: '이것저것(10)'
         url: /Every/etc/etc/
       - title: 'Wecode(7)'
         url: /Every/Wecode/wecode/

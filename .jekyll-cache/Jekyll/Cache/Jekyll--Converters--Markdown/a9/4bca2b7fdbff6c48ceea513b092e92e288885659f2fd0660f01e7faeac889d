@@ -1,0 +1,122 @@
+I"-<h2 id="winston-">winston? 💯</h2>
+
+<center class="notice--info">winston : 기본적으로 자바스크립트에서는 console 객체의 log(), error() 메서드 등으로 로그를 출력할 수 있다. 그런데 프로그램 크기가 커지면, 로그의 양도 많아지고, 로그를 보관했다가 이후 확인할 일이 생기기도 한다. 따라서 다양한 방식으로 로그를 남기기 위해 외부의 다양한 모듈을 사용할 수 있다. winston은 multiple transports를 지원하는 비동기 로깅 라이브러리다.</center>
+
+<ul>
+  <li>
+    <p>winston은 simple하고 universal한 logging 라이브러리로 다중전송을 지원한다.</p>
+  </li>
+  <li>
+    <p>각 winston logger에는 여러 레벨로 구성된 다중 전송이 있을 수 있다.</p>
+  </li>
+  <li>
+    <p>예를 들어 오류 로그를 데이터비이스와 콘솔 또는 로컬 파일에 동시에 저장, 출력할 수 있다</p>
+  </li>
+</ul>
+
+<h2 id="morgan-">morgan? 💯</h2>
+
+<center class="notice--info">morgan : client에 요청한 메소드나 응답으로 어떤 상태 코드를 보내주었는지 보여주는 로그를 남겨주는 모듈이다.</center>
+
+<ul>
+  <li>
+    <p>morgan(format, options)</p>
+  </li>
+  <li>
+    <p>format은 <code class="language-plaintext highlighter-rouge">로그를 어떤형태로 찍을것이다</code>를 설정하는것이다.</p>
+  </li>
+  <li>
+    <p>options에는 크게 3가지로 stream, skip, immediate 가 있다.</p>
+  </li>
+  <li>
+    <p>immediate : 찍히는 로그가 request기준인지 response를 기준인지를 true, fasle로 지정해준다.(default === response)</p>
+  </li>
+  <li>
+    <p>skip : 로깅을 필터해주는 것으로 function(request, response)형식의 함수로 설정해준다.</p>
+  </li>
+  <li>
+    <p>stream : 로그가 출력되는 위치를 지정해준다.(default === process.stdout)</p>
+  </li>
+</ul>
+
+<p>이번페이지에서는 stream을 통해 winston과 함께 사용할 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="사용해보기">사용해보기</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">winston</span><span class="o">,</span> <span class="o">{</span> <span class="n">format</span> <span class="o">}</span> <span class="n">from</span> <span class="err">'</span><span class="n">winston</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">winstonDaily</span> <span class="n">from</span> <span class="err">'</span><span class="n">winston</span><span class="o">-</span><span class="n">daily</span><span class="o">-</span><span class="n">rotate</span><span class="o">-</span><span class="n">file</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">winstonMongodb</span> <span class="n">from</span> <span class="err">'</span><span class="n">winston</span><span class="o">-</span><span class="n">mongodb</span><span class="err">'</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">dotenv</span> <span class="n">from</span> <span class="err">'</span><span class="n">dotenv</span><span class="err">'</span><span class="o">;</span>
+
+<span class="n">dotenv</span><span class="o">.</span><span class="na">config</span><span class="o">();</span>
+
+<span class="kd">const</span> <span class="n">logFormat</span> <span class="o">=</span> <span class="n">format</span><span class="o">.</span><span class="na">printf</span><span class="o">(({</span> <span class="n">timestamp</span><span class="o">,</span> <span class="n">label</span><span class="o">,</span> <span class="n">level</span><span class="o">,</span> <span class="n">message</span> <span class="o">})</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="err">`$</span><span class="o">{</span><span class="n">timestamp</span><span class="o">}</span> <span class="o">[</span><span class="err">$</span><span class="o">{</span><span class="n">label</span><span class="o">}]</span> <span class="err">$</span><span class="o">{</span><span class="n">level</span><span class="o">}</span> <span class="o">:</span> <span class="err">$</span><span class="o">{</span><span class="n">message</span><span class="o">}</span><span class="err">`</span><span class="o">;</span>
+<span class="o">});</span>
+</code></pre></div></div>
+
+<p>winston = logger만들기 위해 필요</p>
+
+<p>winston-daily-rotate-file = logger파일을 원하는 이름과 위치, 보관날짜까지 정해줄 수 있음</p>
+
+<p>winston-mongodb = 생성되는 log들을 mongoDB와 연동하여 저장 할 수 있음.</p>
+
+<p>format.printf를 통해 출력될 로그를 customize할 수 있다.</p>
+
+<p>나의 경우 <code class="language-plaintext highlighter-rouge">${timestamp} [${label}] ${level} : ${message}</code>이렇게 지정 해주었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">combineLogFormat</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">MongoDb:</span> <span class="n">format</span><span class="o">.</span><span class="na">combine</span><span class="o">(</span>
+    <span class="n">format</span><span class="o">.</span><span class="na">label</span><span class="o">({</span> <span class="nl">label:</span> <span class="err">'</span><span class="nc">Vling</span><span class="err">'</span> <span class="o">}),</span>
+    <span class="n">format</span><span class="o">.</span><span class="na">timestamp</span><span class="o">({</span>
+      <span class="nl">format:</span> <span class="err">'</span><span class="no">YYYY</span><span class="o">-</span><span class="no">MM</span><span class="o">-</span><span class="no">DD</span> <span class="nl">HH:mm:</span><span class="n">dd</span><span class="err">'</span><span class="o">,</span>
+    <span class="o">}),</span>
+    <span class="n">logFormat</span>
+  <span class="o">),</span>
+  <span class="nl">console:</span> <span class="n">format</span><span class="o">.</span><span class="na">combine</span><span class="o">(</span>
+    <span class="n">format</span><span class="o">.</span><span class="na">colorize</span><span class="o">(),</span>
+    <span class="n">format</span><span class="o">.</span><span class="na">label</span><span class="o">({</span> <span class="nl">label:</span> <span class="err">'</span><span class="nc">Vling</span><span class="err">'</span> <span class="o">}),</span>
+    <span class="n">format</span><span class="o">.</span><span class="na">timestamp</span><span class="o">({</span>
+      <span class="nl">format:</span> <span class="err">'</span><span class="no">YYYY</span><span class="o">-</span><span class="no">MM</span><span class="o">-</span><span class="no">DD</span> <span class="nl">HH:mm:</span><span class="n">dd</span><span class="err">'</span><span class="o">,</span>
+    <span class="o">}),</span>
+    <span class="n">logFormat</span>
+  <span class="o">),</span>
+<span class="o">};</span>
+
+<span class="kd">const</span> <span class="n">opts</span> <span class="o">=</span> <span class="o">(</span><span class="n">level</span><span class="o">,</span> <span class="n">format</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">format</span> <span class="o">===</span> <span class="err">'</span><span class="nc">MongoDb</span><span class="err">'</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">winston</span><span class="o">.</span><span class="na">transports</span><span class="o">.</span><span class="na">MongoDB</span><span class="o">({</span>
+      <span class="nl">level:</span> <span class="err">`$</span><span class="o">{</span><span class="n">level</span><span class="o">}</span><span class="err">`</span><span class="o">,</span>
+      <span class="nl">db:</span> <span class="n">process</span><span class="o">.</span><span class="na">env</span><span class="o">.</span><span class="na">mongodb_atlas_uri</span><span class="o">,</span>
+      <span class="nl">collection:</span> <span class="err">'</span><span class="n">logs</span><span class="err">'</span><span class="o">,</span>
+      <span class="nl">format:</span> <span class="n">combineLogFormat</span><span class="o">.</span><span class="na">MongoDb</span><span class="o">,</span>
+    <span class="o">});</span>
+  <span class="o">}</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">format</span> <span class="o">===</span> <span class="err">'</span><span class="nc">Console</span><span class="err">'</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">winston</span><span class="o">.</span><span class="na">transports</span><span class="o">.</span><span class="na">Console</span><span class="o">({</span>
+      <span class="nl">level:</span> <span class="err">`$</span><span class="o">{</span><span class="n">level</span><span class="o">}</span><span class="err">`</span><span class="o">,</span>
+      <span class="nl">format:</span> <span class="n">combineLogFormat</span><span class="o">.</span><span class="na">console</span><span class="o">,</span>
+    <span class="o">});</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<p>format.combine을 통해 형식을 하나로 합치고</p>
+
+<p>그렇게 만들어진 format을 transports에 넣는다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">winston</span><span class="o">.</span><span class="na">createLogger</span><span class="o">({</span>
+  <span class="nl">transports:</span> <span class="o">[</span><span class="n">opts</span><span class="o">(</span><span class="err">'</span><span class="n">verbose</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="nc">MongoDb</span><span class="err">'</span><span class="o">)],</span>
+<span class="o">});</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">process</span><span class="o">.</span><span class="na">env</span><span class="o">.</span><span class="na">NODE_ENV</span> <span class="o">===</span> <span class="err">'</span><span class="n">production</span><span class="err">'</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">logger</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">opts</span><span class="o">(</span><span class="err">'</span><span class="n">verbose</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="nc">Console</span><span class="err">'</span><span class="o">));</span>
+<span class="o">}</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="na">stream</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">write:</span> <span class="n">message</span> <span class="o">=&gt;</span> <span class="n">logger</span><span class="o">.</span><span class="na">http</span><span class="o">(</span><span class="n">message</span><span class="o">),</span>
+<span class="o">};</span>
+</code></pre></div></div>
+:ET

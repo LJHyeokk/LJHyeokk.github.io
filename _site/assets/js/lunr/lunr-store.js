@@ -424,4 +424,10 @@ var store = [{
         "tags": [],
         "url": "/wecode-07/",
         "teaser": null
+      },{
+        "title": "winston && morgan",
+        "excerpt":"winston? 💯 winston : 기본적으로 자바스크립트에서는 console 객체의 log(), error() 메서드 등으로 로그를 출력할 수 있다. 그런데 프로그램 크기가 커지면, 로그의 양도 많아지고, 로그를 보관했다가 이후 확인할 일이 생기기도 한다. 따라서 다양한 방식으로 로그를 남기기 위해 외부의 다양한 모듈을 사용할 수 있다. winston은 multiple transports를 지원하는 비동기 로깅 라이브러리다. winston은...","categories": [],
+        "tags": [],
+        "url": "/interview-10/",
+        "teaser": null
       }]
