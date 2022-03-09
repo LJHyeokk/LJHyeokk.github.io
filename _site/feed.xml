@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-07T10:04:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">winston &amp;amp;&amp;amp; morgan</title><link href="http://localhost:4000/interview-10/" rel="alternate" type="text/html" title="winston &amp;amp;&amp;amp; morgan" /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/interview-10</id><content type="html" xml:base="http://localhost:4000/interview-10/">&lt;h2 id=&quot;winston-&quot;&gt;winston? 💯&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-08T15:47:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">winston &amp;amp;&amp;amp; morgan</title><link href="http://localhost:4000/interview-10/" rel="alternate" type="text/html" title="winston &amp;amp;&amp;amp; morgan" /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/interview-10</id><content type="html" xml:base="http://localhost:4000/interview-10/">&lt;h2 id=&quot;winston-&quot;&gt;winston? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;winston : 기본적으로 자바스크립트에서는 console 객체의 log(), error() 메서드 등으로 로그를 출력할 수 있다. 그런데 프로그램 크기가 커지면, 로그의 양도 많아지고, 로그를 보관했다가 이후 확인할 일이 생기기도 한다. 따라서 다양한 방식으로 로그를 남기기 위해 외부의 다양한 모듈을 사용할 수 있다. winston은 multiple transports를 지원하는 비동기 로깅 라이브러리다.&lt;/center&gt;
 
@@ -166,6 +166,28 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/winston-2.png&quot; alt=&quot;winston-2&quot; /&gt;&lt;/center&gt;
 &lt;center&gt;mongoDB에 log수집&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 로그의 timestamp가 현재의 시간하고 달랐다..&lt;/p&gt;
+
+&lt;p&gt;우선 ec2의 시간대를 바꿔주고&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo rm /etc/localtime
+
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;바꾸기 성공.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDefault&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Asia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Seoul&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeStamp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;YYYY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;MM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;DD&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;HH:mm:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;혹시몰라서 server의 timeStamp도 timze zone을 바꿔주었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/winston-4.png&quot; alt=&quot;winston-4&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;time zone 변경 완료&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">winston? 💯</summary></entry><entry><title type="html">네트워크 특강</title><link href="http://localhost:4000/wecode-07/" rel="alternate" type="text/html" title="네트워크 특강" /><published>2022-03-04T00:00:00+09:00</published><updated>2022-03-04T00:00:00+09:00</updated><id>http://localhost:4000/wecode-07</id><content type="html" xml:base="http://localhost:4000/wecode-07/">&lt;h2 id=&quot;vpn-서비스-마릴--&quot;&gt;VPN 서비스 ‘마릴’ ~ 🧑‍💻&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;VPN 서비스 '마릴'을 운영하고 있는 empo 기업의 이재형, 최한동 대표님의 특강&lt;/center&gt;

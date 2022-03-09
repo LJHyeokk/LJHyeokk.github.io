@@ -1,4 +1,4 @@
-I"-<h2 id="winston-">winston? 💯</h2>
+I"�=<h2 id="winston-">winston? 💯</h2>
 
 <center class="notice--info">winston : 기본적으로 자바스크립트에서는 console 객체의 log(), error() 메서드 등으로 로그를 출력할 수 있다. 그런데 프로그램 크기가 커지면, 로그의 양도 많아지고, 로그를 보관했다가 이후 확인할 일이 생기기도 한다. 따라서 다양한 방식으로 로그를 남기기 위해 외부의 다양한 모듈을 사용할 수 있다. winston은 multiple transports를 지원하는 비동기 로깅 라이브러리다.</center>
 
@@ -13,6 +13,23 @@
     <p>예를 들어 오류 로그를 데이터비이스와 콘솔 또는 로컬 파일에 동시에 저장, 출력할 수 있다</p>
   </li>
 </ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">levels</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nl">error:</span> <span class="mi">0</span><span class="o">,</span>
+  <span class="nl">warn:</span> <span class="mi">1</span><span class="o">,</span>
+  <span class="nl">info:</span> <span class="mi">2</span><span class="o">,</span>
+  <span class="nl">http:</span> <span class="mi">3</span><span class="o">,</span>
+  <span class="nl">verbose:</span> <span class="mi">4</span><span class="o">,</span>
+  <span class="nl">debug:</span> <span class="mi">5</span><span class="o">,</span>
+  <span class="nl">silly:</span> <span class="mi">6</span><span class="o">,</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>RFC5454에서 정한 심각한 정도에 따라 분류</p>
+
+<p>숫자가 클수록 더 많은것을 기록함</p>
+
+<p>ex) info = error,warn,info모두 기록 , error = error만 기록</p>
 
 <h2 id="morgan-">morgan? 💯</h2>
 
@@ -111,7 +128,7 @@
   <span class="nl">transports:</span> <span class="o">[</span><span class="n">opts</span><span class="o">(</span><span class="err">'</span><span class="n">verbose</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="nc">MongoDb</span><span class="err">'</span><span class="o">)],</span>
 <span class="o">});</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">process</span><span class="o">.</span><span class="na">env</span><span class="o">.</span><span class="na">NODE_ENV</span> <span class="o">===</span> <span class="err">'</span><span class="n">production</span><span class="err">'</span><span class="o">)</span> <span class="o">{</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">process</span><span class="o">.</span><span class="na">env</span><span class="o">.</span><span class="na">NODE_ENV</span> <span class="o">!==</span> <span class="err">'</span><span class="n">production</span><span class="err">'</span><span class="o">)</span> <span class="o">{</span>
   <span class="n">logger</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">opts</span><span class="o">(</span><span class="err">'</span><span class="n">verbose</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="nc">Console</span><span class="err">'</span><span class="o">));</span>
 <span class="o">}</span>
 
@@ -119,4 +136,57 @@
   <span class="nl">write:</span> <span class="n">message</span> <span class="o">=&gt;</span> <span class="n">logger</span><span class="o">.</span><span class="na">http</span><span class="o">(</span><span class="n">message</span><span class="o">),</span>
 <span class="o">};</span>
 </code></pre></div></div>
+
+<p>verbose level로 mongoDB에 넣을 transtorts를 넣어주고</p>
+
+<p>만약 배포환경이 아니라면 console또한 찍히게하였다.</p>
+
+<p>마지막으로 stream을 통해 morgan과 연결시켜주었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span><span class="o">.</span><span class="na">use</span><span class="o">(</span>
+  <span class="n">morgan</span><span class="o">(</span><span class="err">`$</span><span class="o">{</span><span class="n">process</span><span class="o">.</span><span class="na">env</span><span class="o">.</span><span class="na">MORGAN_FORMAT</span><span class="o">}</span><span class="err">`</span><span class="o">,</span> <span class="o">{</span>
+  <span class="nl">stream:</span> <span class="n">logger</span><span class="o">.</span><span class="na">stream</span><span class="o">,</span>
+  <span class="o">})</span>
+<span class="o">);</span>
+</code></pre></div></div>
+
+<p>morgan은 주로 req,res log를 찍을때에 사용되는데</p>
+
+<p>app.use로 미들웨어로 log를 찍는다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">MORGAN_FORMAT=:method :status :url 🔹 clientIp : :remote-addr 🔹 userAgent : :user-agent 🔹 elapsed : :response-time ms</code></p>
+
+<p>stram을 통해 winston과 연결시켜주었고 위의 costomize형태로 출력된다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/winston-1.png" alt="winston-1" /></center>
+<center>개발환경에서의 log출력</center>
+<p><br /></p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/winston-2.png" alt="winston-2" /></center>
+<center>mongoDB에 log수집</center>
+<p><br /></p>
+
+<p>그런데 로그의 timestamp가 현재의 시간하고 달랐다..</p>
+
+<p>우선 ec2의 시간대를 바꿔주고</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo rm /etc/localtime
+
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+</code></pre></div></div>
+
+<p>바꾸기 성공.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">moment</span><span class="o">.</span><span class="na">tz</span><span class="o">.</span><span class="na">setDefault</span><span class="o">(</span><span class="err">'</span><span class="nc">Asia</span><span class="o">/</span><span class="nc">Seoul</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="n">timeStamp</span> <span class="o">=</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">moment</span><span class="o">().</span><span class="na">format</span><span class="o">(</span><span class="err">'</span><span class="no">YYYY</span><span class="o">-</span><span class="no">MM</span><span class="o">-</span><span class="no">DD</span> <span class="nl">HH:mm:</span><span class="n">ss</span><span class="err">'</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>혹시몰라서 server의 timeStamp도 timze zone을 바꿔주었다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/winston-4.png" alt="winston-4" /></center>
+<center>time zone 변경 완료</center>
+<p><br /></p>
 :ET

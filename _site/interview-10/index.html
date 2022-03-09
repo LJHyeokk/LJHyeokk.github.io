@@ -609,6 +609,28 @@
 <center><img src="../images/2021-10-27-first/winston-2.png" alt="winston-2" /></center>
 <center>mongoDB에 log수집</center>
 <p><br /></p>
+
+<p>그런데 로그의 timestamp가 현재의 시간하고 달랐다..</p>
+
+<p>우선 ec2의 시간대를 바꿔주고</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo rm /etc/localtime
+
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+</code></pre></div></div>
+
+<p>바꾸기 성공.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">moment</span><span class="o">.</span><span class="na">tz</span><span class="o">.</span><span class="na">setDefault</span><span class="o">(</span><span class="err">'</span><span class="nc">Asia</span><span class="o">/</span><span class="nc">Seoul</span><span class="err">'</span><span class="o">);</span>
+<span class="kd">const</span> <span class="n">timeStamp</span> <span class="o">=</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">moment</span><span class="o">().</span><span class="na">format</span><span class="o">(</span><span class="err">'</span><span class="no">YYYY</span><span class="o">-</span><span class="no">MM</span><span class="o">-</span><span class="no">DD</span> <span class="nl">HH:mm:</span><span class="n">ss</span><span class="err">'</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>혹시몰라서 server의 timeStamp도 timze zone을 바꿔주었다.</p>
+
+<p><br /></p>
+<center><img src="../images/2021-10-27-first/winston-4.png" alt="winston-4" /></center>
+<center>time zone 변경 완료</center>
+<p><br /></p>
  
       </section>
 
