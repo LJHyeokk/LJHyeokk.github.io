@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-08T15:47:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">winston &amp;amp;&amp;amp; morgan</title><link href="http://localhost:4000/interview-10/" rel="alternate" type="text/html" title="winston &amp;amp;&amp;amp; morgan" /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/interview-10</id><content type="html" xml:base="http://localhost:4000/interview-10/">&lt;h2 id=&quot;winston-&quot;&gt;winston? 💯&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-26T22:35:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">POPO</title><subtitle>An amazing website.</subtitle><author><name>Lee Jun Hyeok</name></author><entry><title type="html">홈페이지 제작 의뢰</title><link href="http://localhost:4000/interview-11/" rel="alternate" type="text/html" title="홈페이지 제작 의뢰" /><published>2022-03-18T00:00:00+09:00</published><updated>2022-03-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-11</id><content type="html" xml:base="http://localhost:4000/interview-11/">&lt;h2 id=&quot;홈페이지-제작-의뢰를-받다-&quot;&gt;홈페이지 제작 의뢰를 받다 💯&lt;/h2&gt;
+
+&lt;center class=&quot;notice--info&quot;&gt;wecode를 수료하고, 첫 직장에 채용합격을 받고 들어가기에 앞서 2주간의 휴식을 받았다. 그동안 못봤던 지인도 보고 열심히 놀러다니고 있었는데 지인으로 부터 회사소개 홈페이지를 제작 의뢰받았다.&lt;/center&gt;
+
+&lt;center class=&quot;notice--info&quot;&gt;결론 부터 말하자면 일주일간 열심히 홈페이지를 만들었고 의뢰인에게 &quot;이정도면 좋다. 회사 홈페이지로 써도 될거같다.&quot;라는 말을 들었으나 우선 디자인이 별로여서 일까? 내마음에 들지 않았고 회사의 업무에 집중도 해야하고 몇년간 유지보수를 해 줄 자신이 없었기에 의뢰취소를 하였다.&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;느낀점&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;만들땐 신이나서 시간가는줄 모르고 4일간 기초셋팅부터 밤새며 만들었는데…&lt;/p&gt;
+
+&lt;p&gt;막상 만들고 나니 aws 비용도 얼마가 나올지 모르겠고&lt;/p&gt;
+
+&lt;div style=&quot;color:red&quot;&gt; ( 해커한테 aws 계정이 털려 라이트세일 폭탄요금을 맞은 경험때매 더 무서움 ) &lt;/div&gt;
+
+&lt;p&gt;몇년간 이 홈페이지를 내가 유지보수해야한다는 책임감이 갑자기 밀려왔다.&lt;/p&gt;
+
+&lt;div style=&quot;color:green&quot;&gt;( 그리고 처음과 말이 다르게 갑자기 공짜로 해달라는 말을 들으니 의욕 급다운 )&lt;/div&gt;
+
+&lt;p&gt;고작 4개월 남짓 배운 실력으로 아직은 해커들의 공격방어 및 의뢰받은 회사에 필요한 서비스의 유지 보수 및 개선은&lt;/p&gt;
+
+&lt;p&gt;무리가 있다는 판단에 결정을 내렸지만 이러한 고민을 하게된 것 자체가 나에겐 소중한 경험이 되었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;홈페이지-view&quot;&gt;홈페이지 view&lt;/h2&gt;
+
+&lt;p&gt;소개 페이지 및 상담문의 페이지는 혹여나 의뢰 회사에 피해가 갈 수도 있기때문에 비공개로 하겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/migong-1.gif&quot; alt=&quot;migong&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;컴퓨터로 볼때&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/migong-2.gif&quot; alt=&quot;migong&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;핸드폰으로 볼때&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/migong-3.gif&quot; alt=&quot;migong&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;관리자 권한으로 로그인하여 업로드,편집,삭제 기능 활성화&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;홈페이지-작업과정&quot;&gt;홈페이지 작업과정&lt;/h2&gt;
+
+&lt;p&gt;인테리어 회사다 보니 “회사의 작업내용을 게시하고 고객들은 그것을 보고 상담페이지로 가서 문의를 하면 되겠다.” 라고 생각하였다.&lt;/p&gt;
+
+&lt;p&gt;그래서 관리자라는 유저를 만들어 게시물을 업로드 및 편집,삭제 기능을 주었고&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/migong-5.png&quot; alt=&quot;migong&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;나중에 서비스를 개편할때 유저 회원가입을 고려하여 is_admin 이라는 칼럼도 DB의 users 테이블에 생성해두었다.&lt;/p&gt;
+
+&lt;p&gt;DB는 초간단하게 users, board, images 이렇게 3가지로 구성하여 만들었다.&lt;/p&gt;
+
+&lt;p&gt;서비스가 개편될때를 생각해서 여러가지 구상을 해보았지만 아직은 없는 서비스의 table까지 만들 필요는 없을것 같았다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;업로드한 게시물의 사진을 어디다가 보관을 시킬까 검색을 하다가 aws s3라는 것을 알게되어&lt;/p&gt;
+
+&lt;p&gt;s3를 활용하여 스토리지를 구성하였다.&lt;/p&gt;
+
+&lt;p&gt;처음 사용하는거라 조금 애먹었지만 의외로 사용방법은 간단했다.&lt;/p&gt;
+
+&lt;p&gt;ACCESS KEY를 통해 back server에서 aws s3에 접근하였고&lt;/p&gt;
+
+&lt;p&gt;multer를 통해 s3의 버킷에 저장시켰다.&lt;/p&gt;
+
+&lt;p&gt;사진을 저장시키면 그 사진에 대한 key값이 나오는데 그 값을 통해 사진을 삭제시켰다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;핸드폰 view에 맞게 만드는 작업은 처음 해보는 작업이라 좀 애를 먹었는데&lt;/p&gt;
+
+&lt;p&gt;이것을 하면서 나는 진짜 front-end를 안가길 잘했다고 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;지금까지 했던 css 작업을 또 다시 해줘야 한다니…ㅠㅠ&lt;/p&gt;
+
+&lt;p&gt;하지만 내가 만든 홈페이지가 핸드폰에서도 잘 나오는것을 보니 뿌듯하다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">홈페이지 제작 의뢰를 받다 💯</summary></entry><entry><title type="html">winston &amp;amp;&amp;amp; morgan</title><link href="http://localhost:4000/interview-10/" rel="alternate" type="text/html" title="winston &amp;amp;&amp;amp; morgan" /><published>2022-03-05T00:00:00+09:00</published><updated>2022-03-05T00:00:00+09:00</updated><id>http://localhost:4000/interview-10</id><content type="html" xml:base="http://localhost:4000/interview-10/">&lt;h2 id=&quot;winston-&quot;&gt;winston? 💯&lt;/h2&gt;
 
 &lt;center class=&quot;notice--info&quot;&gt;winston : 기본적으로 자바스크립트에서는 console 객체의 log(), error() 메서드 등으로 로그를 출력할 수 있다. 그런데 프로그램 크기가 커지면, 로그의 양도 많아지고, 로그를 보관했다가 이후 확인할 일이 생기기도 한다. 따라서 다양한 방식으로 로그를 남기기 위해 외부의 다양한 모듈을 사용할 수 있다. winston은 multiple transports를 지원하는 비동기 로깅 라이브러리다.&lt;/center&gt;
 
@@ -781,13 +863,31 @@ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 &lt;p&gt;이렇게 선언해주니 잘 작동하였다.&lt;/p&gt;
 
-&lt;p&gt;이유는 nginx프록시가 잘못되서 요청이 순환되며 발생되는 에러같은데&lt;/p&gt;
+&lt;p&gt;이제 에러가 났던 이유를 알아보자.&lt;/p&gt;
 
-&lt;p&gt;기본적으로 transports: [‘websocket’]을 선언해주지 않는다면&lt;/p&gt;
+&lt;p&gt;공식홈페이지에서 이유를 찾아보니 HTTP 롱 폴링 전송이 Socket.IO 세션의 수명 동안 여러 HTTP 요청을 보내기 때문이라고 한다.&lt;/p&gt;
 
-&lt;p&gt;폴링으로 되는건가?..&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/elb-9.png&quot; alt=&quot;elb-9&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;아직은 찾아봐도 어려운 단어들이 많다.&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
+&lt;p&gt;말이 조금 어려워서 내가 생각한대로 다시 말해보자면 빨간네모친상자를 보면 요청이 성공,실패를 반복하고 있다.&lt;/p&gt;
+
+&lt;p&gt;이러한 반복형태를 보이는 이유는 HTTP 롱 폴링 전송은 클라이언트의 요청이 항상 같은 서버에 도착해야되는데&lt;/p&gt;
+
+&lt;p&gt;로드밸런서의 라운드-로빈 알고리즘을 통해 매 순간 실시간 요청을 여러개의 서버에 뿌려주기 때문발생하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/elb-10.gif&quot; alt=&quot;elb-10&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 이문제를 해결하기 위해서는 target group에 있는 스티키세션을 활성화 시키면 된다.&lt;/p&gt;
+
+&lt;p&gt;스티키세션이란 첫 요청에 응답해준 서버에만 껌딱지 처럼 요청을 보내는것이다.&lt;/p&gt;
+
+&lt;p&gt;하지만 이부분은 나의 테스트 목적과 맞지 않기에 보류해 두었고 위처럼 transports:[‘websocket’] 을 적어줌으로써 폴링요청을 비활성화 시켜 해결하였다.&lt;/p&gt;
+
+&lt;p&gt;끝!&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Elastic Load Balancer? 🍪</summary></entry><entry><title type="html">GraphQL Subscription</title><link href="http://localhost:4000/GraphQL-06/" rel="alternate" type="text/html" title="GraphQL Subscription" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/GraphQL-06</id><content type="html" xml:base="http://localhost:4000/GraphQL-06/">&lt;h2 id=&quot;graphql-subscription-&quot;&gt;GraphQL Subscription? 👀&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;GraphQL Subscription : Facebook에서 만든 Graph Query Language로 어플리케이션 레이어 쿼리 언어이다.&lt;/center&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Subscription? 👀</summary></entry><entry><title type="html">Redis</title><link href="http://localhost:4000/interview-09/" rel="alternate" type="text/html" title="Redis" /><published>2022-02-18T00:00:00+09:00</published><updated>2022-02-18T00:00:00+09:00</updated><id>http://localhost:4000/interview-09</id><content type="html" xml:base="http://localhost:4000/interview-09/">&lt;h2 id=&quot;redis-&quot;&gt;Redis? 💯&lt;/h2&gt;
 
@@ -1046,7 +1146,19 @@ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 &lt;p&gt;위 사이트 둘다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install redis&lt;/code&gt;을 통해 createClient를 사용하는것인데 사용방법이 달랐다.&lt;/p&gt;
 
-&lt;p&gt;왜 다른지 찾아보았지만 뭐가뭔지 잘모르겠고 오늘은 피곤해서 자야겠다..&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Redis? 💯</summary></entry><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
+&lt;p&gt;버전 또한 같았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/redis-13.png&quot; alt=&quot;redis-13&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그래서 createClient를 정의보기를 통해 알아보니 위 사진과 같이 url을 옵션으로 사용하고 있는것을 확인했다.&lt;/p&gt;
+
+&lt;p&gt;평소 정의보기를 활용하지않고 봐도 무슨뜻인지 몰라 뒷방 취급을 하였는데&lt;/p&gt;
+
+&lt;p&gt;이번 일을 계기로 제대로 알아보아야할 나의 체크순위에 들어가게되었다.&lt;/p&gt;
+
+&lt;p&gt;좋은 경험이었다.!&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Redis? 💯</summary></entry><entry><title type="html">AWS Http/Https?</title><link href="http://localhost:4000/AWS-01/" rel="alternate" type="text/html" title="AWS Http/Https?" /><published>2022-02-16T00:00:00+09:00</published><updated>2022-02-16T00:00:00+09:00</updated><id>http://localhost:4000/AWS-01</id><content type="html" xml:base="http://localhost:4000/AWS-01/">&lt;h2 id=&quot;http-&quot;&gt;HTTP? 🍪&lt;/h2&gt;
 
 &lt;center class=&quot;notice--danger&quot;&gt;  HTTP : 인터넷에서 웹서버와 사용자 컴퓨터에 설치된 웹브라우저 사이에 문서를 전송하기 위한 통신규약이다.&lt;/center&gt;
 
@@ -1303,161 +1415,4 @@ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;../images/2021-10-27-first/graphql-13.png&quot; alt=&quot;graphql-13&quot; /&gt;&lt;/center&gt;
 &lt;center&gt;최근 사용률&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Server 👀</summary></entry><entry><title type="html">Typescript란?</title><link href="http://localhost:4000/Typescript-01/" rel="alternate" type="text/html" title="Typescript란?" /><published>2022-02-13T00:00:00+09:00</published><updated>2022-02-13T00:00:00+09:00</updated><id>http://localhost:4000/Typescript-01</id><content type="html" xml:base="http://localhost:4000/Typescript-01/">&lt;h2 id=&quot;typescript-&quot;&gt;Typescript? 🔑&lt;/h2&gt;
-
-&lt;center class=&quot;notice--danger&quot;&gt;Typescript : 타입스크립트는 자바스크립트에 타입을 부여한 언어이다.&lt;/center&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;MS에 의해 개발/관리되고 있는 오픈소스 프로그래밍 언어이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;대규모 애플리케이션을 개발하는 데 자바스크립트가 어렵고 불편하다는 불만에 대응하기 위해 개발되었다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TypeScript는 ES5의 Superset이므로 기존의 자바스크립트(ES5) 문법을 그대로 사용할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ES6의 새로운 기능들을 사용하기 위해 Babel과 같은 별도 트랜스파일러(Transpiler)를 사용하지 않아도 ES6의 새로운 기능을 기존의 자바스크립트 엔진(현재의 브라우저 또는 Node.js)에서 실행할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;js-vs-ts&quot;&gt;JS vs TS&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;JS는 5 - ‘3’과 같은 Dynamic Typing이 가능하다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TS는 ERROR MESSEGE가 정확하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;설치&quot;&gt;설치&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;nodejs 설치&lt;/li&gt;
-  &lt;li&gt;npm install typescript&lt;/li&gt;
-  &lt;li&gt;tsconfig.json 파일 만들기(컴파일시 옵션설정하기 위함)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;tsconfig.json&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;es5&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commonjs&quot;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;commonjs는 require 문법&lt;/p&gt;
-
-&lt;p&gt;es2015, esnext는 import 문법을 사용함&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;브라우저는 JS만 읽을 수 있기때문에 TS -&amp;gt; JS로 변환시켜 줘야함( 터미널에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tsc -w&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;문법&quot;&gt;문법&lt;/h3&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;kk&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ERROR&lt;/span&gt;
-
-&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;형식은&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;형식에&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;할당할&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;수&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;없습니다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;TS는 변수를 선언할때 타입을 지정해준다.&lt;/p&gt;
-
-&lt;p&gt;지정해준타입이 아닌 다른 타입을 넣으면 ERROR를 발생시킨다.&lt;/p&gt;
-
-&lt;p&gt;(string, number, boolean, null, undefiend, bigint, [], {}, string[], { name? : string } 등등)&lt;/p&gt;
-
-&lt;p&gt;Union Type이라고 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let a: string[] | number = 123;&lt;/code&gt; 이런식으로 타입을 여러개 받을수도있다.&lt;/p&gt;
-
-&lt;p&gt;Tuple Type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[number, boolean]&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;타입선언이 길어지면 위와 같이 타입을 변수에 넣어서 사용하여도 된다.( 대문자로 사용하자. )&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;abc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ERROR&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;함수에도 타입선언을 해줄 수 있다.&lt;/p&gt;
-
-&lt;p&gt;arg를 숫자타입으로 지정해두었고, return 부분도 숫자타입으로 선언해주었다.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Member&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;abcdefg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;asd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;string타입의 모든 키는 키값으로 string타입을 가지게 선언할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;class문법은 살짝 다르다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;tsconfig.json&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;s&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;es5&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 'es3', 'es5', 'es2015', 'es2016', 'es2017','es2018', 'esnext' 가능&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commonjs&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;allowJs&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// js 파일들 ts에서 import해서 쓸 수 있는지&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;checkJs&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 일반 js 파일에서도 에러체크 여부&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;jsx&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;declaration&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;outFile&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;outDir&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//js파일 아웃풋 경로바꾸기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;rootDir&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;removeComments&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//컴파일시 주석제거&lt;/span&gt;
-
-  &lt;span class=&quot;s&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//strict 관련, noimplicit 어쩌구 관련 모드 전부 켜기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;noImplicitAny&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//any타입 금지 여부&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;strictNullChecks&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//null, undefined 타입에 이상한 짓 할시 에러내기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;strictFunctionTypes&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//함수파라미터 타입체크 강하게&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;strictPropertyInitialization&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//class constructor 작성시 타입체크 강하게&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;noImplicitThis&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this 키워드가 any 타입일 경우 에러내기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;alwaysStrict&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//자바스크립트 &quot;use strict&quot; 모드 켜기&lt;/span&gt;
-
-  &lt;span class=&quot;s&quot;&gt;&quot;noUnusedLocals&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//쓰지않는 지역변수 있으면 에러내기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;noUnusedParameters&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//쓰지않는 파라미터 있으면 에러내기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;noImplicitReturns&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//함수에서 return 빼먹으면 에러내기&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;noFallthroughCasesInSwitch&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//switch문 이상하면 에러내기&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이러한 것들이 있다~&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">Typescript? 🔑</summary></entry></feed>
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Lee Jun Hyeok</name></author><summary type="html">GraphQL Server 👀</summary></entry></feed>
