@@ -17,6 +17,8 @@ main-sidebar:
         url: /Every/Node/node/
       - title: 'AWS(3)'
         url: /Every/AWS/AWS/
+      - title: 'Machine learning(1)'
+        url: /Every/Machine/Machine/
   - title: 'Algorithm'
     children:
       - title: '알고리즘(6)'
@@ -33,7 +35,7 @@ main-sidebar:
         url: /Every/Blog/Blog/
   - title: 'etc'
     children:
-      - title: '이것저것(11)'
+      - title: '이것저것(12)'
         url: /Every/etc/etc/
       - title: 'Wecode(7)'
         url: /Every/Wecode/wecode/
