@@ -1,41 +1,41 @@
 # main links
 main-sidebar:
-  - title: 'Front-End'
+  - title: "Front-End"
     url: /
     children:
-      - title: 'HTML/CSS(3)'
+      - title: "HTML/CSS(3)"
         url: /Every/HTMLCSS/HTMLCSS/
-      - title: 'JavaScript(10)'
+      - title: "JavaScript(10)"
         url: /Every/JS/javascript/
-      - title: 'TypeScript(3)'
+      - title: "TypeScript(3)"
         url: /Every/Typescript/Typescript/
-      - title: 'React(11)'
+      - title: "React(11)"
         url: /Every/React/React/
-  - title: 'BACK-END'
+  - title: "BACK-END"
     children:
-      - title: 'Node.Js(6)'
+      - title: "Node.Js(6)"
         url: /Every/Node/node/
-      - title: 'AWS(3)'
+      - title: "AWS(3)"
         url: /Every/AWS/AWS/
-      - title: 'Machine learning(1)'
+      - title: "Machine learning(1)"
         url: /Every/Machine/Machine/
-  - title: 'Algorithm'
+  - title: "Algorithm"
     children:
-      - title: '알고리즘(6)'
+      - title: "알고리즘(6)"
         url: /Every/Algorithm/Algorithm
-  - title: 'Database'
+  - title: "Database"
     children:
-      - title: 'mySQL(4)'
+      - title: "mySQL(4)"
         url: /Every/Sql/sql/
-      - title: 'GraphQL(6)'
+      - title: "GraphQL(6)"
         url: /Every/GraphQL/GraphQL/
-  - title: 'Blog'
+  - title: "Blog"
     children:
-      - title: '만들어보기(3)'
+      - title: "만들어보기(3)"
         url: /Every/Blog/Blog/
-  - title: 'etc'
+  - title: "etc"
     children:
-      - title: '이것저것(12)'
+      - title: "이것저것(13)"
         url: /Every/etc/etc/
-      - title: 'Wecode(7)'
+      - title: "Wecode(7)"
         url: /Every/Wecode/wecode/
